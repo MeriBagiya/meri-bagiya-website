@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "bussiness-8ae39"
+  },
+  "targets": {
+    "bussiness-8ae39": {
+      "hosting": {
+        "meribagiya": [
+          "meribagiya"
+        ]
+      }
+    }
+  }
+}

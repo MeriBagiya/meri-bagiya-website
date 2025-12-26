@@ -1,0 +1,10 @@
+{
+  "name": "meribagiya-api",
+  "version": "1.0.0",
+  "description": "Email sending API for Meri Bagiya",
+  "main": "send-email.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "nodemailer": "^6.9.7"
+  }
+}

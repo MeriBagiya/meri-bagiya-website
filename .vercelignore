@@ -1,0 +1,6 @@
+# Ignore all files and directories
+*
+
+# Un-ignore the api directory and the vercel.json file
+!api/
+!vercel.json

@@ -1,0 +1,146 @@
+[
+    {
+        "Plantid":1,
+        "Plantname":"Peace Lily Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/peace-lily-s.webp",
+        "Plantdescription":"The Peace Lily is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.5,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":2,
+        "Plantname":"Plastic Pot",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/plastic-pot-1.webp",
+        "Plantdescription":"The Plastic Pot is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.6,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":3,
+        "Plantname":"Aglonema Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/aglonema.webp",
+        "Plantdescription":"The Aglonema Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.6,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":4,
+        "Plantname":"Jade Mini Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/jade-mini.webp",
+        "Plantdescription":"The Jade Mini Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.7,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":5,
+        "Plantname":"Monstera Deliciosa Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/monstera-deliciosa.webp",
+        "Plantdescription":"The Monstera Deliciosa Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.8,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":6,
+        "Plantname":"Anthurium Red Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/anthurium-red.webp",
+        "Plantdescription":"The Anthurium Red Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.4,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":7,
+        "Plantname":"Snake Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/snake-plant.webp",
+        "Plantdescription":"The Snake Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.9,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":8,
+        "Plantname":"Calathea Sanderiana Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/calathea-sanderiana.webp",
+        "Plantdescription":"The Calathea Sanderiana Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.5,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":9,
+        "Plantname":"ZZ Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/zz-plant.webp",
+        "Plantdescription":"The ZZ Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.6,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":10,
+        "Plantname":"Lemon Grass Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/lemon-grass.webp",
+        "Plantdescription":"The Lemon Grass Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.7,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":11,
+        "Plantname":"Ficus Lyrata Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/ficus-lyrata.webp",
+        "Plantdescription":"The Ficus Lyrata Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.1,
+        "Discount": "10%"
+        
+
+
+    },
+    {
+        "Plantid":12,
+        "Plantname":"Aloe Vera Mini Plant",
+        "Plantprice": "₹499",
+        "Plantimageurl":"/assets/images/shop/plants/aloe-vera-mini.webp",
+        "Plantdescription":"The Aloe Vera Mini Plant is a popular choice in house plants for a reason. It's a very hardy plant, withstanding a variety of different indoor conditions. It's a great air purifier and is known for it beautiful white flowers.",
+        "Plantrating":4.8,
+        "Discount": "10%"
+        
+
+
+    }
+]
