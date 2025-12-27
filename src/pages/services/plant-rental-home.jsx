@@ -62,48 +62,36 @@ function PlantRentalHome() {
               {/* Sidebar */}
               <div className="col-lg-3 order-lg-1 order-2">
                 <div className="de-box mb-3">
-                  <Link to="/services/plant-rental" className="d-block p-3 bg-light position-relative mb-1px">
-                    Plant Rental - Corporate
-                  </Link>
-                  <Link to="/services/plant-rental-home" className="d-block p-3 bg-color text-light position-relative mb-1px">
-                    Plant Rental - Home
+                  <Link to="/services/plant-rental-home" className="bg-color text-light d-block p-3 px-4 rounded-10px mb-3 relative">
+                    <h4 className="mb-0">Plant Rental - Home</h4>
                     <i className="icofont-long-arrow-right absolute abs-middle fs-24 end-20px"></i>
                   </Link>
-                  <Link to="/services/indoor-plants" className="d-block p-3 bg-light position-relative mb-1px">
-                    Indoor Plants
+                  <Link to="/services/plant-rental" className="bg-light d-block p-3 px-4 rounded-10px mb-3">
+                    <h4 className="mb-0">Plant Rental - Corporate</h4>
                   </Link>
-                  <Link to="/services/balcony-garden" className="d-block p-3 bg-light position-relative mb-1px">
-                    Balcony Garden
+                  <Link to="/services/indoor-plants" className="bg-light d-block p-3 px-4 rounded-10px mb-3">
+                    <h4 className="mb-0">Indoor Plants</h4>
                   </Link>
-                  <Link to="/services/terrace-garden" className="d-block p-3 bg-light position-relative mb-1px">
-                    Terrace Garden
+                  <Link to="/services/balcony-garden" className="bg-light d-block p-3 px-4 rounded-10px mb-3">
+                    <h4 className="mb-0">Balcony Garden</h4>
                   </Link>
-                  <Link to="/services/garden-maintenance" className="d-block p-3 bg-light position-relative">
-                    Garden Maintenance
+                  <Link to="/services/terrace-garden" className="bg-light d-block p-3 px-4 rounded-10px mb-3">
+                    <h4 className="mb-0">Terrace Garden</h4>
+                  </Link>
+                  <Link to="/services/garden-maintenance" className="bg-light d-block p-3 px-4 rounded-10px mb-3">
+                    <h4 className="mb-0">Garden Maintenance</h4>
                   </Link>
                 </div>
 
                 {/* Quick Contact */}
-                <div style={{ backgroundColor: '#4a7c59', padding: '1.5rem', borderRadius: '10px' }}>
-                  <h5 style={{ color: '#ffffff', marginBottom: '1rem' }}>Quick Enquiry</h5>
-                  <p style={{ color: '#ffffff', marginBottom: '1rem' }}>Have questions about home plant rental?</p>
-                  <a href="tel:+919220404309" style={{ display: 'block', color: '#ffffff', marginBottom: '0.5rem', textDecoration: 'none' }}>
-                    <i className="icofont-phone me-2"></i> +91 9220404309
+                <div className="bg-color text-light p-4 rounded-1 mt-4">
+                  <h5 className="mb-3">Quick Enquiry</h5>
+                  <p className="small mb-3">Need plants for your home? Get in touch!</p>
+                  <a href="tel:9220404309" className="btn-line text-light d-block text-center mb-2">
+                    <i className="icofont-phone me-2"></i>Call Now
                   </a>
-                  <a
-                    href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn w-100 mt-2"
-                    style={{
-                      backgroundColor: '#25D366',
-                      color: '#ffffff',
-                      fontWeight: '600',
-                      padding: '0.75rem 1rem',
-                      border: 'none'
-                    }}
-                  >
-                    <i className="fa-brands fa-whatsapp me-2"></i> WhatsApp Us
+                  <a href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home." target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center">
+                    <i className="icofont-whatsapp me-2"></i>WhatsApp
                   </a>
                 </div>
               </div>
