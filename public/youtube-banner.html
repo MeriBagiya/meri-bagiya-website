@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Bagiya - YouTube Banner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .info {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* YouTube Banner Container - 2560x1440 */
+        .youtube-banner {
+            width: 2560px;
+            height: 1440px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #3d7a4f 100%);
+        }
+
+        /* Background Image */
+        .banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        /* Green Overlay Pattern */
+        .overlay-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/background/12.webp') center center;
+            background-size: cover;
+            opacity: 0.4;
+        }
+
+        /* Gradient Overlay */
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(26, 71, 42, 0.9) 0%,
+                rgba(26, 71, 42, 0.7) 30%,
+                rgba(26, 71, 42, 0.5) 50%,
+                rgba(26, 71, 42, 0.7) 70%,
+                rgba(26, 71, 42, 0.9) 100%
+            );
+        }
+
+        /* Safe Area Guide (1546x423 centered) - for reference */
+        .safe-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1546px;
+            height: 423px;
+            /* border: 2px dashed rgba(255,255,255,0.3); */ /* Uncomment to see safe area */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        /* Content Container */
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-icon {
+            width: 120px;
+            height: 120px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Text Section */
+        .text-section {
+            text-align: center;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 96px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            color: #c4e3c9;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .sub-tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: #98d4a0;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* Decorative Elements */
+        .leaf-left, .leaf-right {
+            position: absolute;
+            width: 400px;
+            opacity: 0.15;
+            z-index: 5;
+        }
+
+        .leaf-left {
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-15deg);
+        }
+
+        .leaf-right {
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(15deg) scaleX(-1);
+        }
+
+        /* Decorative Lines */
+        .decorative-line {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #98d4a0, transparent);
+            margin: 25px auto;
+        }
+
+        /* Plant Images on Sides */
+        .side-image-left {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 500px;
+            height: 700px;
+            object-fit: cover;
+            opacity: 0.4;
+            mask-image: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+        }
+
+        .side-image-right {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 500px;
+            height: 700px;
+            object-fit: cover;
+            opacity: 0.4;
+            mask-image: linear-gradient(to left, rgba(0,0,0,0.8), transparent);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8), transparent);
+        }
+
+        /* Services Icons Row */
+        .services-row {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 80px;
+            z-index: 10;
+        }
+
+        .service-item {
+            text-align: center;
+            color: #c4e3c9;
+        }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .service-text {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Bottom Bar */
+        .bottom-bar {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            color: #98d4a0;
+            font-size: 20px;
+            z-index: 10;
+        }
+
+        .bottom-bar span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Download Instructions */
+        .instructions {
+            color: #888;
+            margin-top: 30px;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .instructions h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .scale-note {
+            background: #2a2a2a;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Meri Bagiya - YouTube Channel Banner</h1>
+        <p>Dimensions: 2560 x 1440 pixels (YouTube Recommended Size)</p>
+    </div>
+
+    <!-- YouTube Banner -->
+    <div class="youtube-banner" id="banner">
+        <!-- Background Image -->
+        <img src="assets/images/slider/4.jpg" alt="" class="banner-bg">
+
+        <!-- Pattern Overlay -->
+        <div class="overlay-pattern"></div>
+
+        <!-- Gradient Overlay -->
+        <div class="gradient-overlay"></div>
+
+        <!-- Side Plant Images -->
+        <img src="assets/images/slider/1.jpg" alt="" class="side-image-left">
+        <img src="assets/images/slider/1.jpg" alt="" class="side-image-right">
+
+        <!-- Leaf Decorations -->
+        <img src="assets/images/logo-icon.webp" alt="" class="leaf-left">
+        <img src="assets/images/logo-icon.webp" alt="" class="leaf-right">
+
+        <!-- Safe Area Content -->
+        <div class="safe-area">
+            <div class="content">
+                <div class="text-section">
+                    <div class="brand-name">Meri Bagiya</div>
+                    <div class="decorative-line"></div>
+                    <div class="tagline">Plant Nursery & Garden Services</div>
+                    <div class="sub-tagline">Transform Your Space Into A Green Paradise</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Row -->
+        <div class="services-row">
+            <div class="service-item">
+                <div class="service-icon">🌱</div>
+                <div class="service-text">Indoor Plants</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🌳</div>
+                <div class="service-text">Garden Design</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🌿</div>
+                <div class="service-text">Landscaping</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🪴</div>
+                <div class="service-text">Plant Care</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">💧</div>
+                <div class="service-text">Irrigation</div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <span>📍 Greater Noida, India</span>
+            <span>|</span>
+            <span>🌐 meribagiya.com</span>
+            <span>|</span>
+            <span>📞 9220404309</span>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>How to Save This Banner</h3>
+        <ol>
+            <li>Open this file in Chrome or Firefox browser</li>
+            <li>Right-click on the banner and select "Inspect"</li>
+            <li>In DevTools, right-click on the banner element</li>
+            <li>Select "Capture node screenshot" (Chrome) or use a screenshot tool</li>
+            <li>Alternatively, use browser extensions like "GoFullPage" or "Awesome Screenshot"</li>
+        </ol>
+        <div class="scale-note">
+            <strong>Note:</strong> The banner is displayed at full size (2560x1440).
+            You may need to zoom out (Ctrl/Cmd + -) to see the full banner,
+            then take a screenshot at 100% zoom for best quality.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+================================================================================
+                    MERI BAGIYA - YOUTUBE CHANNEL DESCRIPTION
+================================================================================
+
+CHANNEL NAME: Meri Bagiya - Plant Nursery & Garden Services
+
+--------------------------------------------------------------------------------
+SHORT DESCRIPTION (For Channel Header - Max 1000 characters)
+--------------------------------------------------------------------------------
+
+Welcome to Meri Bagiya! Your one-stop destination for all things green and beautiful. We are a plant nursery and garden services company based in Greater Noida, India, dedicated to transforming your spaces into lush green paradises.
+
+What We Offer:
+- Indoor & Outdoor Plants
+- Garden Design & Landscaping
+- Terrace & Balcony Gardens
+- Vertical Gardens & Green Walls
+- Plant Rentals for Offices & Events
+- Garden Maintenance Services
+- Irrigation Systems Installation
+
+Subscribe for gardening tips, plant care guides, DIY garden projects, and behind-the-scenes looks at our beautiful nursery!
+
+Visit us: https://meribagiya.com
+Location: Amrapali Leisure Valley, Greater Noida, UP-201318
+Contact: 9220404309 | 9463563049 | 9911654089
+
+#MeriBagiya #PlantNursery #GardenServices #GreaterNoida #IndoorPlants #Gardening
+
+--------------------------------------------------------------------------------
+FULL ABOUT SECTION (For Channel About Page)
+--------------------------------------------------------------------------------
+
+MERI BAGIYA - Transform Your Space Into A Green Paradise
+
+Welcome to the official YouTube channel of Meri Bagiya, your trusted plant nursery and garden services provider in Greater Noida, India.
+
+WHO WE ARE
+----------
+Meri Bagiya is more than just a plant nursery - we're your partners in creating beautiful, sustainable green spaces. Whether you have a small balcony, a spacious terrace, or an entire garden, we have the expertise and passion to transform it into your personal paradise.
+
+WHAT YOU'LL FIND ON THIS CHANNEL
+--------------------------------
+- Plant Care Tutorials: Learn how to care for various indoor and outdoor plants
+- Gardening Tips & Tricks: Expert advice for beginners and seasoned gardeners
+- DIY Garden Projects: Step-by-step guides for creating beautiful garden features
+- Plant Spotlights: Detailed information about different plant species
+- Garden Makeovers: Watch amazing transformations of outdoor spaces
+- Seasonal Gardening: Tips for maintaining your garden throughout the year
+- Behind the Scenes: Glimpses of our nursery and team at work
+
+OUR SERVICES
+------------
+- Indoor Plants: Wide variety of air-purifying and decorative indoor plants
+- Outdoor Plants: Trees, shrubs, flowering plants, and more
+- Garden Design & Landscaping: Custom designs tailored to your space
+- Terrace Gardens: Convert your rooftop into a green oasis
+- Balcony Gardens: Maximize small spaces with beautiful plant arrangements
+- Vertical Gardens: Modern green walls for homes and offices
+- Plant Rentals: Perfect for offices, events, and special occasions
+- Garden Maintenance: Regular care services to keep your garden thriving
+- Irrigation Systems: Smart watering solutions for efficient plant care
+- Water Features: Fountains and water elements for your garden
+
+VISIT US
+--------
+Location: Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, UP-201318
+Hours: Monday - Sunday, 8:00 AM - 6:00 PM
+
+CONTACT US
+----------
+Phone: 9220404309 | 9463563049 | 9911654089
+Email: Contact@meribagiya.com
+Website: https://meribagiya.com
+
+CONNECT WITH US
+---------------
+Website: https://meribagiya.com
+Facebook: [Your Facebook URL]
+Instagram: [Your Instagram URL]
+Twitter/X: [Your Twitter URL]
+
+Don't forget to SUBSCRIBE and hit the bell icon to stay updated with our latest videos!
+
+--------------------------------------------------------------------------------
+CHANNEL TAGS/KEYWORDS (For YouTube Studio)
+--------------------------------------------------------------------------------
+
+meri bagiya, plant nursery, garden services, greater noida plants, indoor plants india, garden design, landscaping services, terrace garden, balcony garden, vertical garden, plant care tips, gardening tutorials, plant nursery near me, buy plants online, office plants, plant rental, garden maintenance, irrigation services, noida gardening, delhi ncr plants, home garden ideas, diy gardening, plant care guide, houseplants india, outdoor plants india, landscaping greater noida
+
+--------------------------------------------------------------------------------
+SOCIAL MEDIA LINKS (For Channel Banner)
+--------------------------------------------------------------------------------
+
+Website: meribagiya.com
+Location: Greater Noida, India
+Phone: 9220404309
+
+================================================================================
+                         YOUTUBE BANNER SPECIFICATIONS
+================================================================================
+
+File Location: public/youtube-banner.html
+
+Banner Dimensions:
+- Full Size: 2560 x 1440 pixels (Recommended by YouTube)
+- Safe Area: 1546 x 423 pixels (Content visible on all devices)
+- Minimum Upload Size: 2048 x 1152 pixels
+
+Design Elements Used:
+- Background: Green gradient with topographic pattern overlay
+- Images: slider/4.jpg (lush garden path), slider/1.jpg (gardening)
+- Logo Icon: logo-icon.webp
+- Colors: Deep green (#1a472a), Light green (#98d4a0, #c4e3c9)
+- Fonts: Playfair Display (brand name), Poppins (tagline)
+
+How to Export:
+1. Open youtube-banner.html in a browser
+2. Use browser screenshot tools or extensions
+3. Alternatively, use html2canvas or Puppeteer for programmatic export
+
+================================================================================
