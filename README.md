@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Meri Bagiya - Plant Nursery & Garden Services
+
+A React.js e-commerce single-page application for Meri Bagiya, a plant nursery and garden services business in Greater Noida.
+
+## Live Site
+
+**Website:** [https://meribagiya.com](https://meribagiya.com)
+
+## Known Issues
+
+| Issue | Description | Link |
+|-------|-------------|------|
+| Email Not Working | Contact form email functionality requires SMTP environment variables configuration in Vercel | [#1](https://github.com/MeriBagiya/meri-bagiya-website/issues/1) |
+| Placeholder Links | Social media, footer legal links, and pagination are non-functional | [#2](https://github.com/MeriBagiya/meri-bagiya-website/issues/2) |
+| Accessibility | Multiple images missing alt text descriptions | [#3](https://github.com/MeriBagiya/meri-bagiya-website/issues/3) |
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
