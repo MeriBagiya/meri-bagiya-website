@@ -38,7 +38,7 @@ function PlantRentalHome() {
         <div id="top"></div>
 
         {/* Hero Section */}
-        <section id="subheader" className="jarallax" style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background/11.webp'})`}}>
+        <section id="subheader" className="jarallax" style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background/8.webp'})`}}>
           <div className="container relative z-index-1000">
             <div className="row">
               <div className="col-lg-6">
