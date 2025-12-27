@@ -61,7 +61,6 @@ function PlantRentalHome() {
             <div className="row g-4">
               {/* Sidebar */}
               <div className="col-lg-3 order-lg-1 order-2">
-                <div className="fw-bold text-dark fs-16px lh-2 mb-1">Our Services</div>
                 <div className="de-box mb-3">
                   <Link to="/services/plant-rental" className="d-block p-3 bg-light position-relative mb-1px">
                     Plant Rental - Corporate
