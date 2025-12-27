@@ -52,7 +52,8 @@ function Header() {
                                             Services
                                         </Link>
                                         <ul>
-                                            <li><Link to="/services/plant-rental">Plant Rental Service</Link></li>
+                                            <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
+                                            <li><Link to="/services/plant-rental-home">Plant Rental - Home</Link></li>
                                             <li><Link to="/services/landscape-design">Landscape Design</Link></li>
                                             <li><Link to="/services/vertical-garden">Vertical Garden</Link></li>
                                             <li><Link to="/services/balcony-garden">Balcony Garden</Link></li>
@@ -242,7 +243,22 @@ function Header() {
                         backgroundColor: '#fafafa'
                     }}
                 >
-                    → Plant Rental Service
+                    → Plant Rental - Corporate
+                </Link>
+                <Link
+                    to="/services/plant-rental-home"
+                    onClick={closeMobileMenu}
+                    style={{
+                        display: 'block',
+                        padding: '12px 20px 12px 35px',
+                        color: '#555',
+                        textDecoration: 'none',
+                        fontSize: '14px',
+                        borderBottom: '1px solid #f5f5f5',
+                        backgroundColor: '#fafafa'
+                    }}
+                >
+                    → Plant Rental - Home
                 </Link>
                 <Link
                     to="/services/landscape-design"
