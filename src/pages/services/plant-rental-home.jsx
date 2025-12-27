@@ -58,10 +58,10 @@ function PlantRentalHome() {
         {/* Main Content */}
         <section>
           <div className="container">
-            <div className="row g-4">
+            <div className="row g-4 gx-5">
               {/* Sidebar */}
-              <div className="col-lg-3 order-lg-1 order-2">
-                <div className="de-box mb-3">
+              <div className="col-lg-3 col-12 order-lg-1 order-2">
+                <div className="me-lg-3">
                   <Link to="/services/plant-rental-home" className="bg-color text-light d-block p-3 px-4 rounded-10px mb-3 relative">
                     <h4 className="mb-0">Plant Rental - Home</h4>
                     <i className="icofont-long-arrow-right absolute abs-middle fs-24 end-20px"></i>
@@ -82,22 +82,10 @@ function PlantRentalHome() {
                     <h4 className="mb-0">Garden Maintenance</h4>
                   </Link>
                 </div>
-
-                {/* Quick Contact */}
-                <div className="bg-color text-light p-4 rounded-1 mt-4">
-                  <h5 className="mb-3">Quick Enquiry</h5>
-                  <p className="small mb-3">Need plants for your home? Get in touch!</p>
-                  <a href="tel:9220404309" className="btn-line text-light d-block text-center mb-2">
-                    <i className="icofont-phone me-2"></i>Call Now
-                  </a>
-                  <a href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home." target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center">
-                    <i className="icofont-whatsapp me-2"></i>WhatsApp
-                  </a>
-                </div>
               </div>
 
               {/* Main Content Area */}
-              <div className="col-lg-9 order-lg-2 order-1">
+              <div className="col-lg-9 col-12 order-lg-2 order-1">
                 {/* Introduction */}
                 <div className="row g-4 mb-5">
                   <div className="col-lg-6">
