@@ -5,12 +5,12 @@ const generateSitemap = async () => {
   const staticRoutes = [
     '/',
     '/about',
-    '/blog',
     '/catalog',
     '/contact',
     '/services',
     '/shop-all',
     '/shop-cart',
+    '/services/plant-rental-home',
     '/services/garden-design',
     '/services/garden-maintenance',
     '/services/planting-services',
