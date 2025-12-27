@@ -97,8 +97,8 @@ function PlantRentalHome() {
                     </p>
                     <p>
                       Starting from just <strong>₹150/month per plant</strong>, you get beautiful indoor
-                      plants with free delivery, weekly maintenance, and replacement guarantee. No green
-                      thumb required!
+                      plants with weekly maintenance and replacement guarantee. No green
+                      thumb required! <small className="text-muted">(₹300 delivery charges apply)</small>
                     </p>
                     <div className="d-flex gap-3 mt-4">
                       <div className="text-center">
@@ -270,8 +270,8 @@ function PlantRentalHome() {
                       <div className="bg-color text-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
                         <span className="fs-4 fw-bold">3</span>
                       </div>
-                      <h6>Free Delivery</h6>
-                      <p className="text-muted small mb-0">We deliver and set up plants at your home</p>
+                      <h6>Delivery & Setup</h6>
+                      <p className="text-muted small mb-0">We deliver and set up plants at your home (₹300 charges)</p>
                     </div>
                     <div className="col-md-3 col-6 text-center">
                       <div className="bg-color text-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
@@ -331,11 +331,33 @@ function PlantRentalHome() {
                       </h2>
                       <div id="faq4" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div className="accordion-body">
-                          We serve Greater Noida, Noida, and nearby areas including Amrapali Leisure Valley, Ace Aspire, Alpha, Beta, Gamma sectors, Pari Chowk, and Knowledge Park.
+                          We serve locations within <strong>5 km radius</strong> of our nursery (Near Ace Aspire, Greater Noida). This includes Amrapali Leisure Valley, Ace Aspire, nearby sectors, and Pari Chowk area. A minimum <strong>₹300 delivery charge</strong> applies for all orders.
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+
+                {/* Terms & Conditions */}
+                <div className="mb-5 p-4 rounded-10px" style={{ backgroundColor: '#fff8e1', border: '1px solid #ffc107' }}>
+                  <h5 className="mb-3" style={{ color: '#856404' }}>
+                    <i className="icofont-warning me-2"></i>
+                    Terms & Conditions
+                  </h5>
+                  <ul className="mb-0" style={{ color: '#856404' }}>
+                    <li className="mb-2">
+                      <strong>Service Area:</strong> Plant rental service is available only within <strong>5 km radius</strong> from our nursery location (Near Ace Aspire, Greater Noida).
+                    </li>
+                    <li className="mb-2">
+                      <strong>Delivery Charges:</strong> Minimum <strong>₹300 delivery charges</strong> applicable for all orders.
+                    </li>
+                    <li className="mb-2">
+                      <strong>Minimum Order:</strong> Minimum 5 plants required for home rental service.
+                    </li>
+                    <li className="mb-0">
+                      <strong>Rental Period:</strong> Minimum rental period is 3 months with 15 days cancellation notice.
+                    </li>
+                  </ul>
                 </div>
 
                 {/* Final CTA */}

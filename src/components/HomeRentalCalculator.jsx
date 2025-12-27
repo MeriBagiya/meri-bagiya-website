@@ -190,7 +190,7 @@ function HomeRentalCalculator() {
           <div className="col-6 col-md-3">
             <div className="d-flex align-items-center">
               <i className="icofont-check-circled id-color me-2"></i>
-              <small>Free Delivery</small>
+              <small>Delivery (₹300)</small>
             </div>
           </div>
           <div className="col-6 col-md-3">
