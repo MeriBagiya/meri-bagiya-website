@@ -85,17 +85,24 @@ function PlantRentalHome() {
                 </div>
 
                 {/* Quick Contact */}
-                <div className="bg-color p-4 text-light rounded-10px">
-                  <h5 className="text-light mb-3">Quick Enquiry</h5>
-                  <p className="mb-3">Have questions about home plant rental?</p>
-                  <a href="tel:+919220404309" className="d-block text-light mb-2">
+                <div style={{ backgroundColor: '#4a7c59', padding: '1.5rem', borderRadius: '10px' }}>
+                  <h5 style={{ color: '#ffffff', marginBottom: '1rem' }}>Quick Enquiry</h5>
+                  <p style={{ color: '#ffffff', marginBottom: '1rem' }}>Have questions about home plant rental?</p>
+                  <a href="tel:+919220404309" style={{ display: 'block', color: '#ffffff', marginBottom: '0.5rem', textDecoration: 'none' }}>
                     <i className="icofont-phone me-2"></i> +91 9220404309
                   </a>
                   <a
                     href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-light btn-sm mt-2 w-100"
+                    className="btn w-100 mt-2"
+                    style={{
+                      backgroundColor: '#25D366',
+                      color: '#ffffff',
+                      fontWeight: '600',
+                      padding: '0.75rem 1rem',
+                      border: 'none'
+                    }}
                   >
                     <i className="fa-brands fa-whatsapp me-2"></i> WhatsApp Us
                   </a>
@@ -347,20 +354,39 @@ function PlantRentalHome() {
                 </div>
 
                 {/* Final CTA */}
-                <div className="bg-color p-5 rounded-10px text-center text-light">
-                  <h3 className="text-light mb-3">Ready to Green Your Home?</h3>
-                  <p className="mb-4">Start with just 5 plants and transform your living space today!</p>
+                <div style={{ backgroundColor: '#4a7c59', padding: '3rem', borderRadius: '10px', textAlign: 'center' }}>
+                  <h3 style={{ color: '#ffffff', marginBottom: '1rem' }}>Ready to Green Your Home?</h3>
+                  <p style={{ color: '#ffffff', marginBottom: '1.5rem' }}>Start with just 5 plants and transform your living space today!</p>
                   <div className="d-flex flex-column flex-md-row gap-3 justify-content-center">
                     <a
                       href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-light btn-lg px-4"
+                      className="btn btn-lg px-5 py-3"
+                      style={{
+                        backgroundColor: '#25D366',
+                        color: '#ffffff',
+                        fontWeight: '600',
+                        fontSize: '1.1rem',
+                        border: 'none',
+                        transition: 'all 0.3s ease'
+                      }}
                     >
                       <i className="fa-brands fa-whatsapp me-2"></i>
                       WhatsApp Us
                     </a>
-                    <Link to="/contact" className="btn btn-outline-light btn-lg px-4">
+                    <Link
+                      to="/contact"
+                      className="btn btn-lg px-5 py-3"
+                      style={{
+                        backgroundColor: '#ffffff',
+                        color: '#4a7c59',
+                        fontWeight: '600',
+                        fontSize: '1.1rem',
+                        border: '2px solid #ffffff',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
                       <i className="icofont-phone me-2"></i>
                       Contact Us
                     </Link>

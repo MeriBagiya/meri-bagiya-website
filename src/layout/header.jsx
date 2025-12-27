@@ -52,16 +52,19 @@ function Header() {
                                             Services
                                         </Link>
                                         <ul>
-                                            <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
+                                            <li style={{borderBottom: '1px solid #eee', paddingBottom: '5px', marginBottom: '5px'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '12px'}}>FOR HOME</span></li>
                                             <li><Link to="/services/plant-rental-home">Plant Rental - Home</Link></li>
-                                            <li><Link to="/services/landscape-design">Landscape Design</Link></li>
-                                            <li><Link to="/services/vertical-garden">Vertical Garden</Link></li>
                                             <li><Link to="/services/balcony-garden">Balcony Garden</Link></li>
                                             <li><Link to="/services/terrace-garden">Terrace Garden</Link></li>
                                             <li><Link to="/services/indoor-plants">Indoor Plants</Link></li>
+                                            <li style={{borderBottom: '1px solid #eee', paddingBottom: '5px', marginBottom: '5px', marginTop: '10px'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '12px'}}>FOR BUSINESS</span></li>
+                                            <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
+                                            <li><Link to="/plant-rent-in-office">Plant Rent in Office</Link></li>
+                                            <li><Link to="/services/landscape-design">Landscape Design</Link></li>
+                                            <li style={{borderBottom: '1px solid #eee', paddingBottom: '5px', marginBottom: '5px', marginTop: '10px'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '12px'}}>OTHER SERVICES</span></li>
+                                            <li><Link to="/services/vertical-garden">Vertical Garden</Link></li>
                                             <li><Link to="/services/artificial-grass">Artificial Grass</Link></li>
                                             <li><Link to="/services/water-fountain">Water Fountain</Link></li>
-                                            <li><Link to="/plant-rent-in-office">Plant Rent in Office</Link></li>
                                             <li><Link to="/services/garden-maintenance">Garden Maintenance</Link></li>
                                         </ul>
                                     </li>
@@ -230,169 +233,52 @@ function Header() {
                 >
                     Services
                 </Link>
-                <Link
-                    to="/services/plant-rental"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
-                    → Plant Rental - Corporate
-                </Link>
-                <Link
-                    to="/services/plant-rental-home"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
+
+                {/* FOR HOME Section */}
+                <div style={{ padding: '10px 20px', backgroundColor: '#e8f5e9', fontWeight: 'bold', fontSize: '12px', color: '#4a7c59' }}>
+                    FOR HOME
+                </div>
+                <Link to="/services/plant-rental-home" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Plant Rental - Home
                 </Link>
-                <Link
-                    to="/services/landscape-design"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
-                    → Landscape Design
-                </Link>
-                <Link
-                    to="/services/vertical-garden"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
-                    → Vertical Garden
-                </Link>
-                <Link
-                    to="/services/balcony-garden"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
+                <Link to="/services/balcony-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Balcony Garden
                 </Link>
-                <Link
-                    to="/services/terrace-garden"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
+                <Link to="/services/terrace-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Terrace Garden
                 </Link>
-                <Link
-                    to="/services/indoor-plants"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
+                <Link to="/services/indoor-plants" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Indoor Plants
                 </Link>
-                <Link
-                    to="/services/artificial-grass"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
-                    → Artificial Grass
+
+                {/* FOR BUSINESS Section */}
+                <div style={{ padding: '10px 20px', backgroundColor: '#e8f5e9', fontWeight: 'bold', fontSize: '12px', color: '#4a7c59' }}>
+                    FOR BUSINESS
+                </div>
+                <Link to="/services/plant-rental" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                    → Plant Rental - Corporate
                 </Link>
-                <Link
-                    to="/services/water-fountain"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
-                    → Water Fountain
-                </Link>
-                <Link
-                    to="/plant-rent-in-office"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
+                <Link to="/plant-rent-in-office" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Plant Rent in Office
                 </Link>
-                <Link
-                    to="/services/garden-maintenance"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '12px 20px 12px 35px',
-                        color: '#555',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        borderBottom: '1px solid #f5f5f5',
-                        backgroundColor: '#fafafa'
-                    }}
-                >
+                <Link to="/services/landscape-design" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                    → Landscape Design
+                </Link>
+
+                {/* OTHER SERVICES Section */}
+                <div style={{ padding: '10px 20px', backgroundColor: '#e8f5e9', fontWeight: 'bold', fontSize: '12px', color: '#4a7c59' }}>
+                    OTHER SERVICES
+                </div>
+                <Link to="/services/vertical-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                    → Vertical Garden
+                </Link>
+                <Link to="/services/artificial-grass" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                    → Artificial Grass
+                </Link>
+                <Link to="/services/water-fountain" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                    → Water Fountain
+                </Link>
+                <Link to="/services/garden-maintenance" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Garden Maintenance
                 </Link>
                 <Link
