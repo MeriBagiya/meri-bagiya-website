@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
 const POT_SIZES = {
   small: {
@@ -221,40 +222,34 @@ function HomeRentalCalculator() {
           rel="noopener noreferrer"
           className="btn btn-lg px-5 py-3"
           style={{
-            backgroundColor: isValidOrder ? '#25D366' : '#6c757d',
+            backgroundColor: '#25D366',
             color: '#ffffff',
-            pointerEvents: isValidOrder ? 'auto' : 'none',
-            opacity: isValidOrder ? 1 : 0.6,
             fontWeight: '600',
             fontSize: '1.1rem',
-            transition: 'all 0.3s ease',
-            transform: 'scale(1)',
-            border: 'none'
+            border: 'none',
+            textDecoration: 'none',
+            cursor: 'pointer'
           }}
-          onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-          onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
         >
           <i className="fa-brands fa-whatsapp me-2"></i>
           Get Quote on WhatsApp
         </a>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="btn btn-lg px-5 py-3"
           style={{
             backgroundColor: '#4a7c59',
             color: '#ffffff',
             fontWeight: '600',
             fontSize: '1.1rem',
-            transition: 'all 0.3s ease',
-            transform: 'scale(1)',
-            border: 'none'
+            border: 'none',
+            textDecoration: 'none',
+            cursor: 'pointer'
           }}
-          onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-          onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
         >
           <i className="icofont-phone me-2"></i>
           Contact Us
-        </a>
+        </Link>
       </div>
 
       {!isValidOrder && calculation.totalPlants > 0 && (
