@@ -97,8 +97,11 @@ function PlantRentalHome() {
                     </p>
                     <p>
                       Starting from just <strong>₹150/month per plant</strong>, you get beautiful indoor
-                      plants with weekly maintenance and replacement guarantee. No green
-                      thumb required! <small className="text-muted">(₹300 delivery charges apply)</small>
+                      plants with replacement guarantee. No green thumb required!
+                    </p>
+                    <p className="small text-muted mb-0">
+                      <i className="icofont-info-circle me-1"></i>
+                      Delivery: ₹300 | Maintenance: ₹300/month (1st month FREE!)
                     </p>
                     <div className="d-flex gap-3 mt-4">
                       <div className="text-center">
@@ -110,8 +113,8 @@ function PlantRentalHome() {
                         <small className="text-muted">Starting Price</small>
                       </div>
                       <div className="text-center">
-                        <div className="fs-1 fw-bold id-color">Free</div>
-                        <small className="text-muted">Maintenance</small>
+                        <div className="fs-1 fw-bold id-color">5km</div>
+                        <small className="text-muted">Service Area</small>
                       </div>
                     </div>
                   </div>
@@ -151,8 +154,8 @@ function PlantRentalHome() {
                     <div className="col-md-6 col-lg-4">
                       <div className="bg-light p-4 rounded-10px h-100 text-center">
                         <i className="icofont-hand-power fs-40 id-color mb-3"></i>
-                        <h5>Zero Maintenance</h5>
-                        <p className="mb-0 text-muted">We handle watering, pruning, and fertilizing. You just enjoy!</p>
+                        <h5>Hassle-Free Care</h5>
+                        <p className="mb-0 text-muted">We handle watering, pruning, and fertilizing. You just enjoy! (₹300/mo)</p>
                       </div>
                     </div>
                     <div className="col-md-6 col-lg-4">
@@ -278,7 +281,7 @@ function PlantRentalHome() {
                         <span className="fs-4 fw-bold">4</span>
                       </div>
                       <h6>We Maintain</h6>
-                      <p className="text-muted small mb-0">Weekly visits to water, prune, and care for plants</p>
+                      <p className="text-muted small mb-0">Weekly visits (₹300/mo, 1st month FREE!)</p>
                     </div>
                   </div>
                 </div>
@@ -314,12 +317,12 @@ function PlantRentalHome() {
                     <div className="accordion-item border-0 mb-2">
                       <h2 className="accordion-header">
                         <button className="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                          Is maintenance really included?
+                          What about maintenance?
                         </button>
                       </h2>
                       <div id="faq3" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div className="accordion-body">
-                          Yes! Our team visits weekly to water, check plant health, prune if needed, and clean pots. All included in the monthly rental.
+                          Maintenance is charged at <strong>₹300/month</strong> separately. Our team visits weekly to water, check plant health, prune if needed, and clean pots. <strong>First month maintenance is FREE!</strong>
                         </div>
                       </div>
                     </div>
@@ -349,7 +352,10 @@ function PlantRentalHome() {
                       <strong>Service Area:</strong> Plant rental service is available only within <strong>5 km radius</strong> from our nursery location (Near Ace Aspire, Greater Noida).
                     </li>
                     <li className="mb-2">
-                      <strong>Delivery Charges:</strong> Minimum <strong>₹300 delivery charges</strong> applicable for all orders.
+                      <strong>Delivery Charges:</strong> <strong>₹300 delivery charges</strong> applicable separately (not included in rental).
+                    </li>
+                    <li className="mb-2">
+                      <strong>Maintenance Charges:</strong> <strong>₹300/month</strong> for weekly maintenance visits. <span style={{ color: '#28a745', fontWeight: 'bold' }}>First month FREE!</span>
                     </li>
                     <li className="mb-2">
                       <strong>Minimum Order:</strong> Minimum 5 plants required for home rental service.

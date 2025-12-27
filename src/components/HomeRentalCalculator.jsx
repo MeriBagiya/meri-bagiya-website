@@ -190,18 +190,6 @@ function HomeRentalCalculator() {
           <div className="col-6 col-md-3">
             <div className="d-flex align-items-center">
               <i className="icofont-check-circled id-color me-2"></i>
-              <small>Delivery (₹300)</small>
-            </div>
-          </div>
-          <div className="col-6 col-md-3">
-            <div className="d-flex align-items-center">
-              <i className="icofont-check-circled id-color me-2"></i>
-              <small>Weekly Maintenance</small>
-            </div>
-          </div>
-          <div className="col-6 col-md-3">
-            <div className="d-flex align-items-center">
-              <i className="icofont-check-circled id-color me-2"></i>
               <small>Free Replacement</small>
             </div>
           </div>
@@ -211,6 +199,21 @@ function HomeRentalCalculator() {
               <small>No Long-term Lock-in</small>
             </div>
           </div>
+          <div className="col-6 col-md-3">
+            <div className="d-flex align-items-center">
+              <i className="icofont-info-circle text-warning me-2"></i>
+              <small>Delivery: ₹300</small>
+            </div>
+          </div>
+          <div className="col-6 col-md-3">
+            <div className="d-flex align-items-center">
+              <i className="icofont-info-circle text-warning me-2"></i>
+              <small>Maintenance: ₹300/mo</small>
+            </div>
+          </div>
+        </div>
+        <div className="mt-2 text-center">
+          <small className="text-success fw-bold">✓ First month maintenance FREE!</small>
         </div>
       </div>
 
