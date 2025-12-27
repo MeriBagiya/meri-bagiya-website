@@ -53,10 +53,10 @@ function Header() {
                                         </Link>
                                         <ul>
                                             <li><Link to="/services/plant-rental-home">Plant Rental - Home</Link></li>
+                                            <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
                                             <li><Link to="/services/balcony-garden">Balcony Garden</Link></li>
                                             <li><Link to="/services/terrace-garden">Terrace Garden</Link></li>
                                             <li><Link to="/services/indoor-plants">Indoor Plants</Link></li>
-                                            <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
                                             <li><Link to="/plant-rent-in-office">Plant Rent in Office</Link></li>
                                             <li><Link to="/services/landscape-design">Landscape Design</Link></li>
                                             <li><Link to="/services/vertical-garden">Vertical Garden</Link></li>
