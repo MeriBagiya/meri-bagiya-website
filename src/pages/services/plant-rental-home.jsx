@@ -217,7 +217,17 @@ function PlantRentalHome() {
                     </div>
                     <div className="col-md-4">
                       <div className="bg-color-2 text-light p-4 rounded-10px text-center h-100" style={{ transform: 'scale(1.05)' }}>
-                        <div className="badge bg-light text-dark mb-2">Popular</div>
+                        <span style={{
+                          display: 'inline-block',
+                          backgroundColor: '#ffffff',
+                          color: '#333333',
+                          padding: '4px 12px',
+                          borderRadius: '20px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          marginBottom: '10px'
+                        }}>Popular</span>
+                        <br />
                         <span style={{ fontSize: '3rem' }}>🪴</span>
                         <h4 className="text-light mt-3">Medium</h4>
                         <p className="mb-1">10 inch pot</p>
