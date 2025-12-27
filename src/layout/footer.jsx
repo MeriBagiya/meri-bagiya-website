@@ -14,7 +14,7 @@ function Footer() {
              <p>Greater Noida's leading wholesale plant nursery and garden services provider. We supply retail nurseries, landscapers, and garden centers with quality plants. From garden design to maintenance, we bring your dream garden to life—professional, reliable, and passionate about nature.</p>
 
              <div className="social-icons mb-sm-30" style={{justifyContent: 'center'}}>
-                 <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
+                 <a href="https://www.facebook.com/share/1GT8gTXRsH/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
                  <a href="https://www.instagram.com/meribagiya_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
                  <a href="https://www.youtube.com/@Meri_Bagiya_Nersery" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
                  <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i></a>
