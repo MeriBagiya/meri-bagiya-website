@@ -52,16 +52,13 @@ function Header() {
                                             Services
                                         </Link>
                                         <ul>
-                                            <li style={{padding: '8px 15px', marginBottom: '5px', backgroundColor: '#f8f9fa', borderBottom: '2px solid #4a7c59'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '11px', letterSpacing: '1px'}}>FOR HOME</span></li>
                                             <li><Link to="/services/plant-rental-home">Plant Rental - Home</Link></li>
                                             <li><Link to="/services/balcony-garden">Balcony Garden</Link></li>
                                             <li><Link to="/services/terrace-garden">Terrace Garden</Link></li>
                                             <li><Link to="/services/indoor-plants">Indoor Plants</Link></li>
-                                            <li style={{padding: '8px 15px', marginTop: '15px', marginBottom: '5px', backgroundColor: '#f8f9fa', borderBottom: '2px solid #4a7c59'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '11px', letterSpacing: '1px'}}>FOR BUSINESS</span></li>
                                             <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
                                             <li><Link to="/plant-rent-in-office">Plant Rent in Office</Link></li>
                                             <li><Link to="/services/landscape-design">Landscape Design</Link></li>
-                                            <li style={{padding: '8px 15px', marginTop: '15px', marginBottom: '5px', backgroundColor: '#f8f9fa', borderBottom: '2px solid #4a7c59'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '11px', letterSpacing: '1px'}}>OTHER SERVICES</span></li>
                                             <li><Link to="/services/vertical-garden">Vertical Garden</Link></li>
                                             <li><Link to="/services/artificial-grass">Artificial Grass</Link></li>
                                             <li><Link to="/services/water-fountain">Water Fountain</Link></li>
@@ -233,11 +230,6 @@ function Header() {
                 >
                     Services
                 </Link>
-
-                {/* FOR HOME Section */}
-                <div style={{ padding: '10px 20px', backgroundColor: '#e8f5e9', fontWeight: 'bold', fontSize: '12px', color: '#4a7c59' }}>
-                    FOR HOME
-                </div>
                 <Link to="/services/plant-rental-home" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Plant Rental - Home
                 </Link>
@@ -250,11 +242,6 @@ function Header() {
                 <Link to="/services/indoor-plants" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Indoor Plants
                 </Link>
-
-                {/* FOR BUSINESS Section */}
-                <div style={{ padding: '10px 20px', backgroundColor: '#e8f5e9', fontWeight: 'bold', fontSize: '12px', color: '#4a7c59' }}>
-                    FOR BUSINESS
-                </div>
                 <Link to="/services/plant-rental" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Plant Rental - Corporate
                 </Link>
@@ -264,11 +251,6 @@ function Header() {
                 <Link to="/services/landscape-design" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Landscape Design
                 </Link>
-
-                {/* OTHER SERVICES Section */}
-                <div style={{ padding: '10px 20px', backgroundColor: '#e8f5e9', fontWeight: 'bold', fontSize: '12px', color: '#4a7c59' }}>
-                    OTHER SERVICES
-                </div>
                 <Link to="/services/vertical-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Vertical Garden
                 </Link>
