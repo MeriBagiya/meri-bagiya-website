@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 const cors = require("cors")({
   origin: [
     "https://meribagiya.com",
-    "http://localhost:3000",
     "https://meri-bagiya-project.vercel.app",
   ],
 });
@@ -16,6 +15,32 @@ const transporter = nodemailer.createTransport({
     pass: process.env.SMTP_PASSWORD,
   },
 });
+
+// Verify reCAPTCHA token with Google
+async function verifyRecaptcha(token) {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+  if (!secretKey) {
+    console.warn("RECAPTCHA_SECRET_KEY not configured, skipping verification");
+    return { success: true, score: 1.0 };
+  }
+
+  try {
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${secretKey}&response=${token}`,
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("reCAPTCHA verification error:", error);
+    return { success: false, error: "Verification failed" };
+  }
+}
 
 module.exports = (req, res) => {
   console.log("Function invoked");
@@ -34,8 +59,35 @@ module.exports = (req, res) => {
     }
 
     try {
-      const { name, email, phone, message } = req.body;
-      console.log("Request body:", req.body);
+      const { name, email, phone, message, recaptchaToken } = req.body;
+      console.log("Request body received");
+
+      // Verify reCAPTCHA token
+      if (!recaptchaToken) {
+        return res.status(400).json({
+          success: false,
+          error: "reCAPTCHA verification required",
+        });
+      }
+
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+      console.log("reCAPTCHA result:", recaptchaResult);
+
+      if (!recaptchaResult.success) {
+        return res.status(400).json({
+          success: false,
+          error: "reCAPTCHA verification failed. Please try again.",
+        });
+      }
+
+      // For reCAPTCHA v3, check score (0.0 - 1.0, higher is more likely human)
+      if (recaptchaResult.score !== undefined && recaptchaResult.score < 0.5) {
+        console.log("Low reCAPTCHA score:", recaptchaResult.score);
+        return res.status(400).json({
+          success: false,
+          error: "Verification failed. Please try again.",
+        });
+      }
 
       if (!name || !email || !message) {
         return res.status(400).json({
