@@ -52,16 +52,16 @@ function Header() {
                                             Services
                                         </Link>
                                         <ul>
-                                            <li style={{borderBottom: '1px solid #eee', paddingBottom: '5px', marginBottom: '5px'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '12px'}}>FOR HOME</span></li>
+                                            <li style={{padding: '8px 15px', marginBottom: '5px', backgroundColor: '#f8f9fa', borderBottom: '2px solid #4a7c59'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '11px', letterSpacing: '1px'}}>FOR HOME</span></li>
                                             <li><Link to="/services/plant-rental-home">Plant Rental - Home</Link></li>
                                             <li><Link to="/services/balcony-garden">Balcony Garden</Link></li>
                                             <li><Link to="/services/terrace-garden">Terrace Garden</Link></li>
                                             <li><Link to="/services/indoor-plants">Indoor Plants</Link></li>
-                                            <li style={{borderBottom: '1px solid #eee', paddingBottom: '5px', marginBottom: '5px', marginTop: '10px'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '12px'}}>FOR BUSINESS</span></li>
+                                            <li style={{padding: '8px 15px', marginTop: '15px', marginBottom: '5px', backgroundColor: '#f8f9fa', borderBottom: '2px solid #4a7c59'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '11px', letterSpacing: '1px'}}>FOR BUSINESS</span></li>
                                             <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
                                             <li><Link to="/plant-rent-in-office">Plant Rent in Office</Link></li>
                                             <li><Link to="/services/landscape-design">Landscape Design</Link></li>
-                                            <li style={{borderBottom: '1px solid #eee', paddingBottom: '5px', marginBottom: '5px', marginTop: '10px'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '12px'}}>OTHER SERVICES</span></li>
+                                            <li style={{padding: '8px 15px', marginTop: '15px', marginBottom: '5px', backgroundColor: '#f8f9fa', borderBottom: '2px solid #4a7c59'}}><span style={{fontWeight: 'bold', color: '#4a7c59', fontSize: '11px', letterSpacing: '1px'}}>OTHER SERVICES</span></li>
                                             <li><Link to="/services/vertical-garden">Vertical Garden</Link></li>
                                             <li><Link to="/services/artificial-grass">Artificial Grass</Link></li>
                                             <li><Link to="/services/water-fountain">Water Fountain</Link></li>
