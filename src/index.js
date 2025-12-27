@@ -25,6 +25,7 @@ import IndoorPlants from './pages/services/indoor-plants';
 import ArtificialGrass from './pages/services/artificial-grass';
 import WaterFountain from './pages/services/water-fountain';
 import PlantRental from './pages/services/plant-rental';
+import PlantRentalHome from './pages/services/plant-rental-home';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -49,6 +50,7 @@ const router = createBrowserRouter(
          <Route path="services/artificial-grass" element={<ArtificialGrass/>}/>
          <Route path="services/water-fountain" element={<WaterFountain/>}/>
          <Route path="services/plant-rental" element={<PlantRental/>}/>
+         <Route path="services/plant-rental-home" element={<PlantRentalHome/>}/>
          <Route path="plant-rent-in-office" element={<PlantRentInOffice/>}/>
 
       </Route>
