@@ -359,14 +359,18 @@ function PlantRentalHome() {
                       href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-lg px-5 py-3"
                       style={{
+                        display: 'inline-block',
                         backgroundColor: '#25D366',
                         color: '#ffffff',
                         fontWeight: '600',
-                        fontSize: '1.1rem',
+                        fontSize: '1rem',
                         border: 'none',
-                        transition: 'all 0.3s ease'
+                        padding: '12px 24px',
+                        borderRadius: '5px',
+                        textDecoration: 'none',
+                        outline: 'none',
+                        boxShadow: 'none'
                       }}
                     >
                       <i className="fa-brands fa-whatsapp me-2"></i>
@@ -374,14 +378,18 @@ function PlantRentalHome() {
                     </a>
                     <Link
                       to="/contact"
-                      className="btn btn-lg px-5 py-3"
                       style={{
+                        display: 'inline-block',
                         backgroundColor: '#ffffff',
                         color: '#4a7c59',
                         fontWeight: '600',
-                        fontSize: '1.1rem',
-                        border: '2px solid #ffffff',
-                        transition: 'all 0.3s ease'
+                        fontSize: '1rem',
+                        border: 'none',
+                        padding: '12px 24px',
+                        borderRadius: '5px',
+                        textDecoration: 'none',
+                        outline: 'none',
+                        boxShadow: 'none'
                       }}
                     >
                       <i className="icofont-phone me-2"></i>

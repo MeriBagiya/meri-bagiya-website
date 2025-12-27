@@ -220,15 +220,19 @@ function HomeRentalCalculator() {
           href={`https://wa.me/919220404309?text=${generateWhatsAppMessage()}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-lg px-5 py-3"
           style={{
+            display: 'inline-block',
             backgroundColor: '#25D366',
             color: '#ffffff',
             fontWeight: '600',
-            fontSize: '1.1rem',
+            fontSize: '1rem',
             border: 'none',
             textDecoration: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            padding: '12px 24px',
+            borderRadius: '5px',
+            outline: 'none',
+            boxShadow: 'none'
           }}
         >
           <i className="fa-brands fa-whatsapp me-2"></i>
@@ -236,15 +240,19 @@ function HomeRentalCalculator() {
         </a>
         <Link
           to="/contact"
-          className="btn btn-lg px-5 py-3"
           style={{
+            display: 'inline-block',
             backgroundColor: '#4a7c59',
             color: '#ffffff',
             fontWeight: '600',
-            fontSize: '1.1rem',
+            fontSize: '1rem',
             border: 'none',
             textDecoration: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            padding: '12px 24px',
+            borderRadius: '5px',
+            outline: 'none',
+            boxShadow: 'none'
           }}
         >
           <i className="icofont-phone me-2"></i>
