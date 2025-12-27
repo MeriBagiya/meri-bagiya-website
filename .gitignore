@@ -43,3 +43,7 @@ firebase-debug.log
 
 # Claude Code
 .claude
+.Claude.md
+
+# Gemini
+Gemini.md
