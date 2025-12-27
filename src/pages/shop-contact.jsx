@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 // Cloud Function URL - Update after deployment
 const FUNCTION_URL = 'https://meri-bagiya-project.vercel.app/api/send-email';
+
+// reCAPTCHA site key from environment
+const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 
 // Validation functions
 const validators = {
@@ -114,6 +117,22 @@ function Contact() {
     }));
   };
 
+  const executeRecaptcha = useCallback(() => {
+    return new Promise((resolve, reject) => {
+      if (!window.grecaptcha) {
+        reject(new Error('reCAPTCHA not loaded. Please refresh the page.'));
+        return;
+      }
+
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -125,12 +144,18 @@ function Contact() {
     setStatus({ submitting: true, success: false, error: null });
 
     try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await executeRecaptcha();
+
       const response = await fetch(FUNCTION_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        })
       });
 
       const data = await response.json();
