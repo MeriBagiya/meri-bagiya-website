@@ -67,6 +67,11 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // Allow GET for health check
+  if (req.method === "GET") {
+    return res.status(200).json({ status: "ok", message: "Meri Bagiya Email API is running" });
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
