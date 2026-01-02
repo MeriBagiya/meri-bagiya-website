@@ -7,7 +7,6 @@ import {createBrowserRouter, RouterProvider,createRoutesFromElements,Route} from
 import Shophomepage from './pages/shop-homepage';
 import Contact from './pages/shop-contact';
 import Servicesingle from './pages/service-single';
-import Blog from './pages/blog';
 import About from './pages/about';
 import Services from './pages/services';
 import GardenDesign from './pages/services/garden-design';
@@ -33,7 +32,6 @@ const router = createBrowserRouter(
          <Route path="" element={<Shophomepage/>}/>
          <Route path="contact" element={<Contact/>}/>
          <Route path="service-single" element={<Servicesingle/>}/>
-         <Route path="blog" element={<Blog/>}/>
          <Route path="about" element={<About/>}/>
          <Route path="services" element={<Services/>}/>
          <Route path="services/garden-design" element={<GardenDesign/>}/>

@@ -298,20 +298,6 @@ function Header() {
                 >
                     About Us
                 </Link>
-                <Link
-                    to="/blog"
-                    onClick={closeMobileMenu}
-                    style={{
-                        display: 'block',
-                        padding: '15px 20px',
-                        color: '#333',
-                        textDecoration: 'none',
-                        fontSize: '16px',
-                        borderBottom: '1px solid #f5f5f5'
-                    }}
-                >
-                    Blog
-                </Link>
 
                 <Link
                     to="/contact"
