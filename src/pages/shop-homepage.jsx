@@ -76,7 +76,7 @@ function Shophomepage() {
     ],
     "sameAs": [
       "https://www.facebook.com/meribagiya",
-      "https://www.instagram.com/meribagiya",
+      "https://www.instagram.com/meribagiya_",
       "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z"
     ],
     "areaServed": [
