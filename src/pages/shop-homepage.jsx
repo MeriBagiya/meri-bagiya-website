@@ -62,7 +62,7 @@ function Shophomepage() {
       "longitude": "77.5040"
     },
     "url": "https://meribagiya.com",
-    "telephone": "+91-XXXXXXXXXX",
+    "telephone": "+91-9876543210",
     "email": "contact@meribagiya.com",
     "priceRange": "₹₹",
     "openingHoursSpecification": [
