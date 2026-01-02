@@ -71,7 +71,7 @@ function Services() {
       <SEO
         title="Garden Services"
         description="Professional garden services in Greater Noida - Garden design, maintenance, planting, tree care, irrigation and specialty services by Meri Bagiya experts."
-        keywords="garden services, garden design, garden maintenance, landscaping, Greater Noida"
+        keywords="garden services near me, garden design Greater Noida, garden maintenance, landscaping services Noida, Delhi NCR gardening, landscape contractor near me, professional gardener"
         canonicalUrl="/services"
         jsonLd={jsonLd}
       />

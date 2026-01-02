@@ -9,7 +9,7 @@ function PlantRental() {
       <SEO
         title="Plant Rental Service"
         description="Premium plant rental services in Greater Noida. Rent indoor & outdoor plants for homes, offices, events, weddings, and corporate functions. Maintenance included by Meri Bagiya."
-        keywords="plant rental, plants on rent, rent plants Greater Noida, event plant rental, wedding plants, corporate plant rental, indoor plant hire"
+        keywords="plant rental near me, plants on rent Greater Noida, event plant rental Delhi NCR, wedding plants decoration, corporate plant rental Noida, indoor plant hire, office plants on rent, plant rental service"
         canonicalUrl="/services/plant-rental"
       />
 
