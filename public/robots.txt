@@ -2,8 +2,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://meribagiya.com/sitemap.xml
+Sitemap: https://meribagiya.com/sitemap-images.xml
 
 # Disallow admin/private areas
 Disallow: /api/

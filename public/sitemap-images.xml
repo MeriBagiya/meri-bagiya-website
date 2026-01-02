@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage with gallery images -->
+  <url>
+    <loc>https://meribagiya.com/</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png</image:loc>
+      <image:title>Meri Bagiya - Plant Nursery Logo</image:title>
+      <image:caption>Meri Bagiya plant nursery and garden services in Greater Noida</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery/1.webp</image:loc>
+      <image:title>Garden Design Project</image:title>
+      <image:caption>Professional garden design and landscaping by Meri Bagiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery/2.webp</image:loc>
+      <image:title>Landscaping Work</image:title>
+      <image:caption>Beautiful landscaping project completed by Meri Bagiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery/3.webp</image:loc>
+      <image:title>Plant Nursery</image:title>
+      <image:caption>Indoor and outdoor plants at Meri Bagiya nursery</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery/4.webp</image:loc>
+      <image:title>Garden Maintenance</image:title>
+      <image:caption>Garden maintenance services by Meri Bagiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery/5.webp</image:loc>
+      <image:title>Terrace Garden</image:title>
+      <image:caption>Terrace garden design and setup</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery/6.webp</image:loc>
+      <image:title>Vertical Garden</image:title>
+      <image:caption>Vertical garden installation by Meri Bagiya</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services page -->
+  <url>
+    <loc>https://meribagiya.com/services</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects/1.jpg</image:loc>
+      <image:title>Garden Design Service</image:title>
+      <image:caption>Professional garden design service in Greater Noida</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects/2.jpg</image:loc>
+      <image:title>Landscape Design</image:title>
+      <image:caption>Landscape design and planning services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects/3.jpg</image:loc>
+      <image:title>Garden Maintenance</image:title>
+      <image:caption>Regular garden maintenance and care</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects/4.jpg</image:loc>
+      <image:title>Plant Rental Service</image:title>
+      <image:caption>Plant rental for homes and offices</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects/5.jpg</image:loc>
+      <image:title>Terrace Garden Setup</image:title>
+      <image:caption>Terrace garden design and installation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects/6.jpg</image:loc>
+      <image:title>Indoor Plants</image:title>
+      <image:caption>Indoor plants for home and office decoration</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Garden Design -->
+  <url>
+    <loc>https://meribagiya.com/services/garden-design</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects-square/1.jpg</image:loc>
+      <image:title>Garden Design Greater Noida</image:title>
+      <image:caption>Custom garden design for residential and commercial spaces</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Landscape Design -->
+  <url>
+    <loc>https://meribagiya.com/services/landscape-design</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects-square/2.jpg</image:loc>
+      <image:title>Landscape Design Service</image:title>
+      <image:caption>Professional landscape design and execution</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Vertical Garden -->
+  <url>
+    <loc>https://meribagiya.com/services/vertical-garden</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects-square/3.jpg</image:loc>
+      <image:title>Vertical Garden Installation</image:title>
+      <image:caption>Vertical garden and green wall installation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Balcony Garden -->
+  <url>
+    <loc>https://meribagiya.com/services/balcony-garden</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects-square/4.jpg</image:loc>
+      <image:title>Balcony Garden Design</image:title>
+      <image:caption>Balcony garden design and plant arrangement</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Terrace Garden -->
+  <url>
+    <loc>https://meribagiya.com/services/terrace-garden</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects-square/5.jpg</image:loc>
+      <image:title>Terrace Garden Setup</image:title>
+      <image:caption>Terrace garden design and maintenance</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Indoor Plants -->
+  <url>
+    <loc>https://meribagiya.com/services/indoor-plants</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/projects-square/6.jpg</image:loc>
+      <image:title>Indoor Plants Collection</image:title>
+      <image:caption>Indoor plants for home and office spaces</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plant Rental -->
+  <url>
+    <loc>https://meribagiya.com/services/plant-rental</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery-mix/1.webp</image:loc>
+      <image:title>Plant Rental Service</image:title>
+      <image:caption>Rent plants for events, offices and homes</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plant Rental Home -->
+  <url>
+    <loc>https://meribagiya.com/services/plant-rental-home</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery-mix/2.webp</image:loc>
+      <image:title>Home Plant Rental</image:title>
+      <image:caption>Plant rental service for residential spaces</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plant Rent in Office -->
+  <url>
+    <loc>https://meribagiya.com/plant-rent-in-office</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery-mix/3.webp</image:loc>
+      <image:title>Office Plant Rental</image:title>
+      <image:caption>Plant rental service for corporate offices</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Artificial Grass -->
+  <url>
+    <loc>https://meribagiya.com/services/artificial-grass</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery-mix/4.webp</image:loc>
+      <image:title>Artificial Grass Installation</image:title>
+      <image:caption>Artificial grass and turf installation service</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Water Fountain -->
+  <url>
+    <loc>https://meribagiya.com/services/water-fountain</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/gallery-mix/5.webp</image:loc>
+      <image:title>Water Fountain Installation</image:title>
+      <image:caption>Decorative water fountain for gardens</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
