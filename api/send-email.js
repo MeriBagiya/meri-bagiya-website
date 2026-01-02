@@ -1,10 +1,21 @@
 const nodemailer = require("nodemailer");
-const cors = require("cors")({
-  origin: [
-    "https://meribagiya.com",
-    "https://meri-bagiya-project.vercel.app",
-  ],
-});
+
+// Allowed origins for CORS
+const allowedOrigins = [
+  "https://meribagiya.com",
+  "https://www.meribagiya.com",
+  "https://meri-bagiya-project.vercel.app",
+  "http://localhost:3000"
+];
+
+// CORS headers helper
+function setCorsHeaders(res, origin) {
+  const allowedOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+  res.setHeader("Access-Control-Allow-Headers", "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version");
+}
 
 const transporter = nodemailer.createTransport({
   host: "smtp.hostinger.com",
@@ -42,23 +53,25 @@ async function verifyRecaptcha(token) {
   }
 }
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   console.log("Function invoked");
-  cors(req, res, async () => {
-    console.log("Request method:", req.method);
-    console.log("Request origin:", req.headers.origin);
+  console.log("Request method:", req.method);
+  console.log("Request origin:", req.headers.origin);
 
-    // Handle preflight OPTIONS request for CORS
-    if (req.method === "OPTIONS") {
-      res.status(200).end();
-      return;
-    }
+  // Set CORS headers for all requests
+  setCorsHeaders(res, req.headers.origin);
 
-    if (req.method !== "POST") {
-      return res.status(405).json({ error: "Method not allowed" });
-    }
+  // Handle preflight OPTIONS request for CORS
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
 
-    try {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  try {
       const { name, email, phone, message, recaptchaToken } = req.body;
       console.log("Request body received");
 
@@ -180,12 +193,11 @@ This email was sent from the Meri Bagiya website contact form.
         success: true,
         message: "Email sent successfully",
       });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      return res.status(500).json({
-        success: false,
-        error: "Failed to send email. Please try again later.",
-      });
-    }
-  });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return res.status(500).json({
+      success: false,
+      error: "Failed to send email. Please try again later.",
+    });
+  }
 };
