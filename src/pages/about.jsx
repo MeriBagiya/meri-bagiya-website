@@ -7,9 +7,30 @@ function About() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Meri Bagiya",
+    "alternateName": "Meri Bagiya Plant Nursery",
     "url": "https://meribagiya.com",
     "logo": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
-    "sameAs": []
+    "description": "Meri Bagiya is a trusted plant nursery and garden services provider in Greater Noida, Delhi NCR.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
+      "addressLocality": "Greater Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201318",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.5899943",
+      "longitude": "77.4281686"
+    },
+    "telephone": "+91-9876543210",
+    "email": "contact@meribagiya.com",
+    "sameAs": [
+      "https://www.facebook.com/meribagiya",
+      "https://www.instagram.com/meribagiya_",
+      "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z"
+    ]
   };
 
   return (
