@@ -11,16 +11,30 @@ function PlantRentalHome() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Meri Bagiya",
+      "url": "https://meribagiya.com",
+      "telephone": "+91-9876543210",
+      "email": "contact@meribagiya.com",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
         "addressLocality": "Greater Noida",
         "addressRegion": "Uttar Pradesh",
         "postalCode": "201318",
         "addressCountry": "IN"
-      }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.5899943",
+        "longitude": "77.4281686"
+      },
+      "sameAs": [
+        "https://www.facebook.com/meribagiya",
+        "https://www.instagram.com/meribagiya_",
+        "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z"
+      ]
     },
     "description": "Affordable plant rental service for homes in Greater Noida. Rent indoor plants starting from just Rs 150/month with free delivery and maintenance.",
-    "areaServed": "Greater Noida",
+    "areaServed": ["Greater Noida", "Noida", "Delhi NCR"],
     "priceRange": "₹150 - ₹300 per plant/month"
   };
 
