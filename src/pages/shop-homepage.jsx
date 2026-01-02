@@ -58,9 +58,10 @@ function Shophomepage() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "28.4744",
-      "longitude": "77.5040"
+      "latitude": "28.5899943",
+      "longitude": "77.4281686"
     },
+    "hasMap": "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z",
     "url": "https://meribagiya.com",
     "telephone": "+91-9876543210",
     "email": "contact@meribagiya.com",
@@ -75,7 +76,8 @@ function Shophomepage() {
     ],
     "sameAs": [
       "https://www.facebook.com/meribagiya",
-      "https://www.instagram.com/meribagiya"
+      "https://www.instagram.com/meribagiya",
+      "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z"
     ],
     "areaServed": [
       {
