@@ -38,8 +38,16 @@ function Shophomepage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://meribagiya.com/#business",
     "name": "Meri Bagiya",
-    "image": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
+    "alternateName": "Meri Bagiya Plant Nursery",
+    "description": "Meri Bagiya is a trusted plant nursery and garden services provider in Greater Noida, Delhi NCR. We offer indoor plants, outdoor plants, garden design, landscaping, and plant rental services.",
+    "image": [
+      "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
+      "https://meribagiya.com/assets/images/gallery/1.webp",
+      "https://meribagiya.com/assets/images/gallery/2.webp"
+    ],
+    "logo": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
@@ -48,9 +56,75 @@ function Shophomepage() {
       "postalCode": "201318",
       "addressCountry": "IN"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.4744",
+      "longitude": "77.5040"
+    },
     "url": "https://meribagiya.com",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "contact@meribagiya.com",
     "priceRange": "₹₹",
-    "openingHours": "Mo-Sa 08:00-18:00"
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/meribagiya",
+      "https://www.instagram.com/meribagiya"
+    ],
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Greater Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "State",
+        "name": "Delhi NCR"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Garden Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Garden Design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Landscaping"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Plant Rental"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Garden Maintenance"
+          }
+        }
+      ]
+    }
   };
 
   return (
@@ -58,7 +132,7 @@ function Shophomepage() {
       <SEO
         title="Plant Nursery & Garden Services"
         description="Meri Bagiya - Buy quality indoor plants, outdoor plants, flowering plants. Professional garden design, maintenance & landscaping services in Greater Noida."
-        keywords="plant nursery, indoor plants, outdoor plants, garden services, Greater Noida, buy plants online"
+        keywords="plant nursery near me, indoor plants, outdoor plants, garden services Greater Noida, buy plants online, nursery near me, plant shop Noida, Delhi NCR plants, landscaping services, garden design near me"
         canonicalUrl="/"
         jsonLd={jsonLd}
       />

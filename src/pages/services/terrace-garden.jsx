@@ -8,7 +8,7 @@ function TerraceGarden() {
       <SEO
         title="Terrace Garden Design Services"
         description="Professional terrace garden design in Greater Noida. Transform your rooftop into a lush garden with seating areas, vegetable gardens, and beautiful landscaping by Meri Bagiya."
-        keywords="terrace garden, rooftop garden, terrace landscaping Greater Noida, rooftop plants, terrace design, roof garden"
+        keywords="terrace garden design, rooftop garden Greater Noida, terrace landscaping cost, rooftop garden ideas India, terrace garden near me, roof garden design Delhi NCR, small terrace garden"
         canonicalUrl="/services/terrace-garden"
       />
 
