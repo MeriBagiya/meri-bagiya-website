@@ -1,17 +1,4 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/send-email.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/send-email",
-      "destination": "/api/send-email.js"
-    }
-  ],
   "headers": [
     {
       "source": "/api/(.*)",
