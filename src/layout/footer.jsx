@@ -41,10 +41,10 @@ function Footer() {
                          <ul>
                              <li><Link to='/services/garden-design'>Garden Design</Link></li>
                              <li><Link to='/services/garden-maintenance'>Garden Maintenance</Link></li>
-                             <li><Link to='/services/planting-services'>Planting Services</Link></li>
-                             <li><Link to='/services/tree-care'>Tree Care</Link></li>
-                             <li><Link to='/services/irrigation-services'>Irrigation Services</Link></li>
-                             <li><Link to='/services/specialty-services'>Specialty Services</Link></li>
+                             <li><Link to='/services/plant-rental'>Plant Rental</Link></li>
+                             <li><Link to='/corporate-gifting'>Corporate Gifting</Link></li>
+                             <li><Link to='/services/landscape-design'>Landscape Design</Link></li>
+                             <li><Link to='/services/vertical-garden'>Vertical Garden</Link></li>
                          </ul>
                      </div>
                  </div>

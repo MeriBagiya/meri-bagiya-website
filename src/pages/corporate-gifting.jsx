@@ -203,13 +203,66 @@ function CorporateGifting() {
     document.getElementById('inquiry-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Corporate Plant Gifting Services",
+    "description": "Premium plant gifts for corporate clients, employees and business partners. Customizable packages for Diwali, New Year, employee appreciation and client gifts.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Meri Bagiya",
+      "image": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
+        "addressLocality": "Greater Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201318",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-9220404309",
+      "email": "contact@meribagiya.com"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.5899943",
+        "longitude": "77.4281686"
+      },
+      "geoRadius": "100000"
+    },
+    "serviceType": "Corporate Gifting",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter Pack",
+        "description": "Perfect for small teams and desk plants",
+        "priceRange": "₹500 - ₹1,000 per plant"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium Pack",
+        "description": "Ideal for corporate offices and events",
+        "priceRange": "₹1,000 - ₹2,500 per plant"
+      },
+      {
+        "@type": "Offer",
+        "name": "Luxury Pack",
+        "description": "Executive gifts and VIP clients",
+        "priceRange": "₹2,500+ per plant"
+      }
+    ]
+  };
+
   return (
     <>
       <SEO
-        title="Corporate Gifting - Premium Plant Gifts for Businesses"
-        description="Elevate your corporate gifting with premium plants from Meri Bagiya. Perfect for Diwali, New Year, employee appreciation & client gifts. Bulk orders welcome."
-        keywords="corporate gifting plants, business gifts, Diwali corporate gifts, employee gifts, client gifts Greater Noida, bulk plant orders"
+        title="Corporate Gifting - Premium Plant Gifts for Businesses | Meri Bagiya"
+        description="Elevate your corporate gifting with premium plants from Meri Bagiya, Greater Noida. Perfect for Diwali, New Year, employee appreciation & client gifts. Bulk orders welcome. Custom branding available."
+        keywords="corporate gifting plants Greater Noida, business gifts Delhi NCR, Diwali corporate gifts, employee appreciation gifts, client gifts plants, bulk plant orders, corporate plant gifts Noida, office plants gifts, eco-friendly corporate gifts, sustainable business gifts"
         canonicalUrl="/corporate-gifting"
+        jsonLd={jsonLd}
       />
 
       <div className="no-bottom no-top" id="content">

@@ -317,6 +317,36 @@ function Shophomepage() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* <!-- Slide 6 - Corporate Gifting --> */}
+                        <div className="swiper-slide">
+                            <div className="swiper-inner jarallax" style={{position: 'relative'}}>
+                                <img src={process.env.PUBLIC_URL + '/assets/images/slider/3.jpg'} className="jarallax-img" alt="Corporate Gifting"/>
+                                <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)'}}></div>
+                                <div className="sw-caption z-1000 text-white">
+                                    <div className="container">
+                                        <div className="row g-4 align-items-center justify-content-between">
+
+                                            <div className="spacer-double"></div>
+
+                                            <div className="col-lg-5">
+                                                <div className="spacer-single"></div>
+                                                <div className="sw-text-wrapper">
+                                                    <div className="subtitle" style={{color: '#8bc34a'}}>Corporate Gifting</div>
+                                                    <h2 className="slider-title text-uppercase mb-4">Premium <span className="id-color-2">Plant Gifts</span> for Business</h2>
+                                                    <p className="slider-text">Impress clients & employees with eco-friendly plant gifts. Perfect for Diwali, New Year & corporate events. Bulk orders welcome!</p>
+
+                                                    <Link to="/corporate-gifting" className="btn-main mb10 mb-3">Get a Quote</Link>
+                                                </div>
+                                            </div>
+
+                                            <div className="spacer-single"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* <!-- If we need navigation buttons --> */}
