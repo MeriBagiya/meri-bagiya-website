@@ -6,16 +6,30 @@ const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "https://script
 // Save form data to Google Sheets
 async function saveToGoogleSheet(data) {
   try {
+    console.log("Attempting to save to Google Sheets:", JSON.stringify(data));
+
+    // Google Apps Script requires following redirects
     const response = await fetch(GOOGLE_SHEET_WEBHOOK, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charset=utf-8",
       },
       body: JSON.stringify(data),
+      redirect: "follow",
     });
-    const result = await response.json();
-    console.log("Google Sheets save result:", result);
-    return result;
+
+    const responseText = await response.text();
+    console.log("Google Sheets response status:", response.status);
+    console.log("Google Sheets response:", responseText);
+
+    // Try to parse as JSON, but handle if it's not
+    try {
+      const result = JSON.parse(responseText);
+      return result;
+    } catch {
+      // If not JSON, just return success based on status
+      return { success: response.ok, response: responseText };
+    }
   } catch (error) {
     console.error("Error saving to Google Sheets:", error);
     // Don't throw - we don't want to fail the email if sheets fails
