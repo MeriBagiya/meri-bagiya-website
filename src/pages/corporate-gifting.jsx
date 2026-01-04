@@ -86,6 +86,9 @@ const validators = {
 };
 
 function CorporateGifting() {
+  const [step, setStep] = useState(1);
+  const [selectedPackage, setSelectedPackage] = useState('');
+
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -101,9 +104,21 @@ function CorporateGifting() {
   const [touched, setTouched] = useState({});
   const [status, setStatus] = useState({
     submitting: false,
-    success: false,
     error: null
   });
+
+  const handleGetQuote = (packageName = '') => {
+    setSelectedPackage(packageName);
+    setStep(2);
+    setTimeout(() => {
+      document.getElementById('inquiry-form')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleStartOver = () => {
+    setStep(1);
+    setStatus({ submitting: false, error: null });
+  };
 
   const validateField = (name, value) => {
     return validators[name] ? validators[name](value) : '';
@@ -162,7 +177,7 @@ function CorporateGifting() {
 
     if (!validateAllFields()) return;
 
-    setStatus({ submitting: true, success: false, error: null });
+    setStatus({ submitting: true, error: null });
 
     try {
       const recaptchaToken = await executeRecaptcha();
@@ -180,7 +195,7 @@ function CorporateGifting() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setStatus({ submitting: false, success: true, error: null });
+        setStep(3); // Go to thank you step
         setFormData({
           name: '', company: '', email: '', phone: '',
           quantity: '', budget: '', occasion: '', message: ''
@@ -193,14 +208,9 @@ function CorporateGifting() {
     } catch (error) {
       setStatus({
         submitting: false,
-        success: false,
         error: error.message || 'Something went wrong. Please try again.'
       });
     }
-  };
-
-  const scrollToForm = () => {
-    document.getElementById('inquiry-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const jsonLd = {
@@ -280,7 +290,7 @@ function CorporateGifting() {
                 <h1 className="text-uppercase mb-3">Corporate Gifting</h1>
                 <p className="lead mb-4">Elevate Your Corporate Relationships with the Gift of Green</p>
                 <p className="mb-4">Make a lasting impression on clients, employees, and partners with our premium plant gifts. Perfect for festivals, milestones, and appreciation.</p>
-                <button onClick={scrollToForm} className="btn-main">
+                <button onClick={() => handleGetQuote()} className="btn-main">
                   Get a Quote <i className="icofont-long-arrow-right ms-2"></i>
                 </button>
               </div>
@@ -289,6 +299,8 @@ function CorporateGifting() {
           <div className="de-overlay"></div>
         </section>
 
+        {step === 1 && (
+        <>
         {/* Why Choose Corporate Plant Gifting */}
         <section className="bg-light">
           <div className="container">
@@ -382,7 +394,7 @@ function CorporateGifting() {
                           </li>
                         ))}
                       </ul>
-                      <button onClick={scrollToForm} className={`btn-main w-100 ${pkg.popular ? '' : 'btn-outline'}`}>
+                      <button onClick={() => handleGetQuote(pkg.name)} className={`btn-main w-100 ${pkg.popular ? '' : 'btn-outline'}`}>
                         Get Quote
                       </button>
                     </div>
@@ -422,28 +434,32 @@ function CorporateGifting() {
             </div>
           </div>
         </section>
+        </>
+        )}
 
-        {/* Inquiry Form */}
+        {(step === 2 || step === 3) && (
         <section id="inquiry-form">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">
-                <div className="text-center mb-5">
-                  <div className="subtitle wow fadeInUp mb-3">Get Started</div>
-                  <h2 className="text-uppercase wow fadeInUp">Request a <span className="id-color-2">Quote</span></h2>
-                  <p className="wow fadeInUp">Fill out the form below and our corporate gifting specialist will get back to you within 24 hours.</p>
-                </div>
 
-                {status.success ? (
+                {step === 3 ? (
                   <div className="text-center p-5 bg-light rounded-1">
                     <i className="icofont-check-circled fs-64 text-success mb-3 d-block"></i>
                     <h3 className="text-success">Thank You!</h3>
                     <p>Your inquiry has been submitted successfully. Our corporate gifting specialist will contact you within 24 hours.</p>
-                    <button onClick={() => setStatus({...status, success: false})} className="btn-main mt-3">
+                    <button onClick={handleStartOver} className="btn-main mt-3">
                       Submit Another Inquiry
                     </button>
                   </div>
                 ) : (
+                <>
+                <div className="text-center mb-5">
+                  <div className="subtitle wow fadeInUp mb-3">Get Started</div>
+                  <h2 className="text-uppercase wow fadeInUp">Request a <span className="id-color-2">Quote</span></h2>
+                  <p className="wow fadeInUp">Fill out the form below and our corporate gifting specialist will get back to you within 24 hours.</p>
+                  {selectedPackage && <p className='lead'>Selected Package: <strong>{selectedPackage}</strong></p>}
+                </div>
                   <form onSubmit={handleSubmit} className="bg-light p-4 p-lg-5 rounded-1">
                     {status.error && (
                       <div className="alert alert-danger mb-4">
@@ -590,11 +606,13 @@ function CorporateGifting() {
                       </div>
                     </div>
                   </form>
+                </>
                 )}
               </div>
             </div>
           </div>
         </section>
+        )}
 
         {/* CTA Section */}
         <section className="jarallax text-light" style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background/5.webp'})`}}>
