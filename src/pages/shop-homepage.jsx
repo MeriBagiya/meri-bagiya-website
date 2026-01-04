@@ -306,7 +306,7 @@ function Shophomepage() {
                                                     <h2 className="slider-title text-uppercase mb-4">Great Deals on <span className="id-color-2">Plants & Services</span></h2>
                                                     <p className="slider-text">Check out our latest offers and discounts on plants and garden services.</p>
 
-                                                    <Link to="/shop-all" className="btn-main mb10 mb-3">View Offers</Link>
+                                                    <Link to="/services" className="btn-main mb10 mb-3">View Offers</Link>
                                                 </div>
                                             </div>
 
