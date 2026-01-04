@@ -62,6 +62,7 @@ function Header() {
                                             <li className="menu-section-header"><span style={{color: '#4a7c59', fontWeight: '600', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', padding: '8px 15px', display: 'block', borderBottom: '1px solid #eee', marginTop: '5px', pointerEvents: 'none'}}>For Business</span></li>
                                             <li><Link to="/services/plant-rental">Plant Rental - Corporate</Link></li>
                                             <li><Link to="/plant-rent-in-office">Plant Rent in Office</Link></li>
+                                            <li><Link to="/corporate-gifting">Corporate Gifting</Link></li>
                                             {/* OTHER SERVICES */}
                                             <li className="menu-section-header"><span style={{color: '#4a7c59', fontWeight: '600', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', padding: '8px 15px', display: 'block', borderBottom: '1px solid #eee', marginTop: '5px', pointerEvents: 'none'}}>Other Services</span></li>
                                             <li><Link to="/services/landscape-design">Landscape Design</Link></li>
@@ -263,6 +264,9 @@ function Header() {
                 </Link>
                 <Link to="/plant-rent-in-office" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
                     → Plant Rent in Office
+                </Link>
+                <Link to="/corporate-gifting" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                    → Corporate Gifting
                 </Link>
 
                 {/* OTHER SERVICES Section */}

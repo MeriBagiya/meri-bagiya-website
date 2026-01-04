@@ -1,5 +1,28 @@
 const nodemailer = require("nodemailer");
 
+// Google Sheets webhook URL
+const GOOGLE_SHEET_WEBHOOK = process.env.GOOGLE_SHEET_WEBHOOK || "https://script.google.com/macros/s/AKfycbzGtlzuaujwdax4AHlCC85cQGZrnhziXXkw78X5qyz3sE6n_dkvkG1VDzoaFmmJc1B2/exec";
+
+// Save form data to Google Sheets
+async function saveToGoogleSheet(data) {
+  try {
+    const response = await fetch(GOOGLE_SHEET_WEBHOOK, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    console.log("Google Sheets save result:", result);
+    return result;
+  } catch (error) {
+    console.error("Error saving to Google Sheets:", error);
+    // Don't throw - we don't want to fail the email if sheets fails
+    return { success: false, error: error.message };
+  }
+}
+
 // Allowed origins for CORS
 const allowedOrigins = [
   "https://meribagiya.com",
@@ -77,8 +100,9 @@ module.exports = async (req, res) => {
   }
 
   try {
-      const { name, email, phone, message, recaptchaToken } = req.body;
-      console.log("Request body received");
+      const { name, email, phone, message, recaptchaToken, source, company, quantity, budget, occasion } = req.body;
+      const formSource = source || "contact";
+      console.log("Request body received, source:", formSource);
 
       // Verify reCAPTCHA token
       if (!recaptchaToken) {
@@ -114,16 +138,51 @@ module.exports = async (req, res) => {
         });
       }
 
+      // Build corporate gifting extra fields HTML
+      const isCorporate = formSource === "corporate-gifting";
+      const corporateFieldsHtml = isCorporate ? `
+              <tr>
+                <td style="padding: 10px; font-weight: bold;">Company:</td>
+                <td style="padding: 10px;">${company || "Not provided"}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; background-color: #f5f5f5; font-weight: bold;">Quantity:</td>
+                <td style="padding: 10px; background-color: #f5f5f5;">${quantity || "Not provided"}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; font-weight: bold;">Budget:</td>
+                <td style="padding: 10px;">${budget || "Not provided"}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; background-color: #f5f5f5; font-weight: bold;">Occasion:</td>
+                <td style="padding: 10px; background-color: #f5f5f5;">${occasion || "Not provided"}</td>
+              </tr>` : "";
+
+      const corporateFieldsText = isCorporate ? `
+Company: ${company || "Not provided"}
+Quantity: ${quantity || "Not provided"}
+Budget: ${budget || "Not provided"}
+Occasion: ${occasion || "Not provided"}` : "";
+
+      const emailSubject = isCorporate
+        ? `Corporate Gifting Inquiry from ${company || name}`
+        : `New Contact Form Submission from ${name}`;
+
+      const emailTitle = isCorporate
+        ? "Corporate Gifting Inquiry"
+        : "New Contact Form Submission";
+
       const mailOptions = {
         from: `"Meri Bagiya Website" <contact@meribagiya.com>`,
         to: "contact@meribagiya.com",
         replyTo: email,
-        subject: `New Contact Form Submission from ${name}`,
+        subject: emailSubject,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #2e7d32; border-bottom: 2px solid #2e7d32; padding-bottom: 10px;">
-              New Contact Form Submission
+              ${emailTitle}
             </h2>
+            ${isCorporate ? '<p style="background-color: #fff3cd; padding: 10px; border-radius: 4px; color: #856404;"><strong>Corporate Inquiry</strong> - Priority Response Required</p>' : ''}
             <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
               <tr>
                 <td style="padding: 10px; background-color: #f5f5f5; font-weight: bold; width: 120px;">Name:</td>
@@ -136,7 +195,7 @@ module.exports = async (req, res) => {
               <tr>
                 <td style="padding: 10px; background-color: #f5f5f5; font-weight: bold;">Phone:</td>
                 <td style="padding: 10px; background-color: #f5f5f5;"><a href="tel:${phone}">${phone || "Not provided"}</a></td>
-              </tr>
+              </tr>${corporateFieldsHtml}
             </table>
             <div style="margin-top: 20px;">
               <h3 style="color: #2e7d32;">Message:</h3>
@@ -144,19 +203,19 @@ module.exports = async (req, res) => {
             </div>
             <hr style="margin-top: 30px; border: none; border-top: 1px solid #ddd;">
             <p style="color: #666; font-size: 12px;">
-              This email was sent from the Meri Bagiya website contact form.
+              This email was sent from the Meri Bagiya website ${isCorporate ? 'corporate gifting' : 'contact'} form.
             </p>
           </div>
         `,
         text: `
-New Contact Form Submission
+${emailTitle}
 Name: ${name}
 Email: ${email}
-Phone: ${phone || "Not provided"}
+Phone: ${phone || "Not provided"}${corporateFieldsText}
 Message:
 ${message}
 ---
-This email was sent from the Meri Bagiya website contact form.
+This email was sent from the Meri Bagiya website ${isCorporate ? 'corporate gifting' : 'contact'} form.
         `,
       };
 
@@ -193,6 +252,20 @@ This email was sent from the Meri Bagiya website contact form.
       console.log("Sending auto-reply email...");
       await transporter.sendMail(autoReplyOptions);
       console.log("Auto-reply email sent successfully.");
+
+      // Save to Google Sheets (non-blocking, don't fail if this fails)
+      console.log("Saving to Google Sheets...");
+      await saveToGoogleSheet({
+        name,
+        email,
+        phone: phone || "",
+        message,
+        source: formSource,
+        company: company || "",
+        quantity: quantity || "",
+        budget: budget || "",
+        occasion: occasion || "",
+      });
 
       return res.status(200).json({
         success: true,

@@ -25,6 +25,7 @@ import ArtificialGrass from './pages/services/artificial-grass';
 import WaterFountain from './pages/services/water-fountain';
 import PlantRental from './pages/services/plant-rental';
 import PlantRentalHome from './pages/services/plant-rental-home';
+import CorporateGifting from './pages/corporate-gifting';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
          <Route path="services/plant-rental" element={<PlantRental/>}/>
          <Route path="services/plant-rental-home" element={<PlantRentalHome/>}/>
          <Route path="plant-rent-in-office" element={<PlantRentInOffice/>}/>
+         <Route path="corporate-gifting" element={<CorporateGifting/>}/>
 
       </Route>
    )
