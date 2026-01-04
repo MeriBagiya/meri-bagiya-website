@@ -1,5 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  "buildCommand": "echo 'API only - skipping React build'",
+  "outputDirectory": "public",
+  "framework": null
 }
