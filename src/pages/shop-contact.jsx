@@ -432,7 +432,14 @@ function Contact() {
                                                 className="btn-main"
                                                 disabled={status.submitting}
                                             >
-                                                {status.submitting ? 'Sending...' : 'Send Message'}
+                                                {status.submitting ? (
+                                                    <>
+                                                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                        Sending...
+                                                    </>
+                                                ) : (
+                                                    'Send Message'
+                                                )}
                                             </button>
                                         </div>
                                     </div>
