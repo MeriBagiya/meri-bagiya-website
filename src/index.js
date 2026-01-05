@@ -26,6 +26,7 @@ import WaterFountain from './pages/services/water-fountain';
 import PlantRental from './pages/services/plant-rental';
 import PlantRentalHome from './pages/services/plant-rental-home';
 import CorporateGifting from './pages/corporate-gifting';
+import InstagramLanding from './pages/instagram-landing';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -52,6 +53,7 @@ const router = createBrowserRouter(
          <Route path="services/plant-rental-home" element={<PlantRentalHome/>}/>
          <Route path="plant-rent-in-office" element={<PlantRentInOffice/>}/>
          <Route path="corporate-gifting" element={<CorporateGifting/>}/>
+         <Route path="instagram" element={<InstagramLanding/>}/>
 
       </Route>
    )
