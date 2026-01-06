@@ -2,8 +2,8 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-// Cloud Function URL - Update after deployment
-const FUNCTION_URL = 'https://meri-bagiya-project.vercel.app/api/send-email';
+// API URL from environment variable with fallback
+const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
 
 // reCAPTCHA site key from environment
 const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
