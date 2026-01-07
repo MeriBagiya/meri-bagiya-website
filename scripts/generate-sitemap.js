@@ -13,7 +13,6 @@ const generateSitemap = async () => {
     { path: '/about', priority: '0.8', changefreq: 'monthly' },
     { path: '/contact', priority: '0.8', changefreq: 'monthly' },
     { path: '/services', priority: '0.9', changefreq: 'weekly' },
-    { path: '/shop-all', priority: '0.8', changefreq: 'weekly' },
     { path: '/catalog', priority: '0.8', changefreq: 'weekly' },
     { path: '/corporate-gifting', priority: '0.8', changefreq: 'monthly' },
 

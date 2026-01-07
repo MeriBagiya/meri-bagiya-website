@@ -251,7 +251,7 @@ function IndoorPlants() {
 
                 <div className="row">
                   <div className="col-lg-12 text-center">
-                    <Link className="btn-main wow fadeInUp me-3" to="/shop-all">Shop Plants</Link>
+                    <Link className="btn-main wow fadeInUp me-3" to="/catalog">Shop Plants</Link>
                     <Link className="btn-line wow fadeInUp" to="/contact">Get Consultation</Link>
                   </div>
                 </div>

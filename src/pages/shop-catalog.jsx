@@ -45,7 +45,7 @@ function Shopcatalog() {
                                 <div className="col-md-6 col-12 text-center text-md-start">
                                     <span>Up to 50% Off</span>
                                     <h3>Natural Plants</h3>
-                                    <Link to="/shop-all" className="btn-main bg-color-2">Shop Now</Link>
+                                    <Link to="/catalog" className="btn-main bg-color-2">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ function Shopcatalog() {
                                 <div className="col-md-6 col-12 text-center text-md-start">
                                     <span>Up to 50% Off</span>
                                     <h3>Shop Gifts</h3>
-                                    <Link to="/shop-all" className="btn-main bg-color-2">Shop Now</Link>
+                                    <Link to="/catalog" className="btn-main bg-color-2">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ function Shopcatalog() {
                                 <div className="col-md-6 col-12 text-center text-md-start">
                                     <span>Up to 50% Off</span>
                                     <h3>Garden Care</h3>
-                                    <Link to="/shop-all" className="btn-main bg-color-2">Shop Now</Link>
+                                    <Link to="/catalog" className="btn-main bg-color-2">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ function Shopcatalog() {
                                 <div className="col-md-6 col-12 text-center text-md-start">
                                     <span>Up to 50% Off</span>
                                     <h3>Garden Accesories</h3>
-                                    <Link to="/shop-all" className="btn-main bg-color-2">Shop Now</Link>
+                                    <Link to="/catalog" className="btn-main bg-color-2">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ function Shopcatalog() {
                             <h2 className="mb-2 text-uppercase" style={{fontSize: 'clamp(1.5rem, 4vw, 2.5rem)'}}>Discover Amazing <span className="id-color-2">variety of plants</span></h2>
                             <p>From vibrant flowering plants to lush tropical greens, we offer an incredible variety to turn your space into a living paradise.</p>
 
-                            <Link to="/shop-all" className="btn-main mb10 mb-3">Shop Now</Link>
+                            <Link to="/catalog" className="btn-main mb10 mb-3">Shop Now</Link>
                         </div>
                     </div>
 

@@ -69,7 +69,7 @@ function Shopcart() {
                   {cartItems.length === 0 ? (
                     <div className="text-center p-4">
                       <p>Your cart is empty</p>
-                      <Link to="/shop-all" className="btn-main">Continue Shopping</Link>
+                      <Link to="/catalog" className="btn-main">Continue Shopping</Link>
                     </div>
                   ) : (
                     <>

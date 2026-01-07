@@ -78,7 +78,7 @@ function About() {
                             <div className="subtitle wow fadeInUp mb-3">Our Story</div>
                             <h2 className="text-uppercase wow fadeInUp" data-wow-delay=".2s">Crafting <span className="id-color-2">Beautiful Gardens</span> Since '99</h2>
                             <p className="wow fadeInUp">Established in 1999, our garden service has been transforming outdoor spaces into thriving, beautiful landscapes for over two decades. With a commitment to quality and personalized care, our experienced team offers a full range of services, from design to maintenance, ensuring your garden flourishes in every season.</p>
-                            <Link className="btn-main btn-line wow fadeInUp" to="/shop-all" data-wow-delay=".6s">Our Projects</Link>
+                            <Link className="btn-main btn-line wow fadeInUp" to="/catalog" data-wow-delay=".6s">Our Projects</Link>
                         </div>
 
                         <div className="col-lg-6 col-12">

@@ -67,7 +67,7 @@ function Shopproductsingle() {
         jsonLd={jsonLd}
         breadcrumbs={[
           { name: 'Home', url: '/' },
-          { name: 'Shop', url: '/shop-all' },
+          { name: 'Shop', url: '/catalog' },
           { name: product.Plantname }
         ]}
       />
@@ -83,7 +83,7 @@ function Shopproductsingle() {
                         <div className="col-lg-6">
                             <ul className="crumb m-0">
                                 <li><Link to="/">Home</Link></li>
-                                <li><Link to="/shop-all">Shop</Link></li>
+                                <li><Link to="/catalog">Shop</Link></li>
                                 <li className="active">{product.Plantname}</li>
                             </ul>
                         </div>
