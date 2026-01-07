@@ -36,6 +36,15 @@ const generateSitemap = async () => {
 
     // Lower priority pages
     { path: '/shop-cart', priority: '0.3', changefreq: 'monthly' },
+
+    // Legal pages
+    { path: '/terms', priority: '0.3', changefreq: 'yearly' },
+    { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+    { path: '/return-policy', priority: '0.4', changefreq: 'yearly' },
+    { path: '/shipping', priority: '0.4', changefreq: 'yearly' },
+
+    // Landing pages
+    { path: '/instagram', priority: '0.5', changefreq: 'monthly' },
   ];
 
   // Load product data

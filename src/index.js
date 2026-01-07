@@ -27,6 +27,10 @@ import PlantRental from './pages/services/plant-rental';
 import PlantRentalHome from './pages/services/plant-rental-home';
 import CorporateGifting from './pages/corporate-gifting';
 import InstagramLanding from './pages/instagram-landing';
+import Terms from './pages/terms';
+import Privacy from './pages/privacy';
+import ReturnPolicy from './pages/return-policy';
+import Shipping from './pages/shipping';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -54,6 +58,10 @@ const router = createBrowserRouter(
          <Route path="plant-rent-in-office" element={<PlantRentInOffice/>}/>
          <Route path="corporate-gifting" element={<CorporateGifting/>}/>
          <Route path="instagram" element={<InstagramLanding/>}/>
+         <Route path="terms" element={<Terms/>}/>
+         <Route path="privacy" element={<Privacy/>}/>
+         <Route path="return-policy" element={<ReturnPolicy/>}/>
+         <Route path="shipping" element={<Shipping/>}/>
 
       </Route>
    )

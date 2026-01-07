@@ -82,8 +82,10 @@ function Footer() {
                          Copyright 2024 - Meri Bagiya By AGreenForest
                      </div>
                      <ul className="menu-simple" style={{justifyContent: 'center', flexWrap: 'wrap'}}>
-                         <li><a href="#">Terms &amp; Conditions</a></li>
-                         <li><a href="#">Privacy Policy</a></li>
+                         <li><Link to="/terms">Terms &amp; Conditions</Link></li>
+                         <li><Link to="/privacy">Privacy Policy</Link></li>
+                         <li><Link to="/return-policy">Return Policy</Link></li>
+                         <li><Link to="/shipping">Shipping Policy</Link></li>
                      </ul>
                  </div>
              </div>
