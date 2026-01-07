@@ -41,6 +41,10 @@ function About() {
         keywords="about Meri Bagiya, plant nursery Greater Noida, garden company"
         canonicalUrl="/about"
         jsonLd={jsonLd}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'About Us' }
+        ]}
       />
 
       {/* <!-- content begin --> */}

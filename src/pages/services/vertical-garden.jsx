@@ -10,6 +10,29 @@ function VerticalGarden() {
         description="Professional vertical garden installation in Greater Noida. Living walls, green walls for homes and offices. Transform any wall into a lush garden by Meri Bagiya."
         keywords="vertical garden, living wall, green wall, vertical planting, wall garden Greater Noida, indoor vertical garden"
         canonicalUrl="/services/vertical-garden"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Vertical Garden' }
+        ]}
+        faqItems={[
+          {
+            question: 'What is a vertical garden or living wall?',
+            answer: 'A vertical garden (living wall) is a wall-mounted system that allows plants to grow vertically. It transforms blank walls into lush green spaces, perfect for homes, offices, and commercial spaces.'
+          },
+          {
+            question: 'How much does a vertical garden cost in India?',
+            answer: 'Vertical garden costs range from ₹400-1500 per sq.ft. depending on the system type (modular, pocket, or hydroponic), plant selection, and installation complexity.'
+          },
+          {
+            question: 'Do vertical gardens need a lot of maintenance?',
+            answer: 'Modern vertical garden systems require minimal maintenance. We install automated irrigation systems and select low-maintenance plants. Monthly maintenance visits keep your wall looking beautiful.'
+          },
+          {
+            question: 'Can vertical gardens be installed indoors?',
+            answer: 'Yes! Indoor vertical gardens are very popular. We use shade-tolerant plants and install grow lights if needed to ensure healthy plant growth indoors.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

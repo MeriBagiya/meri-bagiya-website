@@ -10,6 +10,29 @@ function GardenDesign() {
         description="Professional garden design and landscaping services in Greater Noida. Custom garden layouts, landscape architecture, and outdoor space planning by Meri Bagiya experts."
         keywords="garden design Greater Noida, landscape design, garden planning, outdoor landscaping, custom garden design, landscape architect"
         canonicalUrl="/services/garden-design"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Garden Design' }
+        ]}
+        faqItems={[
+          {
+            question: 'What is included in garden design services?',
+            answer: 'Our garden design services include site assessment, custom layout planning, plant selection, hardscape design, irrigation planning, and 3D visualization of your dream garden.'
+          },
+          {
+            question: 'How long does a garden design project take?',
+            answer: 'A typical garden design project takes 2-4 weeks for design and planning, and 4-8 weeks for implementation depending on the size and complexity of the project.'
+          },
+          {
+            question: 'Do you offer garden design services for small spaces?',
+            answer: 'Yes! We specialize in designing beautiful gardens for all space sizes including balconies, terraces, and compact backyards in Greater Noida and Delhi NCR.'
+          },
+          {
+            question: 'What is the cost of garden design services?',
+            answer: 'Garden design costs vary based on project scope. We offer free initial consultations to understand your requirements and provide customized quotes.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

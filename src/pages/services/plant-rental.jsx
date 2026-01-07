@@ -11,6 +11,29 @@ function PlantRental() {
         description="Premium plant rental services in Greater Noida. Rent indoor & outdoor plants for homes, offices, events, weddings, and corporate functions. Maintenance included by Meri Bagiya."
         keywords="plant rental near me, plants on rent Greater Noida, event plant rental Delhi NCR, wedding plants decoration, corporate plant rental Noida, indoor plant hire, office plants on rent, plant rental service"
         canonicalUrl="/services/plant-rental"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Plant Rental' }
+        ]}
+        faqItems={[
+          {
+            question: 'What is included in the plant rental service?',
+            answer: 'Our plant rental includes delivery, setup, regular maintenance visits for watering and pruning, free replacement of any unhealthy plants, and pickup at the end of the rental period.'
+          },
+          {
+            question: 'What is the minimum rental period for plants?',
+            answer: 'For offices and homes, the minimum rental period is 1 month. For events, we offer daily and weekly rentals starting from just 1 day.'
+          },
+          {
+            question: 'Do you provide plants for weddings and events?',
+            answer: 'Yes! We provide beautiful plant arrangements for weddings, corporate events, exhibitions, film shoots, and all types of celebrations in Greater Noida and Delhi NCR.'
+          },
+          {
+            question: 'How much does plant rental cost?',
+            answer: 'Rental prices start from ₹300/plant/month for homes and ₹500/plant/month for offices. Event rentals have custom pricing based on requirements. Contact us for a free quote.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

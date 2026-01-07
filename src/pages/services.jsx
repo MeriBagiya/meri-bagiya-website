@@ -74,6 +74,10 @@ function Services() {
         keywords="garden services near me, garden design Greater Noida, garden maintenance, landscaping services Noida, Delhi NCR gardening, landscape contractor near me, professional gardener"
         canonicalUrl="/services"
         jsonLd={jsonLd}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services' }
+        ]}
       />
 
       {/* <!-- content begin --> */}

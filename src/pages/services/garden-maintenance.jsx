@@ -10,6 +10,29 @@ function GardenMaintenance() {
         description="Professional garden maintenance services in Greater Noida. Lawn mowing, pruning, weeding, fertilizing and seasonal care by Meri Bagiya experts."
         keywords="garden maintenance Greater Noida, lawn care, garden upkeep, pruning services, weeding, lawn mowing service"
         canonicalUrl="/services/garden-maintenance"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Garden Maintenance' }
+        ]}
+        faqItems={[
+          {
+            question: 'How often should garden maintenance be done?',
+            answer: 'For optimal results, we recommend weekly or bi-weekly maintenance visits. The frequency depends on your garden size, plant types, and seasonal requirements.'
+          },
+          {
+            question: 'What does garden maintenance include?',
+            answer: 'Our maintenance includes lawn mowing, edging, pruning, weeding, mulching, fertilizing, pest control, seasonal clean-ups, and general plant care.'
+          },
+          {
+            question: 'Do you offer one-time garden maintenance?',
+            answer: 'Yes, we offer both one-time clean-up services and regular maintenance contracts. One-time services are perfect for seasonal clean-ups or special occasions.'
+          },
+          {
+            question: 'What areas do you serve for garden maintenance?',
+            answer: 'We provide garden maintenance services throughout Greater Noida, Noida, and Delhi NCR region.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

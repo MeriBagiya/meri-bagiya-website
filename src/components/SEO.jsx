@@ -7,8 +7,12 @@ function SEO({
   keywords,
   canonicalUrl,
   ogImage = 'https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png',
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
   ogType = 'website',
-  jsonLd
+  jsonLd,
+  breadcrumbs,
+  faqItems
 }) {
   const siteName = 'Meri Bagiya';
   const baseUrl = 'https://meribagiya.com';
@@ -17,6 +21,32 @@ function SEO({
     : `${siteName} - Plant Nursery & Garden Services in Greater Noida`;
 
   const defaultDescription = 'Meri Bagiya - Your trusted plant nursery and professional garden services in Greater Noida. Buy indoor plants, outdoor plants, flowering plants and get expert garden design, maintenance, and landscaping services.';
+
+  // Generate breadcrumb schema
+  const breadcrumbSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url ? `${baseUrl}${item.url}` : undefined
+    }))
+  } : null;
+
+  // Generate FAQ schema
+  const faqSchema = faqItems && faqItems.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  } : null;
 
   return (
     <Helmet>
@@ -29,6 +59,8 @@ function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description || defaultDescription} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content={ogImageWidth.toString()} />
+      <meta property="og:image:height" content={ogImageHeight.toString()} />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:url" content={canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl} />
@@ -43,6 +75,20 @@ function SEO({
       {jsonLd && (
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
+        </script>
+      )}
+
+      {/* Breadcrumb Schema */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
+
+      {/* FAQ Schema */}
+      {faqSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
         </script>
       )}
     </Helmet>

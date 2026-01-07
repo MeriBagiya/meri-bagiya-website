@@ -10,6 +10,25 @@ function BalconyGarden() {
         description="Professional balcony garden design in Greater Noida. Transform your balcony into a green oasis with custom planters, vertical gardens, and expert landscaping by Meri Bagiya."
         keywords="balcony garden, balcony plants, balcony landscaping Greater Noida, small space garden, apartment garden, balcony design"
         canonicalUrl="/services/balcony-garden"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Balcony Garden' }
+        ]}
+        faqItems={[
+          {
+            question: 'What plants are best for balcony gardens?',
+            answer: 'Low-maintenance plants like money plant, snake plant, peace lily, herbs, and succulents work great for balconies. We select plants based on your balcony sunlight and space.'
+          },
+          {
+            question: 'How much does balcony garden design cost?',
+            answer: 'Balcony garden costs depend on size and design complexity. Basic setups start from ₹5,000, while premium designs with planters and irrigation can range from ₹15,000-50,000.'
+          },
+          {
+            question: 'Can you design a balcony garden for apartments?',
+            answer: 'Yes! We specialize in apartment balcony gardens in Greater Noida. We work with limited space using vertical planters, railing pots, and creative arrangements.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

@@ -19,6 +19,12 @@ function Shopproductsingle() {
     return <div>Loading...</div>;
   }
 
+  // Parse rating value (e.g., "4.5 (120)" -> 4.5)
+  const ratingMatch = product.Plantrating?.match(/^([\d.]+)/);
+  const ratingValue = ratingMatch ? parseFloat(ratingMatch[1]) : 4.5;
+  const reviewMatch = product.Plantrating?.match(/\((\d+)\)/);
+  const reviewCount = reviewMatch ? parseInt(reviewMatch[1]) : 50;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -29,11 +35,18 @@ function Shopproductsingle() {
       "@type": "Brand",
       "name": "Meri Bagiya"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": ratingValue.toString(),
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": reviewCount.toString()
+    },
     "offers": {
       "@type": "Offer",
-      "url": `https://meribagiya.com/single-product/${product.id}`,
+      "url": `https://meribagiya.com/single-product/${product.Plantid}`,
       "priceCurrency": "INR",
-      "price": product.Plantprice.replace('₹', ''),
+      "price": product.Plantprice.replace('₹', '').replace(',', ''),
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
@@ -48,10 +61,15 @@ function Shopproductsingle() {
         title={product.Plantname}
         description={product.description}
         keywords={product.keywords}
-        canonicalUrl={`/single-product/${product.id}`}
+        canonicalUrl={`/single-product/${product.Plantid}`}
         ogImage={`https://meribagiya.com${product.Plantimageurl}`}
         ogType="product"
         jsonLd={jsonLd}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Shop', url: '/shop-all' },
+          { name: product.Plantname }
+        ]}
       />
 
       {/* <!-- content begin --> */}

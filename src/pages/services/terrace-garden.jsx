@@ -10,6 +10,29 @@ function TerraceGarden() {
         description="Professional terrace garden design in Greater Noida. Transform your rooftop into a lush garden with seating areas, vegetable gardens, and beautiful landscaping by Meri Bagiya."
         keywords="terrace garden design, rooftop garden Greater Noida, terrace landscaping cost, rooftop garden ideas India, terrace garden near me, roof garden design Delhi NCR, small terrace garden"
         canonicalUrl="/services/terrace-garden"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Terrace Garden' }
+        ]}
+        faqItems={[
+          {
+            question: 'How much does a terrace garden cost in India?',
+            answer: 'Terrace garden costs range from ₹50-200 per sq.ft. depending on design, waterproofing requirements, planters, and plant selection. We provide free consultations with detailed quotes.'
+          },
+          {
+            question: 'Is waterproofing necessary for terrace gardens?',
+            answer: 'Yes, proper waterproofing is essential to prevent water seepage into the building. We ensure proper drainage and waterproofing as part of our terrace garden installation.'
+          },
+          {
+            question: 'Can I grow vegetables on my terrace garden?',
+            answer: 'Absolutely! Terrace gardens are perfect for growing vegetables, herbs, and fruits. We can design dedicated vegetable sections with proper soil and sunlight arrangements.'
+          },
+          {
+            question: 'How much weight can a terrace garden support?',
+            answer: 'We assess your terrace load-bearing capacity before design. We use lightweight materials, proper drainage, and strategic plant placement to ensure safety.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

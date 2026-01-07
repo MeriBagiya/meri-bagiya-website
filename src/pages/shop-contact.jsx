@@ -193,6 +193,10 @@ function Contact() {
         keywords="contact Meri Bagiya, plant nursery contact, garden services Greater Noida"
         canonicalUrl="/contact"
         jsonLd={jsonLd}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Contact Us' }
+        ]}
       />
 
       {/* <!-- content begin --> */}
