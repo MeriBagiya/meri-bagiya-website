@@ -17,7 +17,7 @@ function ArtificialGrass() {
 
         {/* Hero Section */}
         <section id="subheader" className="relative jarallax text-light">
-          <img src="https://images.unsplash.com/photo-1558635924-3c27ad0d8a00?w=1920&q=80" className="jarallax-img" alt="Artificial grass"/>
+          <img src="/assets/images/background/5.webp" className="jarallax-img" alt="Artificial grass"/>
           <div className="container relative z-index-1000">
             <div className="row">
               <div className="col-lg-6">
@@ -79,11 +79,11 @@ function ArtificialGrass() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Synthetic lawn"/>
+                        <img src="/assets/images/services/1.webp" className="w-100 rounded-1 wow zoomIn" alt="Synthetic lawn"/>
                       </div>
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1551410224-699683e15636?w=400&q=80" className="w-100 rounded-1 wow zoomIn mb-3" alt="Artificial turf"/>
-                        <img src="https://images.unsplash.com/photo-1558635924-3c27ad0d8a00?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Green lawn"/>
+                        <img src="/assets/images/services/2.webp" className="w-100 rounded-1 wow zoomIn mb-3" alt="Artificial turf"/>
+                        <img src="/assets/images/services/3.webp" className="w-100 rounded-1 wow zoomIn" alt="Green lawn"/>
                       </div>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ function ArtificialGrass() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1558635924-3c27ad0d8a00?w=400&q=80" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Home lawn"/>
+                      <img src="/assets/images/gallery/1.webp" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Home lawn"/>
                       <div className="bg-color text-light p-4">
                         <h5>Home Lawns</h5>
                         <p className="mb-0 small">Transform your front or backyard into an evergreen paradise.</p>
@@ -109,7 +109,7 @@ function ArtificialGrass() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=400&q=80" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Balcony turf"/>
+                      <img src="/assets/images/gallery/2.webp" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Balcony turf"/>
                       <div className="bg-color text-light p-4">
                         <h5>Balconies & Terraces</h5>
                         <p className="mb-0 small">Create soft, green flooring for your outdoor spaces.</p>
@@ -119,7 +119,7 @@ function ArtificialGrass() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Sports turf"/>
+                      <img src="/assets/images/gallery/3.webp" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Sports turf"/>
                       <div className="bg-color text-light p-4">
                         <h5>Sports Areas</h5>
                         <p className="mb-0 small">Durable turf for playgrounds, golf putting greens, and sports.</p>
@@ -129,7 +129,7 @@ function ArtificialGrass() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Office grass"/>
+                      <img src="/assets/images/gallery/4.webp" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Office grass"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Commercial Spaces</h5>
                         <p className="mb-0 small">Offices, hotels, malls - impress visitors with green aesthetics.</p>
@@ -139,7 +139,7 @@ function ArtificialGrass() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="School playground"/>
+                      <img src="/assets/images/gallery/5.webp" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="School playground"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Schools & Playgrounds</h5>
                         <p className="mb-0 small">Safe, soft surface for children to play on.</p>
@@ -149,7 +149,7 @@ function ArtificialGrass() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Wall grass"/>
+                      <img src="/assets/images/gallery/6.webp" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Wall grass"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Wall Coverings</h5>
                         <p className="mb-0 small">Vertical grass walls for unique interior/exterior design.</p>
@@ -256,7 +256,7 @@ function ArtificialGrass() {
                     </div>
                   </div>
                   <div className="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1558635924-3c27ad0d8a00?w=600&q=80" className="w-100 rounded-1" alt="Grass types"/>
+                    <img src="/assets/images/services/4.webp" className="w-100 rounded-1" alt="Grass types"/>
                   </div>
                 </div>
 
