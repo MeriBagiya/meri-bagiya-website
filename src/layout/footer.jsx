@@ -85,7 +85,7 @@ function Footer() {
                          <li><Link to="/terms">Terms &amp; Conditions</Link></li>
                          <li><Link to="/privacy">Privacy Policy</Link></li>
                          <li><Link to="/return-policy">Return Policy</Link></li>
-                         <li><Link to="/shipping">Shipping Policy</Link></li>
+                         <li><Link to="/shipping">Pickup & Delivery</Link></li>
                      </ul>
                  </div>
              </div>
