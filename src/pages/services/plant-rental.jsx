@@ -115,11 +115,11 @@ function PlantRental() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Plants for rent"/>
+                        <img src="/assets/images/unsplash/1545241047-6083a3684587.jpg" className="w-100 rounded-1 wow zoomIn" alt="Plants for rent"/>
                       </div>
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&q=80" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor plant rental"/>
-                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Event plants"/>
+                        <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor plant rental"/>
+                        <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn" alt="Event plants"/>
                       </div>
                     </div>
                   </div>
@@ -135,7 +135,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Office plant rental"/>
+                      <img src="/assets/images/unsplash/1497366216548-37526070297c.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Office plant rental"/>
                       <div className="bg-color text-light p-4">
                         <h5>Office & Corporate</h5>
                         <p className="mb-2 small">Monthly rental for offices, co-working spaces, and corporate lobbies.</p>
@@ -146,7 +146,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Wedding plant rental"/>
+                      <img src="/assets/images/unsplash/1519167758481-83f550bb49b3.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Wedding plant rental"/>
                       <div className="bg-color text-light p-4">
                         <h5>Weddings & Events</h5>
                         <p className="mb-2 small">Beautiful plants and arrangements for weddings, parties, and celebrations.</p>
@@ -157,7 +157,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Exhibition plant rental"/>
+                      <img src="/assets/images/unsplash/1540575467063-178a50c2df87.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Exhibition plant rental"/>
                       <div className="bg-color text-light p-4">
                         <h5>Exhibitions & Trade Shows</h5>
                         <p className="mb-2 small">Make your booth stand out with green displays and planters.</p>
@@ -168,7 +168,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Home plant rental"/>
+                      <img src="/assets/images/unsplash/1600607687939-ce8a6c25118c.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Home plant rental"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Home & Apartments</h5>
                         <p className="mb-2 small">Green up your living space without the hassle of maintenance.</p>
@@ -179,7 +179,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Hotel plant rental"/>
+                      <img src="/assets/images/unsplash/1582719508461-905c673771fd.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Hotel plant rental"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Hotels & Restaurants</h5>
                         <p className="mb-2 small">Create inviting spaces for guests with premium greenery.</p>
@@ -190,7 +190,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Film shoot plant rental"/>
+                      <img src="/assets/images/unsplash/1497366811353-6870744d04b2.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Film shoot plant rental"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Film & Photo Shoots</h5>
                         <p className="mb-2 small">Perfect backdrop plants for shoots, ads, and productions.</p>
@@ -259,77 +259,77 @@ function PlantRental() {
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1602923668104-8f9e03e77e62?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Money Plant"/>
+                      <img src="/assets/images/unsplash/1602923668104-8f9e03e77e62.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Money Plant"/>
                       <h6 className="small mb-0">Money Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Snake Plant"/>
+                      <img src="/assets/images/unsplash/1558171813-4c088753af8f.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Snake Plant"/>
                       <h6 className="small mb-0">Snake Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Areca Palm"/>
+                      <img src="/assets/images/unsplash/1520412099551-62b6bafeb5bb.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Areca Palm"/>
                       <h6 className="small mb-0">Areca Palm</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Peace Lily"/>
+                      <img src="/assets/images/unsplash/1509423350716-97f9360b4e09.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Peace Lily"/>
                       <h6 className="small mb-0">Peace Lily</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Rubber Plant"/>
+                      <img src="/assets/images/unsplash/1485955900006-10f4d324d411.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Rubber Plant"/>
                       <h6 className="small mb-0">Rubber Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Ficus"/>
+                      <img src="/assets/images/unsplash/1545241047-6083a3684587.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Ficus"/>
                       <h6 className="small mb-0">Ficus</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1446071103084-c257b5f70672?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Pothos"/>
+                      <img src="/assets/images/unsplash/1446071103084-c257b5f70672.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Pothos"/>
                       <h6 className="small mb-0">Pothos</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Jade Plant"/>
+                      <img src="/assets/images/unsplash/1596438459194-f275f413d6ff.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Jade Plant"/>
                       <h6 className="small mb-0">Jade Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Dracaena"/>
+                      <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Dracaena"/>
                       <h6 className="small mb-0">Dracaena</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Flowering Plants"/>
+                      <img src="/assets/images/unsplash/1466692476868-aef1dfb1e735.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Flowering Plants"/>
                       <h6 className="small mb-0">Flowering</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=100&q=80" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Bonsai"/>
+                      <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Bonsai"/>
                       <h6 className="small mb-0">Bonsai</h6>
                     </div>
                   </div>
@@ -349,7 +349,7 @@ function PlantRental() {
                 {/* Why Rent */}
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-6 order-lg-2">
-                    <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=600&q=80" className="w-100 rounded-1" alt="Why rent plants"/>
+                    <img src="/assets/images/unsplash/1463320726281-696a485928c7.jpg" className="w-100 rounded-1" alt="Why rent plants"/>
                   </div>
                   <div className="col-lg-6 order-lg-1">
                     <h2 className="mb-4">Why <span className="id-color-2">Rent</span> Instead of Buy?</h2>

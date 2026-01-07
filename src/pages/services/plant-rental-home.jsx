@@ -136,7 +136,7 @@ function PlantRentalHome() {
                     <div className="row g-2">
                       <div className="col-6">
                         <img
-                          src="https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?w=400"
+                          src="/assets/images/unsplash/1493552152660-f915ab47ae9d.jpg"
                           alt="Indoor plants in living room"
                           className="w-100 rounded-10px"
                           style={{ height: '200px', objectFit: 'cover' }}
@@ -144,7 +144,7 @@ function PlantRentalHome() {
                       </div>
                       <div className="col-6">
                         <img
-                          src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=400"
+                          src="/assets/images/unsplash/1463320726281-696a485928c7.jpg"
                           alt="Plants on shelf"
                           className="w-100 rounded-10px"
                           style={{ height: '200px', objectFit: 'cover' }}

@@ -36,7 +36,7 @@ function BalconyGarden() {
 
         {/* Hero Section */}
         <section id="subheader" className="relative jarallax text-light">
-          <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=1920&q=80" className="jarallax-img" alt="Balcony garden"/>
+          <img src="/assets/images/unsplash/1622383563227-04401ab4e5ea.jpg" className="jarallax-img" alt="Balcony garden"/>
           <div className="container relative z-index-1000">
             <div className="row">
               <div className="col-lg-6">
@@ -98,11 +98,11 @@ function BalconyGarden() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Balcony plants"/>
+                        <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="w-100 rounded-1 wow zoomIn" alt="Balcony plants"/>
                       </div>
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80" className="w-100 rounded-1 wow zoomIn mb-3" alt="Small garden"/>
-                        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Balcony design"/>
+                        <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Small garden"/>
+                        <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="w-100 rounded-1 wow zoomIn" alt="Balcony design"/>
                       </div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ function BalconyGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1">
-                      <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Flowering balcony"/>
+                      <img src="/assets/images/unsplash/1466692476868-aef1dfb1e735.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Flowering balcony"/>
                       <div className="bg-color text-light p-4">
                         <h5>Flowering Garden</h5>
                         <p className="mb-0 small">Colorful blooms with petunias, marigolds, and seasonal flowers.</p>
@@ -185,7 +185,7 @@ function BalconyGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1">
-                      <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Herb garden"/>
+                      <img src="/assets/images/unsplash/1591857177580-dc82b9ac4e1e.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Herb garden"/>
                       <div className="bg-color text-light p-4">
                         <h5>Herb & Kitchen Garden</h5>
                         <p className="mb-0 small">Fresh herbs, vegetables, and greens for your daily cooking needs.</p>
@@ -195,7 +195,7 @@ function BalconyGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1">
-                      <img src="https://images.unsplash.com/photo-1524247108137-732e0f642303?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Zen balcony"/>
+                      <img src="/assets/images/unsplash/1524247108137-732e0f642303.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Zen balcony"/>
                       <div className="bg-color text-light p-4">
                         <h5>Zen Retreat</h5>
                         <p className="mb-0 small">Peaceful space with bamboo, ornamental grasses, and meditation area.</p>

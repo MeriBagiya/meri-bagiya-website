@@ -17,7 +17,7 @@ function WaterFountain() {
 
         {/* Hero Section */}
         <section id="subheader" className="relative jarallax text-light">
-          <img src="https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=1920&q=80" className="jarallax-img" alt="Water fountain"/>
+          <img src="/assets/images/unsplash/1541123603104-512919d6a96c.jpg" className="jarallax-img" alt="Water fountain"/>
           <div className="container relative z-index-1000">
             <div className="row">
               <div className="col-lg-6">
@@ -79,11 +79,11 @@ function WaterFountain() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Garden fountain"/>
+                        <img src="/assets/images/unsplash/1541123603104-512919d6a96c.jpg" className="w-100 rounded-1 wow zoomIn" alt="Garden fountain"/>
                       </div>
                       <div className="col-6">
-                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80" className="w-100 rounded-1 wow zoomIn mb-3" alt="Water feature"/>
-                        <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=400&q=80" className="w-100 rounded-1 wow zoomIn" alt="Decorative fountain"/>
+                        <img src="/assets/images/unsplash/1585320806297-9794b3e4eeae.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Water feature"/>
+                        <img src="/assets/images/unsplash/1519331379826-f10be5486c6f.jpg" className="w-100 rounded-1 wow zoomIn" alt="Decorative fountain"/>
                       </div>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ function WaterFountain() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Tiered fountain"/>
+                      <img src="/assets/images/unsplash/1541123603104-512919d6a96c.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Tiered fountain"/>
                       <div className="bg-color text-light p-4">
                         <h5>Tiered Fountains</h5>
                         <p className="mb-0 small">Classic multi-level fountains that create beautiful cascading water effects.</p>
@@ -109,7 +109,7 @@ function WaterFountain() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Waterfall"/>
+                      <img src="/assets/images/unsplash/1506905925346-21bda4d32df4.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Waterfall"/>
                       <div className="bg-color text-light p-4">
                         <h5>Waterfalls</h5>
                         <p className="mb-0 small">Natural rock or modern waterfalls that bring dramatic beauty to gardens.</p>
@@ -119,7 +119,7 @@ function WaterFountain() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Pond"/>
+                      <img src="/assets/images/unsplash/1519331379826-f10be5486c6f.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Pond"/>
                       <div className="bg-color text-light p-4">
                         <h5>Koi Ponds</h5>
                         <p className="mb-0 small">Serene fish ponds with aquatic plants creating a living ecosystem.</p>
@@ -129,7 +129,7 @@ function WaterFountain() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Wall fountain"/>
+                      <img src="/assets/images/unsplash/1534237710431-e2fc698436d0.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Wall fountain"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Water Walls</h5>
                         <p className="mb-0 small">Sleek vertical water features perfect for modern spaces.</p>
@@ -139,7 +139,7 @@ function WaterFountain() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Bubble fountain"/>
+                      <img src="/assets/images/unsplash/1558618666-fcd25c85cd64.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Bubble fountain"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Bubble Fountains</h5>
                         <p className="mb-0 small">Compact tabletop fountains for indoor spaces and offices.</p>
@@ -149,7 +149,7 @@ function WaterFountain() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Stream"/>
+                      <img src="/assets/images/unsplash/1600607687939-ce8a6c25118c.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Stream"/>
                       <div className="bg-color-2 text-light p-4">
                         <h5>Garden Streams</h5>
                         <p className="mb-0 small">Flowing water channels that meander through your garden.</p>
@@ -163,7 +163,7 @@ function WaterFountain() {
                 {/* Benefits */}
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=600&q=80" className="w-100 rounded-1" alt="Fountain benefits"/>
+                    <img src="/assets/images/unsplash/1541123603104-512919d6a96c.jpg" className="w-100 rounded-1" alt="Fountain benefits"/>
                   </div>
                   <div className="col-lg-6">
                     <h2 className="mb-4">Benefits of <span className="id-color-2">Water Features</span></h2>
