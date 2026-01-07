@@ -3,6 +3,7 @@ import Header from './layout/header';
 import Footer from './layout/footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import { Outlet, useLocation } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -63,6 +64,32 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <ScrollToTop />
       <PluginReinitializer />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#333',
+            color: '#fff',
+            padding: '16px',
+            borderRadius: '8px',
+          },
+          success: {
+            style: {
+              background: '#22c55e',
+            },
+            iconTheme: {
+              primary: '#fff',
+              secondary: '#22c55e',
+            },
+          },
+          error: {
+            style: {
+              background: '#ef4444',
+            },
+          },
+        }}
+      />
       <Header/>
       <main style={{ flex: 1 }}>
         <Outlet/>

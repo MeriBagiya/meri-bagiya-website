@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import toast from 'react-hot-toast';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -202,14 +203,17 @@ function CorporateGifting() {
         });
         setErrors({});
         setTouched({});
+        toast.success('Inquiry submitted! Our team will contact you shortly.');
       } else {
         throw new Error(data.error || 'Failed to send inquiry');
       }
     } catch (error) {
+      const errorMessage = error.message || 'Something went wrong. Please try again.';
       setStatus({
         submitting: false,
-        error: error.message || 'Something went wrong. Please try again.'
+        error: errorMessage
       });
+      toast.error(errorMessage);
     }
   };
 

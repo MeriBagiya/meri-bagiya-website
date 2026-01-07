@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
+import toast from 'react-hot-toast';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -121,16 +122,21 @@ function InstagramLanding() {
       const data = await response.json();
 
       if (response.ok && data.success) {
+        toast.success('Thanks! Redirecting you to our packages...');
         // Redirect to corporate gifting page with UTM params
-        navigate('/corporate-gifting?utm_source=instagram&utm_medium=landing&utm_campaign=lead_capture');
+        setTimeout(() => {
+          navigate('/corporate-gifting?utm_source=instagram&utm_medium=landing&utm_campaign=lead_capture');
+        }, 1000);
       } else {
         throw new Error(data.error || 'Failed to submit. Please try again.');
       }
     } catch (error) {
+      const errorMessage = error.message || 'Something went wrong. Please try again.';
       setStatus({
         submitting: false,
-        error: error.message || 'Something went wrong. Please try again.'
+        error: errorMessage
       });
+      toast.error(errorMessage);
     }
   };
 

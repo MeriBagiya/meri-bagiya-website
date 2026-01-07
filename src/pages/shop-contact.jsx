@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import toast from 'react-hot-toast';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -166,15 +167,18 @@ function Contact() {
         setFormData({ name: '', email: '', phone: '', message: '', whatsappOptIn: false });
         setErrors({ name: '', email: '', phone: '', message: '' });
         setTouched({ name: false, email: false, phone: false, message: false });
+        toast.success('Message sent! We\'ll get back to you within 24 hours.');
       } else {
         throw new Error(data.error || 'Failed to send message');
       }
     } catch (error) {
+      const errorMessage = error.message || 'Something went wrong. Please try again.';
       setStatus({
         submitting: false,
         success: false,
-        error: error.message || 'Something went wrong. Please try again.'
+        error: errorMessage
       });
+      toast.error(errorMessage);
     }
   };
 
