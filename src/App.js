@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import Header from './layout/header';
 import Footer from './layout/footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import { Outlet, useLocation } from 'react-router-dom';
 
 function ScrollToTop() {
@@ -67,6 +68,7 @@ function App() {
         <Outlet/>
       </main>
       <Footer/>
+      <WhatsAppButton />
     </div>
   )
 };
