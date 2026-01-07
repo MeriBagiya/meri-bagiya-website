@@ -63,7 +63,7 @@ function Shophomepage() {
     },
     "hasMap": "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z",
     "url": "https://meribagiya.com",
-    "telephone": "+91-9876543210",
+    "telephone": "+91-9220404309",
     "email": "contact@meribagiya.com",
     "priceRange": "₹₹",
     "openingHoursSpecification": [

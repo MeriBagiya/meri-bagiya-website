@@ -24,7 +24,7 @@ function About() {
       "latitude": "28.5899943",
       "longitude": "77.4281686"
     },
-    "telephone": "+91-9876543210",
+    "telephone": "+91-9220404309",
     "email": "contact@meribagiya.com",
     "sameAs": [
       "https://www.facebook.com/meribagiya",

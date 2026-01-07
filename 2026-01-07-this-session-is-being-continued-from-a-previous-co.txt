@@ -1,0 +1,1040 @@
+
+ * ▐▛███▜▌ *   Claude Code v2.0.76
+* ▝▜█████▛▘ *  Opus 4.5 · Claude Pro
+ *  ▘▘ ▝▝  *   C:\code\MeriBagiya\meri-bagiya-project
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+
+● Continuing with Issue #14 implementation. I need to update api/package.json with the googleapis dependency and update .env.example with new environment variables.
+
+● Read(api\package.json)
+  ⎿  Read 11 lines
+
+● Read(.env.example)
+  ⎿  Read 39 lines
+
+● Update(api\package.json)
+  ⎿  Added 1 line                                                        
+       5    "main": "send-email.js",
+       6    "dependencies": {
+       7      "cors": "^2.8.5",
+       8 +    "googleapis": "^144.0.0",
+       9      "nodemailer": "^6.9.7"
+      10    }
+      11  }
+
+● Update(.env.example)
+  ⎿  Added 16 lines                                                      
+      31  GOOGLE_SHEET_WEBHOOK=https://script.google.com/macros/s/your_sc
+          ript_id/exec
+      32 
+      33  # ===========================================
+      34 +# Lead Nurturing / Drip Email System
+      35 +# ===========================================
+      36 +
+      37 +# Google Service Account credentials (JSON string)
+      38 +# Create at: https://console.cloud.google.com/iam-admin/service
+         +accounts
+      39 +# Grant "Editor" access to your Google Sheet
+      40 +GOOGLE_SERVICE_ACCOUNT={"type":"service_account","project_id":"
+         +...","private_key":"...","client_email":"..."}
+      41 +
+      42 +# Google Sheet ID (from the URL: https://docs.google.com/spread
+         +sheets/d/SHEET_ID/edit)
+      43 +GOOGLE_SHEET_ID=your_google_sheet_id_here
+      44 +
+      45 +# Cron Secret (random string to authenticate cron requests)
+      46 +# Generate with: node -e "console.log(require('crypto').randomB
+         +ytes(32).toString('hex'))"
+      47 +CRON_SECRET=your_cron_secret_here
+      48 +
+      49 +# ===========================================
+      50  # Vercel Environment
+      51  # ===========================================
+      52  # These are set automatically by Vercel, but you can override f
+          or testing
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && npm run build 2>&1 | head
+      -50)
+  ⎿  > meri-bagiya-project@0.1.0 build
+     > react-scripts build
+     … +69 lines (ctrl+o to expand)
+
+● Build successful. Now let me commit and push the changes.
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +14 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git diff --stat)
+  ⎿   .env.example     | 16 ++++++++++++++++
+      api/package.json |  1 +
+      src/App.js       |  2 ++
+     … +7 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git log -3 --oneline)
+  ⎿ 038ec53 feat: download Unsplash images locally for reliable loading    
+    8f0d063 fix: replace broken Unsplash images with local assets on artifi
+    cial-grass page
+    … +2 lines (ctrl+o to expand)
+
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git add
+      src/components/WhatsAppButton.jsx api/cron/ api/lib/ .env.example
+      api/package.json src/App.js && git stat…)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +14 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git commit -m "feat: add
+      lead nurturing funnel with WhatsApp button and drip emails…)
+  ⎿ [master 9c607d8] feat: add lead nurturing funnel with WhatsApp button a
+    nd drip emails
+     6 files changed, 509 insertions(+)
+    … +3 lines (ctrl+o to expand)
+
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git push origin master)
+  ⎿  To https://github.com/MeriBagiya/meri-bagiya-website.git
+        038ec53..9c607d8  master -> master
+
+● Issue #14 implementation complete and pushed to master.
+
+  Summary of changes:
+
+  | File                              | Change                              |
+  |-----------------------------------|-------------------------------------|
+  | src/components/WhatsAppButton.jsx | New global floating WhatsApp button |
+  | src/App.js                        | Added WhatsAppButton to layout      |
+  | api/lib/sheets.js                 | Google Sheets read/update helper    |
+  | api/cron/send-followups.js        | Drip email handler (Day 1, 3, 7)    |
+  | api/package.json                  | Added googleapis dependency         |
+  | .env.example                      | Documented new env vars             |
+
+  Next steps to activate the system:
+
+  1. Add columns to Google Sheet: Status, Day1SentAt, Day3SentAt, Day7SentAt
+  2. Create Google Service Account:
+    - Go to https://console.cloud.google.com/iam-admin/serviceaccounts
+    - Create service account, download JSON key
+    - Share your Google Sheet with the service account email (Editor access)
+  3. Add environment variables in Vercel:
+    - GOOGLE_SERVICE_ACCOUNT - JSON credentials string
+    - GOOGLE_SHEET_ID - From sheet URL
+    - CRON_SECRET - Random secure string
+  4. Setup cron-job.org (free):
+    - URL: https://meri-bagiya-project.vercel.app/api/cron/send-followups
+    - Schedule: Daily at 9:00 AM IST (3:30 AM UTC)
+    - Header: Authorization: Bearer {CRON_SECRET}
+
+> push to vercel 
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && vercel        timeout: 3m 
+      --prod --yes)                                                 0s
+  ⎿ https://meri-bagiya-project-fn1ddzr0f-basants-projects-cb7b636c.vercel.
+    app
+    Vercel CLI 50.1.3
+    … +49 lines (ctrl+o to expand)
+
+
+● Deployed successfully to Vercel.
+
+  Production URL: https://meri-bagiya-project.vercel.app
+
+  The WhatsApp button should now be visible on all pages. The drip email cron endpoint is ready at /api/cron/send-followups - just needs the environment variables configured in Vercel dashboard to activate.
+
+> Google Sheets API has not been used in project 963881517163 before or it 
+is disabled. Enable it by visiting https://console.developers.google.com/api
+s/api/sheets.googleapis.com/overview?project=963881517163 then retry. If you
+ enabled this API recently, wait a few minutes for the action to propagate 
+to our systems and retry. 
+
+● You need to enable the Google Sheets API in your Google Cloud project. Here's how:
+
+  1. Click this link to go directly to the API page:
+  https://console.developers.google.com/apis/api/sheets.googleapis.com/overview?project=963881517163
+  2. Click "Enable" button
+  3. Wait 1-2 minutes for the change to propagate
+  4. Retry your operation
+
+  That's it - the drip email system should work after enabling the API.
+
+> Create the feture in the github like we tracking issues  need to use the 
+whatsapp api to send the message as I have bussiness account add all the 
+details how we can send the message to the end user via reading the excel 
+sheet. 
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && gh issue create --title
+      "Add WhatsApp Business API for automated lead messages" --body "## Summary
+      Integrate What…)
+  ⎿  https://github.com/MeriBagiya/meri-bagiya-website/issues/40
+
+● Created GitHub issue: https://github.com/MeriBagiya/meri-bagiya-website/issues/40
+
+  Issue includes:
+
+  | Section             | Details                                                  |
+  |---------------------|----------------------------------------------------------|
+  | API Options         | Meta Cloud API (free 1K/month) or Twilio                 |
+  | Prerequisites       | Facebook Business, Meta Developer App, Verified Business |
+  | 3 Message Templates | Day 1 welcome, Day 3 consultation, Day 7 discount        |
+  | Code Structure      | api/cron/send-whatsapp.js endpoint example               |
+  | Sheet Columns       | Phone, WhatsAppOptIn, WA_Day1/3/7SentAt, WA_Status       |
+  | Environment Vars    | WHATSAPP_ACCESS_TOKEN, PHONE_ID, BUSINESS_ID             |
+  | Compliance          | Opt-in checkbox, STOP handling                           |
+  | Rate Limits         | 250-100K messages/day based on tier                      |
+
+  Quick start steps:
+  1. Create app at https://developers.facebook.com/apps
+  2. Add WhatsApp product to app
+  3. Get test number from Meta dashboard
+  4. Submit message templates for approval (24-48 hrs)
+  5. Implement the cron endpoint
+
+> remove shop-all page add a issue in the issue log in github 
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && gh issue create --title
+      "Remove shop-all page" --body "## Summary
+      Remove the `/shop-all` page from the website.…)
+  ⎿  https://github.com/MeriBagiya/meri-bagiya-website/issues/41
+
+● Created: https://github.com/MeriBagiya/meri-bagiya-website/issues/41
+
+  Issue tracks removal of /shop-all page including route, component, navigation links, and sitemap entry.
+
+> work on issue 41 
+
+● Search(pattern: "shop-all", output_mode: "content")
+  ⎿  Found 14 lines (ctrl+o to expand)
+
+● Read(src\index.js)
+  ⎿  Read 70 lines
+
+● Search(pattern: "shop-all|Shop All", path: "src\layout", output_mode:
+        "content")
+  ⎿  Found 0 lines 
+
+● The route is already not in index.js and no nav links in header/footer. Let me check if the page file exists and update internal links.
+
+● Search(pattern: "src/pages/shop-all*.jsx")
+  ⎿  Found 0 files 
+
+● Search(pattern: "src/pages/*shop*all*.jsx")
+  ⎿  Found 1 file (ctrl+o to expand)
+
+● Found it - the file is shop-shop-all.jsx. Let me update the todo list and proceed with the cleanup.
+
+● Bash(rm "C:\code\MeriBagiya\meri-bagiya-project\src\pages\shop-shop-all.jsx")
+  ⎿  (No content)
+
+● Read(scripts\generate-sitemap.js)
+  ⎿  Read 77 lines
+
+● Update(scripts\generate-sitemap.js)
+  ⎿  Removed 1 line                                                      
+      13      { path: '/about', priority: '0.8', changefreq: 'monthly' },
+      14      { path: '/contact', priority: '0.8', changefreq: 'monthly'
+          },
+      15      { path: '/services', priority: '0.9', changefreq: 'weekly'
+          },
+      16 -    { path: '/shop-all', priority: '0.8', changefreq: 'weekly' 
+         -},                                                             
+      16      { path: '/catalog', priority: '0.8', changefreq: 'weekly' }
+          ,
+      17      { path: '/corporate-gifting', priority: '0.8', changefreq:
+          'monthly' },
+      18 
+
+● Read(src\pages\about.jsx)
+  ⎿  Read 10 lines
+
+● Read(src\pages\shop-product-single.jsx)
+  ⎿  Read 25 lines
+
+● Read(src\pages\shop-catalog.jsx)
+  ⎿  Read 75 lines
+
+● Read(src\pages\shop-cart.jsx)
+  ⎿  Read 8 lines
+
+● Read(src\pages\services\indoor-plants.jsx)
+  ⎿  Read 8 lines
+
+● Now let me update all internal links from /shop-all to /catalog:
+
+● Update(src\pages\about.jsx)
+  ⎿  Added 1 line, removed 1 line                                        
+      78                              <div className="subtitle wow fadeIn
+          Up mb-3">Our Story</div>
+      79                              <h2 className="text-uppercase wow f
+          adeInUp" data-wow-delay=".2s">Crafting <span className="id-colo
+          r-2">Beautiful Gardens</span> Since '99</h2>
+      80                              <p className="wow fadeInUp">Establi
+          shed in 1999, our garden service has been transforming outdoor
+          spaces into thriving, beautiful landscapes for over two decades
+          . With a commitment to quality and personalized care, our exper
+          ienced team offers a full range of services, from design to mai
+          ntenance, ensuring your garden flourishes in every season.</p>
+      81 -                            <Link className="btn-main btn-line 
+         -wow fadeInUp" to="/shop-all" data-wow-delay=".6s">Our Projects<
+         -/Link>                                                         
+      81 +                            <Link className="btn-main btn-line 
+         +wow fadeInUp" to="/catalog" data-wow-delay=".6s">Our Projects</
+         +Link>
+      82                          </div>
+      83 
+      84                          <div className="col-lg-6 col-12">
+
+● Update(src\pages\shop-product-single.jsx)
+  ⎿  Added 1 line, removed 1 line                                        
+      67          jsonLd={jsonLd}
+      68          breadcrumbs={[
+      69            { name: 'Home', url: '/' },
+      70 -          { name: 'Shop', url: '/shop-all' },                  
+      70 +          { name: 'Shop', url: '/catalog' },
+      71            { name: product.Plantname }
+      72          ]}
+      73        />
+
+● Update(src\pages\shop-product-single.jsx)
+  ⎿  Added 1 line, removed 1 line                                        
+      83                          <div className="col-lg-6">
+      84                              <ul className="crumb m-0">
+      85                                  <li><Link to="/">Home</Link></l
+          i>
+      86 -                                <li><Link to="/shop-all">Shop</
+         -Link></li>                                                     
+      86 +                                <li><Link to="/catalog">Shop</L
+         +ink></li>
+      87                                  <li className="active">{product
+          .Plantname}</li>
+      88                              </ul>
+      89                          </div>
+
+● Update(src\pages\shop-catalog.jsx)
+  ⎿  Added 5 lines, removed 5 lines                                      
+      45                                  <div className="col-md-6 col-12
+           text-center text-md-start">
+      46                                      <span>Up to 50% Off</span>
+      47                                      <h3>Natural Plants</h3>
+      48 -                                    <Link to="/shop-all" classN
+         -ame="btn-main bg-color-2">Shop Now</Link>                      
+      48 +                                    <Link to="/catalog" classNa
+         +me="btn-main bg-color-2">Shop Now</Link>
+      49                                  </div>
+      50                              </div>
+      51                          </div>
+     ...
+      60                                  <div className="col-md-6 col-12
+           text-center text-md-start">
+      61                                      <span>Up to 50% Off</span>
+      62                                      <h3>Shop Gifts</h3>
+      63 -                                    <Link to="/shop-all" classN
+         -ame="btn-main bg-color-2">Shop Now</Link>                      
+      63 +                                    <Link to="/catalog" classNa
+         +me="btn-main bg-color-2">Shop Now</Link>
+      64                                  </div>
+      65                              </div>
+      66                          </div>
+     ...
+      75                                  <div className="col-md-6 col-12
+           text-center text-md-start">
+      76                                      <span>Up to 50% Off</span>
+      77                                      <h3>Garden Care</h3>
+      78 -                                    <Link to="/shop-all" classN
+         -ame="btn-main bg-color-2">Shop Now</Link>                      
+      78 +                                    <Link to="/catalog" classNa
+         +me="btn-main bg-color-2">Shop Now</Link>
+      79                                  </div>
+      80                              </div>
+      81                          </div>
+     ...
+      90                                  <div className="col-md-6 col-12
+           text-center text-md-start">
+      91                                      <span>Up to 50% Off</span>
+      92                                      <h3>Garden Accesories</h3>
+      93 -                                    <Link to="/shop-all" classN
+         -ame="btn-main bg-color-2">Shop Now</Link>                      
+      93 +                                    <Link to="/catalog" classNa
+         +me="btn-main bg-color-2">Shop Now</Link>
+      94                                  </div>
+      95                              </div>
+      96                          </div>
+     ...
+      112                              <h2 className="mb-2 text-uppercase
+           " style={{fontSize: 'clamp(1.5rem, 4vw, 2.5rem)'}}>Discover Am
+           azing <span className="id-color-2">variety of plants</span></h
+           2>
+      113                              <p>From vibrant flowering plants t
+           o lush tropical greens, we offer an incredible variety to turn
+            your space into a living paradise.</p>
+      114 
+      115 -                            <Link to="/shop-all" className="bt
+          -n-main mb10 mb-3">Shop Now</Link>                             
+      115 +                            <Link to="/catalog" className="btn
+          +-main mb10 mb-3">Shop Now</Link>
+      116                          </div>
+      117                      </div>
+      118 
+
+● Update(src\pages\shop-cart.jsx)
+  ⎿  Added 1 line, removed 1 line                                        
+      69                    {cartItems.length === 0 ? (
+      70                      <div className="text-center p-4">
+      71                        <p>Your cart is empty</p>
+      72 -                      <Link to="/shop-all" className="btn-main"
+         ->Continue Shopping</Link>                                      
+      72 +                      <Link to="/catalog" className="btn-main">
+         +Continue Shopping</Link>
+      73                      </div>
+      74                    ) : (
+      75                      <>
+
+● Update(src\pages\services\indoor-plants.jsx)
+  ⎿  Added 1 line, removed 1 line                                        
+      251 
+      252                  <div className="row">
+      253                    <div className="col-lg-12 text-center">
+      254 -                    <Link className="btn-main wow fadeInUp me-
+          -3" to="/shop-all">Shop Plants</Link>                          
+      254 +                    <Link className="btn-main wow fadeInUp me-
+          +3" to="/catalog">Shop Plants</Link>
+      255                      <Link className="btn-line wow fadeInUp" to
+           ="/contact">Get Consultation</Link>
+      256                    </div>
+      257                  </div>
+
+● Search(pattern: "shop-all", path: "src")
+  ⎿  Found 0 files 
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && npm run build 2>&1 | tail
+      -20)
+  ⎿  To ignore, add // eslint-disable-next-line to the line before.
+
+     File sizes after gzip:
+     … +16 lines (ctrl+o to expand)
+
+● Build successful. Let me commit and push:
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +12 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git add -A && git commit
+      -m "fix: remove shop-all page and update links to catalog…)
+  ⎿  [master e30ad53] fix: remove shop-all page and update links to catalog
+      7 files changed, 10 insertions(+), 152 deletions(-)
+      delete mode 100644 src/pages/shop-shop-all.jsx
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git push origin master)
+  ⎿  To https://github.com/MeriBagiya/meri-bagiya-website.git
+        9c607d8..e30ad53  master -> master
+
+● Done! Issue #41 complete.
+
+  Summary:
+
+  | Action  | File                                                             |
+  |---------|------------------------------------------------------------------|
+  | Deleted | src/pages/shop-shop-all.jsx                                      |
+  | Updated | scripts/generate-sitemap.js - removed /shop-all                  |
+  | Updated | src/pages/about.jsx - link to /catalog                           |
+  | Updated | src/pages/shop-product-single.jsx - breadcrumbs to /catalog      |
+  | Updated | src/pages/shop-catalog.jsx - 5 "Shop Now" buttons to /catalog    |
+  | Updated | src/pages/shop-cart.jsx - "Continue Shopping" to /catalog        |
+  | Updated | src/pages/services/indoor-plants.jsx - "Shop Plants" to /catalog |
+
+  Pushed to master: e30ad53
+
+> work on item number 40 check the github issue 
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && gh issue view 40)
+  ⎿  title:	Add WhatsApp Business API for automated lead messages 
+     state:	OPEN
+     author:	MeriBagiya
+     … +192 lines (ctrl+o to expand)
+
+● Read(src\pages\shop-contact.jsx)
+  ⎿  Read 478 lines
+
+● Read(api\send-email.js)
+  ⎿  Read 438 lines
+
+● Now I understand the structure. Let me implement the WhatsApp Business API integration:
+
+● Update(src\pages\shop-contact.jsx)
+  ⎿  Added 2 lines, removed 1 line                                       
+      47      name: '',
+      48      email: '',
+      49      phone: '',
+      50 -    message: ''                                                
+      50 +    message: '',
+      51 +    whatsappOptIn: false
+      52    });
+      53 
+      54    const [errors, setErrors] = useState({
+
+● Update(src\pages\shop-contact.jsx)
+  ⎿  Added 4 lines, removed 4 lines                                      
+       91    };
+       92 
+       93    const handleChange = (e) => {
+       94 -    const { name, value } = e.target;                         
+       94 +    const { name, value, type, checked } = e.target;
+       95      setFormData(prev => ({
+       96        ...prev,
+       97 -      [name]: value                                           
+       97 +      [name]: type === 'checkbox' ? checked : value
+       98      }));
+       99 
+      100 -    // Validate on change if field was already touched        
+      101 -    if (touched[name]) {                                      
+      100 +    // Validate on change if field was already touched (skip c
+          +heckbox)
+      101 +    if (touched[name] && type !== 'checkbox') {
+      102        setErrors(prev => ({
+      103          ...prev,
+      104          [name]: validateField(name, value)
+
+● Update(src\pages\shop-contact.jsx)
+  ⎿  Added 1 line, removed 1 line                                        
+      163 
+      164        if (response.ok && data.success) {
+      165          setStatus({ submitting: false, success: true, error: n
+           ull });
+      166 -        setFormData({ name: '', email: '', phone: '', message:
+          - '' });                                                       
+      166 +        setFormData({ name: '', email: '', phone: '', message:
+          + '', whatsappOptIn: false });
+      167          setErrors({ name: '', email: '', phone: '', message: '
+           ' });
+      168          setTouched({ name: false, email: false, phone: false,
+           message: false });
+      169        } else {
+
+● Update(src\pages\shop-contact.jsx)
+  ⎿  Added 18 lines                                                      
+      432                                              </div>
+      433                                          </div>
+      434                                          <div className="col-md
+           -12">
+      435 +                                            <div className="fo
+          +rm-check" style={{display: 'flex', alignItems: 'flex-start', g
+          +ap: '10px'}}>
+      436 +                                                <input
+      437 +                                                    type="chec
+          +kbox"
+      438 +                                                    name="what
+          +sappOptIn"
+      439 +                                                    id="whatsa
+          +ppOptIn"
+      440 +                                                    checked={f
+          +ormData.whatsappOptIn}
+      441 +                                                    onChange={
+          +handleChange}
+      442 +                                                    className=
+          +"form-check-input"
+      443 +                                                    disabled={
+          +status.submitting}
+      444 +                                                    style={{ma
+          +rginTop: '4px', width: '18px', height: '18px', cursor: 'pointe
+          +r'}}
+      445 +                                                />
+      446 +                                                <label htmlFor
+          +="whatsappOptIn" className="form-check-label" style={{cursor:
+          +'pointer', fontSize: '14px', color: '#666'}}>
+      447 +                                                    <i classNa
+          +me="icofont-brand-whatsapp" style={{color: '#25D366', marginRi
+          +ght: '6px'}}></i>
+      448 +                                                    Send me up
+          +dates via WhatsApp (recommended for faster response)
+      449 +                                                </label>
+      450 +                                            </div>
+      451 +                                        </div>
+      452 +                                        <div className="col-md
+          +-12">
+      453                                              <button
+      454                                                  type="submit"
+      455                                                  className="btn
+           -main"
+
+● Update(api\send-email.js)
+  ⎿  Added 1 line, removed 1 line                                        
+      232    }
+      233 
+      234    try {
+      235 -      const { name, email, phone, message, recaptchaToken, sou
+          -rce, company, quantity, budget, occasion } = req.body;        
+      235 +      const { name, email, phone, message, recaptchaToken, sou
+          +rce, company, quantity, budget, occasion, whatsappOptIn } = re
+          +q.body;
+      236        const formSource = source || "contact";
+      237        console.log("Request body received, source:", formSource
+           );
+      238 
+
+● Update(api\send-email.js)
+  ⎿  Added 1 line                                                        
+      421          quantity: quantity || "",
+      422          budget: budget || "",
+      423          occasion: occasion || "",
+      424 +        whatsappOptIn: whatsappOptIn ? "TRUE" : "FALSE",
+      425        });
+      426 
+      427        return res.status(200).json({
+
+● Write(api\cron\send-whatsapp.js)
+  ⎿  Wrote 1 lines to api\cron\send-whatsapp.js                          
+       1 /**
+       2  * WhatsApp Business API - Automated Lead Messages
+       3  *
+       4  * This cron job reads leads from Google Sheets and sends WhatsA
+         pp messages
+       5  * using Meta's Cloud API on Day 1, 3, and 7 after submission.
+       6  *
+       7  * Prerequisites:
+       8  * 1. Meta Developer App with WhatsApp product enabled
+       9  * 2. WhatsApp Business Account linked
+      10  * 3. Approved message templates
+
+● Read(.env.example)
+  ⎿  Read 55 lines
+
+● Update(.env.example)
+  ⎿  Added 16 lines                                                      
+      47  CRON_SECRET=your_cron_secret_here
+      48 
+      49  # ===========================================
+      50 +# WhatsApp Business API (Meta Cloud API)
+      51 +# ===========================================
+      52 +# Setup Guide: https://developers.facebook.com/docs/whatsapp/cl
+         +oud-api/get-started
+      53 +
+      54 +# Access Token from Meta Developer Dashboard
+      55 +# Get from: https://developers.facebook.com/apps/{app-id}/whats
+         +app-business/wa-dev-console
+      56 +WHATSAPP_ACCESS_TOKEN=your_whatsapp_access_token_here
+      57 +
+      58 +# Phone Number ID (not the phone number itself)
+      59 +# Get from: WhatsApp > API Setup in Meta Developer Dashboard
+      60 +WHATSAPP_PHONE_ID=your_phone_number_id_here
+      61 +
+      62 +# Business Account ID (optional, for analytics)
+      63 +WHATSAPP_BUSINESS_ID=your_business_account_id_here
+      64 +
+      65 +# ===========================================
+      66  # Vercel Environment
+      67  # ===========================================
+      68  # These are set automatically by Vercel, but you can override f
+          or testing
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && npm run build 2>&1 | tail
+      -25)
+  ⎿ src\pages\about.jsx                                                    
+      Line 89:45:   Redundant alt attribute. Screen-readers already announc
+    e `img` tags as an image. You don’t need to use the words `image`, `pho
+    … +27 lines (ctrl+o to expand)
+
+
+
+● Build successful. Let me commit and push:
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +12 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git add -A && git commit
+      -m "feat: add WhatsApp Business API integration for automated lead
+      messages…)
+  ⎿ [master a43e8af] feat: add WhatsApp Business API integration for automa
+    ted lead messages
+     4 files changed, 351 insertions(+), 7 deletions(-)
+    … +5 lines (ctrl+o to expand)
+
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git push origin master)
+  ⎿  To https://github.com/MeriBagiya/meri-bagiya-website.git
+        e30ad53..a43e8af  master -> master
+
+● Done! Issue #40 complete. Pushed to master: a43e8af
+
+  Changes implemented:
+
+  | File                       | Change                                   |
+  |----------------------------|------------------------------------------|
+  | src/pages/shop-contact.jsx | Added WhatsApp opt-in checkbox with icon |
+  | api/send-email.js          | Pass whatsappOptIn to Google Sheets      |
+  | api/cron/send-whatsapp.js  | New cron endpoint for WhatsApp messages  |
+  | .env.example               | Added WhatsApp API variables             |
+
+  Next steps to activate:
+
+  1. Create Meta Developer App
+    - https://developers.facebook.com/apps
+    - Add WhatsApp product
+  2. Submit message templates for approval (24-48 hrs):
+    - welcome_message - Day 1
+    - followup_consultation - Day 3
+    - discount_offer - Day 7
+  3. Add columns to Google Sheet:
+    - Column K: WhatsAppOptIn
+    - Column M: WA_Day1SentAt
+    - Column N: WA_Day3SentAt
+    - Column O: WA_Day7SentAt
+    - Column P: WA_Status
+  4. Add Vercel environment variables:
+    - WHATSAPP_ACCESS_TOKEN
+    - WHATSAPP_PHONE_ID
+  5. Setup cron-job.org (run after email cron):
+    - URL: https://meri-bagiya-project.vercel.app/api/cron/send-whatsapp
+    - Header: Authorization: Bearer {CRON_SECRET}
+
+> as we aready added some of the new columns in google sheet do we need to 
+add the column for sepecific localtion as youi mentioned in step 3 
+
+● Yes, the columns need to be in specific positions because the code uses column indices. Let me check what columns your sheet currently has.
+
+  The code expects this structure:
+
+  | Column | Letter | Field               |
+  |--------|--------|---------------------|
+  | A      | 0      | Timestamp           |
+  | B      | 1      | Name                |
+  | C      | 2      | Email               |
+  | D      | 3      | Phone               |
+  | E      | 4      | Message             |
+  | F      | 5      | Source              |
+  | G      | 6      | Company             |
+  | H      | 7      | Quantity            |
+  | I      | 8      | Budget              |
+  | J      | 9      | Occasion            |
+  | K      | 10     | WhatsAppOptIn       |
+  | L      | 11     | Status (email drip) |
+  | M      | 12     | WA_Day1SentAt       |
+  | N      | 13     | WA_Day3SentAt       |
+  | O      | 14     | WA_Day7SentAt       |
+  | P      | 15     | WA_Status           |
+
+  Two options:
+
+  1. Match this structure - Add WhatsApp columns in exact positions (K, M, N, O, P)
+  2. Tell me your current columns - I can update the code to match your existing sheet structure
+
+  What columns does your Google Sheet currently have? I can adjust the code to fit your layout.
+
+> if you check other corn job like send email we ar send email. I have two 
+options I would like to sending email using corn job as already exist also 
+would like to send message in the whatapp message both options 
+
+● Let me check the existing email cron job to align the WhatsApp cron with the same column structure.
+
+● Read(api\cron\send-followups.js)
+  ⎿  Read 292 lines
+
+● I see! The email cron uses columns A-N. I need to update the WhatsApp cron to add columns AFTER those. Let me fix this:
+
+● Write(api\cron\send-whatsapp.js)
+  ⎿  Added 52 lines, removed 37 lines                                    
+      17   * - GOOGLE_SHEET_ID: Google Sheet ID containing leads
+      18   * - CRON_SECRET: Secret for authenticating cron requests
+      19   *
+      20 - * Google Sheet Columns Expected:                              
+      20 + * Google Sheet Column Structure (must match email cron + Whats
+         +App columns):
+      21   * A: Timestamp, B: Name, C: Email, D: Phone, E: Message, F: So
+          urce,
+      22 - * G: Company, H: Quantity, I: Budget, J: Occasion, K: WhatsApp
+         -OptIn,                                                         
+      23 - * L: Status, M: WA_Day1SentAt, N: WA_Day3SentAt, O: WA_Day7Sen
+         -tAt, P: WA_Status                                              
+      22 + * G: Company, H: Quantity, I: Budget, J: Occasion,
+      23 + * K: Status (email), L: Day1SentAt (email), M: Day3SentAt (ema
+         +il), N: Day7SentAt (email),
+      24 + * O: WhatsAppOptIn, P: WA_Day1SentAt, Q: WA_Day3SentAt, R: WA_
+         +Day7SentAt, S: WA_Status
+      25   */
+      26 
+      27  const { getLeads, updateCell } = require('../lib/sheets');
+     ...
+      30  const WHATSAPP_API_VERSION = 'v18.0';
+      31  const WHATSAPP_API_BASE = `https://graph.facebook.com/${WHATSAP
+          P_API_VERSION}`;
+      32 
+      32 -// Column indices (0-based) for Google Sheet                   
+      33 +// ===========================================
+      34 +// Column indices (0-based) - Aligned with email cron
+      35 +// ===========================================
+      36  const COLUMNS = {
+      34 -  TIMESTAMP: 0,      // A                                      
+      35 -  NAME: 1,           // B                                      
+      36 -  EMAIL: 2,          // C                                      
+      37 -  PHONE: 3,          // D                                      
+      38 -  MESSAGE: 4,        // E                                      
+      39 -  SOURCE: 5,         // F                                      
+      40 -  WHATSAPP_OPTIN: 10, // K - WhatsAppOptIn                     
+      41 -  WA_DAY1_SENT: 12,  // M                                      
+      42 -  WA_DAY3_SENT: 13,  // N                                      
+      43 -  WA_DAY7_SENT: 14,  // O                                      
+      44 -  WA_STATUS: 15,     // P                                      
+      37 +  // Existing columns (same as email cron)
+      38 +  timestamp: 0,      // A
+      39 +  name: 1,           // B
+      40 +  email: 2,          // C
+      41 +  phone: 3,          // D
+      42 +  message: 4,        // E
+      43 +  source: 5,         // F
+      44 +  company: 6,        // G
+      45 +  quantity: 7,       // H
+      46 +  budget: 8,         // I
+      47 +  occasion: 9,       // J
+      48 +  status: 10,        // K - Email status
+      49 +  day1_sent_at: 11,  // L - Email Day 1
+      50 +  day3_sent_at: 12,  // M - Email Day 3
+      51 +  day7_sent_at: 13,  // N - Email Day 7
+      52 +  // WhatsApp columns (new)
+      53 +  whatsapp_optin: 14,    // O - WhatsAppOptIn
+      54 +  wa_day1_sent_at: 15,   // P - WA_Day1SentAt
+      55 +  wa_day3_sent_at: 16,   // Q - WA_Day3SentAt
+      56 +  wa_day7_sent_at: 17,   // R - WA_Day7SentAt
+      57 +  wa_status: 18,         // S - WA_Status
+      58  };
+      59 
+      60  /**
+     ...
+      169   * Process a single lead for WhatsApp messaging
+      170   */
+      171  async function processLead(row, rowIndex, spreadsheetId) {
+      159 -  const name = row[COLUMNS.NAME] || 'Customer';               
+      160 -  const phone = row[COLUMNS.PHONE];                           
+      161 -  const message = row[COLUMNS.MESSAGE] || 'your inquiry';     
+      162 -  const whatsappOptIn = (row[COLUMNS.WHATSAPP_OPTIN] || '').to
+          -UpperCase() === 'TRUE';                                       
+      163 -  const timestamp = row[COLUMNS.TIMESTAMP];                   
+      164 -  const waDay1Sent = row[COLUMNS.WA_DAY1_SENT];               
+      165 -  const waDay3Sent = row[COLUMNS.WA_DAY3_SENT];               
+      166 -  const waDay7Sent = row[COLUMNS.WA_DAY7_SENT];               
+      167 -  const waStatus = (row[COLUMNS.WA_STATUS] || '').toLowerCase(
+          -);                                                            
+      172 +  const name = row[COLUMNS.name] || 'Customer';
+      173 +  const phone = row[COLUMNS.phone];
+      174 +  const message = row[COLUMNS.message] || 'your inquiry';
+      175 +  const whatsappOptIn = (row[COLUMNS.whatsapp_optin] || '').to
+          +UpperCase() === 'TRUE';
+      176 +  const timestamp = row[COLUMNS.timestamp];
+      177 +  const waDay1Sent = row[COLUMNS.wa_day1_sent_at];
+      178 +  const waDay3Sent = row[COLUMNS.wa_day3_sent_at];
+      179 +  const waDay7Sent = row[COLUMNS.wa_day7_sent_at];
+      180 +  const waStatus = (row[COLUMNS.wa_status] || '').toLowerCase(
+          +);
+      181 
+      182    // Skip if not opted in or opted out
+      170 -  if (!whatsappOptIn || waStatus === 'opted_out') {           
+      171 -    return { skipped: true, reason: 'Not opted in or opted out
+          -' };                                                          
+      183 +  if (!whatsappOptIn || waStatus === 'opted_out' || waStatus =
+          +== 'completed') {
+      184 +    return { skipped: true, reason: 'Not opted in, opted out, 
+          +or completed' };
+      185    }
+      186 
+      187    // Format phone number
+     ...
+      199    try {
+      200      // Day 1: Welcome message (send on day 0-1)
+      201      if (!waDay1Sent && daysSinceSubmission >= 0 && daysSinceSu
+           bmission <= 1) {
+      189 -      // Extract first word of message as topic               
+      202 +      // Extract first words of message as topic
+      203        const topic = message.split(' ').slice(0, 3).join(' ') +
+            '...';
+      204        await sendWhatsAppMessage(formattedPhone, TEMPLATES.day1
+           .name, [name, topic]);
+      192 -      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA
+          -_DAY1_SENT + 1, now);                                         
+      205 +      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa
+          +_day1_sent_at + 1, now);
+      206 +      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa
+          +_status + 1, 'day1_sent');
+      207        sent = true;
+      208        templateUsed = 'day1';
+      209      }
+      210      // Day 3: Follow-up consultation
+      211      else if (!waDay3Sent && waDay1Sent && daysSinceSubmission
+           >= 3 && daysSinceSubmission <= 4) {
+      212        await sendWhatsAppMessage(formattedPhone, TEMPLATES.day3
+           .name, [name]);
+      199 -      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA
+          -_DAY3_SENT + 1, now);                                         
+      213 +      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa
+          +_day3_sent_at + 1, now);
+      214 +      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa
+          +_status + 1, 'day3_sent');
+      215        sent = true;
+      216        templateUsed = 'day3';
+      217      }
+      218      // Day 7: Discount offer
+      219      else if (!waDay7Sent && waDay3Sent && daysSinceSubmission
+           >= 7 && daysSinceSubmission <= 8) {
+      220        await sendWhatsAppMessage(formattedPhone, TEMPLATES.day7
+           .name, [name]);
+      206 -      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA
+          -_DAY7_SENT + 1, now);                                         
+      207 -      // Mark as completed after day 7                        
+      208 -      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA
+          -_STATUS + 1, 'completed');                                    
+      221 +      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa
+          +_day7_sent_at + 1, now);
+      222 +      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa
+          +_status + 1, 'completed');
+      223        sent = true;
+      224        templateUsed = 'day7';
+      225      }
+     ...
+      232    } catch (error) {
+      233      console.error(`Error sending WhatsApp to ${formattedPhone}
+           :`, error.message);
+      234      // Update status to failed
+      221 -    await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA_S
+          -TATUS + 1, 'failed');                                         
+      235 +    await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_s
+          +tatus + 1, 'failed');
+      236      return { error: error.message };
+      237    }
+      238  }
+     ...
+      243  module.exports = async (req, res) => {
+      244    console.log('WhatsApp cron job started');
+      245 
+      232 -  // Only allow POST requests                                 
+      233 -  if (req.method !== 'POST') {                                
+      246 +  // Only allow GET and POST requests
+      247 +  if (req.method !== 'GET' && req.method !== 'POST') {
+      248      return res.status(405).json({ error: 'Method not allowed'
+           });
+      249    }
+      250 
+     ...
+      275    }
+      276 
+      277    try {
+      264 -    // Get all leads from sheet                               
+      265 -    const leads = await getLeads(spreadsheetId, 'Sheet1!A:P');
+      278 +    // Get all leads from sheet (columns A to S)
+      279 +    const leads = await getLeads(spreadsheetId, 'Sheet1!A:S');
+      280 
+      281      if (!leads || leads.length <= 1) {
+      282        console.log('No leads to process');
+     ...
+      312      return res.status(200).json({
+      313        success: true,
+      314        message: 'WhatsApp messages processed',
+      315 +      timestamp: new Date().toISOString(),
+      316        stats: { processed, sent, errors }
+      317      });
+      318 
+
+● Now let me test the build and commit:
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && npm run build 2>&1 | tail
+      -15)
+  ⎿    487 B      build\static\css\main.ed3c22b7.css  
+
+     The project was built assuming it is hosted at /.
+     … +11 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git add -A && git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +5 lines (ctrl+o to expand)
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git commit -m "fix: align
+      WhatsApp cron columns with email cron structure…)
+  ⎿ [master 31318da] fix: align WhatsApp cron columns with email cron struc
+    ture
+     1 file changed, 52 insertions(+), 37 deletions(-)
+
+
+● Bash(cd "C:\code\MeriBagiya\meri-bagiya-project" && git push origin master)
+  ⎿  To https://github.com/MeriBagiya/meri-bagiya-website.git
+        a43e8af..31318da  master -> master
+
+● Done! Both cron jobs now work together. Here's the complete Google Sheet structure:
+
+  Google Sheet Columns (A-S):
+
+  | Col | Letter | Field         | Used By       |
+  |-----|--------|---------------|---------------|
+  | 0   | A      | Timestamp     | Both          |
+  | 1   | B      | Name          | Both          |
+  | 2   | C      | Email         | Both          |
+  | 3   | D      | Phone         | Both          |
+  | 4   | E      | Message       | Both          |
+  | 5   | F      | Source        | Both          |
+  | 6   | G      | Company       | Both          |
+  | 7   | H      | Quantity      | Both          |
+  | 8   | I      | Budget        | Both          |
+  | 9   | J      | Occasion      | Both          |
+  | 10  | K      | Status        | Email cron    |
+  | 11  | L      | Day1SentAt    | Email cron    |
+  | 12  | M      | Day3SentAt    | Email cron    |
+  | 13  | N      | Day7SentAt    | Email cron    |
+  | 14  | O      | WhatsAppOptIn | WhatsApp cron |
+  | 15  | P      | WA_Day1SentAt | WhatsApp cron |
+  | 16  | Q      | WA_Day3SentAt | WhatsApp cron |
+  | 17  | R      | WA_Day7SentAt | WhatsApp cron |
+  | 18  | S      | WA_Status     | WhatsApp cron |
+
+  Two Cron Jobs:
+
+  | Cron     | Endpoint                 | Purpose                       |
+  |----------|--------------------------|-------------------------------|
+  | Email    | /api/cron/send-followups | Day 1, 3, 7 drip emails       |
+  | WhatsApp | /api/cron/send-whatsapp  | Day 1, 3, 7 WhatsApp messages |
+
+  Setup on cron-job.org:
+  1. Email cron: 9:00 AM IST daily
+  2. WhatsApp cron: 9:05 AM IST daily (5 min after email)
+
+  Both use same Authorization: Bearer {CRON_SECRET} header.
+
+> good tell me the environment variable and corn job url that need to update
+ 
+
+● Environment Variables (Add to Vercel Dashboard):
+
+  | Variable               | Value                          | Purpose                 |
+  |------------------------|--------------------------------|-------------------------|
+  | GOOGLE_SERVICE_ACCOUNT | {"type":"service_account",...} | Google Sheets API auth  |
+  | GOOGLE_SHEET_ID        | From sheet URL                 | Sheet containing leads  |
+  | CRON_SECRET            | Random 64-char hex string      | Auth for cron endpoints |
+  | WHATSAPP_ACCESS_TOKEN  | From Meta Developer            | WhatsApp API auth       |
+  | WHATSAPP_PHONE_ID      | From Meta Developer            | WhatsApp phone ID       |
+
+  Generate CRON_SECRET:
+  node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+  ---
+  Cron Job URLs (Setup on cron-job.org):
+
+  | Cron     | URL                                                            | Schedule                        |
+  |----------|----------------------------------------------------------------|---------------------------------|
+  | Email    | https://meri-bagiya-project.vercel.app/api/cron/send-followups | Daily 9:00 AM IST (3:30 AM UTC) |
+  | WhatsApp | https://meri-bagiya-project.vercel.app/api/cron/send-whatsapp  | Daily 9:05 AM IST (3:35 AM UTC) |
+
+  Cron-job.org Settings for both:
+  - Method: POST
+  - Header: Authorization: Bearer YOUR_CRON_SECRET_HERE
+
+  ---
+  Google Sheet Headers (Row 1):
+  Timestamp | Name | Email | Phone | Message | Source | Company | Quantity | Budget | Occasion | Status | Day1SentAt | Day3SentAt | Day7SentAt | WhatsAppOptIn | WA_Day1SentAt | WA_Day3SentAt | WA_Day7SentAt | WA_Status
+  (Columns A through S)
+
+> what is whatapp phone id also access token how I get it 
+  ⎿  You've hit your limit · resets 7:30pm (Asia/Calcutta)
+     /upgrade or /extra-usage to finish what you're working on.
+
+
+

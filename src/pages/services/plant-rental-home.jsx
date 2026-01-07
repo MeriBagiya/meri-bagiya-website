@@ -12,7 +12,7 @@ function PlantRentalHome() {
       "@type": "LocalBusiness",
       "name": "Meri Bagiya",
       "url": "https://meribagiya.com",
-      "telephone": "+91-9876543210",
+      "telephone": "+91-9220404309",
       "email": "contact@meribagiya.com",
       "address": {
         "@type": "PostalAddress",

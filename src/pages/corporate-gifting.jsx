@@ -513,7 +513,7 @@ function CorporateGifting() {
                           type="tel"
                           name="phone"
                           className={`form-control form-control-lg ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
-                          placeholder="+91 9876543210"
+                          placeholder="+91 9220404309"
                           value={formData.phone}
                           onChange={handleChange}
                           onBlur={handleBlur}
