@@ -17,10 +17,11 @@
  * - GOOGLE_SHEET_ID: Google Sheet ID containing leads
  * - CRON_SECRET: Secret for authenticating cron requests
  *
- * Google Sheet Columns Expected:
+ * Google Sheet Column Structure (must match email cron + WhatsApp columns):
  * A: Timestamp, B: Name, C: Email, D: Phone, E: Message, F: Source,
- * G: Company, H: Quantity, I: Budget, J: Occasion, K: WhatsAppOptIn,
- * L: Status, M: WA_Day1SentAt, N: WA_Day3SentAt, O: WA_Day7SentAt, P: WA_Status
+ * G: Company, H: Quantity, I: Budget, J: Occasion,
+ * K: Status (email), L: Day1SentAt (email), M: Day3SentAt (email), N: Day7SentAt (email),
+ * O: WhatsAppOptIn, P: WA_Day1SentAt, Q: WA_Day3SentAt, R: WA_Day7SentAt, S: WA_Status
  */
 
 const { getLeads, updateCell } = require('../lib/sheets');
@@ -29,19 +30,31 @@ const { getLeads, updateCell } = require('../lib/sheets');
 const WHATSAPP_API_VERSION = 'v18.0';
 const WHATSAPP_API_BASE = `https://graph.facebook.com/${WHATSAPP_API_VERSION}`;
 
-// Column indices (0-based) for Google Sheet
+// ===========================================
+// Column indices (0-based) - Aligned with email cron
+// ===========================================
 const COLUMNS = {
-  TIMESTAMP: 0,      // A
-  NAME: 1,           // B
-  EMAIL: 2,          // C
-  PHONE: 3,          // D
-  MESSAGE: 4,        // E
-  SOURCE: 5,         // F
-  WHATSAPP_OPTIN: 10, // K - WhatsAppOptIn
-  WA_DAY1_SENT: 12,  // M
-  WA_DAY3_SENT: 13,  // N
-  WA_DAY7_SENT: 14,  // O
-  WA_STATUS: 15,     // P
+  // Existing columns (same as email cron)
+  timestamp: 0,      // A
+  name: 1,           // B
+  email: 2,          // C
+  phone: 3,          // D
+  message: 4,        // E
+  source: 5,         // F
+  company: 6,        // G
+  quantity: 7,       // H
+  budget: 8,         // I
+  occasion: 9,       // J
+  status: 10,        // K - Email status
+  day1_sent_at: 11,  // L - Email Day 1
+  day3_sent_at: 12,  // M - Email Day 3
+  day7_sent_at: 13,  // N - Email Day 7
+  // WhatsApp columns (new)
+  whatsapp_optin: 14,    // O - WhatsAppOptIn
+  wa_day1_sent_at: 15,   // P - WA_Day1SentAt
+  wa_day3_sent_at: 16,   // Q - WA_Day3SentAt
+  wa_day7_sent_at: 17,   // R - WA_Day7SentAt
+  wa_status: 18,         // S - WA_Status
 };
 
 /**
@@ -156,19 +169,19 @@ function getDaysSinceSubmission(timestamp) {
  * Process a single lead for WhatsApp messaging
  */
 async function processLead(row, rowIndex, spreadsheetId) {
-  const name = row[COLUMNS.NAME] || 'Customer';
-  const phone = row[COLUMNS.PHONE];
-  const message = row[COLUMNS.MESSAGE] || 'your inquiry';
-  const whatsappOptIn = (row[COLUMNS.WHATSAPP_OPTIN] || '').toUpperCase() === 'TRUE';
-  const timestamp = row[COLUMNS.TIMESTAMP];
-  const waDay1Sent = row[COLUMNS.WA_DAY1_SENT];
-  const waDay3Sent = row[COLUMNS.WA_DAY3_SENT];
-  const waDay7Sent = row[COLUMNS.WA_DAY7_SENT];
-  const waStatus = (row[COLUMNS.WA_STATUS] || '').toLowerCase();
+  const name = row[COLUMNS.name] || 'Customer';
+  const phone = row[COLUMNS.phone];
+  const message = row[COLUMNS.message] || 'your inquiry';
+  const whatsappOptIn = (row[COLUMNS.whatsapp_optin] || '').toUpperCase() === 'TRUE';
+  const timestamp = row[COLUMNS.timestamp];
+  const waDay1Sent = row[COLUMNS.wa_day1_sent_at];
+  const waDay3Sent = row[COLUMNS.wa_day3_sent_at];
+  const waDay7Sent = row[COLUMNS.wa_day7_sent_at];
+  const waStatus = (row[COLUMNS.wa_status] || '').toLowerCase();
 
   // Skip if not opted in or opted out
-  if (!whatsappOptIn || waStatus === 'opted_out') {
-    return { skipped: true, reason: 'Not opted in or opted out' };
+  if (!whatsappOptIn || waStatus === 'opted_out' || waStatus === 'completed') {
+    return { skipped: true, reason: 'Not opted in, opted out, or completed' };
   }
 
   // Format phone number
@@ -186,26 +199,27 @@ async function processLead(row, rowIndex, spreadsheetId) {
   try {
     // Day 1: Welcome message (send on day 0-1)
     if (!waDay1Sent && daysSinceSubmission >= 0 && daysSinceSubmission <= 1) {
-      // Extract first word of message as topic
+      // Extract first words of message as topic
       const topic = message.split(' ').slice(0, 3).join(' ') + '...';
       await sendWhatsAppMessage(formattedPhone, TEMPLATES.day1.name, [name, topic]);
-      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA_DAY1_SENT + 1, now);
+      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_day1_sent_at + 1, now);
+      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_status + 1, 'day1_sent');
       sent = true;
       templateUsed = 'day1';
     }
     // Day 3: Follow-up consultation
     else if (!waDay3Sent && waDay1Sent && daysSinceSubmission >= 3 && daysSinceSubmission <= 4) {
       await sendWhatsAppMessage(formattedPhone, TEMPLATES.day3.name, [name]);
-      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA_DAY3_SENT + 1, now);
+      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_day3_sent_at + 1, now);
+      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_status + 1, 'day3_sent');
       sent = true;
       templateUsed = 'day3';
     }
     // Day 7: Discount offer
     else if (!waDay7Sent && waDay3Sent && daysSinceSubmission >= 7 && daysSinceSubmission <= 8) {
       await sendWhatsAppMessage(formattedPhone, TEMPLATES.day7.name, [name]);
-      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA_DAY7_SENT + 1, now);
-      // Mark as completed after day 7
-      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA_STATUS + 1, 'completed');
+      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_day7_sent_at + 1, now);
+      await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_status + 1, 'completed');
       sent = true;
       templateUsed = 'day7';
     }
@@ -218,7 +232,7 @@ async function processLead(row, rowIndex, spreadsheetId) {
   } catch (error) {
     console.error(`Error sending WhatsApp to ${formattedPhone}:`, error.message);
     // Update status to failed
-    await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.WA_STATUS + 1, 'failed');
+    await updateCell(spreadsheetId, rowIndex + 2, COLUMNS.wa_status + 1, 'failed');
     return { error: error.message };
   }
 }
@@ -229,8 +243,8 @@ async function processLead(row, rowIndex, spreadsheetId) {
 module.exports = async (req, res) => {
   console.log('WhatsApp cron job started');
 
-  // Only allow POST requests
-  if (req.method !== 'POST') {
+  // Only allow GET and POST requests
+  if (req.method !== 'GET' && req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -261,8 +275,8 @@ module.exports = async (req, res) => {
   }
 
   try {
-    // Get all leads from sheet
-    const leads = await getLeads(spreadsheetId, 'Sheet1!A:P');
+    // Get all leads from sheet (columns A to S)
+    const leads = await getLeads(spreadsheetId, 'Sheet1!A:S');
 
     if (!leads || leads.length <= 1) {
       console.log('No leads to process');
@@ -298,6 +312,7 @@ module.exports = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: 'WhatsApp messages processed',
+      timestamp: new Date().toISOString(),
       stats: { processed, sent, errors }
     });
 
