@@ -350,8 +350,8 @@ function Shophomepage() {
                     </div>
 
                     {/* <!-- If we need navigation buttons --> */}
-                    <div className="swiper-button-prev no-bg text-dark"></div>
-                    <div className="swiper-button-next no-bg text-dark"></div>
+                    <div className="swiper-button-prev no-bg text-white"></div>
+                    <div className="swiper-button-next no-bg text-white"></div>
 
                 </div>
             </div>
