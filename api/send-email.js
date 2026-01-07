@@ -232,7 +232,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-      const { name, email, phone, message, recaptchaToken, source, company, quantity, budget, occasion } = req.body;
+      const { name, email, phone, message, recaptchaToken, source, company, quantity, budget, occasion, whatsappOptIn } = req.body;
       const formSource = source || "contact";
       console.log("Request body received, source:", formSource);
 
@@ -421,6 +421,7 @@ This email was sent from the Meri Bagiya website ${isCorporate ? 'corporate gift
         quantity: quantity || "",
         budget: budget || "",
         occasion: occasion || "",
+        whatsappOptIn: whatsappOptIn ? "TRUE" : "FALSE",
       });
 
       return res.status(200).json({

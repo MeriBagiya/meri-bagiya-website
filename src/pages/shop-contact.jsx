@@ -47,7 +47,8 @@ function Contact() {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    whatsappOptIn: false
   });
 
   const [errors, setErrors] = useState({
@@ -90,14 +91,14 @@ function Contact() {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
 
-    // Validate on change if field was already touched
-    if (touched[name]) {
+    // Validate on change if field was already touched (skip checkbox)
+    if (touched[name] && type !== 'checkbox') {
       setErrors(prev => ({
         ...prev,
         [name]: validateField(name, value)
@@ -162,7 +163,7 @@ function Contact() {
 
       if (response.ok && data.success) {
         setStatus({ submitting: false, success: true, error: null });
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', whatsappOptIn: false });
         setErrors({ name: '', email: '', phone: '', message: '' });
         setTouched({ name: false, email: false, phone: false, message: false });
       } else {
@@ -428,6 +429,24 @@ function Contact() {
                                                 {touched.message && errors.message && (
                                                     <div className="invalid-feedback" style={{display: 'block'}}>{errors.message}</div>
                                                 )}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-12">
+                                            <div className="form-check" style={{display: 'flex', alignItems: 'flex-start', gap: '10px'}}>
+                                                <input
+                                                    type="checkbox"
+                                                    name="whatsappOptIn"
+                                                    id="whatsappOptIn"
+                                                    checked={formData.whatsappOptIn}
+                                                    onChange={handleChange}
+                                                    className="form-check-input"
+                                                    disabled={status.submitting}
+                                                    style={{marginTop: '4px', width: '18px', height: '18px', cursor: 'pointer'}}
+                                                />
+                                                <label htmlFor="whatsappOptIn" className="form-check-label" style={{cursor: 'pointer', fontSize: '14px', color: '#666'}}>
+                                                    <i className="icofont-brand-whatsapp" style={{color: '#25D366', marginRight: '6px'}}></i>
+                                                    Send me updates via WhatsApp (recommended for faster response)
+                                                </label>
                                             </div>
                                         </div>
                                         <div className="col-md-12">
