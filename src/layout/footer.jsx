@@ -79,7 +79,7 @@ function Footer() {
              <div className="col-md-12">
                  <div className="de-flex" style={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', textAlign: 'center'}}>
                      <div className="de-flex-col" style={{width: '100%', marginBottom: '10px'}}>
-                         Copyright 2024 - Meri Bagiya By AGreenForest
+                         Copyright {new Date().getFullYear()} - Meri Bagiya By AGreenForest
                      </div>
                      <ul className="menu-simple" style={{justifyContent: 'center', flexWrap: 'wrap'}}>
                          <li><Link to="/terms">Terms &amp; Conditions</Link></li>
