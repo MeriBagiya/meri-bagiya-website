@@ -191,9 +191,9 @@ function IndoorPlants() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp">
                     <div className="bg-color text-light p-4 rounded-1 h-100 text-center">
-                      <i className="icofont-cart fs-48 mb-3"></i>
-                      <h4>Buy Plants</h4>
-                      <p className="mb-0">Wide variety of healthy indoor plants with beautiful pots and planters to choose from.</p>
+                      <i className="icofont-plant fs-48 mb-3"></i>
+                      <h4>Get Plants</h4>
+                      <p className="mb-0">Wide variety of healthy indoor plants with beautiful pots and planters. Contact us for availability.</p>
                     </div>
                   </div>
 
@@ -270,7 +270,7 @@ function IndoorPlants() {
 
                 <div className="row">
                   <div className="col-lg-12 text-center">
-                    <Link className="btn-main wow fadeInUp me-3" to="/catalog">Shop Plants</Link>
+                    <Link className="btn-main wow fadeInUp me-3" to="/contact">Enquire Now</Link>
                     <Link className="btn-line wow fadeInUp" to="/contact">Get Consultation</Link>
                   </div>
                 </div>
