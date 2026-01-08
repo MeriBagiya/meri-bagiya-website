@@ -2,6 +2,9 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
 import toast from 'react-hot-toast';
+import { useFormValidation } from '../hooks/useFormValidation';
+import { validators } from '../constants/validation';
+import { FormInput } from '../components/form';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -9,79 +12,34 @@ const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-proje
 // reCAPTCHA site key from environment
 const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 
-// Validation functions
-const validators = {
-  name: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Name is required';
-    if (trimmed.length < 2) return 'Name must be at least 2 characters';
-    return '';
-  },
-  email: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Email is required';
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(trimmed)) return 'Please enter a valid email';
-    return '';
-  },
-  phone: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Phone is required';
-    const digitsOnly = trimmed.replace(/[\s\-()]/g, '');
-    if (!/^\+?\d{10,13}$/.test(digitsOnly)) return 'Please enter a valid phone number';
-    return '';
-  }
+const initialValues = {
+  name: '',
+  email: '',
+  phone: ''
+};
+
+const validationRules = {
+  name: validators.name,
+  email: validators.email,
+  phone: validators.phone
 };
 
 function InstagramLanding() {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: ''
-  });
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    validateAll
+  } = useFormValidation(initialValues, validationRules);
 
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
   const [status, setStatus] = useState({
     submitting: false,
     error: null
   });
-
-  const validateField = (name, value) => {
-    return validators[name] ? validators[name](value) : '';
-  };
-
-  const validateAllFields = () => {
-    const newErrors = {};
-    let isValid = true;
-
-    Object.keys(formData).forEach(field => {
-      const error = validateField(field, formData[field]);
-      newErrors[field] = error;
-      if (error) isValid = false;
-    });
-
-    setErrors(newErrors);
-    setTouched({ name: true, email: true, phone: true });
-    return isValid;
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-
-    if (touched[name]) {
-      setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
-    }
-  };
-
-  const handleBlur = (e) => {
-    const { name, value } = e.target;
-    setTouched(prev => ({ ...prev, [name]: true }));
-    setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
-  };
 
   const executeRecaptcha = useCallback(() => {
     return new Promise((resolve, reject) => {
@@ -101,7 +59,7 @@ function InstagramLanding() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateAllFields()) return;
+    if (!validateAll()) return;
 
     setStatus({ submitting: true, error: null });
 
@@ -112,7 +70,7 @@ function InstagramLanding() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...formData,
+          ...values,
           source: 'instagram-landing',
           message: 'Lead from Instagram landing page - interested in corporate gifting',
           recaptchaToken
@@ -188,48 +146,47 @@ function InstagramLanding() {
                     )}
 
                     <div className="mb-3">
-                      <input
-                        type="text"
+                      <FormInput
                         name="name"
-                        className={`form-control form-control-lg ${touched.name && errors.name ? 'is-invalid' : ''}`}
-                        placeholder="Your Name"
-                        value={formData.name}
+                        value={values.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        placeholder="Your Name"
+                        error={errors.name}
+                        touched={touched.name}
                         disabled={status.submitting}
                         style={{ fontSize: '16px', padding: '14px 16px' }}
                       />
-                      {touched.name && errors.name && <div className="invalid-feedback">{errors.name}</div>}
                     </div>
 
                     <div className="mb-3">
-                      <input
+                      <FormInput
                         type="tel"
                         name="phone"
-                        className={`form-control form-control-lg ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
-                        placeholder="Phone Number"
-                        value={formData.phone}
+                        value={values.phone}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        placeholder="Phone Number"
+                        error={errors.phone}
+                        touched={touched.phone}
                         disabled={status.submitting}
                         style={{ fontSize: '16px', padding: '14px 16px' }}
                       />
-                      {touched.phone && errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
                     </div>
 
                     <div className="mb-4">
-                      <input
+                      <FormInput
                         type="email"
                         name="email"
-                        className={`form-control form-control-lg ${touched.email && errors.email ? 'is-invalid' : ''}`}
-                        placeholder="Email Address"
-                        value={formData.email}
+                        value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        placeholder="Email Address"
+                        error={errors.email}
+                        touched={touched.email}
                         disabled={status.submitting}
                         style={{ fontSize: '16px', padding: '14px 16px' }}
                       />
-                      {touched.email && errors.email && <div className="invalid-feedback">{errors.email}</div>}
                     </div>
 
                     <button

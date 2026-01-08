@@ -2,6 +2,9 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import toast from 'react-hot-toast';
+import { useFormValidation } from '../hooks/useFormValidation';
+import { validators } from '../constants/validation';
+import { FormInput, FormTextarea, FormCheckbox } from '../components/form';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -9,115 +12,37 @@ const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-proje
 // reCAPTCHA site key from environment
 const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 
-// Validation functions
-const validators = {
-  name: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Name is required';
-    if (trimmed.length < 2) return 'Name must be at least 2 characters';
-    if (trimmed.length > 100) return 'Name must be less than 100 characters';
-    if (!/^[a-zA-Z\s'-]+$/.test(trimmed)) return 'Name can only contain letters, spaces, hyphens, and apostrophes';
-    return '';
-  },
-  email: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Email is required';
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(trimmed)) return 'Please enter a valid email address';
-    if (trimmed.length > 254) return 'Email must be less than 254 characters';
-    return '';
-  },
-  phone: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Phone number is required';
-    const digitsOnly = trimmed.replace(/[\s\-()]/g, '');
-    if (!/^\+?\d{10,13}$/.test(digitsOnly)) return 'Please enter a valid phone number (10-13 digits)';
-    return '';
-  },
-  message: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Message is required';
-    if (trimmed.length < 10) return 'Message must be at least 10 characters';
-    if (trimmed.length > 2000) return 'Message must be less than 2000 characters';
-    return '';
-  }
+const initialValues = {
+  name: '',
+  email: '',
+  phone: '',
+  message: '',
+  whatsappOptIn: false
+};
+
+const validationRules = {
+  name: validators.name,
+  email: validators.email,
+  phone: validators.phone,
+  message: validators.message
 };
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    whatsappOptIn: false
-  });
-
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const [touched, setTouched] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    message: false
-  });
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    validateAll,
+    reset
+  } = useFormValidation(initialValues, validationRules);
 
   const [status, setStatus] = useState({
     submitting: false,
     success: false,
     error: null
   });
-
-  const validateField = (name, value) => {
-    return validators[name] ? validators[name](value) : '';
-  };
-
-  const validateAllFields = () => {
-    const newErrors = {};
-    let isValid = true;
-
-    Object.keys(formData).forEach(field => {
-      const error = validateField(field, formData[field]);
-      newErrors[field] = error;
-      if (error) isValid = false;
-    });
-
-    setErrors(newErrors);
-    setTouched({ name: true, email: true, phone: true, message: true });
-    return isValid;
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-
-    // Validate on change if field was already touched (skip checkbox)
-    if (touched[name] && type !== 'checkbox') {
-      setErrors(prev => ({
-        ...prev,
-        [name]: validateField(name, value)
-      }));
-    }
-  };
-
-  const handleBlur = (e) => {
-    const { name, value } = e.target;
-    setTouched(prev => ({
-      ...prev,
-      [name]: true
-    }));
-    setErrors(prev => ({
-      ...prev,
-      [name]: validateField(name, value)
-    }));
-  };
 
   const executeRecaptcha = useCallback(() => {
     return new Promise((resolve, reject) => {
@@ -138,15 +63,13 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate all fields before submission
-    if (!validateAllFields()) {
+    if (!validateAll(['name', 'email', 'phone', 'message'])) {
       return;
     }
 
     setStatus({ submitting: true, success: false, error: null });
 
     try {
-      // Get reCAPTCHA token
       const recaptchaToken = await executeRecaptcha();
 
       const response = await fetch(FUNCTION_URL, {
@@ -155,7 +78,7 @@ function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
+          ...values,
           recaptchaToken
         })
       });
@@ -164,9 +87,7 @@ function Contact() {
 
       if (response.ok && data.success) {
         setStatus({ submitting: false, success: true, error: null });
-        setFormData({ name: '', email: '', phone: '', message: '', whatsappOptIn: false });
-        setErrors({ name: '', email: '', phone: '', message: '' });
-        setTouched({ name: false, email: false, phone: false, message: false });
+        reset();
         toast.success('Message sent! We\'ll get back to you within 24 hours.');
       } else {
         throw new Error(data.error || 'Failed to send message');
@@ -368,90 +289,65 @@ function Contact() {
                                 <form onSubmit={handleSubmit} className="position-relative z1000">
                                     <div className="row g-4">
                                         <div className="col-md-6">
-                                            <div className="field-set">
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    value={formData.name}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    className={`form-control ${touched.name && errors.name ? 'is-invalid' : ''}`}
-                                                    placeholder="Your Name"
-                                                    disabled={status.submitting}
-                                                />
-                                                {touched.name && errors.name && (
-                                                    <div className="invalid-feedback" style={{display: 'block'}}>{errors.name}</div>
-                                                )}
-                                            </div>
+                                            <FormInput
+                                                name="name"
+                                                value={values.name}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                placeholder="Your Name"
+                                                error={errors.name}
+                                                touched={touched.name}
+                                                disabled={status.submitting}
+                                            />
                                         </div>
                                         <div className="col-md-6">
-                                            <div className="field-set">
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    className={`form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}
-                                                    placeholder="Your Email"
-                                                    disabled={status.submitting}
-                                                />
-                                                {touched.email && errors.email && (
-                                                    <div className="invalid-feedback" style={{display: 'block'}}>{errors.email}</div>
-                                                )}
-                                            </div>
+                                            <FormInput
+                                                type="email"
+                                                name="email"
+                                                value={values.email}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                placeholder="Your Email"
+                                                error={errors.email}
+                                                touched={touched.email}
+                                                disabled={status.submitting}
+                                            />
                                         </div>
                                         <div className="col-md-12">
-                                            <div className="field-set">
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    value={formData.phone}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    className={`form-control ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
-                                                    placeholder="Your Phone"
-                                                    disabled={status.submitting}
-                                                />
-                                                {touched.phone && errors.phone && (
-                                                    <div className="invalid-feedback" style={{display: 'block'}}>{errors.phone}</div>
-                                                )}
-                                            </div>
+                                            <FormInput
+                                                type="tel"
+                                                name="phone"
+                                                value={values.phone}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                placeholder="Your Phone"
+                                                error={errors.phone}
+                                                touched={touched.phone}
+                                                disabled={status.submitting}
+                                            />
                                         </div>
                                         <div className="col-md-12">
-                                            <div className="field-set">
-                                                <textarea
-                                                    name="message"
-                                                    value={formData.message}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    className={`form-control ${touched.message && errors.message ? 'is-invalid' : ''}`}
-                                                    placeholder="Your Message"
-                                                    rows="5"
-                                                    disabled={status.submitting}
-                                                ></textarea>
-                                                {touched.message && errors.message && (
-                                                    <div className="invalid-feedback" style={{display: 'block'}}>{errors.message}</div>
-                                                )}
-                                            </div>
+                                            <FormTextarea
+                                                name="message"
+                                                value={values.message}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                placeholder="Your Message"
+                                                rows={5}
+                                                error={errors.message}
+                                                touched={touched.message}
+                                                disabled={status.submitting}
+                                            />
                                         </div>
                                         <div className="col-md-12">
-                                            <div className="form-check" style={{display: 'flex', alignItems: 'flex-start', gap: '10px'}}>
-                                                <input
-                                                    type="checkbox"
-                                                    name="whatsappOptIn"
-                                                    id="whatsappOptIn"
-                                                    checked={formData.whatsappOptIn}
-                                                    onChange={handleChange}
-                                                    className="form-check-input"
-                                                    disabled={status.submitting}
-                                                    style={{marginTop: '4px', width: '18px', height: '18px', cursor: 'pointer'}}
-                                                />
-                                                <label htmlFor="whatsappOptIn" className="form-check-label" style={{cursor: 'pointer', fontSize: '14px', color: '#666'}}>
-                                                    <i className="icofont-brand-whatsapp" style={{color: '#25D366', marginRight: '6px'}}></i>
-                                                    Send me updates via WhatsApp (recommended for faster response)
-                                                </label>
-                                            </div>
+                                            <FormCheckbox
+                                                name="whatsappOptIn"
+                                                checked={values.whatsappOptIn}
+                                                onChange={handleChange}
+                                                label="Send me updates via WhatsApp (recommended for faster response)"
+                                                icon="icofont-brand-whatsapp"
+                                                disabled={status.submitting}
+                                            />
                                         </div>
                                         <div className="col-md-12">
                                             <button

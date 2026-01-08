@@ -10,6 +10,25 @@ function IndoorPlants() {
         description="Indoor plant services in Greater Noida. Buy, rent or get maintenance for indoor plants. Air-purifying plants, decorative plants for home and office by Meri Bagiya."
         keywords="indoor plants, house plants, indoor plant rental, air purifying plants Greater Noida, office plants, home plants"
         canonicalUrl="/services/indoor-plants"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Indoor Plants' }
+        ]}
+        faqItems={[
+          {
+            question: 'What are the best indoor plants for beginners?',
+            answer: 'Money plant, snake plant, pothos, and ZZ plant are excellent for beginners as they require minimal care and can survive in low light conditions.'
+          },
+          {
+            question: 'Do indoor plants really purify air?',
+            answer: 'Yes! Plants like snake plant, peace lily, and spider plant are proven to remove toxins like formaldehyde and benzene from indoor air.'
+          },
+          {
+            question: 'How often should I water indoor plants?',
+            answer: 'Most indoor plants need watering once a week. Check the top inch of soil - if dry, water thoroughly. Overwatering is the most common cause of indoor plant death.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

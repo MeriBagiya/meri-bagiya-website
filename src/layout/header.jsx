@@ -1,8 +1,29 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Check if path is active (exact match or starts with for nested routes)
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname === path || location.pathname.startsWith(path + '/');
+  };
+
+  // Active link styles
+  const getActiveStyle = (path) => ({
+    backgroundColor: isActive(path) ? '#e8f5e9' : 'transparent',
+    color: isActive(path) ? '#2d5016' : '#333',
+    fontWeight: isActive(path) ? '600' : 'normal',
+    borderLeft: isActive(path) ? '3px solid #4a7c59' : '3px solid transparent'
+  });
+
+  const getSubActiveStyle = (path) => ({
+    backgroundColor: isActive(path) ? '#e8f5e9' : '#fafafa',
+    color: isActive(path) ? '#2d5016' : '#555',
+    fontWeight: isActive(path) ? '600' : 'normal'
+  });
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -213,10 +234,10 @@ function Header() {
                     style={{
                         display: 'block',
                         padding: '15px 20px',
-                        color: '#333',
                         textDecoration: 'none',
                         fontSize: '16px',
-                        borderBottom: '1px solid #f5f5f5'
+                        borderBottom: '1px solid #f5f5f5',
+                        ...getActiveStyle('/')
                     }}
                 >
                     Home
@@ -242,16 +263,16 @@ function Header() {
                 <div style={{ padding: '10px 20px 5px', color: '#4a7c59', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', backgroundColor: '#f0f7f2' }}>
                     For Home
                 </div>
-                <Link to="/services/plant-rental-home" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/plant-rental-home" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/plant-rental-home') }}>
                     → Plant Rental - Home
                 </Link>
-                <Link to="/services/balcony-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/balcony-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/balcony-garden') }}>
                     → Balcony Garden
                 </Link>
-                <Link to="/services/terrace-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/terrace-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/terrace-garden') }}>
                     → Terrace Garden
                 </Link>
-                <Link to="/services/indoor-plants" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/indoor-plants" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/indoor-plants') }}>
                     → Indoor Plants
                 </Link>
 
@@ -259,13 +280,13 @@ function Header() {
                 <div style={{ padding: '10px 20px 5px', color: '#4a7c59', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', backgroundColor: '#f0f7f2', marginTop: '5px' }}>
                     For Business
                 </div>
-                <Link to="/services/plant-rental" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/plant-rental" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/plant-rental') }}>
                     → Plant Rental - Corporate
                 </Link>
-                <Link to="/plant-rent-in-office" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/plant-rent-in-office" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/plant-rent-in-office') }}>
                     → Plant Rent in Office
                 </Link>
-                <Link to="/corporate-gifting" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/corporate-gifting" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/corporate-gifting') }}>
                     → Corporate Gifting
                 </Link>
 
@@ -273,19 +294,19 @@ function Header() {
                 <div style={{ padding: '10px 20px 5px', color: '#4a7c59', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', backgroundColor: '#f0f7f2', marginTop: '5px' }}>
                     Other Services
                 </div>
-                <Link to="/services/landscape-design" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/landscape-design" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/landscape-design') }}>
                     → Landscape Design
                 </Link>
-                <Link to="/services/vertical-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/vertical-garden" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/vertical-garden') }}>
                     → Vertical Garden
                 </Link>
-                <Link to="/services/artificial-grass" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/artificial-grass" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/artificial-grass') }}>
                     → Artificial Grass
                 </Link>
-                <Link to="/services/water-fountain" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/water-fountain" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/water-fountain') }}>
                     → Water Fountain
                 </Link>
-                <Link to="/services/garden-maintenance" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', color: '#555', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', backgroundColor: '#fafafa' }}>
+                <Link to="/services/garden-maintenance" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/garden-maintenance') }}>
                     → Garden Maintenance
                 </Link>
                 <Link
@@ -294,10 +315,10 @@ function Header() {
                     style={{
                         display: 'block',
                         padding: '15px 20px',
-                        color: '#333',
                         textDecoration: 'none',
                         fontSize: '16px',
-                        borderBottom: '1px solid #f5f5f5'
+                        borderBottom: '1px solid #f5f5f5',
+                        ...getActiveStyle('/about')
                     }}
                 >
                     About Us
@@ -309,10 +330,10 @@ function Header() {
                     style={{
                         display: 'block',
                         padding: '15px 20px',
-                        color: '#333',
                         textDecoration: 'none',
                         fontSize: '16px',
-                        borderBottom: '1px solid #f5f5f5'
+                        borderBottom: '1px solid #f5f5f5',
+                        ...getActiveStyle('/contact')
                     }}
                 >
                     Contact Us

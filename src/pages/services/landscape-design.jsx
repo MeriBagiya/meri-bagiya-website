@@ -10,6 +10,25 @@ function LandscapeDesign() {
         description="Professional landscape design services in Greater Noida. Transform your outdoor space with custom landscaping, garden planning, and expert design by Meri Bagiya."
         keywords="landscape design, landscaping Greater Noida, garden design, outdoor design, landscape architect, garden planning"
         canonicalUrl="/services/landscape-design"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Landscape Design' }
+        ]}
+        faqItems={[
+          {
+            question: 'How much does landscape design cost in Greater Noida?',
+            answer: 'Landscape design costs vary based on area size and complexity. Basic designs start from ₹15,000, while comprehensive landscaping projects range from ₹50,000 to ₹5,00,000+.'
+          },
+          {
+            question: 'How long does a landscaping project take?',
+            answer: 'Small garden makeovers take 1-2 weeks, while complete landscape transformations may take 4-8 weeks depending on the scope and complexity of the design.'
+          },
+          {
+            question: 'Do you provide 3D design visualizations?',
+            answer: 'Yes, we create detailed 3D renders and plan views so you can visualize your garden before implementation. This is included in our design package.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

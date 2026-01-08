@@ -46,6 +46,25 @@ function PlantRentalHome() {
         keywords="plant rental home, indoor plants rent, home plants Greater Noida, affordable plant rental, rent plants for apartment"
         canonicalUrl="/services/plant-rental-home"
         jsonLd={jsonLd}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Plant Rental - Home' }
+        ]}
+        faqItems={[
+          {
+            question: 'What is the minimum number of plants for home rental?',
+            answer: 'We require a minimum of 5 plants for home plant rental service. This ensures proper maintenance visits are cost-effective for both parties.'
+          },
+          {
+            question: 'What does plant rental include?',
+            answer: 'Our rental includes plants, decorative pots, delivery, setup, weekly maintenance visits, and free plant replacement if any plant dies or becomes unhealthy.'
+          },
+          {
+            question: 'Can I change plants during my rental period?',
+            answer: 'Yes, you can request plant changes once per quarter at no extra cost. Additional changes may incur a small fee depending on plant availability.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

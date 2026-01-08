@@ -2,6 +2,9 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import toast from 'react-hot-toast';
+import { useFormValidation } from '../hooks/useFormValidation';
+import { validators } from '../constants/validation';
+import { FormInput, FormTextarea, FormSelect } from '../components/form';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -43,66 +46,64 @@ const giftPackages = [
   }
 ];
 
-// Validation functions
-const validators = {
-  name: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Contact person name is required';
-    if (trimmed.length < 2) return 'Name must be at least 2 characters';
-    return '';
-  },
-  company: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Company name is required';
-    return '';
-  },
-  email: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Email is required';
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(trimmed)) return 'Please enter a valid email address';
-    return '';
-  },
-  phone: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Phone number is required';
-    const digitsOnly = trimmed.replace(/[\s\-()]/g, '');
-    if (!/^\+?\d{10,13}$/.test(digitsOnly)) return 'Please enter a valid phone number';
-    return '';
-  },
-  quantity: (value) => {
-    if (!value) return 'Please select quantity range';
-    return '';
-  },
-  budget: (value) => {
-    if (!value) return 'Please select budget range';
-    return '';
-  },
-  message: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return 'Please describe your requirements';
-    if (trimmed.length < 10) return 'Message must be at least 10 characters';
-    return '';
-  }
+const quantityOptions = [
+  { value: '10-50', label: '10 - 50 plants' },
+  { value: '50-100', label: '50 - 100 plants' },
+  { value: '100-500', label: '100 - 500 plants' },
+  { value: '500+', label: '500+ plants' }
+];
+
+const budgetOptions = [
+  { value: 'Under ₹50,000', label: 'Under ₹50,000' },
+  { value: '₹50,000 - ₹1,00,000', label: '₹50,000 - ₹1,00,000' },
+  { value: '₹1,00,000 - ₹5,00,000', label: '₹1,00,000 - ₹5,00,000' },
+  { value: 'Above ₹5,00,000', label: 'Above ₹5,00,000' }
+];
+
+const occasionOptions = [
+  { value: 'Diwali', label: 'Diwali' },
+  { value: 'New Year', label: 'New Year' },
+  { value: 'Employee Appreciation', label: 'Employee Appreciation' },
+  { value: 'Client Gift', label: 'Client Gift' },
+  { value: 'Office Inauguration', label: 'Office Inauguration' },
+  { value: 'Other', label: 'Other' }
+];
+
+const initialValues = {
+  name: '',
+  company: '',
+  email: '',
+  phone: '',
+  quantity: '',
+  budget: '',
+  occasion: '',
+  message: ''
+};
+
+const validationRules = {
+  name: (value) => validators.name(value, 'Contact person name'),
+  company: validators.company,
+  email: validators.email,
+  phone: validators.phone,
+  quantity: (value) => validators.required(value, 'Quantity'),
+  budget: (value) => validators.required(value, 'Budget'),
+  message: (value) => validators.message(value, 10, 2000)
 };
 
 function CorporateGifting() {
   const [step, setStep] = useState(1);
   const [selectedPackage, setSelectedPackage] = useState('');
 
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    quantity: '',
-    budget: '',
-    occasion: '',
-    message: ''
-  });
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    validateAll,
+    reset
+  } = useFormValidation(initialValues, validationRules);
 
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
   const [status, setStatus] = useState({
     submitting: false,
     error: null
@@ -119,43 +120,6 @@ function CorporateGifting() {
   const handleStartOver = () => {
     setStep(1);
     setStatus({ submitting: false, error: null });
-  };
-
-  const validateField = (name, value) => {
-    return validators[name] ? validators[name](value) : '';
-  };
-
-  const validateAllFields = () => {
-    const newErrors = {};
-    let isValid = true;
-    const requiredFields = ['name', 'company', 'email', 'phone', 'quantity', 'budget', 'message'];
-
-    requiredFields.forEach(field => {
-      const error = validateField(field, formData[field]);
-      newErrors[field] = error;
-      if (error) isValid = false;
-    });
-
-    setErrors(newErrors);
-    const allTouched = {};
-    requiredFields.forEach(f => allTouched[f] = true);
-    setTouched(allTouched);
-    return isValid;
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-
-    if (touched[name]) {
-      setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
-    }
-  };
-
-  const handleBlur = (e) => {
-    const { name, value } = e.target;
-    setTouched(prev => ({ ...prev, [name]: true }));
-    setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
   };
 
   const executeRecaptcha = useCallback(() => {
@@ -176,7 +140,8 @@ function CorporateGifting() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateAllFields()) return;
+    const requiredFields = ['name', 'company', 'email', 'phone', 'quantity', 'budget', 'message'];
+    if (!validateAll(requiredFields)) return;
 
     setStatus({ submitting: true, error: null });
 
@@ -187,7 +152,7 @@ function CorporateGifting() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...formData,
+          ...values,
           source: 'corporate-gifting',
           recaptchaToken
         })
@@ -196,13 +161,8 @@ function CorporateGifting() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setStep(3); // Go to thank you step
-        setFormData({
-          name: '', company: '', email: '', phone: '',
-          quantity: '', budget: '', occasion: '', message: ''
-        });
-        setErrors({});
-        setTouched({});
+        setStep(3);
+        reset();
         toast.success('Inquiry submitted! Our team will contact you shortly.');
       } else {
         throw new Error(data.error || 'Failed to send inquiry');
@@ -473,120 +433,118 @@ function CorporateGifting() {
 
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <label className="form-label fw-500">Company Name *</label>
-                        <input
-                          type="text"
+                        <FormInput
                           name="company"
-                          className={`form-control form-control-lg ${touched.company && errors.company ? 'is-invalid' : ''}`}
+                          value={values.company}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
                           placeholder="Your Company Name"
-                          value={formData.company}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
+                          label="Company Name"
+                          error={errors.company}
+                          touched={touched.company}
+                          size="lg"
+                          required
                         />
-                        {touched.company && errors.company && <div className="invalid-feedback">{errors.company}</div>}
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-500">Contact Person *</label>
-                        <input
-                          type="text"
+                        <FormInput
                           name="name"
-                          className={`form-control form-control-lg ${touched.name && errors.name ? 'is-invalid' : ''}`}
-                          placeholder="Your Name"
-                          value={formData.name}
+                          value={values.name}
                           onChange={handleChange}
                           onBlur={handleBlur}
+                          placeholder="Your Name"
+                          label="Contact Person"
+                          error={errors.name}
+                          touched={touched.name}
+                          size="lg"
+                          required
                         />
-                        {touched.name && errors.name && <div className="invalid-feedback">{errors.name}</div>}
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-500">Email Address *</label>
-                        <input
+                        <FormInput
                           type="email"
                           name="email"
-                          className={`form-control form-control-lg ${touched.email && errors.email ? 'is-invalid' : ''}`}
-                          placeholder="email@company.com"
-                          value={formData.email}
+                          value={values.email}
                           onChange={handleChange}
                           onBlur={handleBlur}
+                          placeholder="email@company.com"
+                          label="Email Address"
+                          error={errors.email}
+                          touched={touched.email}
+                          size="lg"
+                          required
                         />
-                        {touched.email && errors.email && <div className="invalid-feedback">{errors.email}</div>}
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-500">Phone Number *</label>
-                        <input
+                        <FormInput
                           type="tel"
                           name="phone"
-                          className={`form-control form-control-lg ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
+                          value={values.phone}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
                           placeholder="+91 9220404309"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
+                          label="Phone Number"
+                          error={errors.phone}
+                          touched={touched.phone}
+                          size="lg"
+                          required
                         />
-                        {touched.phone && errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
                       </div>
                       <div className="col-md-4">
-                        <label className="form-label fw-500">Quantity *</label>
-                        <select
+                        <FormSelect
                           name="quantity"
-                          className={`form-select form-select-lg ${touched.quantity && errors.quantity ? 'is-invalid' : ''}`}
-                          value={formData.quantity}
+                          value={values.quantity}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        >
-                          <option value="">Select quantity</option>
-                          <option value="10-50">10 - 50 plants</option>
-                          <option value="50-100">50 - 100 plants</option>
-                          <option value="100-500">100 - 500 plants</option>
-                          <option value="500+">500+ plants</option>
-                        </select>
-                        {touched.quantity && errors.quantity && <div className="invalid-feedback">{errors.quantity}</div>}
+                          label="Quantity"
+                          placeholder="Select quantity"
+                          options={quantityOptions}
+                          error={errors.quantity}
+                          touched={touched.quantity}
+                          size="lg"
+                          required
+                        />
                       </div>
                       <div className="col-md-4">
-                        <label className="form-label fw-500">Budget Range *</label>
-                        <select
+                        <FormSelect
                           name="budget"
-                          className={`form-select form-select-lg ${touched.budget && errors.budget ? 'is-invalid' : ''}`}
-                          value={formData.budget}
+                          value={values.budget}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        >
-                          <option value="">Select budget</option>
-                          <option value="Under ₹50,000">Under ₹50,000</option>
-                          <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
-                          <option value="₹1,00,000 - ₹5,00,000">₹1,00,000 - ₹5,00,000</option>
-                          <option value="Above ₹5,00,000">Above ₹5,00,000</option>
-                        </select>
-                        {touched.budget && errors.budget && <div className="invalid-feedback">{errors.budget}</div>}
+                          label="Budget Range"
+                          placeholder="Select budget"
+                          options={budgetOptions}
+                          error={errors.budget}
+                          touched={touched.budget}
+                          size="lg"
+                          required
+                        />
                       </div>
                       <div className="col-md-4">
-                        <label className="form-label fw-500">Occasion</label>
-                        <select
+                        <FormSelect
                           name="occasion"
-                          className="form-select form-select-lg"
-                          value={formData.occasion}
+                          value={values.occasion}
                           onChange={handleChange}
-                        >
-                          <option value="">Select occasion</option>
-                          <option value="Diwali">Diwali</option>
-                          <option value="New Year">New Year</option>
-                          <option value="Employee Appreciation">Employee Appreciation</option>
-                          <option value="Client Gift">Client Gift</option>
-                          <option value="Office Inauguration">Office Inauguration</option>
-                          <option value="Other">Other</option>
-                        </select>
+                          label="Occasion"
+                          placeholder="Select occasion"
+                          options={occasionOptions}
+                          size="lg"
+                        />
                       </div>
                       <div className="col-12">
-                        <label className="form-label fw-500">Requirements *</label>
-                        <textarea
+                        <FormTextarea
                           name="message"
-                          rows="4"
-                          className={`form-control form-control-lg ${touched.message && errors.message ? 'is-invalid' : ''}`}
-                          placeholder="Tell us about your requirements - type of plants, delivery locations, customization needs, timeline, etc."
-                          value={formData.message}
+                          value={values.message}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        ></textarea>
-                        {touched.message && errors.message && <div className="invalid-feedback">{errors.message}</div>}
+                          placeholder="Tell us about your requirements - type of plants, delivery locations, customization needs, timeline, etc."
+                          label="Requirements"
+                          rows={4}
+                          error={errors.message}
+                          touched={touched.message}
+                          size="lg"
+                          required
+                        />
                       </div>
                       <div className="col-12">
                         <button

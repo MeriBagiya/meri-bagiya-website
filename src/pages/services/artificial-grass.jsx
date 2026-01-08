@@ -10,6 +10,25 @@ function ArtificialGrass() {
         description="Premium artificial grass installation in Greater Noida. Low maintenance synthetic turf for lawns, balconies, terraces, and sports areas by Meri Bagiya."
         keywords="artificial grass, synthetic turf, fake lawn, artificial lawn Greater Noida, grass carpet, turf installation"
         canonicalUrl="/services/artificial-grass"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Artificial Grass' }
+        ]}
+        faqItems={[
+          {
+            question: 'How long does artificial grass last?',
+            answer: 'Quality artificial grass typically lasts 15-20 years with proper care. It is UV-resistant and maintains its green appearance year-round.'
+          },
+          {
+            question: 'Is artificial grass safe for pets and children?',
+            answer: 'Yes, our artificial grass is non-toxic, lead-free, and safe for pets and children. It is also easy to clean and does not harbor insects.'
+          },
+          {
+            question: 'What is the cost of artificial grass installation?',
+            answer: 'Artificial grass costs range from ₹50-150 per sq ft depending on quality and pile height. Installation charges are additional. Contact us for a free quote.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">

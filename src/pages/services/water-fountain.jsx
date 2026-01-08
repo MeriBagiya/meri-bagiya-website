@@ -10,6 +10,25 @@ function WaterFountain() {
         description="Custom water fountain and water body installation in Greater Noida. Decorative fountains, ponds, waterfalls for homes, gardens, and commercial spaces by Meri Bagiya."
         keywords="water fountain, garden fountain, decorative fountain Greater Noida, water feature, pond, waterfall, water body"
         canonicalUrl="/services/water-fountain"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Water Fountain' }
+        ]}
+        faqItems={[
+          {
+            question: 'How much does a garden fountain cost?',
+            answer: 'Garden fountains range from ₹5,000 for small tabletop fountains to ₹50,000+ for large custom water features. Price depends on size, material, and design complexity.'
+          },
+          {
+            question: 'Do water fountains attract mosquitoes?',
+            answer: 'Moving water in fountains does not attract mosquitoes as they prefer stagnant water. We also recommend adding fish or fountain treatments to prevent any breeding.'
+          },
+          {
+            question: 'What maintenance do water fountains require?',
+            answer: 'Regular cleaning of pump filters, water top-up, and algae control every 2-4 weeks. We offer maintenance packages for hassle-free fountain care.'
+          }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">
