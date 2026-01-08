@@ -74,8 +74,7 @@ function Shipping() {
                 <div className="bg-light p-4 rounded-1 mb-5">
                   <h5 className="mb-3"><i className="icofont-location-pin me-2 id-color-2"></i>Nursery Location</h5>
                   <p className="mb-2"><strong>Address:</strong> Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, Uttar Pradesh - 201318</p>
-                  <p className="mb-2"><strong>Timings:</strong> Monday - Saturday, 8:00 AM - 6:00 PM</p>
-                  <p className="mb-3"><strong>Sunday:</strong> 9:00 AM - 2:00 PM</p>
+                  <p className="mb-3"><strong>Timings:</strong> Monday - Sunday, 8:00 AM - 7:00 PM</p>
                   <a
                     href="https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z"
                     target="_blank"

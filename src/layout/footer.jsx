@@ -53,7 +53,7 @@ function Footer() {
          <div className="col-lg-4 col-md-6 col-12 order-lg-2 order-md-1">
              <div className="widget">
                  <div className="fw-bold text-white"><i className="icofont-clock-time me-2 id-color-2"></i>We're Open</div>
-                 Monday - Friday 08.00 - 18.00
+                 Monday - Sunday, 8:00 AM - 7:00 PM
 
                  <div className="spacer-20"></div>
 
@@ -68,7 +68,7 @@ function Footer() {
                  <div className="spacer-20"></div>
 
                  <div className="fw-bold text-white"><i className="icofont-phone me-2 id-color-2"></i>Call Us Directly</div>
-                 +919220404309
+                 +91-9220404309
              </div>
          </div>
      </div>

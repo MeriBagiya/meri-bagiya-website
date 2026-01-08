@@ -167,7 +167,7 @@ function ReturnPolicy() {
                   <li><strong>WhatsApp:</strong> +91-9220404309 (fastest response)</li>
                   <li><strong>Email:</strong> contact@meribagiya.com</li>
                   <li><strong>Phone:</strong> +91-9220404309</li>
-                  <li><strong>Hours:</strong> Monday - Saturday, 9 AM - 6 PM IST</li>
+                  <li><strong>Hours:</strong> Monday - Sunday, 8:00 AM - 7:00 PM IST</li>
                 </ul>
 
                 <div className="text-center mt-5">

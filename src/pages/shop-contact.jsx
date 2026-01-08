@@ -153,7 +153,7 @@ function Contact() {
                             <div className="relative h-100 bg-color text-light padding30 rounded-1 text-center">
                                 <i className="icofont-clock-time fs-40 mb-3 d-block"></i>
                                 <h5>We're Open</h5>
-                                <p className="mb-0">Monday - Sunday<br/>08:00 AM - 06:00 PM</p>
+                                <p className="mb-0">Monday - Sunday<br/>8:00 AM - 7:00 PM</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".2s">
@@ -167,7 +167,7 @@ function Contact() {
                             <div className="relative h-100 bg-color-2 text-light padding30 rounded-1 text-center">
                                 <i className="icofont-phone fs-40 mb-3 d-block"></i>
                                 <h5>Call Us Directly</h5>
-                                <p className="mb-0">9220404309<br/>9463563049<br/>9911654089</p>
+                                <p className="mb-0">+91-9220404309<br/>+91-9463563049<br/>+91-9911654089</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".6s">
