@@ -255,37 +255,22 @@ function PlantCareCalendar() {
       />
 
       {/* Subheader */}
-      <section
-        id="subheader"
-        className="jarallax text-light"
-        style={{
-          backgroundImage: 'url(/assets/images/background/6.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          position: 'relative'
-        }}
-      >
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)'
-        }}></div>
-        <div className="container relative z-index-1000" style={{ position: 'relative', zIndex: 10 }}>
+      <section id="subheader" className="relative jarallax text-light">
+        <img src="/assets/images/background/6.webp" className="jarallax-img" alt="Plant Care Calendar" />
+        <div className="container relative z-index-1000">
           <div className="row">
-            <div className="col-lg-12">
-              <ul className="crumb" style={{ marginBottom: '15px' }}>
-                <li><Link to="/" style={{ color: '#fff' }}>Home</Link></li>
-                <li><Link to="/tools" style={{ color: '#fff' }}>Tools</Link></li>
-                <li className="active" style={{ color: '#fff' }}>Plant Care Calendar</li>
+            <div className="col-lg-6">
+              <ul className="crumb">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/tools">Tools</Link></li>
+                <li className="active">Plant Care Calendar</li>
               </ul>
-              <h1 className="wow fadeInUp" data-wow-delay=".2s">Plant Care Calendar</h1>
-              <p className="lead mt-2">Free Tool</p>
+              <h1>Plant Care Calendar</h1>
+              <p>Free Tool</p>
             </div>
           </div>
         </div>
+        <div className="de-overlay"></div>
       </section>
 
       {/* Main Content */}

@@ -41,38 +41,21 @@ function Tools() {
       />
 
       {/* Subheader with Plant Images */}
-      <section
-        id="subheader"
-        className="jarallax text-light"
-        style={{
-          backgroundImage: 'url(/assets/images/plants/monstera.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          position: 'relative'
-        }}
-      >
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.6)'
-        }}></div>
-        <div className="container relative z-index-1000" style={{ position: 'relative', zIndex: 10 }}>
+      <section id="subheader" className="relative jarallax text-light">
+        <img src="/assets/images/plants/monstera.jpg" className="jarallax-img" alt="Gardening Tools" />
+        <div className="container relative z-index-1000">
           <div className="row">
-            <div className="col-lg-12">
-              <ul className="crumb" style={{ marginBottom: '15px' }}>
-                <li><Link to="/" style={{ color: '#fff' }}>Home</Link></li>
-                <li className="active" style={{ color: '#fff' }}>Tools</li>
+            <div className="col-lg-6">
+              <ul className="crumb">
+                <li><Link to="/">Home</Link></li>
+                <li className="active">Tools</li>
               </ul>
-              <h1 className="wow fadeInUp" data-wow-delay=".2s">Gardening Tools</h1>
-              <p className="lead mt-3 wow fadeInUp" data-wow-delay=".3s" style={{ maxWidth: '600px' }}>
-                Helpful digital tools to make caring for your plants easier
-              </p>
+              <h1>Gardening Tools</h1>
+              <p>Helpful digital tools to make caring for your plants easier</p>
             </div>
           </div>
         </div>
+        <div className="de-overlay"></div>
       </section>
 
       {/* Plant Showcase Section */}
