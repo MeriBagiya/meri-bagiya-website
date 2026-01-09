@@ -520,3 +520,33 @@ footer.footer-light{
     }
 
 }
+
+/* Button Click Animation - Scale Effect */
+.btn,
+.btn-main,
+a.btn-main,
+button,
+input[type="button"],
+input[type="submit"] {
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:active,
+.btn-main:active,
+a.btn-main:active,
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for better UX */
+.btn:hover,
+.btn-main:hover,
+a.btn-main:hover,
+button:hover:not(:disabled),
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    transform: scale(1.02);
+}
