@@ -99,6 +99,7 @@ function Header() {
                                         </Link>
                                         <ul>
                                             <li><Link to="/tools/plant-care-calendar">Plant Care Calendar</Link></li>
+                                            <li><Link to="/tools/plant-disease-identifier">Plant Disease Identifier</Link></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -337,6 +338,9 @@ function Header() {
                 </Link>
                 <Link to="/tools/plant-care-calendar" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/tools/plant-care-calendar') }}>
                     → Plant Care Calendar
+                </Link>
+                <Link to="/tools/plant-disease-identifier" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/tools/plant-disease-identifier') }}>
+                    → Plant Disease Identifier
                 </Link>
 
                 <Link

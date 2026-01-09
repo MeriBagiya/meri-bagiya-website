@@ -8,7 +8,7 @@ function Tools() {
     {
       id: 'plant-care-calendar',
       title: 'Plant Care Calendar',
-      description: 'Track watering, fertilizing, pruning, and repotting schedules for all your plants. Get reminders so you never forget to care for your green friends.',
+      description: 'Track watering & care schedules for all your plants.',
       icon: 'icofont-calendar',
       link: '/tools/plant-care-calendar',
       color: '#4a7c59',
@@ -17,7 +17,7 @@ function Tools() {
     {
       id: 'plant-disease-identifier',
       title: 'Plant Disease Identifier',
-      description: 'Upload a photo of your plant to identify diseases with our AI-powered tool. Get instant results and care recommendations.',
+      description: 'AI-powered tool to identify plant diseases from photos.',
       icon: 'icofont-search-2',
       link: '/tools/plant-disease-identifier',
       color: '#28a745',
@@ -62,7 +62,10 @@ function Tools() {
         <div className="container relative z-index-1000" style={{ position: 'relative', zIndex: 10 }}>
           <div className="row">
             <div className="col-lg-12">
-              <div className="subtitle wow fadeInUp mb-3">Free Online Tools</div>
+              <ul className="crumb" style={{ marginBottom: '15px' }}>
+                <li><Link to="/" style={{ color: '#fff' }}>Home</Link></li>
+                <li className="active" style={{ color: '#fff' }}>Tools</li>
+              </ul>
               <h1 className="wow fadeInUp" data-wow-delay=".2s">Gardening Tools</h1>
               <p className="lead mt-3 wow fadeInUp" data-wow-delay=".3s" style={{ maxWidth: '600px' }}>
                 Helpful digital tools to make caring for your plants easier
@@ -71,14 +74,6 @@ function Tools() {
           </div>
         </div>
       </section>
-
-      {/* Breadcrumb */}
-      <div className="container">
-        <ul className="crumb">
-          <li><Link to="/">Home</Link></li>
-          <li className="active">Tools</li>
-        </ul>
-      </div>
 
       {/* Plant Showcase Section */}
       <section className="pt-0">
@@ -126,40 +121,46 @@ function Tools() {
 
             {tools.map((tool, index) => (
               <div key={tool.id} className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + index * 0.1}s`}>
-                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
-                  <div className="row g-0">
-                    <div className="col-md-5">
+                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px' }}>
+                  <div className="row g-0 flex-column flex-md-row h-100">
+                    <div className="col-12 col-md-5">
                       <img
                         src={tool.image}
                         alt={tool.title}
-                        className="h-100 w-100"
-                        style={{ objectFit: 'cover', minHeight: '250px' }}
+                        className="w-100 h-100"
+                        style={{ objectFit: 'cover', minHeight: '200px' }}
                       />
                     </div>
-                    <div className="col-md-7">
-                      <div className="card-body p-4 d-flex flex-column justify-content-center h-100">
+                    <div className="col-12 col-md-7 d-flex">
+                      <div className="card-body p-3 p-md-4 d-flex flex-column justify-content-center">
                         <div
-                          className="icon-box mb-3 d-flex align-items-center justify-content-center"
+                          className="icon-box mb-2 mb-md-3 d-flex align-items-center justify-content-center flex-shrink-0"
                           style={{
-                            width: '60px',
-                            height: '60px',
+                            width: '50px',
+                            height: '50px',
                             borderRadius: '50%',
                             backgroundColor: `${tool.color}20`
                           }}
                         >
-                          <i className={tool.icon} style={{ fontSize: '28px', color: tool.color }}></i>
+                          <i className={tool.icon} style={{ fontSize: '24px', color: tool.color }}></i>
                         </div>
-                        <h4 className="card-title mb-3">{tool.title}</h4>
-                        <p className="card-text text-muted mb-4">{tool.description}</p>
+                        <h5 className="card-title mb-2 mb-md-3">{tool.title}</h5>
+                        <p className="card-text text-muted mb-3 mb-md-4" style={{
+                          fontSize: '14px',
+                          lineHeight: '1.5',
+                          wordWrap: 'break-word',
+                          overflowWrap: 'break-word'
+                        }}>{tool.description}</p>
                         <Link
                           to={tool.link}
-                          className="btn btn-main"
+                          className="btn btn-main flex-shrink-0"
                           style={{
                             backgroundColor: tool.color,
                             borderColor: tool.color,
                             borderRadius: '25px',
-                            padding: '12px 30px',
-                            width: 'fit-content'
+                            padding: '10px 20px',
+                            width: 'fit-content',
+                            fontSize: '14px'
                           }}
                         >
                           Open Tool <i className="icofont-arrow-right ms-2"></i>

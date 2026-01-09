@@ -93,29 +93,38 @@ function PlantDiseaseIdentifier() {
       <section
         id="subheader"
         className="jarallax text-light"
-        style={{ backgroundImage: 'url(/assets/images/plants/plant-disease.jpg)' }}
+        style={{
+          backgroundImage: 'url(/assets/images/plants/plant-disease.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          position: 'relative'
+        }}
       >
-        <div className="container relative z-index-1000">
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)'
+        }}></div>
+        <div className="container relative z-index-1000" style={{ position: 'relative', zIndex: 10 }}>
           <div className="row">
             <div className="col-lg-12">
-              <div className="subtitle wow fadeInUp mb-3">AI-Powered Tool</div>
+              <ul className="crumb" style={{ marginBottom: '15px' }}>
+                <li><Link to="/" style={{ color: '#fff' }}>Home</Link></li>
+                <li><Link to="/tools" style={{ color: '#fff' }}>Tools</Link></li>
+                <li className="active" style={{ color: '#fff' }}>Plant Disease Identifier</li>
+              </ul>
               <h1 className="wow fadeInUp" data-wow-delay=".2s">Plant Disease Identifier</h1>
+              <p className="lead mt-2">AI-Powered Tool</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Breadcrumb */}
-      <div className="container">
-        <ul className="crumb">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/tools">Tools</Link></li>
-          <li className="active">Plant Disease Identifier</li>
-        </ul>
-      </div>
-
       {/* Main Content */}
-      <section className="pt-0">
+      <section>
         <div className="container">
           <div className="row">
             {/* Upload Section */}
