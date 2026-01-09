@@ -8,7 +8,7 @@ function Tools() {
     {
       id: 'plant-care-calendar',
       title: 'Plant Care Calendar',
-      description: 'Track watering, fertilizing, pruning, and repotting schedules for all your plants. Get reminders so you never forget to care for your green friends.',
+      description: 'Track watering, fertilizing & care schedules. Get reminders for your plants.',
       icon: 'icofont-calendar',
       link: '/tools/plant-care-calendar',
       color: '#4a7c59',
@@ -17,7 +17,7 @@ function Tools() {
     {
       id: 'plant-disease-identifier',
       title: 'Plant Disease Identifier',
-      description: 'Upload a photo of your plant to identify diseases with our AI-powered tool. Get instant results and care recommendations.',
+      description: 'Upload a plant photo to identify diseases using AI. Get care tips instantly.',
       icon: 'icofont-search-2',
       link: '/tools/plant-disease-identifier',
       color: '#28a745',
