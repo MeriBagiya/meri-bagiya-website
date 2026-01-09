@@ -8,7 +8,7 @@ function Tools() {
     {
       id: 'plant-care-calendar',
       title: 'Plant Care Calendar',
-      description: 'Track watering, fertilizing & care schedules. Get reminders for your plants.',
+      description: 'Track watering & care schedules for all your plants.',
       icon: 'icofont-calendar',
       link: '/tools/plant-care-calendar',
       color: '#4a7c59',
@@ -17,7 +17,7 @@ function Tools() {
     {
       id: 'plant-disease-identifier',
       title: 'Plant Disease Identifier',
-      description: 'Upload a plant photo to identify diseases using AI. Get care tips instantly.',
+      description: 'AI-powered tool to identify plant diseases from photos.',
       icon: 'icofont-search-2',
       link: '/tools/plant-disease-identifier',
       color: '#28a745',
@@ -126,20 +126,20 @@ function Tools() {
 
             {tools.map((tool, index) => (
               <div key={tool.id} className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + index * 0.1}s`}>
-                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
-                  <div className="row g-0 flex-column flex-md-row">
+                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px' }}>
+                  <div className="row g-0 flex-column flex-md-row h-100">
                     <div className="col-12 col-md-5">
                       <img
                         src={tool.image}
                         alt={tool.title}
-                        className="w-100"
-                        style={{ objectFit: 'cover', height: '200px' }}
+                        className="w-100 h-100"
+                        style={{ objectFit: 'cover', minHeight: '200px' }}
                       />
                     </div>
-                    <div className="col-12 col-md-7">
+                    <div className="col-12 col-md-7 d-flex">
                       <div className="card-body p-3 p-md-4 d-flex flex-column justify-content-center">
                         <div
-                          className="icon-box mb-2 mb-md-3 d-flex align-items-center justify-content-center"
+                          className="icon-box mb-2 mb-md-3 d-flex align-items-center justify-content-center flex-shrink-0"
                           style={{
                             width: '50px',
                             height: '50px',
@@ -150,10 +150,15 @@ function Tools() {
                           <i className={tool.icon} style={{ fontSize: '24px', color: tool.color }}></i>
                         </div>
                         <h5 className="card-title mb-2 mb-md-3">{tool.title}</h5>
-                        <p className="card-text text-muted mb-3 mb-md-4" style={{ fontSize: '14px' }}>{tool.description}</p>
+                        <p className="card-text text-muted mb-3 mb-md-4" style={{
+                          fontSize: '14px',
+                          lineHeight: '1.5',
+                          wordWrap: 'break-word',
+                          overflowWrap: 'break-word'
+                        }}>{tool.description}</p>
                         <Link
                           to={tool.link}
-                          className="btn btn-main"
+                          className="btn btn-main flex-shrink-0"
                           style={{
                             backgroundColor: tool.color,
                             borderColor: tool.color,
