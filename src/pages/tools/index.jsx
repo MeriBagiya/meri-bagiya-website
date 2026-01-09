@@ -62,7 +62,10 @@ function Tools() {
         <div className="container relative z-index-1000" style={{ position: 'relative', zIndex: 10 }}>
           <div className="row">
             <div className="col-lg-12">
-              <div className="subtitle wow fadeInUp mb-3">Free Online Tools</div>
+              <ul className="crumb" style={{ marginBottom: '15px' }}>
+                <li><Link to="/" style={{ color: '#fff' }}>Home</Link></li>
+                <li className="active" style={{ color: '#fff' }}>Tools</li>
+              </ul>
               <h1 className="wow fadeInUp" data-wow-delay=".2s">Gardening Tools</h1>
               <p className="lead mt-3 wow fadeInUp" data-wow-delay=".3s" style={{ maxWidth: '600px' }}>
                 Helpful digital tools to make caring for your plants easier
@@ -71,14 +74,6 @@ function Tools() {
           </div>
         </div>
       </section>
-
-      {/* Breadcrumb */}
-      <div className="container">
-        <ul className="crumb">
-          <li><Link to="/">Home</Link></li>
-          <li className="active">Tools</li>
-        </ul>
-      </div>
 
       {/* Plant Showcase Section */}
       <section className="pt-0">
