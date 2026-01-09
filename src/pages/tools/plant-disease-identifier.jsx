@@ -93,7 +93,7 @@ function PlantDiseaseIdentifier() {
       <section
         id="subheader"
         className="jarallax text-light"
-        style={{ backgroundImage: 'url(/assets/images/background/subheader-green.webp)' }}
+        style={{ backgroundImage: 'url(/assets/images/plants/plant-disease.jpg)' }}
       >
         <div className="container relative z-index-1000">
           <div className="row">
