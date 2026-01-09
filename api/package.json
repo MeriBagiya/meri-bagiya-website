@@ -4,6 +4,7 @@
   "description": "Email sending API for Meri Bagiya",
   "main": "send-email.js",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
     "cors": "^2.8.5",
     "googleapis": "^144.0.0",
     "nodemailer": "^6.9.7"
