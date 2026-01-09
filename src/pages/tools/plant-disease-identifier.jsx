@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import toast from 'react-hot-toast';
 
+const API_URL = process.env.REACT_APP_API_URL
+  ? `${process.env.REACT_APP_API_URL}/api/identify-disease`
+  : 'https://meri-bagiya-project.vercel.app/api/identify-disease';
+
 function PlantDiseaseIdentifier() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -40,8 +44,8 @@ function PlantDiseaseIdentifier() {
       const base64Image = reader.result.split(',')[1];
 
       try {
-        console.log('Calling /api/identify-disease');
-        const response = await fetch('/api/identify-disease', {
+        console.log('Calling API_URL');
+        const response = await fetch(API_URL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
