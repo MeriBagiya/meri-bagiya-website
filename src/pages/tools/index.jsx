@@ -21,7 +21,7 @@ function Tools() {
       icon: 'icofont-search-2',
       link: '/tools/plant-disease-identifier',
       color: '#28a745',
-      image: '/assets/images/plants/rose.jpg'
+      image: '/assets/images/plants/plant-disease.jpg'
     }
   ];
 

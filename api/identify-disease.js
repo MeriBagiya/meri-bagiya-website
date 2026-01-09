@@ -1,31 +1,43 @@
 const Anthropic = require('@anthropic-ai/sdk');
 
 module.exports = async (req, res) => {
+  console.log('Function invoked');
+  console.log('Request method:', req.method);
+  console.log('Request headers:', req.headers);
+
   // Set CORS headers for all requests
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   if (req.method === 'OPTIONS') {
+    console.log('Responding to OPTIONS request');
     res.status(200).end();
     return;
   }
 
   if (req.method !== 'POST') {
+    console.log('Method not allowed:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  console.log('Processing POST request');
+
   const anthropic = new Anthropic({
-    apiKey: process.env.REACT_APP_CLAUDE_API_KEY,
+    apiKey: process.env.CLAUDE_API_KEY,
   });
 
   const { image } = req.body;
 
   if (!image) {
+    console.log('Image data not found in request body');
     return res.status(400).json({ error: 'Image data is required' });
   }
 
+  console.log('Image data received');
+
   try {
+    console.log('Calling Claude API');
     const msg = await anthropic.messages.create({
       model: 'claude-3-haiku-20240307',
       max_tokens: 1024,
@@ -66,6 +78,7 @@ module.exports = async (req, res) => {
       ],
     });
 
+    console.log('Claude API response received:', msg.content[0].text);
     res.status(200).json(JSON.parse(msg.content[0].text));
   } catch (error) {
     console.error('Error identifying plant disease:', error);
