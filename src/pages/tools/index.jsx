@@ -127,30 +127,30 @@ function Tools() {
             {tools.map((tool, index) => (
               <div key={tool.id} className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + index * 0.1}s`}>
                 <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
-                  <div className="row g-0">
-                    <div className="col-md-5">
+                  <div className="row g-0 flex-column flex-md-row">
+                    <div className="col-12 col-md-5">
                       <img
                         src={tool.image}
                         alt={tool.title}
-                        className="h-100 w-100"
-                        style={{ objectFit: 'cover', minHeight: '250px' }}
+                        className="w-100"
+                        style={{ objectFit: 'cover', height: '200px' }}
                       />
                     </div>
-                    <div className="col-md-7">
-                      <div className="card-body p-4 d-flex flex-column justify-content-center h-100">
+                    <div className="col-12 col-md-7">
+                      <div className="card-body p-3 p-md-4 d-flex flex-column justify-content-center">
                         <div
-                          className="icon-box mb-3 d-flex align-items-center justify-content-center"
+                          className="icon-box mb-2 mb-md-3 d-flex align-items-center justify-content-center"
                           style={{
-                            width: '60px',
-                            height: '60px',
+                            width: '50px',
+                            height: '50px',
                             borderRadius: '50%',
                             backgroundColor: `${tool.color}20`
                           }}
                         >
-                          <i className={tool.icon} style={{ fontSize: '28px', color: tool.color }}></i>
+                          <i className={tool.icon} style={{ fontSize: '24px', color: tool.color }}></i>
                         </div>
-                        <h4 className="card-title mb-3">{tool.title}</h4>
-                        <p className="card-text text-muted mb-4">{tool.description}</p>
+                        <h5 className="card-title mb-2 mb-md-3">{tool.title}</h5>
+                        <p className="card-text text-muted mb-3 mb-md-4" style={{ fontSize: '14px' }}>{tool.description}</p>
                         <Link
                           to={tool.link}
                           className="btn btn-main"
@@ -158,8 +158,9 @@ function Tools() {
                             backgroundColor: tool.color,
                             borderColor: tool.color,
                             borderRadius: '25px',
-                            padding: '12px 30px',
-                            width: 'fit-content'
+                            padding: '10px 20px',
+                            width: 'fit-content',
+                            fontSize: '14px'
                           }}
                         >
                           Open Tool <i className="icofont-arrow-right ms-2"></i>
