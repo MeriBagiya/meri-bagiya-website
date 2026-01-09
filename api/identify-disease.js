@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
   console.log('Processing POST request');
 
   const anthropic = new Anthropic({
-    apiKey: process.env.REACT_APP_CLAUDE_API_KEY,
+    apiKey: process.env.CLAUDE_API_KEY,
   });
 
   const { image } = req.body;
