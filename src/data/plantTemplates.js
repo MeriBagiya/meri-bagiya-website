@@ -4,7 +4,7 @@ export const plantTemplates = [
     id: 'snake-plant',
     name: 'Snake Plant',
     scientificName: 'Sansevieria trifasciata',
-    image: '/assets/images/plants/snake-plant.webp',
+    image: '/assets/images/plants/snake-plant.jpg',
     careSchedule: {
       watering: { frequency: 21, summerFrequency: 14, winterFrequency: 28 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
@@ -18,7 +18,7 @@ export const plantTemplates = [
     id: 'peace-lily',
     name: 'Peace Lily',
     scientificName: 'Spathiphyllum',
-    image: '/assets/images/plants/peace-lily.webp',
+    image: '/assets/images/plants/peace-lily.jpg',
     careSchedule: {
       watering: { frequency: 7, summerFrequency: 5, winterFrequency: 10 },
       fertilizing: { frequency: 14, activeSeasons: ['spring', 'summer'] },
@@ -32,7 +32,7 @@ export const plantTemplates = [
     id: 'spider-plant',
     name: 'Spider Plant',
     scientificName: 'Chlorophytum comosum',
-    image: '/assets/images/plants/spider-plant.webp',
+    image: '/assets/images/plants/spider-plant.jpg',
     careSchedule: {
       watering: { frequency: 7, summerFrequency: 5, winterFrequency: 10 },
       fertilizing: { frequency: 14, activeSeasons: ['spring', 'summer'] },
@@ -46,7 +46,7 @@ export const plantTemplates = [
     id: 'pothos',
     name: 'Pothos',
     scientificName: 'Epipremnum aureum',
-    image: '/assets/images/plants/pothos.webp',
+    image: '/assets/images/plants/pothos.jpg',
     careSchedule: {
       watering: { frequency: 10, summerFrequency: 7, winterFrequency: 14 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
@@ -60,7 +60,7 @@ export const plantTemplates = [
     id: 'rubber-plant',
     name: 'Rubber Plant',
     scientificName: 'Ficus elastica',
-    image: '/assets/images/plants/rubber-plant.webp',
+    image: '/assets/images/plants/rubber-plant.jpg',
     careSchedule: {
       watering: { frequency: 10, summerFrequency: 7, winterFrequency: 14 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
@@ -74,7 +74,7 @@ export const plantTemplates = [
     id: 'zz-plant',
     name: 'ZZ Plant',
     scientificName: 'Zamioculcas zamiifolia',
-    image: '/assets/images/plants/zz-plant.webp',
+    image: '/assets/images/plants/zz-plant.jpg',
     careSchedule: {
       watering: { frequency: 21, summerFrequency: 14, winterFrequency: 28 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
@@ -88,7 +88,7 @@ export const plantTemplates = [
     id: 'monstera',
     name: 'Monstera',
     scientificName: 'Monstera deliciosa',
-    image: '/assets/images/plants/monstera.webp',
+    image: '/assets/images/plants/monstera.jpg',
     careSchedule: {
       watering: { frequency: 10, summerFrequency: 7, winterFrequency: 14 },
       fertilizing: { frequency: 14, activeSeasons: ['spring', 'summer'] },
@@ -102,7 +102,7 @@ export const plantTemplates = [
     id: 'jade-plant',
     name: 'Jade Plant',
     scientificName: 'Crassula ovata',
-    image: '/assets/images/plants/jade-plant.webp',
+    image: '/assets/images/plants/jade-plant.jpg',
     careSchedule: {
       watering: { frequency: 14, summerFrequency: 10, winterFrequency: 21 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
@@ -116,7 +116,7 @@ export const plantTemplates = [
     id: 'aloe-vera',
     name: 'Aloe Vera',
     scientificName: 'Aloe barbadensis miller',
-    image: '/assets/images/plants/aloe-vera.webp',
+    image: '/assets/images/plants/aloe-vera.jpg',
     careSchedule: {
       watering: { frequency: 21, summerFrequency: 14, winterFrequency: 28 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
@@ -130,7 +130,7 @@ export const plantTemplates = [
     id: 'boston-fern',
     name: 'Boston Fern',
     scientificName: 'Nephrolepis exaltata',
-    image: '/assets/images/plants/boston-fern.webp',
+    image: '/assets/images/plants/boston-fern.jpg',
     careSchedule: {
       watering: { frequency: 5, summerFrequency: 3, winterFrequency: 7 },
       fertilizing: { frequency: 7, activeSeasons: ['spring', 'summer'] },
@@ -144,7 +144,7 @@ export const plantTemplates = [
     id: 'philodendron',
     name: 'Philodendron',
     scientificName: 'Philodendron hederaceum',
-    image: '/assets/images/plants/philodendron.webp',
+    image: '/assets/images/plants/philodendron.jpg',
     careSchedule: {
       watering: { frequency: 7, summerFrequency: 5, winterFrequency: 10 },
       fertilizing: { frequency: 14, activeSeasons: ['spring', 'summer'] },
@@ -158,7 +158,7 @@ export const plantTemplates = [
     id: 'fiddle-leaf-fig',
     name: 'Fiddle Leaf Fig',
     scientificName: 'Ficus lyrata',
-    image: '/assets/images/plants/fiddle-leaf-fig.webp',
+    image: '/assets/images/plants/fiddle-leaf-fig.jpg',
     careSchedule: {
       watering: { frequency: 10, summerFrequency: 7, winterFrequency: 14 },
       fertilizing: { frequency: 30, activeSeasons: ['spring', 'summer'] },
