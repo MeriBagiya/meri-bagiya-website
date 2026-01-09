@@ -187,4 +187,54 @@
     </image:image>
   </url>
 
+  <!-- Tools Page -->
+  <url>
+    <loc>https://meribagiya.com/tools</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/monstera.jpg</image:loc>
+      <image:title>Gardening Tools</image:title>
+      <image:caption>Free online gardening tools by Meri Bagiya</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/plant-disease.jpg</image:loc>
+      <image:title>Plant Disease Identifier Tool</image:title>
+      <image:caption>AI-powered plant disease identification tool</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plant Care Calendar -->
+  <url>
+    <loc>https://meribagiya.com/tools/plant-care-calendar</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/background/6.webp</image:loc>
+      <image:title>Plant Care Calendar</image:title>
+      <image:caption>Track watering and care schedules for your plants</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/snake-plant.jpg</image:loc>
+      <image:title>Snake Plant Care</image:title>
+      <image:caption>Snake plant care schedule and tips</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/peace-lily.jpg</image:loc>
+      <image:title>Peace Lily Care</image:title>
+      <image:caption>Peace lily care schedule and tips</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/monstera.jpg</image:loc>
+      <image:title>Monstera Care</image:title>
+      <image:caption>Monstera plant care schedule and tips</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plant Disease Identifier -->
+  <url>
+    <loc>https://meribagiya.com/tools/plant-disease-identifier</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/plant-disease.jpg</image:loc>
+      <image:title>Plant Disease Identifier</image:title>
+      <image:caption>AI-powered tool to identify plant diseases from photos</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
