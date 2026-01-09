@@ -124,7 +124,7 @@ function PlantDiseaseIdentifier() {
       </section>
 
       {/* Main Content */}
-      <section className="pt-0">
+      <section>
         <div className="container">
           <div className="row">
             {/* Upload Section */}

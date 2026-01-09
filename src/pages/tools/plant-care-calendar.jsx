@@ -289,7 +289,7 @@ function PlantCareCalendar() {
       </section>
 
       {/* Main Content */}
-      <section className="pt-0">
+      <section>
         <div className="container">
           {/* Notification Banner */}
           {notificationStatus !== 'granted' && notificationStatus !== 'unsupported' && (
