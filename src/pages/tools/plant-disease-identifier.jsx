@@ -40,6 +40,7 @@ function PlantDiseaseIdentifier() {
       const base64Image = reader.result.split(',')[1];
 
       try {
+        console.log('Calling /api/identify-disease');
         const response = await fetch('/api/identify-disease', {
           method: 'POST',
           headers: {
@@ -48,11 +49,15 @@ function PlantDiseaseIdentifier() {
           body: JSON.stringify({ image: base64Image }),
         });
 
+        console.log('Response status:', response.status);
+        const responseText = await response.text();
+        console.log('Response text:', responseText);
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const responseData = await response.json();
+        const responseData = JSON.parse(responseText);
         setResult(responseData.diseases);
         setLoading(false);
         toast.success('Identification complete!');
