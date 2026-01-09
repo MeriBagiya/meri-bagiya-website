@@ -94,6 +94,14 @@ function Header() {
                                         </ul>
                                     </li>
                                     <li>
+                                        <Link to="/tools" className="menu-item">
+                                            Tools
+                                        </Link>
+                                        <ul>
+                                            <li><Link to="/tools/plant-care-calendar">Plant Care Calendar</Link></li>
+                                        </ul>
+                                    </li>
+                                    <li>
                                         <Link to="/about" className="menu-item">
                                             About Us
                                         </Link>
@@ -309,6 +317,28 @@ function Header() {
                 <Link to="/services/garden-maintenance" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/services/garden-maintenance') }}>
                     → Garden Maintenance
                 </Link>
+
+                {/* TOOLS Section */}
+                <Link
+                    to="/tools"
+                    onClick={closeMobileMenu}
+                    style={{
+                        display: 'block',
+                        padding: '15px 20px',
+                        color: '#4a7c59',
+                        textDecoration: 'none',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        borderBottom: '1px solid #f5f5f5',
+                        marginTop: '5px'
+                    }}
+                >
+                    Tools
+                </Link>
+                <Link to="/tools/plant-care-calendar" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/tools/plant-care-calendar') }}>
+                    → Plant Care Calendar
+                </Link>
+
                 <Link
                     to="/about"
                     onClick={closeMobileMenu}

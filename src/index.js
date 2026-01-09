@@ -31,6 +31,8 @@ import Terms from './pages/terms';
 import Privacy from './pages/privacy';
 import ReturnPolicy from './pages/return-policy';
 import Shipping from './pages/shipping';
+import Tools from './pages/tools';
+import PlantCareCalendar from './pages/tools/plant-care-calendar';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -62,6 +64,8 @@ const router = createBrowserRouter(
          <Route path="privacy" element={<Privacy/>}/>
          <Route path="return-policy" element={<ReturnPolicy/>}/>
          <Route path="shipping" element={<Shipping/>}/>
+         <Route path="tools" element={<Tools/>}/>
+         <Route path="tools/plant-care-calendar" element={<PlantCareCalendar/>}/>
 
       </Route>
    )
