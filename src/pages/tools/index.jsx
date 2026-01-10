@@ -224,7 +224,7 @@ function Tools() {
               <Link
                 to="/tools/plant-care-calendar"
                 className="btn btn-main btn-lg wow fadeInUp"
-                style={{ borderRadius: '30px', padding: '15px 40px' }}
+                style={{ borderRadius: '30px', padding: '15px 40px', position: 'relative', zIndex: 10 }}
               >
                 <i className="icofont-calendar me-2"></i> Start Tracking Your Plants
               </Link>

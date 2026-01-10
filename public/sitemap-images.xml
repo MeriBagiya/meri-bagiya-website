@@ -252,4 +252,14 @@
     </image:image>
   </url>
 
+  <!-- Plant Growth Tracker -->
+  <url>
+    <loc>https://meribagiya.com/tools/plant-growth-tracker</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/pothos.jpg</image:loc>
+      <image:title>Plant Growth Tracker</image:title>
+      <image:caption>Track plant height, health, and bloom cycles with photo timeline</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
