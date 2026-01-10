@@ -79,7 +79,7 @@ function Tools() {
       </section>
 
       {/* Plant Showcase Section */}
-      <section className="pt-0">
+      <section className="pt-4">
         <div className="container">
           <div className="row g-3 mb-5">
             {showcasePlants.map((plant, index) => (
@@ -112,7 +112,7 @@ function Tools() {
       </section>
 
       {/* Tools Grid */}
-      <section className="pt-0">
+      <section className="pt-4">
         <div className="container">
           <div className="row g-4">
             <div className="col-lg-12 text-center mb-4">
