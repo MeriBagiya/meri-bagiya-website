@@ -237,4 +237,19 @@
     </image:image>
   </url>
 
+  <!-- Fertilizer Calculator -->
+  <url>
+    <loc>https://meribagiya.com/tools/fertilizer-calculator</loc>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/background/6.webp</image:loc>
+      <image:title>Fertilizer Calculator</image:title>
+      <image:caption>Calculate exact fertilizer amounts for your plants</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://meribagiya.com/assets/images/plants/jade-plant.jpg</image:loc>
+      <image:title>Jade Plant Fertilizer Guide</image:title>
+      <image:caption>Fertilizer recommendations for succulents and cacti</image:caption>
+    </image:image>
+  </url>
+
 </urlset>

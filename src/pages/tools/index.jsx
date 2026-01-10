@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { plantTemplates } from '../../data/plantTemplates';
 
 function Tools() {
+  const navigate = useNavigate();
+
   const tools = [
     {
       id: 'plant-care-calendar',
@@ -22,6 +24,15 @@ function Tools() {
       link: '/tools/plant-disease-identifier',
       color: '#28a745',
       image: '/assets/images/plants/plant-disease.jpg'
+    },
+    {
+      id: 'fertilizer-calculator',
+      title: 'Fertilizer Calculator',
+      description: 'Calculate exact fertilizer amounts based on plant type, pot size, and growth stage.',
+      icon: 'icofont-calculator',
+      link: '/tools/fertilizer-calculator',
+      color: '#fd7e14',
+      image: '/assets/images/plants/jade-plant.jpg'
     }
   ];
 
@@ -104,18 +115,18 @@ function Tools() {
 
             {tools.map((tool, index) => (
               <div key={tool.id} className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + index * 0.1}s`}>
-                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px' }}>
+                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
                   <div className="row g-0 flex-column flex-md-row h-100">
                     <div className="col-12 col-md-5">
                       <img
                         src={tool.image}
                         alt={tool.title}
                         className="w-100 h-100"
-                        style={{ objectFit: 'cover', minHeight: '200px' }}
+                        style={{ objectFit: 'cover', minHeight: '200px', borderRadius: '20px 0 0 20px' }}
                       />
                     </div>
-                    <div className="col-12 col-md-7 d-flex">
-                      <div className="card-body p-3 p-md-4 d-flex flex-column justify-content-center">
+                    <div className="col-12 col-md-7 d-flex" style={{ overflow: 'hidden' }}>
+                      <div className="card-body p-3 p-md-4 d-flex flex-column justify-content-center" style={{ overflow: 'hidden' }}>
                         <div
                           className="icon-box mb-2 mb-md-3 d-flex align-items-center justify-content-center flex-shrink-0"
                           style={{
@@ -131,11 +142,12 @@ function Tools() {
                         <p className="card-text text-muted mb-3 mb-md-4" style={{
                           fontSize: '14px',
                           lineHeight: '1.5',
-                          wordWrap: 'break-word',
-                          overflowWrap: 'break-word'
+                          wordBreak: 'break-word',
+                          overflowWrap: 'break-word',
+                          overflow: 'hidden'
                         }}>{tool.description}</p>
-                        <Link
-                          to={tool.link}
+                        <button
+                          onClick={() => navigate(tool.link)}
                           className="btn btn-main flex-shrink-0"
                           style={{
                             backgroundColor: tool.color,
@@ -143,11 +155,12 @@ function Tools() {
                             borderRadius: '25px',
                             padding: '10px 20px',
                             width: 'fit-content',
-                            fontSize: '14px'
+                            fontSize: '14px',
+                            cursor: 'pointer'
                           }}
                         >
                           Open Tool <i className="icofont-arrow-right ms-2"></i>
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
