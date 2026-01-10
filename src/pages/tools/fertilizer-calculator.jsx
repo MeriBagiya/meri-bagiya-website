@@ -529,9 +529,13 @@ function FertilizerCalculator() {
                     <i className="icofont-calendar me-2" style={{ color: '#4a7c59' }}></i>
                     <span className="text-dark">Plant Care Calendar</span>
                   </Link>
-                  <Link to="/tools/plant-disease-identifier" className="d-flex align-items-center p-2 rounded-3 text-decoration-none" style={{ backgroundColor: '#f8f9fa' }}>
+                  <Link to="/tools/plant-disease-identifier" className="d-flex align-items-center p-2 rounded-3 text-decoration-none mb-2" style={{ backgroundColor: '#f8f9fa' }}>
                     <i className="icofont-search-2 me-2" style={{ color: '#28a745' }}></i>
                     <span className="text-dark">Plant Disease Identifier</span>
+                  </Link>
+                  <Link to="/tools/plant-growth-tracker" className="d-flex align-items-center p-2 rounded-3 text-decoration-none" style={{ backgroundColor: '#f8f9fa' }}>
+                    <i className="icofont-chart-growth me-2" style={{ color: '#9c27b0' }}></i>
+                    <span className="text-dark">Plant Growth Tracker</span>
                   </Link>
                 </div>
               </div>

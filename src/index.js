@@ -35,6 +35,7 @@ import Tools from './pages/tools';
 import PlantCareCalendar from './pages/tools/plant-care-calendar';
 import PlantDiseaseIdentifier from './pages/tools/plant-disease-identifier';
 import FertilizerCalculator from './pages/tools/fertilizer-calculator';
+import PlantGrowthTracker from './pages/tools/plant-growth-tracker';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -70,6 +71,7 @@ const router = createBrowserRouter(
          <Route path="tools/plant-care-calendar" element={<PlantCareCalendar/>}/>
          <Route path="tools/plant-disease-identifier" element={<PlantDiseaseIdentifier/>}/>
          <Route path="tools/fertilizer-calculator" element={<FertilizerCalculator/>}/>
+         <Route path="tools/plant-growth-tracker" element={<PlantGrowthTracker/>}/>
 
       </Route>
    )

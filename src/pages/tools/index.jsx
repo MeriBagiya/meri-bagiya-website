@@ -33,6 +33,15 @@ function Tools() {
       link: '/tools/fertilizer-calculator',
       color: '#fd7e14',
       image: '/assets/images/plants/jade-plant.jpg'
+    },
+    {
+      id: 'plant-growth-tracker',
+      title: 'Plant Growth Tracker',
+      description: 'Track plant height, health, bloom cycles with photo timeline and growth analytics.',
+      icon: 'icofont-chart-growth',
+      link: '/tools/plant-growth-tracker',
+      color: '#9c27b0',
+      image: '/assets/images/plants/pothos.jpg'
     }
   ];
 
@@ -168,28 +177,6 @@ function Tools() {
               </div>
             ))}
 
-            {/* Coming Soon Card */}
-            <div className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-              <div className="card h-100 border-0 shadow-sm" style={{ borderRadius: '20px', overflow: 'hidden', backgroundColor: '#f8f9fa' }}>
-                <div className="card-body text-center p-5 d-flex flex-column justify-content-center">
-                  <div
-                    className="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center"
-                    style={{
-                      width: '80px',
-                      height: '80px',
-                      borderRadius: '50%',
-                      backgroundColor: '#e9ecef'
-                    }}
-                  >
-                    <i className="icofont-plus" style={{ fontSize: '36px', color: '#adb5bd' }}></i>
-                  </div>
-                  <h4 className="card-title mb-3 text-muted">More Tools Coming Soon</h4>
-                  <p className="card-text text-muted">
-                    We're working on more helpful tools for plant lovers. Stay tuned!
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
