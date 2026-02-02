@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput, FormTextarea, FormCheckbox } from '../components/form';
+import { trackEvent } from '../utils/analytics';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -88,6 +89,7 @@ function Contact() {
       if (response.ok && data.success) {
         setStatus({ submitting: false, success: true, error: null });
         reset();
+        trackEvent('generate_lead', { method: 'contact_form' });
         toast.success('Message sent! We\'ll get back to you within 24 hours.');
       } else {
         throw new Error(data.error || 'Failed to send message');

@@ -4,12 +4,26 @@ import Footer from './layout/footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { trackEvent } from './utils/analytics';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+function PageViewTracker() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    trackEvent('page_view', {
+      page_path: pathname,
+      page_title: document.title,
+    });
   }, [pathname]);
 
   return null;
@@ -63,6 +77,7 @@ function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <ScrollToTop />
+      <PageViewTracker />
       <PluginReinitializer />
       <Toaster
         position="top-center"

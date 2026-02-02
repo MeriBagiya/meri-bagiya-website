@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { trackEvent } from '../utils/analytics';
 
 const WHATSAPP_NUMBER = '919220404309';
 const DEFAULT_MESSAGE = 'Hi! I visited your website and would like to know more about your plants and garden services.';
@@ -85,6 +86,7 @@ function WhatsAppButton() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         aria-label="Chat on WhatsApp"
+        onClick={() => trackEvent('generate_lead', { method: 'whatsapp' })}
       >
         <span className="whatsapp-tooltip" style={tooltipStyle}>Chat with us!</span>
         <i className="fa-brands fa-whatsapp wa-icon" style={iconStyle}></i>
