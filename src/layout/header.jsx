@@ -105,6 +105,11 @@ function Header() {
                                         </ul>
                                     </li>
                                     <li>
+                                        <Link to="/portfolio" className="menu-item">
+                                            Portfolio
+                                        </Link>
+                                    </li>
+                                    <li>
                                         <Link to="/about" className="menu-item">
                                             About Us
                                         </Link>
@@ -349,6 +354,21 @@ function Header() {
                 </Link>
                 <Link to="/tools/plant-growth-tracker" onClick={closeMobileMenu} style={{ display: 'block', padding: '12px 20px 12px 35px', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f5f5f5', ...getSubActiveStyle('/tools/plant-growth-tracker') }}>
                     → Plant Growth Tracker
+                </Link>
+
+                <Link
+                    to="/portfolio"
+                    onClick={closeMobileMenu}
+                    style={{
+                        display: 'block',
+                        padding: '15px 20px',
+                        textDecoration: 'none',
+                        fontSize: '16px',
+                        borderBottom: '1px solid #f5f5f5',
+                        ...getActiveStyle('/portfolio')
+                    }}
+                >
+                    Portfolio
                 </Link>
 
                 <Link

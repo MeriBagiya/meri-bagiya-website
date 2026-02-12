@@ -444,6 +444,57 @@ function Shophomepage() {
 
 
 
+        {/* Trusted By Section */}
+        <section style={{ backgroundColor: '#f8f9fa' }}>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-lg-8 text-center">
+                        <div className="subtitle wow fadeInUp">Our Clients</div>
+                        <h2 className="wow fadeInUp" data-wow-delay=".2s">Trusted by Leading Properties in <span className="id-color-2">NCR</span></h2>
+                        <p className="wow fadeInUp" data-wow-delay=".3s">We've partnered with residential societies, commercial venues, and premium developments across Greater Noida and Noida.</p>
+                    </div>
+                </div>
+                <div className="spacer-20"></div>
+                <div className="row g-4">
+                    {[
+                        { name: 'VSK Garden', type: 'Banquet & Event Venue', location: 'Knowledge Park 3, Greater Noida', image: '/assets/images/projects-square/1.jpg' },
+                        { name: 'Telecom City', type: 'Residential Society', location: 'Sector 62, Noida', image: '/assets/images/projects-square/2.jpg' },
+                        { name: 'Arihant Ambar', type: 'Luxury Residential', location: 'Sector 1, Greater Noida West', image: '/assets/images/projects-square/3.jpg' },
+                        { name: 'Ace Divino', type: 'Premium Residential', location: 'Sector 1, Greater Noida West', image: '/assets/images/projects-square/4.jpg' }
+                    ].map((client, index) => (
+                        <div className="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay={`${0.1 * (index + 1)}s`} key={client.name}>
+                            <Link to="/portfolio" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <div style={{
+                                    background: '#fff',
+                                    borderRadius: '12px',
+                                    overflow: 'hidden',
+                                    boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                                }}
+                                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)'; }}
+                                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.08)'; }}
+                                >
+                                    <img src={client.image} alt={`${client.name} - Landscaping by Meri Bagiya`} style={{ width: '100%', aspectRatio: '1', objectFit: 'cover' }} />
+                                    <div style={{ padding: '15px' }}>
+                                        <h5 style={{ marginBottom: '4px', fontSize: '16px' }}>{client.name}</h5>
+                                        <p style={{ fontSize: '13px', color: '#4a7c59', marginBottom: '2px', fontWeight: '500' }}>{client.type}</p>
+                                        <p style={{ fontSize: '12px', color: '#999', margin: 0 }}>
+                                            <i className="icofont-location-pin" style={{ marginRight: '3px' }}></i>
+                                            {client.location}
+                                        </p>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+                <div className="spacer-20"></div>
+                <div className="text-center wow fadeInUp" data-wow-delay=".6s">
+                    <Link to="/portfolio" className="btn-main">View All Projects</Link>
+                </div>
+            </div>
+        </section>
+
     </div>
     {/* <!-- content end --> */}
 
