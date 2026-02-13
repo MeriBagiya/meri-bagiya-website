@@ -6,7 +6,7 @@ import { plantTemplates } from '../../data/plantTemplates';
 function Tools() {
   const navigate = useNavigate();
 
-  const tools = [
+  const homeTools = [
     {
       id: 'plant-care-calendar',
       title: 'Plant Care Calendar',
@@ -42,6 +42,54 @@ function Tools() {
       link: '/tools/plant-growth-tracker',
       color: '#9c27b0',
       image: '/assets/images/plants/pothos.jpg'
+    },
+    {
+      id: 'terrace-garden-cost-calculator',
+      title: 'Terrace Garden Cost Calculator',
+      description: 'Estimate terrace or rooftop garden setup cost per sq ft with features breakdown.',
+      icon: 'icofont-home',
+      link: '/tools/terrace-garden-cost-calculator',
+      color: '#e91e63',
+      image: '/assets/images/plants/jade-plant.jpg'
+    },
+    {
+      id: 'plant-rental-vs-buy-calculator',
+      title: 'Rental vs Buy Calculator',
+      description: 'Compare costs of renting vs buying plants over 1-3 years. Find the better deal.',
+      icon: 'icofont-exchange',
+      link: '/tools/plant-rental-vs-buy-calculator',
+      color: '#009688',
+      image: '/assets/images/plants/pothos.jpg'
+    },
+    {
+      id: 'indoor-plant-quiz',
+      title: 'Indoor Plant Quiz',
+      description: 'Answer 7 questions to find the perfect indoor plants for your space and lifestyle.',
+      icon: 'icofont-question-circle',
+      link: '/tools/indoor-plant-quiz',
+      color: '#673ab7',
+      image: '/assets/images/plants/monstera.jpg'
+    }
+  ];
+
+  const businessTools = [
+    {
+      id: 'society-garden-cost-estimator',
+      title: 'Society Garden AMC Estimator',
+      description: 'Estimate monthly garden maintenance contract costs for your residential society.',
+      icon: 'icofont-building-alt',
+      link: '/tools/society-garden-cost-estimator',
+      color: '#0d6efd',
+      image: '/assets/images/plants/monstera.jpg'
+    },
+    {
+      id: 'corporate-gifting-calculator',
+      title: 'Corporate Gifting Planner',
+      description: 'Plan your budget for corporate plant gifts — Diwali, New Year, employee appreciation.',
+      icon: 'icofont-gift',
+      link: '/tools/corporate-gifting-calculator',
+      color: '#ff9800',
+      image: '/assets/images/plants/jade-plant.jpg'
     }
   ];
 
@@ -51,9 +99,10 @@ function Tools() {
   return (
     <>
       <SEO
-        title="Gardening Tools | Meri Bagiya"
-        description="Free online gardening tools to help you care for your plants. Plant care calendar, watering reminders, and more."
-        keywords="gardening tools, plant care calendar, watering reminder, plant tracker, garden planner"
+        title="Free Gardening Tools & Calculators | Meri Bagiya"
+        description="Free online gardening tools — plant care calendar, disease identifier, fertilizer calculator, growth tracker, society AMC estimator, terrace garden cost calculator, corporate gifting planner, and more."
+        keywords="gardening tools, plant care calendar, society garden maintenance cost calculator, terrace garden cost calculator, corporate plant gifting calculator, plant rental calculator, indoor plant quiz"
+        canonicalUrl="/tools"
         breadcrumbs={[
           { name: 'Home', url: 'https://meribagiya.com/' },
           { name: 'Tools', url: 'https://meribagiya.com/tools' }
@@ -111,18 +160,88 @@ function Tools() {
         </div>
       </section>
 
-      {/* Tools Grid */}
+      {/* Tools Grid - Home & Garden */}
       <section className="pt-4">
         <div className="container">
           <div className="row g-4">
             <div className="col-lg-12 text-center mb-4">
-              <h2 className="wow fadeInUp">Free Tools for Plant Lovers</h2>
+              <h2 className="wow fadeInUp">For Your Home & Garden</h2>
               <p className="lead wow fadeInUp" data-wow-delay=".2s">
-                Helpful tools to make caring for your plants easier
+                Free tools to help you care for your plants and plan your garden
               </p>
             </div>
 
-            {tools.map((tool, index) => (
+            {homeTools.map((tool, index) => (
+              <div key={tool.id} className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + index * 0.1}s`}>
+                <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
+                  <div className="row g-0 flex-column flex-md-row h-100">
+                    <div className="col-12 col-md-5">
+                      <img
+                        src={tool.image}
+                        alt={tool.title}
+                        className="w-100 h-100"
+                        style={{ objectFit: 'cover', minHeight: '200px', borderRadius: '20px 0 0 20px' }}
+                      />
+                    </div>
+                    <div className="col-12 col-md-7 d-flex" style={{ overflow: 'hidden' }}>
+                      <div className="card-body p-3 p-md-4 d-flex flex-column justify-content-center" style={{ overflow: 'hidden' }}>
+                        <div
+                          className="icon-box mb-2 mb-md-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                          style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '50%',
+                            backgroundColor: `${tool.color}20`
+                          }}
+                        >
+                          <i className={tool.icon} style={{ fontSize: '24px', color: tool.color }}></i>
+                        </div>
+                        <h5 className="card-title mb-2 mb-md-3">{tool.title}</h5>
+                        <p className="card-text text-muted mb-3 mb-md-4" style={{
+                          fontSize: '14px',
+                          lineHeight: '1.5',
+                          wordBreak: 'break-word',
+                          overflowWrap: 'break-word',
+                          overflow: 'hidden'
+                        }}>{tool.description}</p>
+                        <button
+                          onClick={() => navigate(tool.link)}
+                          className="btn btn-main flex-shrink-0"
+                          style={{
+                            backgroundColor: tool.color,
+                            borderColor: tool.color,
+                            borderRadius: '25px',
+                            padding: '10px 20px',
+                            width: 'fit-content',
+                            fontSize: '14px',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          Open Tool <i className="icofont-arrow-right ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Grid - Business & Societies */}
+      <section className="pt-4">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-lg-12 text-center mb-4">
+              <h2 className="wow fadeInUp">For Business & Societies</h2>
+              <p className="lead wow fadeInUp" data-wow-delay=".2s">
+                Cost calculators for corporate offices, societies, and bulk orders
+              </p>
+            </div>
+
+            {businessTools.map((tool, index) => (
               <div key={tool.id} className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 + index * 0.1}s`}>
                 <div className="card h-100 border-0 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
                   <div className="row g-0 flex-column flex-md-row h-100">

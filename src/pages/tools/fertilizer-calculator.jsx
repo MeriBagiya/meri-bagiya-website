@@ -142,10 +142,16 @@ function FertilizerCalculator() {
         title="Fertilizer Calculator - Calculate Exact Plant Fertilizer Amounts | Meri Bagiya"
         description="Free fertilizer calculator tool. Get exact fertilizer amounts, NPK ratios, and feeding schedules based on your plant type, pot size, and growth stage."
         keywords="fertilizer calculator, plant fertilizer, NPK ratio, fertilizer schedule, plant feeding, organic fertilizer, gardening calculator"
+        canonicalUrl="/tools/fertilizer-calculator"
         breadcrumbs={[
           { name: 'Home', url: 'https://meribagiya.com/' },
           { name: 'Tools', url: 'https://meribagiya.com/tools' },
           { name: 'Fertilizer Calculator', url: 'https://meribagiya.com/tools/fertilizer-calculator' }
+        ]}
+        faqItems={[
+          { question: "How much fertilizer should I use for indoor plants?", answer: "The amount depends on plant type, pot size, and growth stage. As a general rule, a medium pot (8-10 inch) needs about 5 grams per application. Our calculator provides exact gram amounts and NPK ratios for 8 plant categories." },
+          { question: "What NPK ratio is best for flowering plants?", answer: "Flowering plants need higher phosphorus — typically NPK 10-30-20. This promotes bloom development. Foliage plants need more nitrogen (24-8-16), while succulents need minimal feeding (2-7-7). Use our calculator for specific recommendations." },
+          { question: "When is the best time to fertilize plants in India?", answer: "Spring (March-May) is the peak fertilizing season when plants are in active growth. Reduce during monsoon, and minimize in winter when most plants are dormant. Our seasonal tip banner shows current recommendations." }
         ]}
       />
 

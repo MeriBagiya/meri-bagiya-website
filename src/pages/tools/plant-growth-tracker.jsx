@@ -492,10 +492,16 @@ function PlantGrowthTracker() {
         title="Plant Growth Tracker - Track Height, Health & Blooms | Meri Bagiya"
         description="Free plant growth tracker tool. Monitor plant height, health scores, bloom cycles with photo timeline. Get insights and analytics for your plants."
         keywords="plant growth tracker, plant height tracker, bloom tracker, plant health monitor, plant photo timeline, garden analytics"
+        canonicalUrl="/tools/plant-growth-tracker"
         breadcrumbs={[
           { name: 'Home', url: 'https://meribagiya.com/' },
           { name: 'Tools', url: 'https://meribagiya.com/tools' },
           { name: 'Plant Growth Tracker', url: 'https://meribagiya.com/tools/plant-growth-tracker' }
+        ]}
+        faqItems={[
+          { question: "How to track plant growth at home?", answer: "Use our free Plant Growth Tracker to record height, health scores, bloom cycles, and photos over time. All data is stored locally on your device — no account needed." },
+          { question: "How fast do indoor plants grow?", answer: "Growth rates vary by species. Snake plants grow 2-3 inches/year, pothos can grow 12+ inches/year, and monstera 1-2 feet/year. Track your plant's actual progress with our tool to see personalized growth analytics." },
+          { question: "How do I know if my plant is healthy?", answer: "Healthy plants show vibrant color, new growth, firm stems, and pest-free leaves. Our Growth Tracker lets you score plant health over time and spot trends before problems get serious." }
         ]}
       />
 

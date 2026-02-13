@@ -36,6 +36,11 @@ import PlantCareCalendar from './pages/tools/plant-care-calendar';
 import PlantDiseaseIdentifier from './pages/tools/plant-disease-identifier';
 import FertilizerCalculator from './pages/tools/fertilizer-calculator';
 import PlantGrowthTracker from './pages/tools/plant-growth-tracker';
+import SocietyGardenCostEstimator from './pages/tools/society-garden-cost-estimator';
+import TerraceGardenCostCalculator from './pages/tools/terrace-garden-cost-calculator';
+import CorporateGiftingCalculator from './pages/tools/corporate-gifting-calculator';
+import PlantRentalVsBuyCalculator from './pages/tools/plant-rental-vs-buy-calculator';
+import IndoorPlantQuiz from './pages/tools/indoor-plant-quiz';
 import Portfolio from './pages/portfolio';
 
 const router = createBrowserRouter(
@@ -73,6 +78,11 @@ const router = createBrowserRouter(
          <Route path="tools/plant-disease-identifier" element={<PlantDiseaseIdentifier/>}/>
          <Route path="tools/fertilizer-calculator" element={<FertilizerCalculator/>}/>
          <Route path="tools/plant-growth-tracker" element={<PlantGrowthTracker/>}/>
+         <Route path="tools/society-garden-cost-estimator" element={<SocietyGardenCostEstimator/>}/>
+         <Route path="tools/terrace-garden-cost-calculator" element={<TerraceGardenCostCalculator/>}/>
+         <Route path="tools/corporate-gifting-calculator" element={<CorporateGiftingCalculator/>}/>
+         <Route path="tools/plant-rental-vs-buy-calculator" element={<PlantRentalVsBuyCalculator/>}/>
+         <Route path="tools/indoor-plant-quiz" element={<IndoorPlantQuiz/>}/>
          <Route path="portfolio" element={<Portfolio/>}/>
 
       </Route>

@@ -247,10 +247,16 @@ function PlantCareCalendar() {
         title="Plant Care Calendar - Track Watering & Care Schedules | Meri Bagiya"
         description="Free plant care calendar tool. Track watering, fertilizing, pruning, and repotting schedules. Get reminders for all your plants."
         keywords="plant care calendar, watering schedule, plant tracker, garden planner, plant reminder, fertilizing schedule"
+        canonicalUrl="/tools/plant-care-calendar"
         breadcrumbs={[
           { name: 'Home', url: 'https://meribagiya.com/' },
           { name: 'Tools', url: 'https://meribagiya.com/tools' },
           { name: 'Plant Care Calendar', url: 'https://meribagiya.com/tools/plant-care-calendar' }
+        ]}
+        faqItems={[
+          { question: "How often should I water my indoor plants?", answer: "Most indoor plants need watering every 5-7 days, but it varies by species. Succulents need water every 10-14 days, while ferns may need it every 3-4 days. Our Plant Care Calendar gives customized schedules for 12+ plant types." },
+          { question: "What is the best watering schedule for monstera?", answer: "Monstera needs watering every 7-10 days. Let the top 2 inches of soil dry between waterings. Reduce frequency in winter. Our calendar sends reminders so you never forget." },
+          { question: "How to remember plant care tasks?", answer: "Use our free Plant Care Calendar to set automatic reminders for watering, fertilizing, pruning, and repotting for each of your plants. It tracks all care tasks in one place." }
         ]}
       />
 

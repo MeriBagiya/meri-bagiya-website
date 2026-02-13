@@ -86,10 +86,16 @@ function PlantDiseaseIdentifier() {
         title="Plant Disease Identifier - AI-Powered Tool | Meri Bagiya"
         description="Upload a photo of your plant to identify diseases with our AI-powered tool. Get instant results and care recommendations."
         keywords="plant disease identifier, plant disease checker, identify plant problems, leaf spot, plant health"
+        canonicalUrl="/tools/plant-disease-identifier"
         breadcrumbs={[
           { name: 'Home', url: 'https://meribagiya.com/' },
           { name: 'Tools', url: 'https://meribagiya.com/tools' },
           { name: 'Plant Disease Identifier', url: 'https://meribagiya.com/tools/plant-disease-identifier' }
+        ]}
+        faqItems={[
+          { question: "How to identify plant disease from a photo?", answer: "Upload a clear photo of the affected leaf or stem to our AI-powered Plant Disease Identifier. It analyzes the image and provides the disease name, description, cause, and treatment recommendations — all for free." },
+          { question: "Why are my plant leaves turning yellow?", answer: "Yellow leaves can indicate overwatering, nutrient deficiency, root rot, or pest damage. Use our free Plant Disease Identifier for an accurate AI-powered diagnosis from a photo." },
+          { question: "Is the plant disease identifier free to use?", answer: "Yes, our AI-powered plant disease identification tool is completely free. Simply upload a clear photo of the affected plant part and get instant results with care recommendations." }
         ]}
       />
 
