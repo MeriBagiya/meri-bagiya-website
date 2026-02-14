@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../utils/analytics';
 
 const POT_SIZES = {
   small: {
@@ -223,6 +224,7 @@ function HomeRentalCalculator() {
           href={`https://wa.me/919220404309?text=${generateWhatsAppMessage()}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackEvent('whatsapp_lead', { button_text: 'Get Quote on WhatsApp', location: 'home-rental-calculator' })}
           style={{
             display: 'inline-block',
             backgroundColor: '#25D366',

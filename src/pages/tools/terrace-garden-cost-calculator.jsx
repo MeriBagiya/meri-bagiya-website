@@ -488,7 +488,10 @@ function TerraceGardenCostCalculator() {
                         rel="noopener noreferrer"
                         className="btn btn-success btn-lg"
                         style={{ borderRadius: '25px', padding: '12px 30px' }}
-                        onClick={() => trackEvent('generate_lead', { tool_name: 'terrace_garden_cost_calculator' })}
+                        onClick={() => {
+                          trackEvent('generate_lead', { tool_name: 'terrace_garden_cost_calculator' });
+                          trackEvent('whatsapp_lead', { button_text: 'Get Free Site Visit', location: 'terrace-garden-calculator-results' });
+                        }}
                       >
                         <i className="icofont-whatsapp me-2"></i>
                         Get Free Site Visit

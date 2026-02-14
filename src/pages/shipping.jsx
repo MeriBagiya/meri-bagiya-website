@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { trackEvent } from '../utils/analytics';
 
 function Shipping() {
   return (
@@ -161,7 +162,7 @@ function Shipping() {
                   <div className="col-md-6">
                     <div className="bg-light p-3 rounded-1">
                       <p className="mb-1"><strong><i className="icofont-whatsapp me-2 text-success"></i>WhatsApp (Fastest)</strong></p>
-                      <a href="https://wa.me/919220404309" className="text-dark">+91-9220404309</a>
+                      <a href="https://wa.me/919220404309" className="text-dark" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Number', location: 'shipping-page-contact-section' })}>+91-9220404309</a>
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -185,7 +186,7 @@ function Shipping() {
                 </div>
 
                 <div className="text-center mt-5">
-                  <a href="https://wa.me/919220404309?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20plant%20pickup%2Fdelivery" className="btn-main me-3" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/919220404309?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20plant%20pickup%2Fdelivery" className="btn-main me-3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'shipping-page-bottom-cta' })}>
                     <i className="icofont-whatsapp me-2"></i>WhatsApp Us
                   </a>
                   <Link to="/return-policy" className="btn-line">View Return Policy</Link>

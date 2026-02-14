@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../utils/analytics';
 
 function Footer() {
   return (
@@ -17,7 +18,7 @@ function Footer() {
                  <a href="https://www.facebook.com/share/1GT8gTXRsH/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
                  <a href="https://www.instagram.com/meribagiya_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
                  <a href="https://www.youtube.com/@Meri_Bagiya_Nersery" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
-                 <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i></a>
+                 <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Icon', location: 'footer-social' })}><i className="fa-brands fa-whatsapp"></i></a>
              </div>
          </div>
          <div className="col-lg-4 col-md-6 col-12 order-lg-1 order-md-2">

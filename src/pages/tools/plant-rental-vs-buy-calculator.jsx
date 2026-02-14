@@ -611,7 +611,10 @@ function PlantRentalVsBuyCalculator() {
                           rel="noopener noreferrer"
                           className="btn btn-success btn-lg"
                           style={{ borderRadius: '25px', padding: '12px 30px' }}
-                          onClick={() => trackEvent('generate_lead', { tool_name: 'plant_rental_vs_buy_calculator', savings: results.savings })}
+                          onClick={() => {
+                            trackEvent('generate_lead', { tool_name: 'plant_rental_vs_buy_calculator', savings: results.savings });
+                            trackEvent('whatsapp_lead', { button_text: `Start Renting - Save ₹${results.savings.toLocaleString('en-IN')}`, location: 'calculator-results' });
+                          }}
                         >
                           <i className="icofont-whatsapp me-2"></i>
                           Start Renting — Save ₹{results.savings.toLocaleString('en-IN')}
@@ -629,7 +632,10 @@ function PlantRentalVsBuyCalculator() {
                           rel="noopener noreferrer"
                           className="btn btn-outline-success"
                           style={{ borderRadius: '25px', padding: '10px 24px' }}
-                          onClick={() => trackEvent('generate_lead', { tool_name: 'plant_rental_vs_buy_calculator' })}
+                          onClick={() => {
+                            trackEvent('generate_lead', { tool_name: 'plant_rental_vs_buy_calculator' });
+                            trackEvent('whatsapp_lead', { button_text: 'Explore Rental Plans', location: 'calculator-results' });
+                          }}
                         >
                           <i className="icofont-whatsapp me-2"></i>
                           Explore Rental Plans

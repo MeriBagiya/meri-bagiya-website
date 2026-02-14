@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput } from '../components/form';
+import { trackEvent } from '../utils/analytics';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -234,6 +235,7 @@ function InstagramLanding() {
                         href="https://wa.me/919220404309?text=Hi%2C%20I%27m%20interested%20in%20corporate%20plant%20gifting"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'instagram-landing-corporate-gifting' })}
                         className="btn btn-outline-success w-100 d-flex align-items-center justify-content-center"
                         style={{ padding: '12px', fontSize: '14px' }}
                       >

@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import {createBrowserRouter, RouterProvider,createRoutesFromElements,Route} from 'react-router-dom';
 import Shophomepage from './pages/shop-homepage';
+import ShophomepageImproved from './pages/shophomepage-improved';
 import Contact from './pages/shop-contact';
 import Servicesingle from './pages/service-single';
 import About from './pages/about';
@@ -46,7 +47,7 @@ import Portfolio from './pages/portfolio';
 const router = createBrowserRouter(
    createRoutesFromElements(
       <Route path="/" element={<App/>}>
-         <Route path="" element={<Shophomepage/>}/>
+         <Route path="" element={<ShophomepageImproved/>}/>
          <Route path="contact" element={<Contact/>}/>
          <Route path="service-single" element={<Servicesingle/>}/>
          <Route path="about" element={<About/>}/>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import RentalCalculator from '../../components/RentalCalculator';
+import { trackEvent } from '../../utils/analytics';
 
 function PlantRental() {
   return (
@@ -93,7 +94,7 @@ function PlantRental() {
                   <a href="tel:9220404309" className="btn-line text-light d-block text-center mb-2">
                     <i className="icofont-phone me-2"></i>Call Now
                   </a>
-                  <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center">
+                  <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'plant-rental-page-sidebar' })}>
                     <i className="icofont-whatsapp me-2"></i>WhatsApp
                   </a>
                 </div>
@@ -424,7 +425,7 @@ function PlantRental() {
                       <h3 className="mb-3">Ready to Green Your Space?</h3>
                       <p className="mb-4">Get a free consultation and custom quote for your plant rental needs.</p>
                       <Link className="btn-main bg-light text-dark me-3" to="/contact">Get Free Quote</Link>
-                      <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-line text-light">
+                      <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-line text-light" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-page-bottom-cta' })}>
                         <i className="icofont-whatsapp me-2"></i>WhatsApp Us
                       </a>
                     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
+import { trackEvent } from '../utils/analytics';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -120,7 +121,7 @@ function Header() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="menu-item">
+                                        <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="menu-item" onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'header-desktop' })}>
                                             Chat on WhatsApp
                                         </a>
                                     </li>
@@ -404,6 +405,7 @@ function Header() {
                     href="https://wa.me/919220404309"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'header-mobile' })}
                     style={{
                         display: 'block',
                         padding: '15px 20px',

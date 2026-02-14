@@ -541,7 +541,10 @@ function SocietyGardenCostEstimator() {
                         rel="noopener noreferrer"
                         className="btn btn-success btn-lg"
                         style={{ borderRadius: '25px', padding: '12px 30px' }}
-                        onClick={() => trackEvent('generate_lead', { tool_name: 'society_garden_cost_estimator' })}
+                        onClick={() => {
+                          trackEvent('generate_lead', { tool_name: 'society_garden_cost_estimator' });
+                          trackEvent('whatsapp_lead', { button_text: 'Get Detailed Proposal on WhatsApp', location: 'society-garden-estimator-results' });
+                        }}
                       >
                         <i className="icofont-whatsapp me-2"></i>
                         Get Detailed Proposal on WhatsApp
@@ -634,6 +637,7 @@ function SocietyGardenCostEstimator() {
                 rel="noopener noreferrer"
                 className="btn btn-main"
                 style={{ borderRadius: '25px' }}
+                onClick={() => trackEvent('whatsapp_lead', { button_text: 'Schedule Free Visit', location: 'society-garden-estimator-bottom-cta' })}
               >
                 <i className="icofont-whatsapp me-2"></i>Schedule Free Visit
               </a>

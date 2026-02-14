@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { trackEvent } from '../utils/analytics';
 
 const PRICING_DATA = {
   bronze: {
@@ -295,6 +296,7 @@ function RentalCalculator() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-main bg-light text-dark d-block mb-2"
+                onClick={() => trackEvent('whatsapp_lead', { button_text: 'Get This Quote on WhatsApp', location: 'rental-calculator' })}
               >
                 <i className="icofont-whatsapp me-2"></i>Get This Quote on WhatsApp
               </a>
