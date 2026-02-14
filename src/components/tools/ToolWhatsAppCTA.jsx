@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackEvent } from '../../utils/analytics';
 
 function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garden experts can help you with personalized advice.", whatsappMessage = "Hi! I need help with my garden." }) {
   const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -17,6 +18,7 @@ function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garde
           rel="noopener noreferrer"
           className="btn btn-light d-block mb-2"
           style={{ borderRadius: '25px', fontWeight: '600' }}
+          onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'tool-whatsapp-cta' })}
         >
           <i className="icofont-whatsapp me-2" style={{ color: '#25d366' }}></i>
           Chat on WhatsApp

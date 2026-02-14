@@ -507,7 +507,10 @@ function IndoorPlantQuiz() {
                                       rel="noopener noreferrer"
                                       className="btn btn-sm btn-success"
                                       style={{ borderRadius: '20px', fontSize: '12px' }}
-                                      onClick={() => trackEvent('generate_lead', { tool_name: 'indoor_plant_quiz', action: 'buy', plant: plant.name })}
+                                      onClick={() => {
+                                        trackEvent('generate_lead', { tool_name: 'indoor_plant_quiz', action: 'buy', plant: plant.name });
+                                        trackEvent('whatsapp_lead', { button_text: `Buy ${plant.name}`, location: 'indoor-plant-quiz-results' });
+                                      }}
                                     >
                                       <i className="icofont-whatsapp me-1"></i>
                                       Buy This Plant
@@ -518,7 +521,10 @@ function IndoorPlantQuiz() {
                                       rel="noopener noreferrer"
                                       className="btn btn-sm btn-outline-success"
                                       style={{ borderRadius: '20px', fontSize: '12px' }}
-                                      onClick={() => trackEvent('generate_lead', { tool_name: 'indoor_plant_quiz', action: 'rent', plant: plant.name })}
+                                      onClick={() => {
+                                        trackEvent('generate_lead', { tool_name: 'indoor_plant_quiz', action: 'rent', plant: plant.name });
+                                        trackEvent('whatsapp_lead', { button_text: `Rent ${plant.name}`, location: 'indoor-plant-quiz-results' });
+                                      }}
                                     >
                                       <i className="icofont-whatsapp me-1"></i>
                                       Rent This Plant
@@ -541,7 +547,10 @@ function IndoorPlantQuiz() {
                           rel="noopener noreferrer"
                           className="btn btn-lg text-white"
                           style={{ borderRadius: '25px', padding: '12px 30px', backgroundColor: accentColor }}
-                          onClick={() => trackEvent('generate_lead', { tool_name: 'indoor_plant_quiz', action: 'buy_all' })}
+                          onClick={() => {
+                            trackEvent('generate_lead', { tool_name: 'indoor_plant_quiz', action: 'buy_all' });
+                            trackEvent('whatsapp_lead', { button_text: 'Get All 5 Plants', location: 'indoor-plant-quiz-results-overall' });
+                          }}
                         >
                           <i className="icofont-whatsapp me-2"></i>
                           Get All 5 Plants

@@ -540,7 +540,10 @@ function CorporateGiftingCalculator() {
                         rel="noopener noreferrer"
                         className="btn btn-success btn-lg"
                         style={{ borderRadius: '25px', padding: '12px 30px' }}
-                        onClick={() => trackEvent('generate_lead', { tool_name: 'corporate_gifting_calculator' })}
+                        onClick={() => {
+                          trackEvent('generate_lead', { tool_name: 'corporate_gifting_calculator' });
+                          trackEvent('whatsapp_lead', { button_text: 'Get Custom Quote on WhatsApp', location: 'corporate-gifting-calculator-results' });
+                        }}
                       >
                         <i className="icofont-whatsapp me-2"></i>
                         Get Custom Quote on WhatsApp

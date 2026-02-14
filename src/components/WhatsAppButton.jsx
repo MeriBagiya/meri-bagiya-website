@@ -86,7 +86,10 @@ function WhatsAppButton() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         aria-label="Chat on WhatsApp"
-        onClick={() => trackEvent('generate_lead', { method: 'whatsapp' })}
+        onClick={() => {
+          trackEvent('generate_lead', { method: 'whatsapp' });
+          trackEvent('whatsapp_lead', { button_text: 'WhatsApp Floating Button', location: 'global-floating-button' });
+        }}
       >
         <span className="whatsapp-tooltip" style={tooltipStyle}>Chat with us!</span>
         <i className="fa-brands fa-whatsapp wa-icon" style={iconStyle}></i>
