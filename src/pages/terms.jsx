@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { BUSINESS_ADDRESS_LINE } from '../constants/business';
 
 function Terms() {
   return (
@@ -114,7 +115,7 @@ function Terms() {
                 <ul className="mb-4">
                   <li><strong>Email:</strong> contact@meribagiya.com</li>
                   <li><strong>Phone:</strong> +91-9220404309</li>
-                  <li><strong>Address:</strong> Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, UP-201318</li>
+                  <li><strong>Address:</strong> {BUSINESS_ADDRESS_LINE}</li>
                 </ul>
 
                 <div className="text-center mt-5">

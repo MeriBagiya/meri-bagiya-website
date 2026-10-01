@@ -6,6 +6,7 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput, FormTextarea, FormSelect } from '../components/form';
 import { PHONE_TEL } from '../constants/contact';
+import { BUSINESS_ADDRESS, BUSINESS_PHONE, BUSINESS_EMAIL } from '../constants/business';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -187,16 +188,9 @@ function CorporateGifting() {
       "@type": "LocalBusiness",
       "name": "Meri Bagiya",
       "image": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
-        "addressLocality": "Greater Noida",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "201318",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-9220404309",
-      "email": "contact@meribagiya.com"
+      "address": BUSINESS_ADDRESS,
+      "telephone": BUSINESS_PHONE,
+      "email": BUSINESS_EMAIL
     },
     "areaServed": {
       "@type": "GeoCircle",

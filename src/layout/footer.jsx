@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../utils/analytics';
 import { WHATSAPP_BASE_URL } from '../constants/contact';
+import { BUSINESS_ADDRESS_LINE } from '../constants/business';
 
 function Footer() {
   return (
@@ -60,7 +61,7 @@ function Footer() {
                  <div className="spacer-20"></div>
 
                  <div className="fw-bold text-white"><i className="icofont-location-pin me-2 id-color-2"></i>Office Location</div>
-                 Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, Uttar Pradesh-201318
+                 {BUSINESS_ADDRESS_LINE}
 
                  <div className="spacer-20"></div>
 

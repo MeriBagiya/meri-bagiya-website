@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { BUSINESS_ADDRESS, BUSINESS_GEO, BUSINESS_PHONE, BUSINESS_EMAIL } from '../constants/business';
 
 function About() {
   const jsonLd = {
@@ -11,21 +12,10 @@ function About() {
     "url": "https://meribagiya.com",
     "logo": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
     "description": "Meri Bagiya is a trusted plant nursery and garden services provider in Greater Noida, Delhi NCR.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
-      "addressLocality": "Greater Noida",
-      "addressRegion": "Uttar Pradesh",
-      "postalCode": "201318",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "28.5899943",
-      "longitude": "77.4281686"
-    },
-    "telephone": "+91-9220404309",
-    "email": "contact@meribagiya.com",
+    "address": BUSINESS_ADDRESS,
+    "geo": BUSINESS_GEO,
+    "telephone": BUSINESS_PHONE,
+    "email": BUSINESS_EMAIL,
     "sameAs": [
       "https://www.facebook.com/meribagiya",
       "https://www.instagram.com/meribagiya_",

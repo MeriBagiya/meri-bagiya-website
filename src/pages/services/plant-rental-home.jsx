@@ -4,6 +4,7 @@ import SEO from '../../components/SEO';
 import HomeRentalCalculator from '../../components/HomeRentalCalculator';
 import { trackEvent } from '../../utils/analytics';
 import { WHATSAPP_BASE_URL } from '../../constants/contact';
+import { BUSINESS_ADDRESS, BUSINESS_GEO, BUSINESS_PHONE, BUSINESS_EMAIL } from '../../constants/business';
 
 function PlantRentalHome() {
   const jsonLd = {
@@ -14,21 +15,10 @@ function PlantRentalHome() {
       "@type": "LocalBusiness",
       "name": "Meri Bagiya",
       "url": "https://meribagiya.com",
-      "telephone": "+91-9220404309",
-      "email": "contact@meribagiya.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
-        "addressLocality": "Greater Noida",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "201318",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.5899943",
-        "longitude": "77.4281686"
-      },
+      "telephone": BUSINESS_PHONE,
+      "email": BUSINESS_EMAIL,
+      "address": BUSINESS_ADDRESS,
+      "geo": BUSINESS_GEO,
       "sameAs": [
         "https://www.facebook.com/meribagiya",
         "https://www.instagram.com/meribagiya_",
