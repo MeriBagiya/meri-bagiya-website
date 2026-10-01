@@ -1,15 +1,62 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { whatsappUrl, PHONE_TEL } from '../constants/contact';
+import { BUSINESS_NAME } from '../constants/business';
+import { trackEvent } from '../utils/analytics';
+
+const OFFICE_QUOTE_MESSAGE = 'Hi! I want to rent plants for my office in Noida. Please send a quote.';
+
+const faqItems = [
+  {
+    question: 'How does office plant rental work?',
+    answer: 'You pay a monthly rental. We choose plants that suit your office light and layout, set them up, and look after them. Our team visits regularly to water, fertilize, and prune.'
+  },
+  {
+    question: 'Which areas do you serve for office plant rental?',
+    answer: 'We serve offices in Noida and Greater Noida. Message us on WhatsApp for other Delhi NCR areas.'
+  },
+  {
+    question: 'Which plants can I rent for my office?',
+    answer: 'You can choose Money Plant, Peace Lily, Snake Plant, Areca Palm, Rubber Plant, and other office-friendly indoor plants.'
+  },
+  {
+    question: 'What happens if a rented plant does not thrive?',
+    answer: 'We replace any plant that does not thrive at no extra cost.'
+  },
+  {
+    question: 'How do I get a quote for my office?',
+    answer: 'Send us a WhatsApp message with your office size and area. We reply with a quote.'
+  }
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Office Plant Rental in Noida',
+  serviceType: 'Office plant rental',
+  provider: { '@id': 'https://meribagiya.com/#business', '@type': 'LocalBusiness', name: BUSINESS_NAME },
+  areaServed: [
+    { '@type': 'City', name: 'Noida' },
+    { '@type': 'City', name: 'Greater Noida' }
+  ],
+  url: 'https://meribagiya.com/plant-rent-in-office'
+};
 
 function PlantRentInOffice() {
   return (
     <>
       <SEO
-        title="Plant Rent in Office"
-        description="Rent plants for your office in Greater Noida. Transform your workspace with indoor plants on rent. Professional plant rental services with maintenance included by Meri Bagiya."
-        keywords="plant rent office, office plant rental, indoor plants for office, plants on rent Greater Noida, corporate plant rental, office greenery"
+        title="Office Plant Rental in Noida & Greater Noida"
+        description="Rent plants for your office in Noida and Greater Noida. Monthly plant rental with watering, pruning, and free replacement included. Get a quote on WhatsApp."
+        keywords="office plant rental Noida, plants on rent Noida, office plants Greater Noida, indoor plants for office, corporate plant rental, plant rent in office"
         canonicalUrl="/plant-rent-in-office"
+        jsonLd={jsonLd}
+        faqItems={faqItems}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Office Plant Rental', url: '/plant-rent-in-office' }
+        ]}
       />
 
       <div className="no-bottom no-top" id="content">
@@ -22,10 +69,22 @@ function PlantRentInOffice() {
               <div className="col-lg-6">
                 <ul className="crumb">
                   <li><Link to="/">Home</Link></li>
-                  <li className="active">Plant Rent in Office</li>
+                  <li className="active">Office Plant Rental</li>
                 </ul>
-                <h1 className="text-uppercase">Plant Rent in Office</h1>
-                <p className="col-lg-10">Transform Your Workspace with Green Elegance!</p>
+                <h1 className="text-uppercase">Office Plant Rental in Noida</h1>
+                <p className="col-lg-10">Healthy plants for your workspace. We set up, water, and replace. You pay one monthly fee.</p>
+                <div className="d-flex flex-wrap gap-3 mt-3">
+                  <a
+                    className="btn-main"
+                    href={whatsappUrl(OFFICE_QUOTE_MESSAGE)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent('generate_lead', { method: 'whatsapp', location: 'office_rental_hero' })}
+                  >
+                    Get a Quote on WhatsApp
+                  </a>
+                  <a className="btn-line text-light" href={PHONE_TEL}>Call Us</a>
+                </div>
               </div>
             </div>
           </div>
@@ -39,7 +98,7 @@ function PlantRentInOffice() {
               <div className="col-lg-3 col-12 order-lg-1 order-2">
                 <div className="me-lg-3">
                   <Link to="/plant-rent-in-office" className="bg-color text-light d-block p-3 px-4 rounded-10px mb-3 relative">
-                    <h4 className="mb-0">Plant Rent in Office</h4>
+                    <h4 className="mb-0">Office Plant Rental</h4>
                     <i className="icofont-long-arrow-right absolute abs-middle fs-24 end-20px"></i>
                   </Link>
                   <Link to="/services/garden-design" className="bg-light d-block p-3 px-4 rounded-10px mb-3">
@@ -203,8 +262,33 @@ function PlantRentInOffice() {
                 <div className="spacer-double"></div>
 
                 <div className="row g-4">
+                  <div className="col-lg-12">
+                    <h2 className="mb-0">Office Plant Rental <span className="id-color-2">FAQ</span></h2>
+                  </div>
+                  <div className="col-lg-12">
+                    {faqItems.map((item) => (
+                      <div key={item.question} className="bg-light padding30 rounded-1 mb-3">
+                        <h4>{item.question}</h4>
+                        <p className="mb-0">{item.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="spacer-double"></div>
+
+                <div className="row g-4">
                   <div className="col-lg-12 text-center">
-                    <Link className="btn-main wow fadeInUp" to="/contact">Get a Quote</Link>
+                    <a
+                      className="btn-main wow fadeInUp me-3"
+                      href={whatsappUrl(OFFICE_QUOTE_MESSAGE)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackEvent('generate_lead', { method: 'whatsapp', location: 'office_rental_footer' })}
+                    >
+                      Get a Quote on WhatsApp
+                    </a>
+                    <Link className="btn-line wow fadeInUp" to="/contact">Contact Form</Link>
                   </div>
                 </div>
               </div>
