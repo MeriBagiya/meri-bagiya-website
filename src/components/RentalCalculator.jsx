@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { trackEvent } from '../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 
 const PRICING_DATA = {
   bronze: {
@@ -292,7 +293,7 @@ function RentalCalculator() {
 
             <div className="text-center">
               <a
-                href={`https://wa.me/919220404309?text=Hi! I'm interested in Plant Rental Service.%0A%0AMy Requirements:%0A- Service: ${calculation.tierData.name}%0A- Plants: ${quantity}%0A- Period: ${calculation.months} months%0A- Monthly Cost: Rs. ${calculation.totalMonthly.toLocaleString()}%0A%0APlease provide more details.`}
+                href={`${WHATSAPP_BASE_URL}?text=Hi! I'm interested in Plant Rental Service.%0A%0AMy Requirements:%0A- Service: ${calculation.tierData.name}%0A- Plants: ${quantity}%0A- Period: ${calculation.months} months%0A- Monthly Cost: Rs. ${calculation.totalMonthly.toLocaleString()}%0A%0APlease provide more details.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-main bg-light text-dark d-block mb-2"
@@ -300,7 +301,7 @@ function RentalCalculator() {
               >
                 <i className="icofont-whatsapp me-2"></i>Get This Quote on WhatsApp
               </a>
-              <a href="tel:9220404309" className="btn-line text-light d-block">
+              <a href={PHONE_TEL} className="btn-line text-light d-block">
                 <i className="icofont-phone me-2"></i>Call to Discuss
               </a>
             </div>

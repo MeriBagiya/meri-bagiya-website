@@ -86,7 +86,7 @@ function About() {
                                 <div className="col-sm-6">
                                     <div className="row g-4">
                                         <div className="col-lg-12">
-                                            <img src="/assets/images/misc/3.webp" className="w-100 rounded-1 wow zoomIn" alt="Garden image"/>
+                                            <img src="/assets/images/misc/3.webp" className="w-100 rounded-1 wow zoomIn" alt="Garden view"/>
                                         </div>
                                         <div className="col-lg-12">
                                             <div className="rounded-1 relative bg-color-2 text-light p-4">
@@ -111,7 +111,7 @@ function About() {
                                             </div>
                                         </div>
                                         <div className="col-lg-12">
-                                            <img src="/assets/images/misc/4.webp" className="w-100 rounded-1 wow zoomIn" alt="Garden image"/>
+                                            <img src="/assets/images/misc/4.webp" className="w-100 rounded-1 wow zoomIn" alt="Garden planting"/>
                                         </div>
                                     </div>
                                 </div>

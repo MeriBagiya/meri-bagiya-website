@@ -4,7 +4,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import App from './App';
 import {createBrowserRouter, RouterProvider,createRoutesFromElements,Route} from 'react-router-dom';
-import Shophomepage from './pages/shop-homepage';
 import ShophomepageImproved from './pages/shophomepage-improved';
 import Contact from './pages/shop-contact';
 import Servicesingle from './pages/service-single';

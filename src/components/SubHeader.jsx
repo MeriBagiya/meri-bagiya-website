@@ -10,6 +10,7 @@ function SubHeader({ backgroundImage, children }) {
   const location = useLocation();
 
   useEffect(() => {
+    const section = sectionRef.current;
     // Function to initialize/reinitialize jarallax
     const initJarallax = () => {
       if (window.jarallax && sectionRef.current) {
@@ -46,8 +47,8 @@ function SubHeader({ backgroundImage, children }) {
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (window.jarallax && sectionRef.current) {
-        window.jarallax(sectionRef.current, 'destroy');
+      if (window.jarallax && section) {
+        window.jarallax(section, 'destroy');
       }
     };
   }, [location.pathname, backgroundImage]);

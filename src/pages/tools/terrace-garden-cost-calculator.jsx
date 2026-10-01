@@ -5,6 +5,7 @@ import ToolWhatsAppCTA from '../../components/tools/ToolWhatsAppCTA';
 import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const presets = [
   { label: 'Small Balcony', sqft: 50 },
@@ -483,7 +484,7 @@ function TerraceGardenCostCalculator() {
                     {/* WhatsApp CTA */}
                     <div className="text-center mt-4">
                       <a
-                        href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                        href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-success btn-lg"

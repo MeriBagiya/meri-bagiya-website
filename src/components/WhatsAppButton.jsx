@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { trackEvent } from '../utils/analytics';
+import { whatsappUrl } from '../constants/contact';
 
-const WHATSAPP_NUMBER = '919220404309';
-const DEFAULT_MESSAGE = 'Hi! I visited your website and would like to know more about your plants and garden services.';
 
 function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
+  const whatsappHref = whatsappUrl();
 
   const buttonStyle = {
     position: 'fixed',
@@ -78,7 +77,7 @@ function WhatsAppButton() {
         `}
       </style>
       <a
-        href={whatsappUrl}
+        href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float-btn"

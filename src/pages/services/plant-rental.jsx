@@ -4,6 +4,7 @@ import SEO from '../../components/SEO';
 import { plantPhoto } from '../../data/plantPhotos';
 import RentalCalculator from '../../components/RentalCalculator';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../../constants/contact';
 
 function PlantRental() {
   return (
@@ -92,10 +93,10 @@ function PlantRental() {
                 <div className="bg-color text-light p-4 rounded-1 mt-4">
                   <h5 className="mb-3">Quick Enquiry</h5>
                   <p className="small mb-3">Need plants for your next event or space? Get in touch!</p>
-                  <a href="tel:9220404309" className="btn-line text-light d-block text-center mb-2">
+                  <a href={PHONE_TEL} className="btn-line text-light d-block text-center mb-2">
                     <i className="icofont-phone me-2"></i>Call Now
                   </a>
-                  <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'plant-rental-page-sidebar' })}>
+                  <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'plant-rental-page-sidebar' })}>
                     <i className="icofont-whatsapp me-2"></i>WhatsApp
                   </a>
                 </div>
@@ -111,7 +112,7 @@ function PlantRental() {
                     <p>From a single potted plant to hundreds of plants for large events, we have flexible rental plans to suit every need and budget.</p>
                     <div className="d-flex gap-3 mt-4">
                       <Link to="/contact" className="btn-main">Get Quote</Link>
-                      <a href="tel:9220404309" className="btn-line">Call Us</a>
+                      <a href={PHONE_TEL} className="btn-line">Call Us</a>
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -426,7 +427,7 @@ function PlantRental() {
                       <h3 className="mb-3">Ready to Green Your Space?</h3>
                       <p className="mb-4">Get a free consultation and custom quote for your plant rental needs.</p>
                       <Link className="btn-main bg-light text-dark me-3" to="/contact">Get Free Quote</Link>
-                      <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-line text-light" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-page-bottom-cta' })}>
+                      <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="btn-line text-light" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-page-bottom-cta' })}>
                         <i className="icofont-whatsapp me-2"></i>WhatsApp Us
                       </a>
                     </div>

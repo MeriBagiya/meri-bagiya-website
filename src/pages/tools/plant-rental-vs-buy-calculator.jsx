@@ -5,6 +5,7 @@ import ToolWhatsAppCTA from '../../components/tools/ToolWhatsAppCTA';
 import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const ACCENT = '#009688';
 
@@ -606,7 +607,7 @@ function PlantRentalVsBuyCalculator() {
                     {results.winner === 'rent' && (
                       <div className="text-center mt-4">
                         <a
-                          href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                          href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-success btn-lg"
@@ -627,7 +628,7 @@ function PlantRentalVsBuyCalculator() {
                       <div className="text-center mt-4">
                         <p className="text-muted small">Buying looks cheaper for your current selection, but remember the hidden costs above. Want to explore rental anyway?</p>
                         <a
-                          href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                          href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-outline-success"

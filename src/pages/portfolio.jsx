@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { trackEvent } from '../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../constants/contact';
 
 const projects = [
   {
@@ -233,7 +234,7 @@ function Portfolio() {
                 </p>
                 <div className="spacer-10"></div>
                 <Link to="/contact" className="btn-main wow fadeInUp" data-wow-delay=".4s">Get a Free Consultation</Link>
-                <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-main btn-white wow fadeInUp" data-wow-delay=".5s" style={{ marginLeft: '15px', background: '#25D366', border: 'none' }} onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'portfolio-cta' })}>
+                <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="btn-main btn-white wow fadeInUp" data-wow-delay=".5s" style={{ marginLeft: '15px', background: '#25D366', border: 'none' }} onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'portfolio-cta' })}>
                   Chat on WhatsApp
                 </a>
               </div>

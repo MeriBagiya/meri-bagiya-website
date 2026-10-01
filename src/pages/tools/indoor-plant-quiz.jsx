@@ -6,6 +6,7 @@ import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
 import { plantPhoto } from '../../data/plantPhotos';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const plantDatabase = [
   { name: 'Snake Plant', scientificName: 'Sansevieria trifasciata', image: plantPhoto('snake-plant'), difficulty: 'Easy', light: ['low', 'indirect', 'bright'], water: 'low', petSafe: false, benefits: ['air-purification', 'low-maintenance'], price: 'budget', tags: ['bedroom', 'office', 'bathroom'] },
@@ -503,7 +504,7 @@ function IndoorPlantQuiz() {
                                   {/* CTA Buttons */}
                                   <div className="d-flex gap-2 flex-wrap">
                                     <a
-                                      href={`https://wa.me/919220404309?text=${encodeURIComponent(getBuyWhatsAppMessage(plant.name))}`}
+                                      href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getBuyWhatsAppMessage(plant.name))}`}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       className="btn btn-sm btn-success"
@@ -517,7 +518,7 @@ function IndoorPlantQuiz() {
                                       Buy This Plant
                                     </a>
                                     <a
-                                      href={`https://wa.me/919220404309?text=${encodeURIComponent(getRentWhatsAppMessage(plant.name))}`}
+                                      href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getRentWhatsAppMessage(plant.name))}`}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       className="btn btn-sm btn-outline-success"
@@ -543,7 +544,7 @@ function IndoorPlantQuiz() {
                         <h5 style={{ color: accentColor }}>Want All These Plants?</h5>
                         <p className="text-muted small mb-3">Chat with us on WhatsApp to get all 5 plants delivered to your doorstep.</p>
                         <a
-                          href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                          href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-lg text-white"

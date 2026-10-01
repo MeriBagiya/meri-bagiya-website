@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { trackEvent } from '../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -121,7 +122,7 @@ function Header() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="menu-item" onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'header-desktop' })}>
+                                        <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="menu-item" onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'header-desktop' })}>
                                             Chat on WhatsApp
                                         </a>
                                     </li>
@@ -402,7 +403,7 @@ function Header() {
                     Contact Us
                 </Link>
                 <a
-                    href="https://wa.me/919220404309"
+                    href={WHATSAPP_BASE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackEvent('whatsapp_lead', { button_text: 'Chat on WhatsApp', location: 'header-mobile' })}
@@ -428,7 +429,7 @@ function Header() {
                 marginTop: 'auto'
             }}>
                 <p style={{fontSize: '12px', color: '#666', margin: 0}}>
-                    Call us: <a href="tel:9220404309" style={{color: '#4a7c59'}}>9220404309</a>
+                    Call us: <a href={PHONE_TEL} style={{color: '#4a7c59'}}>9220404309</a>
                 </p>
             </div>
         </div>

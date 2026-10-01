@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import HomeRentalCalculator from '../../components/HomeRentalCalculator';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 function PlantRentalHome() {
   const jsonLd = {
@@ -406,7 +407,7 @@ function PlantRentalHome() {
                   <p style={{ color: '#ffffff', marginBottom: '1.5rem' }}>Start with just 5 plants and transform your living space today!</p>
                   <div className="d-flex flex-column flex-md-row gap-3 justify-content-center">
                     <a
-                      href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home.%20Please%20share%20more%20details."
+                      href={`${WHATSAPP_BASE_URL}?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home.%20Please%20share%20more%20details.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-home-page-cta' })}

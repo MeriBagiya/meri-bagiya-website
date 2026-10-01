@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput, FormTextarea, FormSelect } from '../components/form';
+import { PHONE_TEL } from '../constants/contact';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -587,7 +588,7 @@ function CorporateGifting() {
                   Our corporate gifting experts are here to help you find the perfect plants for your team and clients.
                 </p>
                 <div className="wow fadeInUp" data-wow-delay=".4s">
-                  <a href="tel:9220404309" className="btn-main me-3">
+                  <a href={PHONE_TEL} className="btn-main me-3">
                     <i className="icofont-phone me-2"></i>Call Us: 9220404309
                   </a>
                   <Link to="/contact" className="btn-main btn-outline">
