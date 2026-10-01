@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { trackEvent } from '../utils/analytics';
+import { trackEvent, trackCall } from '../utils/analytics';
 import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 import { BUSINESS_ADDRESS_LINE } from '../constants/business';
 
@@ -170,7 +170,7 @@ function Shipping() {
                   <div className="col-md-6">
                     <div className="bg-light p-3 rounded-1">
                       <p className="mb-1"><strong><i className="icofont-phone me-2 id-color-2"></i>Phone</strong></p>
-                      <a href={PHONE_TEL} className="text-dark">+91-9220404309</a>
+                      <a href={PHONE_TEL} onClick={() => trackCall('shipping')} className="text-dark">+91-9220404309</a>
                     </div>
                   </div>
                   <div className="col-md-6">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { plantPhoto } from '../../data/plantPhotos';
 import RentalCalculator from '../../components/RentalCalculator';
-import { trackEvent } from '../../utils/analytics';
+import { trackEvent, trackCall } from '../../utils/analytics';
 import { WHATSAPP_BASE_URL, PHONE_TEL } from '../../constants/contact';
 
 function PlantRental() {
@@ -93,7 +93,7 @@ function PlantRental() {
                 <div className="bg-color text-light p-4 rounded-1 mt-4">
                   <h5 className="mb-3">Quick Enquiry</h5>
                   <p className="small mb-3">Need plants for your next event or space? Get in touch!</p>
-                  <a href={PHONE_TEL} className="btn-line text-light d-block text-center mb-2">
+                  <a href={PHONE_TEL} onClick={() => trackCall('plant_rental')} className="btn-line text-light d-block text-center mb-2">
                     <i className="icofont-phone me-2"></i>Call Now
                   </a>
                   <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'plant-rental-page-sidebar' })}>
@@ -112,7 +112,7 @@ function PlantRental() {
                     <p>From a single potted plant to hundreds of plants for large events, we have flexible rental plans to suit every need and budget.</p>
                     <div className="d-flex gap-3 mt-4">
                       <Link to="/contact" className="btn-main">Get Quote</Link>
-                      <a href={PHONE_TEL} className="btn-line">Call Us</a>
+                      <a href={PHONE_TEL} onClick={() => trackCall('plant_rental_2')} className="btn-line">Call Us</a>
                     </div>
                   </div>
                   <div className="col-lg-6">

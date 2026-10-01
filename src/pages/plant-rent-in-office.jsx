@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { whatsappUrl, PHONE_TEL } from '../constants/contact';
 import { BUSINESS_NAME } from '../constants/business';
-import { trackEvent } from '../utils/analytics';
+import { trackEvent, trackCall } from '../utils/analytics';
 
 const OFFICE_QUOTE_MESSAGE = 'Hi! I want to rent plants for my office in Noida. Please send a quote.';
 
@@ -83,7 +83,7 @@ function PlantRentInOffice() {
                   >
                     Get a quote on WhatsApp
                   </a>
-                  <a className="btn-ghost" href={PHONE_TEL}>Call us</a>
+                  <a className="btn-ghost" href={PHONE_TEL} onClick={() => trackCall('office_rental_hero')}>Call us</a>
                 </div>
               </div>
               <div className="hp-photo" style={{ backgroundImage: 'url(/assets/images/home/office-plant.jpg)' }} role="img" aria-label="A potted fern in a bright office"></div>

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { trackEvent } from '../utils/analytics';
+import { trackEvent, trackCall } from '../utils/analytics';
 import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 
 const PRICING_DATA = {
@@ -301,7 +301,7 @@ function RentalCalculator() {
               >
                 <i className="icofont-whatsapp me-2"></i>Get This Quote on WhatsApp
               </a>
-              <a href={PHONE_TEL} className="btn-line text-light d-block">
+              <a href={PHONE_TEL} onClick={() => trackCall('rental_calculator')} className="btn-line text-light d-block">
                 <i className="icofont-phone me-2"></i>Call to Discuss
               </a>
             </div>

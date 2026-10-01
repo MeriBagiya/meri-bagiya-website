@@ -7,3 +7,7 @@ export function trackEvent(eventName, params = {}) {
     window.gtag('event', eventName, params);
   }
 }
+
+export function trackCall(location) {
+  trackEvent('generate_lead', { method: 'call', location });
+}
