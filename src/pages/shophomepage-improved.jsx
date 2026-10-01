@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { useSearchParams } from 'react-router-dom';
+import { VARIANTS, PrototypeSwitcher } from './prototype-home/Variants';
 
-function ShophomepageImproved() {
+function ShophomepageCurrent() {
   // Initialize Swiper after component mounts - keeping this for now but hero will be simplified
   useEffect(() => {
     // Check if Swiper is available globally
@@ -388,5 +390,13 @@ function ShophomepageImproved() {
     </>
   )
 };
+
+// PROTOTYPE wrapper - remove before merge
+function ShophomepageImproved() {
+  const [params] = useSearchParams();
+  const v = params.get('variant');
+  const V = VARIANTS[v];
+  return <>{V ? <V /> : <ShophomepageCurrent />}<PrototypeSwitcher current={V ? v : 'Current'} /></>;
+}
 
 export default ShophomepageImproved;
