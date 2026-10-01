@@ -155,7 +155,7 @@ function PlantRentalHome() {
                       </div>
                       <div className="col-6">
                         <img
-                          src="/assets/images/unsplash/1463320726281-696a485928c7.jpg"
+                          src="/assets/images/misc/4.webp"
                           alt="Plants on shelf"
                           className="w-100 rounded-10px"
                           style={{ height: '200px', objectFit: 'cover' }}
@@ -192,7 +192,7 @@ function PlantRentalHome() {
                     </div>
                     <div className="col-md-6 col-lg-4">
                       <div className="bg-light p-4 rounded-10px h-100 text-center">
-                        <i className="icofont-air fs-40 id-color mb-3"></i>
+                        <i className="icofont-wind fs-40 id-color mb-3"></i>
                         <h5>Better Air Quality</h5>
                         <p className="mb-0 text-muted">Indoor plants purify air and boost oxygen levels naturally.</p>
                       </div>

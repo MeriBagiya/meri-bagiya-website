@@ -40,7 +40,7 @@ function VerticalGarden() {
 
         {/* Hero Section */}
         <section id="subheader" className="relative jarallax text-light">
-          <img src="/assets/images/unsplash/1534237710431-e2fc698436d0.jpg" className="jarallax-img" alt="Vertical garden"/>
+          <img src="/assets/images/stock/living-wall-2.jpg" className="jarallax-img" alt="Vertical garden"/>
           <div className="container relative z-index-1000">
             <div className="row">
               <div className="col-lg-6">
@@ -102,10 +102,10 @@ function VerticalGarden() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1621506289937-a8e4df240d0b.jpg" className="w-100 rounded-1 wow zoomIn" alt="Living wall"/>
+                        <img src="/assets/images/stock/living-wall-2.jpg" className="w-100 rounded-1 wow zoomIn" alt="Living wall"/>
                       </div>
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Green wall"/>
+                        <img src="/assets/images/stock/living-wall-3.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Green wall"/>
                         <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn" alt="Vertical planting"/>
                       </div>
                     </div>
@@ -122,7 +122,7 @@ function VerticalGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1558618666-fcd25c85cd64.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Modular vertical garden"/>
+                      <img src="/assets/images/stock/living-wall-1.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Modular vertical garden"/>
                       <div className="bg-color text-light p-4">
                         <h4>Modular Systems</h4>
                         <p className="mb-0">Pre-planted panels that can be easily installed and maintained. Perfect for indoor and outdoor spaces.</p>
@@ -142,7 +142,7 @@ function VerticalGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1524247108137-732e0f642303.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Hydroponic wall"/>
+                      <img src="/assets/images/stock/living-wall-3.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Hydroponic wall"/>
                       <div className="bg-color text-light p-4">
                         <h4>Hydroponic Walls</h4>
                         <p className="mb-0">Soil-free systems with automated irrigation. Low maintenance and high visual impact.</p>
@@ -156,7 +156,7 @@ function VerticalGarden() {
                 {/* Benefits */}
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-6">
-                    <img src="/assets/images/unsplash/1534237710431-e2fc698436d0.jpg" className="w-100 rounded-1" alt="Vertical garden benefits"/>
+                    <img src="/assets/images/stock/living-wall-1.jpg" className="w-100 rounded-1" alt="Vertical garden benefits"/>
                   </div>
                   <div className="col-lg-6">
                     <h2 className="mb-4">Benefits of <span className="id-color-2">Vertical Gardens</span></h2>

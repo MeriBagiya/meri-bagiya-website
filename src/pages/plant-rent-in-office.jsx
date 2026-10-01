@@ -62,34 +62,33 @@ function PlantRentInOffice() {
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
 
-        <section id="subheader" className="relative jarallax text-light">
-          <img src="/assets/images/background/1.webp" className="jarallax-img" alt="Office plant rental background"/>
-          <div className="container relative z-index-1000">
-            <div className="row">
-              <div className="col-lg-6">
-                <ul className="crumb">
+        <section className="hp-hero">
+          <div className="container">
+            <div className="hp-hero-grid">
+              <div>
+                <ul className="crumb mb-3">
                   <li><Link to="/">Home</Link></li>
                   <li className="active">Office Plant Rental</li>
                 </ul>
-                <h1 className="text-uppercase">Office Plant Rental in Noida</h1>
-                <p className="col-lg-10">Healthy plants for your workspace. We set up, water, and replace. You pay one monthly fee.</p>
-                <div className="d-flex flex-wrap gap-3 mt-3">
+                <div className="hp-eyebrow">Noida and Greater Noida</div>
+                <h1 className="hp-title">Office plant rental in <em>Noida.</em></h1>
+                <p className="hp-lead">Healthy plants for your workspace. We set up, water, and replace. You pay one monthly fee.</p>
+                <div className="hp-cta">
                   <a
-                    className="btn-main"
+                    className="btn-wa"
                     href={whatsappUrl(OFFICE_QUOTE_MESSAGE)}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackEvent('generate_lead', { method: 'whatsapp', location: 'office_rental_hero' })}
                   >
-                    Get a Quote on WhatsApp
+                    Get a quote on WhatsApp
                   </a>
-                  <a className="btn-line text-light" href={PHONE_TEL}>Call Us</a>
+                  <a className="btn-ghost" href={PHONE_TEL}>Call us</a>
                 </div>
               </div>
+              <div className="hp-photo" style={{ backgroundImage: 'url(/assets/images/home/office-plant.jpg)' }} role="img" aria-label="A potted fern in a bright office"></div>
             </div>
           </div>
-          <img src={process.env.PUBLIC_URL + '/assets/images/logo-wm.webp'} className="abs end-0 bottom-0 z-2 w-20" alt=""/>
-          <div className="de-overlay"></div>
         </section>
 
         <section>
@@ -253,7 +252,7 @@ function PlantRentInOffice() {
                   </div>
                   <div className="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay=".6s">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <i className="icofont-shop fs-48 id-color mb-2"></i>
+                      <i className="icofont-bag-alt fs-48 id-color mb-2"></i>
                       <h5>Showrooms</h5>
                     </div>
                   </div>
@@ -280,15 +279,15 @@ function PlantRentInOffice() {
                 <div className="row g-4">
                   <div className="col-lg-12 text-center">
                     <a
-                      className="btn-main wow fadeInUp me-3"
+                      className="btn-wa wow fadeInUp me-3"
                       href={whatsappUrl(OFFICE_QUOTE_MESSAGE)}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackEvent('generate_lead', { method: 'whatsapp', location: 'office_rental_footer' })}
                     >
-                      Get a Quote on WhatsApp
+                      Get a quote on WhatsApp
                     </a>
-                    <Link className="btn-line wow fadeInUp" to="/contact">Contact Form</Link>
+                    <Link className="btn-ghost wow fadeInUp" to="/contact">Contact form</Link>
                   </div>
                 </div>
               </div>

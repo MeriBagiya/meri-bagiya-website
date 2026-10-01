@@ -246,7 +246,7 @@ function FertilizerCalculator() {
                           >
                             <div className="card-body p-3">
                               <div className="d-flex align-items-center">
-                                <i className="icofont-flower-pot me-2" style={{ fontSize: '20px', color: selectedPotSize === pot.id ? '#4a7c59' : '#6c757d' }}></i>
+                                <i className="icofont-plant me-2" style={{ fontSize: '20px', color: selectedPotSize === pot.id ? '#4a7c59' : '#6c757d' }}></i>
                                 <div>
                                   <h6 className="mb-0" style={{ fontSize: '13px', color: selectedPotSize === pot.id ? '#2d4a36' : 'inherit' }}>{pot.name}</h6>
                                   <small style={{ fontSize: '11px', color: selectedPotSize === pot.id ? '#4a7c59' : '#6c757d' }}>{pot.description}</small>

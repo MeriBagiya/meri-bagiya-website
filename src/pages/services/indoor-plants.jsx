@@ -102,7 +102,7 @@ function IndoorPlants() {
                         <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="w-100 rounded-1 wow zoomIn" alt="House plants"/>
                       </div>
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1463320726281-696a485928c7.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor greenery"/>
+                        <img src="/assets/images/misc/4.webp" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor greenery"/>
                         <img src={plantPhoto("rubber-plant")} className="w-100 rounded-1 wow zoomIn" alt="Plant decor"/>
                       </div>
                     </div>
@@ -227,7 +227,7 @@ function IndoorPlants() {
 
                     <div className="d-flex mb-3">
                       <div className="bg-color text-light rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{width: '40px', height: '40px'}}>
-                        <i className="icofont-air"></i>
+                        <i className="icofont-wind"></i>
                       </div>
                       <div>
                         <h5 className="mb-0">Purify Air</h5>

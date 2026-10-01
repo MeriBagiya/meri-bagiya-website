@@ -15,7 +15,7 @@ const presets = [
 ];
 
 const gardenTypes = [
-  { id: 'decorative', label: 'Decorative', icon: 'icofont-flower', description: 'Beautiful flowering and ornamental plants', costMultiplier: 1.0 },
+  { id: 'decorative', label: 'Decorative', icon: 'icofont-flora-flower', description: 'Beautiful flowering and ornamental plants', costMultiplier: 1.0 },
   { id: 'vegetable', label: 'Vegetable Garden', icon: 'icofont-carrot', description: 'Grow your own organic vegetables', costMultiplier: 0.8 },
   { id: 'mixed', label: 'Mixed Garden', icon: 'icofont-leaf', description: 'Combination of decorative and edible plants', costMultiplier: 1.1 },
   { id: 'leisure', label: 'Leisure & Seating', icon: 'icofont-chair', description: 'Garden with seating area for relaxation', costMultiplier: 1.3 }

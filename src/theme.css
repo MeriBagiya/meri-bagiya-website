@@ -230,3 +230,14 @@ li,
   border-radius: 14px;
   box-sizing: content-box;
 }
+
+/* Buttons use the body font, not the serif title font */
+a.btn-main,
+.btn-main,
+a.btn-line,
+.btn-line,
+a.btn-wa,
+a.btn-ghost,
+a.btn-slider {
+  font-family: var(--body-font);
+}

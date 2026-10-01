@@ -138,7 +138,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1497366216548-37526070297c.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Office plant rental"/>
+                      <img src="/assets/images/home/office-plant.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Office plant rental"/>
                       <div className="bg-color text-light p-4">
                         <h5>Office & Corporate</h5>
                         <p className="mb-2 small">Monthly rental for offices, co-working spaces, and corporate lobbies.</p>
@@ -318,7 +318,7 @@ function PlantRental() {
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Dracaena"/>
+                      <img src="/assets/images/stock/dracaena.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Dracaena"/>
                       <h6 className="small mb-0">Dracaena</h6>
                     </div>
                   </div>
@@ -352,7 +352,7 @@ function PlantRental() {
                 {/* Why Rent */}
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-6 order-lg-2">
-                    <img src="/assets/images/unsplash/1463320726281-696a485928c7.jpg" className="w-100 rounded-1" alt="Why rent plants"/>
+                    <img src="/assets/images/misc/4.webp" className="w-100 rounded-1" alt="Why rent plants"/>
                   </div>
                   <div className="col-lg-6 order-lg-1">
                     <h2 className="mb-4">Why <span className="id-color-2">Rent</span> Instead of Buy?</h2>

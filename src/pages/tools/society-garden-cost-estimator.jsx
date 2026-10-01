@@ -461,7 +461,7 @@ function SocietyGardenCostEstimator() {
                             <td className="text-end fw-bold">₹{results.baseCost.toLocaleString('en-IN')}/month</td>
                           </tr>
                           <tr>
-                            <td><i className="icofont-flower-pot text-warning me-2"></i>Pot Supply (amortized)</td>
+                            <td><i className="icofont-plant text-warning me-2"></i>Pot Supply (amortized)</td>
                             <td className="text-end fw-bold">₹{results.potCost.toLocaleString('en-IN')}/month</td>
                           </tr>
                           <tr>

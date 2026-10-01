@@ -94,7 +94,7 @@ function PlantCareCalendar() {
       case 'watering': return 'icofont-water-drop';
       case 'fertilizing': return 'icofont-leaf';
       case 'pruning': return 'icofont-cut';
-      case 'repotting': return 'icofont-flower-pot';
+      case 'repotting': return 'icofont-plant';
       default: return 'icofont-plant';
     }
   };
@@ -402,7 +402,7 @@ function PlantCareCalendar() {
                 <div>
                   {plants.length === 0 ? (
                     <div className="text-center py-5">
-                      <i className="icofont-flower-pot" style={{ fontSize: '64px', color: '#4a7c59' }}></i>
+                      <i className="icofont-plant" style={{ fontSize: '64px', color: '#4a7c59' }}></i>
                       <h4 className="mt-3">No plants yet</h4>
                       <p className="text-muted">Add your first plant to start tracking care schedules.</p>
                       <button
@@ -457,7 +457,7 @@ function PlantCareCalendar() {
                   </div>
                   <div>
                     <div className="d-flex align-items-center mb-2">
-                      <i className="icofont-flower-pot me-2" style={{ color: '#9C27B0' }}></i>
+                      <i className="icofont-plant me-2" style={{ color: '#9C27B0' }}></i>
                       <strong>Repotting</strong>
                     </div>
                     <small className="text-muted">Repot when roots outgrow pot. Best done in spring.</small>
@@ -606,7 +606,7 @@ function PlantCareCalendar() {
                             </div>
                             <div className="col-6">
                               <small className="text-muted">
-                                <i className="icofont-flower-pot me-1" style={{ color: '#9C27B0' }}></i>
+                                <i className="icofont-plant me-1" style={{ color: '#9C27B0' }}></i>
                                 Repot: Every {Math.round(selectedTemplate.careSchedule.repotting.frequency / 365)} year(s)
                               </small>
                             </div>

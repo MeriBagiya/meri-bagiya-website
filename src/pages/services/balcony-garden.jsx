@@ -98,7 +98,7 @@ function BalconyGarden() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="w-100 rounded-1 wow zoomIn" alt="Balcony plants"/>
+                        <img src="/assets/images/stock/balcony-pots.jpg" className="w-100 rounded-1 wow zoomIn" alt="Balcony plants"/>
                       </div>
                       <div className="col-6">
                         <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Small garden"/>
@@ -131,7 +131,7 @@ function BalconyGarden() {
                   <div className="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="d-flex bg-light p-4 rounded-1 h-100">
                       <div className="bg-color text-light rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{width: '50px', height: '50px'}}>
-                        <i className="icofont-flower fs-24"></i>
+                        <i className="icofont-flora-flower fs-24"></i>
                       </div>
                       <div>
                         <h5>Plant Selection</h5>
@@ -175,7 +175,7 @@ function BalconyGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1">
-                      <img src="/assets/images/unsplash/1466692476868-aef1dfb1e735.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Flowering balcony"/>
+                      <img src="/assets/images/stock/balcony-pots.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Flowering balcony"/>
                       <div className="bg-color text-light p-4">
                         <h5>Flowering Garden</h5>
                         <p className="mb-0 small">Colorful blooms with petunias, marigolds, and seasonal flowers.</p>
@@ -214,7 +214,7 @@ function BalconyGarden() {
 
                   <div className="col-lg-3 col-md-6 col-6 wow fadeInUp">
                     <div className="text-center p-4 bg-color text-light rounded-1 h-100">
-                      <i className="icofont-air fs-48 mb-3"></i>
+                      <i className="icofont-wind fs-48 mb-3"></i>
                       <h5>Fresh Air</h5>
                       <p className="mb-0 small">Plants purify the air you breathe at home.</p>
                     </div>
@@ -222,7 +222,7 @@ function BalconyGarden() {
 
                   <div className="col-lg-3 col-md-6 col-6 wow fadeInUp">
                     <div className="text-center p-4 bg-color-2 text-light rounded-1 h-100">
-                      <i className="icofont-emo-simple-smile fs-48 mb-3"></i>
+                      <i className="icofont-simple-smile fs-48 mb-3"></i>
                       <h5>Stress Relief</h5>
                       <p className="mb-0 small">Gardening reduces stress and improves mental health.</p>
                     </div>
