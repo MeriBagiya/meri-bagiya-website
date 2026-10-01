@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
+import { plantPhoto } from '../../data/plantPhotos';
 import RentalCalculator from '../../components/RentalCalculator';
 import { trackEvent } from '../../utils/analytics';
 
@@ -120,7 +121,7 @@ function PlantRental() {
                       </div>
                       <div className="col-6">
                         <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor plant rental"/>
-                        <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn" alt="Event plants"/>
+                        <img src={plantPhoto("fiddle-leaf-fig")} className="w-100 rounded-1 wow zoomIn" alt="Event plants"/>
                       </div>
                     </div>
                   </div>
@@ -260,56 +261,56 @@ function PlantRental() {
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1602923668104-8f9e03e77e62.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Money Plant"/>
+                      <img src={plantPhoto("pothos")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Money Plant"/>
                       <h6 className="small mb-0">Money Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1558171813-4c088753af8f.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Snake Plant"/>
+                      <img src={plantPhoto("snake-plant")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Snake Plant"/>
                       <h6 className="small mb-0">Snake Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1520412099551-62b6bafeb5bb.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Areca Palm"/>
+                      <img src={plantPhoto("areca-palm")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Areca Palm"/>
                       <h6 className="small mb-0">Areca Palm</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1509423350716-97f9360b4e09.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Peace Lily"/>
+                      <img src={plantPhoto("peace-lily")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Peace Lily"/>
                       <h6 className="small mb-0">Peace Lily</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1485955900006-10f4d324d411.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Rubber Plant"/>
+                      <img src={plantPhoto("rubber-plant")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Rubber Plant"/>
                       <h6 className="small mb-0">Rubber Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1545241047-6083a3684587.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Ficus"/>
+                      <img src={plantPhoto("fiddle-leaf-fig")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Ficus"/>
                       <h6 className="small mb-0">Ficus</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1446071103084-c257b5f70672.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Pothos"/>
+                      <img src={plantPhoto("pothos")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Pothos"/>
                       <h6 className="small mb-0">Pothos</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1596438459194-f275f413d6ff.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Jade Plant"/>
+                      <img src={plantPhoto("jade-plant")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Jade Plant"/>
                       <h6 className="small mb-0">Jade Plant</h6>
                     </div>
                   </div>
@@ -323,14 +324,14 @@ function PlantRental() {
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1466692476868-aef1dfb1e735.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Flowering Plants"/>
+                      <img src={plantPhoto("jasmine")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Flowering Plants"/>
                       <h6 className="small mb-0">Flowering</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Bonsai"/>
+                      <img src={plantPhoto("bonsai")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Bonsai"/>
                       <h6 className="small mb-0">Bonsai</h6>
                     </div>
                   </div>

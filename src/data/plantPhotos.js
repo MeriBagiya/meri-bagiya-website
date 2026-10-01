@@ -15,6 +15,7 @@ export const plantPhotos = [
   { id: 'tulsi', name: 'Tulsi (Holy Basil)', scientificName: 'Ocimum tenuiflorum', file: 'tulsi.jpg', source: 'https://commons.wikimedia.org/wiki/File:Thulasi2.jpg', license: 'CC BY-SA 2.5', author: 'Challiyan at Malayalam Wikipedia' },
   { id: 'jasmine', name: 'Jasmine', scientificName: 'Jasminum sambac', file: 'jasmine.jpg', source: 'https://commons.wikimedia.org/wiki/File:Jasminum_sambac_Flower.jpg', license: 'CC BY-SA 4.0', author: 'PapiPijuan' },
   { id: 'bird-of-paradise', name: 'Bird of Paradise', scientificName: 'Strelitzia reginae', file: 'bird-of-paradise.jpg', source: 'https://commons.wikimedia.org/wiki/File:Strelitzia_larger.jpg', license: 'Public domain', author: 'Scott Bauer, USDA' },
+  { id: 'bonsai', name: 'Bonsai', scientificName: 'Ficus microcarpa', file: 'bonsai.jpg', source: 'https://commons.wikimedia.org/wiki/File:Ficus_microcarpa_bonsai_Kiev.jpg', license: 'CC BY-SA 3.0', author: 'Аимаина хикари' },
   { id: 'default-plant', name: 'Plant', scientificName: '', file: 'default-plant.jpg' },
 ];
 

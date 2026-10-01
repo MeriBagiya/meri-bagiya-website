@@ -29,3 +29,22 @@ test('every local image path used in src exists in public', () => {
   }
   expect([...missing]).toEqual([]);
 });
+
+test('every image file in public/assets/images is a real image', () => {
+  const sig = {
+    '.jpg': (b) => b[0] === 0xff && b[1] === 0xd8,
+    '.jpeg': (b) => b[0] === 0xff && b[1] === 0xd8,
+    '.png': (b) => b[0] === 0x89 && b[1] === 0x50,
+    '.webp': (b) => b.slice(0, 4).toString() === 'RIFF' && b.slice(8, 12).toString() === 'WEBP',
+    '.gif': (b) => b.slice(0, 3).toString() === 'GIF',
+  };
+  const bad = [];
+  (function scan(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) scan(p);
+      else if (sig[path.extname(e.name).toLowerCase()] && !sig[path.extname(e.name).toLowerCase()](fs.readFileSync(p))) bad.push(path.relative(publicDir, p));
+    }
+  })(path.join(publicDir, 'assets/images'));
+  expect(bad).toEqual([]);
+});
