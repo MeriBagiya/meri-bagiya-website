@@ -1,0 +1,232 @@
+/* Meri Bagiya design base: editorial split look (cream, forest green, serif headings) */
+* {
+  --background: #f6f1e7;
+  --primary-color: #2f5a3d;
+  --primary-color-rgb: 47, 90, 61;
+  --secondary-color: #4d7a4a;
+  --secondary-color-rgb: 77, 122, 74;
+  --title-font-color: #17301f;
+  --body-font-color: #3b4d41;
+  --bg-light: #ebe5d6;
+  --bg-dark-1: #17301f;
+  --bg-dark-1-rgb: 23, 48, 31;
+  --bg-dark-2: #11261a;
+  --bg-dark-3: #1d3a27;
+  --bg-dark-3-rgb: 29, 58, 39;
+  --title-font: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --title-font-weight: 600;
+  --body-font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --body-font-weight: 400;
+  --mainmenu-font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mainmenu-font-weight: 500;
+  --mainmenu-text-transform: none;
+  --mainmenu-font-size: 15px;
+  --rounded-1: 16px;
+  --whatsapp: #25d366;
+  --whatsapp-ink: #06210f;
+}
+
+body {
+  background: var(--background);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+a.btn-main,
+.btn-main {
+  border-radius: 999px;
+  text-transform: none;
+  font-weight: 700;
+  letter-spacing: 0;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+a.btn-line,
+.btn-line {
+  border-radius: 999px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* WhatsApp is the main action: green pill in the header menu */
+a.menu-item[href*="wa.me"] {
+  position: relative;
+  isolation: isolate;
+  padding-left: 22px !important;
+  padding-right: 22px !important;
+  color: var(--whatsapp-ink) !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+a.menu-item[href*="wa.me"]::before {
+  content: '';
+  position: absolute;
+  inset: 17px 0;
+  background: var(--whatsapp);
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.rounded-1 {
+  border-radius: var(--rounded-1) !important;
+}
+
+/* Buttons */
+a.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--whatsapp);
+  color: var(--whatsapp-ink);
+  font-weight: 700;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  transition: transform 0.15s;
+}
+
+a.btn-wa:hover {
+  color: var(--whatsapp-ink);
+  transform: translateY(-2px);
+}
+
+a.btn-ghost {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--title-font-color);
+  color: var(--title-font-color);
+  font-weight: 500;
+}
+
+a.btn-ghost:hover {
+  background: var(--title-font-color);
+  color: #fff;
+}
+
+/* Homepage hero */
+.hp-hero {
+  padding: 160px 0 24px;
+  background: var(--background);
+}
+
+.hp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hp-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hp-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin: 0 0 20px;
+  text-transform: none;
+}
+
+.hp-title em {
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+.hp-lead {
+  font-size: 1.15rem;
+  max-width: 34rem;
+  margin-bottom: 28px;
+}
+
+.hp-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hp-photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 240px 240px 24px 24px;
+  background-position: 30% center;
+  background-size: cover;
+  box-shadow: 0 30px 60px -30px rgba(23, 48, 31, 0.5);
+}
+
+.hp-proof {
+  margin-top: 56px;
+  border-top: 1px solid #d9d0bd;
+  border-bottom: 1px solid #d9d0bd;
+  padding: 22px 0;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.hp-proof b {
+  display: block;
+  font-family: var(--title-font);
+  font-size: 1.6rem;
+  color: var(--title-font-color);
+}
+
+.hp-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 56px 0;
+}
+
+.hp-cols h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hp-cols a {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+@media (max-width: 820px) {
+  .hp-hero {
+    padding-top: 130px;
+  }
+
+  .hp-hero-grid,
+  .hp-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-photo {
+    aspect-ratio: 1 / 1;
+    border-radius: 24px;
+    background-position: 20% center;
+  }
+}
+
+/* Body text weight: the base theme uses 300, which is too thin for DM Sans */
+body,
+p,
+li,
+.lead {
+  font-weight: 400;
+}
+
+/* Footer logo: the logo is dark, so it sits on a cream tile */
+.footer-logo {
+  background: #f6f1e7;
+  max-width: 110px !important;
+  padding: 10px 14px;
+  border-radius: 14px;
+  box-sizing: content-box;
+}

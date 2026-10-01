@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../utils/analytics';
 import { WHATSAPP_BASE_URL } from '../constants/contact';
-import { BUSINESS_ADDRESS_LINE } from '../constants/business';
+import { BUSINESS_ADDRESS_LINE, BUSINESS_EMAIL } from '../constants/business';
 
 function Footer() {
   return (
@@ -12,7 +12,7 @@ function Footer() {
  <div className="container relative z-2">
      <div className="row gx-5 gy-4">
          <div className="col-lg-4 col-md-6 col-12 text-center text-md-start">
-             <img src="/assets/images/MERI-BAGIYA-LOGO-UPDATED.png" className="w-150px" alt="Meri Bagiya - Plant Nursery & Garden Services" style={{maxWidth: '120px'}}/>
+             <img src="/assets/images/MERI-BAGIYA-LOGO-UPDATED.png" className="w-150px footer-logo" alt="Meri Bagiya - Plant Nursery & Garden Services" style={{maxWidth: "120px"}}/>
              <div className="spacer-20"></div>
              <p>Greater Noida's leading wholesale plant nursery and garden services provider. We supply retail nurseries, landscapers, and garden centers with quality plants. From garden design to maintenance, we bring your dream garden to life—professional, reliable, and passionate about nature.</p>
 
@@ -66,7 +66,7 @@ function Footer() {
                  <div className="spacer-20"></div>
 
                  <div className="fw-bold text-white"><i className="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                 Contact@meribagiya.com
+                 {BUSINESS_EMAIL}
 
                  <div className="spacer-20"></div>
 

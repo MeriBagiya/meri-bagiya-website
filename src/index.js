@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
+import './theme.css';
 import App from './App';
 import {createBrowserRouter, RouterProvider,createRoutesFromElements,Route} from 'react-router-dom';
 import ShophomepageImproved from './pages/shophomepage-improved';
