@@ -177,7 +177,7 @@ function Contact() {
                             <div className="relative h-100 bg-color-2 text-light padding30 rounded-1 text-center">
                                 <i className="icofont-envelope fs-40 mb-3 d-block"></i>
                                 <h5>Send a Message</h5>
-                                <p className="mb-0">Contact@meribagiya.com</p>
+                                <p className="mb-0">contact@meribagiya.com</p>
                             </div>
                         </div>
                     </div>

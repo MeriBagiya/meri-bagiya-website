@@ -241,3 +241,41 @@ a.btn-ghost,
 a.btn-slider {
   font-family: var(--body-font);
 }
+
+/* Accent words on dark photos and dark sections need a lighter green */
+.text-light .id-color-2,
+.text-white .id-color-2,
+.section-dark .id-color-2,
+.bg-dark .id-color-2,
+.bg-dark-1 .id-color-2 {
+  color: #b9e08e;
+}
+
+/* Breadcrumb on dark page headers */
+#subheader .crumb li,
+#subheader .crumb li a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#subheader .crumb li.active {
+  color: #fff;
+}
+
+/* Long page titles must wrap on phones */
+@media (max-width: 576px) {
+  #subheader h1 {
+    font-size: 2.1rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* The base theme forces a small height on nav, which collapsed the phone menu */
+.mobile-menu-nav {
+  height: auto !important;
+  float: none;
+}
+
+/* The base theme sets nowrap on .d-flex, which clips text and causes sideways scroll on phones */
+.d-flex {
+  white-space: normal;
+}

@@ -245,7 +245,7 @@ function Header() {
 
 
             {/* Mobile Menu Links */}
-            <nav style={{padding: '10px 0'}}>
+            <nav className="mobile-menu-nav" style={{padding: '10px 0'}}>
                 <Link
                     to="/"
                     onClick={closeMobileMenu}
