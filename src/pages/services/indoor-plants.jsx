@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
+import { plantPhoto } from '../../data/plantPhotos';
 
 function IndoorPlants() {
   return (
@@ -101,8 +102,8 @@ function IndoorPlants() {
                         <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="w-100 rounded-1 wow zoomIn" alt="House plants"/>
                       </div>
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1463320726281-696a485928c7.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor greenery"/>
-                        <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn" alt="Plant decor"/>
+                        <img src="/assets/images/misc/4.webp" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor greenery"/>
+                        <img src={plantPhoto("rubber-plant")} className="w-100 rounded-1 wow zoomIn" alt="Plant decor"/>
                       </div>
                     </div>
                   </div>
@@ -118,7 +119,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1593691509543-c55fb32e1735.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Money Plant"/>
+                      <img src={plantPhoto("pothos")} className="rounded-circle mb-3" style={{width: "100px", height: "100px", objectFit: "cover"}} alt="Money Plant"/>
                       <h5>Money Plant</h5>
                       <p className="small mb-0">Low maintenance, air purifier</p>
                     </div>
@@ -126,7 +127,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".1s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1558171813-4c088753af8f.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Snake Plant"/>
+                      <img src={plantPhoto("snake-plant")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Snake Plant"/>
                       <h5>Snake Plant</h5>
                       <p className="small mb-0">Night oxygen, very hardy</p>
                     </div>
@@ -134,7 +135,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1509423350716-97f9360b4e09.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Peace Lily"/>
+                      <img src={plantPhoto("peace-lily")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Peace Lily"/>
                       <h5>Peace Lily</h5>
                       <p className="small mb-0">Flowering, shade tolerant</p>
                     </div>
@@ -142,7 +143,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".3s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1520412099551-62b6bafeb5bb.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Areca Palm"/>
+                      <img src={plantPhoto("areca-palm")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Areca Palm"/>
                       <h5>Areca Palm</h5>
                       <p className="small mb-0">Humidifier, decorative</p>
                     </div>
@@ -150,7 +151,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1485955900006-10f4d324d411.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Rubber Plant"/>
+                      <img src={plantPhoto("rubber-plant")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Rubber Plant"/>
                       <h5>Rubber Plant</h5>
                       <p className="small mb-0">Bold leaves, easy care</p>
                     </div>
@@ -158,7 +159,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".5s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1507003211169-0a1dd7228f2d.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Jade Plant"/>
+                      <img src={plantPhoto("jade-plant")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Jade Plant"/>
                       <h5>Jade Plant</h5>
                       <p className="small mb-0">Lucky plant, succulent</p>
                     </div>
@@ -166,7 +167,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".6s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1446071103084-c257b5f70672.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Pothos"/>
+                      <img src={plantPhoto("pothos")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Pothos"/>
                       <h5>Pothos</h5>
                       <p className="small mb-0">Trailing vine, adaptable</p>
                     </div>
@@ -174,7 +175,7 @@ function IndoorPlants() {
 
                   <div className="col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay=".7s">
                     <div className="text-center bg-light p-4 rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Ficus"/>
+                      <img src={plantPhoto("fiddle-leaf-fig")} className="rounded-circle mb-3" style={{width: '100px', height: '100px', objectFit: 'cover'}} alt="Ficus"/>
                       <h5>Ficus</h5>
                       <p className="small mb-0">Tree-like, statement piece</p>
                     </div>
@@ -226,7 +227,7 @@ function IndoorPlants() {
 
                     <div className="d-flex mb-3">
                       <div className="bg-color text-light rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style={{width: '40px', height: '40px'}}>
-                        <i className="icofont-air"></i>
+                        <i className="icofont-wind"></i>
                       </div>
                       <div>
                         <h5 className="mb-0">Purify Air</h5>

@@ -5,6 +5,7 @@ import ToolWhatsAppCTA from '../../components/tools/ToolWhatsAppCTA';
 import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const ACCENT = '#009688';
 
@@ -81,7 +82,7 @@ const faqItems = [
 const relatedServices = [
   { name: 'Plant Rental Corporate', icon: 'icofont-building-alt', color: '#009688', link: '/services/plant-rental' },
   { name: 'Plant Rental Home', icon: 'icofont-home', color: '#4caf50', link: '/services/plant-rental-home' },
-  { name: 'Plant Rent in Office', icon: 'icofont-desk', color: '#2196f3', link: '/plant-rent-in-office' }
+  { name: 'Plant Rent in Office', icon: 'icofont-laptop', color: '#2196f3', link: '/plant-rent-in-office' }
 ];
 
 function PlantRentalVsBuyCalculator() {
@@ -535,7 +536,7 @@ function PlantRentalVsBuyCalculator() {
                             <td className="text-end fw-bold">₹{(plantCount * buyCosts.plant[plantSize]).toLocaleString('en-IN')}</td>
                           </tr>
                           <tr>
-                            <td><i className="icofont-flower-pot text-warning me-2"></i>Pots (one-time)</td>
+                            <td><i className="icofont-plant text-warning me-2"></i>Pots (one-time)</td>
                             <td className="text-end fw-bold">₹{(plantCount * buyCosts.pot[plantSize]).toLocaleString('en-IN')}</td>
                           </tr>
                           <tr>
@@ -606,7 +607,7 @@ function PlantRentalVsBuyCalculator() {
                     {results.winner === 'rent' && (
                       <div className="text-center mt-4">
                         <a
-                          href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                          href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-success btn-lg"
@@ -627,7 +628,7 @@ function PlantRentalVsBuyCalculator() {
                       <div className="text-center mt-4">
                         <p className="text-muted small">Buying looks cheaper for your current selection, but remember the hidden costs above. Want to explore rental anyway?</p>
                         <a
-                          href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                          href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-outline-success"

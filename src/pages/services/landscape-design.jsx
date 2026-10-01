@@ -98,11 +98,11 @@ function LandscapeDesign() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1585320806297-9794b3e4eeae.jpg" className="w-100 rounded-1 wow zoomIn" alt="Garden design"/>
+                        <img src="/assets/images/stock/rooftop-garden.jpg" className="w-100 rounded-1 wow zoomIn" alt="Garden design"/>
                       </div>
                       <div className="col-6">
                         <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Landscape planning"/>
-                        <img src="/assets/images/unsplash/1551410224-699683e15636.jpg" className="w-100 rounded-1 wow zoomIn" alt="Outdoor landscaping"/>
+                        <img src="/assets/images/gallery/2.webp" className="w-100 rounded-1 wow zoomIn" alt="Outdoor landscaping"/>
                       </div>
                     </div>
                   </div>
@@ -128,7 +128,7 @@ function LandscapeDesign() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1">
-                      <img src="/assets/images/unsplash/1486406146926-c627a92ad1ab.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Commercial landscaping"/>
+                      <img src="/assets/images/background/5.webp" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Commercial landscaping"/>
                       <div className="bg-color text-light p-4">
                         <h4>Commercial Landscaping</h4>
                         <p className="mb-0">Create impressive outdoor spaces for offices, hotels, and commercial properties that leave lasting impressions.</p>
@@ -138,7 +138,7 @@ function LandscapeDesign() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1">
-                      <img src="/assets/images/unsplash/1604762512526-b7ce049b5764.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Hardscape design"/>
+                      <img src="/assets/images/gallery/1.webp" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Hardscape design"/>
                       <div className="bg-color text-light p-4">
                         <h4>Hardscape Design</h4>
                         <p className="mb-0">Pathways, patios, retaining walls, and decorative elements that add structure to your garden.</p>

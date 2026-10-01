@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
+import { plantPhoto } from '../../data/plantPhotos';
 import RentalCalculator from '../../components/RentalCalculator';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../../constants/contact';
 
 function PlantRental() {
   return (
@@ -91,10 +93,10 @@ function PlantRental() {
                 <div className="bg-color text-light p-4 rounded-1 mt-4">
                   <h5 className="mb-3">Quick Enquiry</h5>
                   <p className="small mb-3">Need plants for your next event or space? Get in touch!</p>
-                  <a href="tel:9220404309" className="btn-line text-light d-block text-center mb-2">
+                  <a href={PHONE_TEL} className="btn-line text-light d-block text-center mb-2">
                     <i className="icofont-phone me-2"></i>Call Now
                   </a>
-                  <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'plant-rental-page-sidebar' })}>
+                  <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="btn-main d-block text-center" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'plant-rental-page-sidebar' })}>
                     <i className="icofont-whatsapp me-2"></i>WhatsApp
                   </a>
                 </div>
@@ -110,7 +112,7 @@ function PlantRental() {
                     <p>From a single potted plant to hundreds of plants for large events, we have flexible rental plans to suit every need and budget.</p>
                     <div className="d-flex gap-3 mt-4">
                       <Link to="/contact" className="btn-main">Get Quote</Link>
-                      <a href="tel:9220404309" className="btn-line">Call Us</a>
+                      <a href={PHONE_TEL} className="btn-line">Call Us</a>
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -120,7 +122,7 @@ function PlantRental() {
                       </div>
                       <div className="col-6">
                         <img src="/assets/images/unsplash/1459411552884-841db9b3cc2a.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Indoor plant rental"/>
-                        <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn" alt="Event plants"/>
+                        <img src={plantPhoto("fiddle-leaf-fig")} className="w-100 rounded-1 wow zoomIn" alt="Event plants"/>
                       </div>
                     </div>
                   </div>
@@ -136,7 +138,7 @@ function PlantRental() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1497366216548-37526070297c.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Office plant rental"/>
+                      <img src="/assets/images/home/office-plant.jpg" className="w-100" style={{height: '200px', objectFit: 'cover'}} alt="Office plant rental"/>
                       <div className="bg-color text-light p-4">
                         <h5>Office & Corporate</h5>
                         <p className="mb-2 small">Monthly rental for offices, co-working spaces, and corporate lobbies.</p>
@@ -260,77 +262,77 @@ function PlantRental() {
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1602923668104-8f9e03e77e62.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Money Plant"/>
+                      <img src={plantPhoto("pothos")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Money Plant"/>
                       <h6 className="small mb-0">Money Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1558171813-4c088753af8f.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Snake Plant"/>
+                      <img src={plantPhoto("snake-plant")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Snake Plant"/>
                       <h6 className="small mb-0">Snake Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1520412099551-62b6bafeb5bb.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Areca Palm"/>
+                      <img src={plantPhoto("areca-palm")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Areca Palm"/>
                       <h6 className="small mb-0">Areca Palm</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1509423350716-97f9360b4e09.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Peace Lily"/>
+                      <img src={plantPhoto("peace-lily")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Peace Lily"/>
                       <h6 className="small mb-0">Peace Lily</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1485955900006-10f4d324d411.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Rubber Plant"/>
+                      <img src={plantPhoto("rubber-plant")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Rubber Plant"/>
                       <h6 className="small mb-0">Rubber Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1545241047-6083a3684587.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Ficus"/>
+                      <img src={plantPhoto("fiddle-leaf-fig")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Ficus"/>
                       <h6 className="small mb-0">Ficus</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1446071103084-c257b5f70672.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Pothos"/>
+                      <img src={plantPhoto("pothos")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Pothos"/>
                       <h6 className="small mb-0">Pothos</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1596438459194-f275f413d6ff.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Jade Plant"/>
+                      <img src={plantPhoto("jade-plant")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Jade Plant"/>
                       <h6 className="small mb-0">Jade Plant</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1598902108854-10e335adac99.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Dracaena"/>
+                      <img src="/assets/images/stock/dracaena.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Dracaena"/>
                       <h6 className="small mb-0">Dracaena</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1466692476868-aef1dfb1e735.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Flowering Plants"/>
+                      <img src={plantPhoto("jasmine")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Flowering Plants"/>
                       <h6 className="small mb-0">Flowering</h6>
                     </div>
                   </div>
 
                   <div className="col-lg-2 col-md-3 col-4 wow fadeInUp">
                     <div className="text-center p-3 bg-light rounded-1">
-                      <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Bonsai"/>
+                      <img src={plantPhoto("bonsai")} className="rounded-circle mb-2" style={{width: '60px', height: '60px', objectFit: 'cover'}} alt="Bonsai"/>
                       <h6 className="small mb-0">Bonsai</h6>
                     </div>
                   </div>
@@ -350,7 +352,7 @@ function PlantRental() {
                 {/* Why Rent */}
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-6 order-lg-2">
-                    <img src="/assets/images/unsplash/1463320726281-696a485928c7.jpg" className="w-100 rounded-1" alt="Why rent plants"/>
+                    <img src="/assets/images/misc/4.webp" className="w-100 rounded-1" alt="Why rent plants"/>
                   </div>
                   <div className="col-lg-6 order-lg-1">
                     <h2 className="mb-4">Why <span className="id-color-2">Rent</span> Instead of Buy?</h2>
@@ -425,7 +427,7 @@ function PlantRental() {
                       <h3 className="mb-3">Ready to Green Your Space?</h3>
                       <p className="mb-4">Get a free consultation and custom quote for your plant rental needs.</p>
                       <Link className="btn-main bg-light text-dark me-3" to="/contact">Get Free Quote</Link>
-                      <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" className="btn-line text-light" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-page-bottom-cta' })}>
+                      <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" className="btn-line text-light" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-page-bottom-cta' })}>
                         <i className="icofont-whatsapp me-2"></i>WhatsApp Us
                       </a>
                     </div>

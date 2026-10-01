@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { trackEvent } from '../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
+import { BUSINESS_ADDRESS_LINE } from '../constants/business';
 
 function Shipping() {
   return (
@@ -74,7 +76,7 @@ function Shipping() {
 
                 <div className="bg-light p-4 rounded-1 mb-5">
                   <h5 className="mb-3"><i className="icofont-location-pin me-2 id-color-2"></i>Nursery Location</h5>
-                  <p className="mb-2"><strong>Address:</strong> Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, Uttar Pradesh - 201318</p>
+                  <p className="mb-2"><strong>Address:</strong> {BUSINESS_ADDRESS_LINE}</p>
                   <p className="mb-3"><strong>Timings:</strong> Monday - Sunday, 8:00 AM - 7:00 PM</p>
                   <a
                     href="https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z"
@@ -162,13 +164,13 @@ function Shipping() {
                   <div className="col-md-6">
                     <div className="bg-light p-3 rounded-1">
                       <p className="mb-1"><strong><i className="icofont-whatsapp me-2 text-success"></i>WhatsApp (Fastest)</strong></p>
-                      <a href="https://wa.me/919220404309" className="text-dark" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Number', location: 'shipping-page-contact-section' })}>+91-9220404309</a>
+                      <a href={WHATSAPP_BASE_URL} className="text-dark" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Number', location: 'shipping-page-contact-section' })}>+91-9220404309</a>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="bg-light p-3 rounded-1">
                       <p className="mb-1"><strong><i className="icofont-phone me-2 id-color-2"></i>Phone</strong></p>
-                      <a href="tel:+919220404309" className="text-dark">+91-9220404309</a>
+                      <a href={PHONE_TEL} className="text-dark">+91-9220404309</a>
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -186,7 +188,7 @@ function Shipping() {
                 </div>
 
                 <div className="text-center mt-5">
-                  <a href="https://wa.me/919220404309?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20plant%20pickup%2Fdelivery" className="btn-main me-3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'shipping-page-bottom-cta' })}>
+                  <a href={`${WHATSAPP_BASE_URL}?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20plant%20pickup%2Fdelivery`} className="btn-main me-3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'shipping-page-bottom-cta' })}>
                     <i className="icofont-whatsapp me-2"></i>WhatsApp Us
                   </a>
                   <Link to="/return-policy" className="btn-line">View Return Policy</Link>

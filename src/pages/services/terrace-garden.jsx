@@ -40,7 +40,7 @@ function TerraceGarden() {
 
         {/* Hero Section */}
         <section id="subheader" className="relative jarallax text-light">
-          <img src="/assets/images/unsplash/1558618666-fcd25c85cd64.jpg" className="jarallax-img" alt="Terrace garden"/>
+          <img src="/assets/images/stock/rooftop-garden.jpg" className="jarallax-img" alt="Terrace garden"/>
           <div className="container relative z-index-1000">
             <div className="row">
               <div className="col-lg-6">
@@ -102,11 +102,11 @@ function TerraceGarden() {
                   <div className="col-lg-6">
                     <div className="row g-3">
                       <div className="col-6">
-                        <img src="/assets/images/unsplash/1585320806297-9794b3e4eeae.jpg" className="w-100 rounded-1 wow zoomIn" alt="Rooftop garden"/>
+                        <img src="/assets/images/stock/rooftop-garden.jpg" className="w-100 rounded-1 wow zoomIn" alt="Rooftop garden"/>
                       </div>
                       <div className="col-6">
                         <img src="/assets/images/unsplash/1416879595882-3373a0480b5b.jpg" className="w-100 rounded-1 wow zoomIn mb-3" alt="Terrace plants"/>
-                        <img src="/assets/images/unsplash/1466692476868-aef1dfb1e735.jpg" className="w-100 rounded-1 wow zoomIn" alt="Terrace design"/>
+                        <img src="/assets/images/stock/balcony-pots.jpg" className="w-100 rounded-1 wow zoomIn" alt="Terrace design"/>
                       </div>
                     </div>
                   </div>
@@ -132,7 +132,7 @@ function TerraceGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1600607687939-ce8a6c25118c.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Seating area"/>
+                      <img src="/assets/images/stock/rooftop-garden.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Seating area"/>
                       <div className="bg-color text-light p-4">
                         <h5>Outdoor Lounge</h5>
                         <p className="mb-0 small">Comfortable seating areas surrounded by plants for relaxation and entertaining guests.</p>
@@ -142,7 +142,7 @@ function TerraceGarden() {
 
                   <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div className="relative overflow-hidden rounded-1 h-100">
-                      <img src="/assets/images/unsplash/1558618666-fcd25c85cd64.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Container garden"/>
+                      <img src="/assets/images/stock/balcony-pots.jpg" className="w-100" style={{height: '180px', objectFit: 'cover'}} alt="Container garden"/>
                       <div className="bg-color text-light p-4">
                         <h5>Container Garden</h5>
                         <p className="mb-0 small">Stylish planters and containers arranged for maximum visual impact and easy maintenance.</p>
@@ -156,7 +156,7 @@ function TerraceGarden() {
                 {/* What's Included */}
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-6 order-lg-2">
-                    <img src="/assets/images/unsplash/1585320806297-9794b3e4eeae.jpg" className="w-100 rounded-1" alt="Terrace garden setup"/>
+                    <img src="/assets/images/stock/rooftop-garden.jpg" className="w-100 rounded-1" alt="Terrace garden setup"/>
                   </div>
                   <div className="col-lg-6 order-lg-1">
                     <h2 className="mb-4">Complete <span className="id-color-2">Setup Includes</span></h2>

@@ -254,7 +254,7 @@ function PlantGrowthTracker() {
                 )}
                 {plant.isCurrentlyBlooming && (
                   <span className="badge bg-danger bg-opacity-10 text-danger">
-                    <i className="icofont-flower me-1"></i>Blooming
+                    <i className="icofont-flora-flower me-1"></i>Blooming
                   </span>
                 )}
               </div>
@@ -441,7 +441,7 @@ function PlantGrowthTracker() {
         {isCurrentlyBlooming && bloomCycles && bloomCycles[0] && !bloomCycles[0].endDate && (
           <div className="alert alert-danger d-flex align-items-center justify-content-between mb-3">
             <div>
-              <i className="icofont-flower me-2"></i>
+              <i className="icofont-flora-flower me-2"></i>
               Currently blooming since {formatDateShort(bloomCycles[0].startDate)}
             </div>
             <button
@@ -458,19 +458,19 @@ function PlantGrowthTracker() {
             className="btn btn-outline-danger btn-sm mb-3 w-100"
             onClick={handleStartBloom}
           >
-            <i className="icofont-flower me-1"></i> Start New Bloom Cycle
+            <i className="icofont-flora-flower me-1"></i> Start New Bloom Cycle
           </button>
         )}
 
         {(!bloomCycles || bloomCycles.length === 0) ? (
           <div className="text-center py-3">
-            <i className="icofont-flower" style={{ fontSize: '36px', color: '#dee2e6' }}></i>
+            <i className="icofont-flora-flower" style={{ fontSize: '36px', color: '#dee2e6' }}></i>
             <p className="text-muted mt-2 mb-0 small">No bloom cycles recorded</p>
           </div>
         ) : (
           bloomCycles.filter(b => b.endDate).map((bloom, index) => (
             <div key={bloom.id} className="d-flex align-items-center mb-2 p-2 bg-light rounded">
-              <i className="icofont-flower me-2" style={{ color: '#e91e63' }}></i>
+              <i className="icofont-flora-flower me-2" style={{ color: '#e91e63' }}></i>
               <div className="flex-grow-1">
                 <small>
                   {formatDateShort(bloom.startDate)} - {formatDateShort(bloom.endDate)}
@@ -670,7 +670,7 @@ function PlantGrowthTracker() {
                           color: activeTab === 'blooms' ? '#fff' : '#333'
                         }}
                       >
-                        <i className="icofont-flower me-1"></i> Blooms ({selectedPlant.bloomCycles?.length || 0})
+                        <i className="icofont-flora-flower me-1"></i> Blooms ({selectedPlant.bloomCycles?.length || 0})
                       </button>
                     </li>
                   </ul>

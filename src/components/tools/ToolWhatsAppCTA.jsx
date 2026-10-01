@@ -1,5 +1,6 @@
 import React from 'react';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../../constants/contact';
 
 function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garden experts can help you with personalized advice.", whatsappMessage = "Hi! I need help with my garden." }) {
   const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -13,7 +14,7 @@ function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garde
         </h5>
         <p className="mb-3 small" style={{ opacity: 0.9 }}>{description}</p>
         <a
-          href={`https://wa.me/919220404309?text=${encodedMessage}`}
+          href={`${WHATSAPP_BASE_URL}?text=${encodedMessage}`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-light d-block mb-2"
@@ -24,7 +25,7 @@ function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garde
           Chat on WhatsApp
         </a>
         <a
-          href="tel:9220404309"
+          href={PHONE_TEL}
           className="btn btn-outline-light d-block"
           style={{ borderRadius: '25px' }}
         >

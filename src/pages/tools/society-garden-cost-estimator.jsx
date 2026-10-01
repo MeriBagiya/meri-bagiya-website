@@ -5,6 +5,7 @@ import ToolWhatsAppCTA from '../../components/tools/ToolWhatsAppCTA';
 import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const scopeOptions = [
   { id: 'common-area', label: 'Common Area Gardens' },
@@ -460,7 +461,7 @@ function SocietyGardenCostEstimator() {
                             <td className="text-end fw-bold">₹{results.baseCost.toLocaleString('en-IN')}/month</td>
                           </tr>
                           <tr>
-                            <td><i className="icofont-flower-pot text-warning me-2"></i>Pot Supply (amortized)</td>
+                            <td><i className="icofont-plant text-warning me-2"></i>Pot Supply (amortized)</td>
                             <td className="text-end fw-bold">₹{results.potCost.toLocaleString('en-IN')}/month</td>
                           </tr>
                           <tr>
@@ -536,7 +537,7 @@ function SocietyGardenCostEstimator() {
                     {/* WhatsApp CTA */}
                     <div className="text-center mt-4">
                       <a
-                        href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                        href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-success btn-lg"
@@ -632,7 +633,7 @@ function SocietyGardenCostEstimator() {
             </div>
             <div className="col-lg-4 text-lg-end mt-3 mt-lg-0">
               <a
-                href={`https://wa.me/919220404309?text=${encodeURIComponent('Hi! I want to schedule a free site visit for society garden maintenance.')}`}
+                href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent('Hi! I want to schedule a free site visit for society garden maintenance.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-main"

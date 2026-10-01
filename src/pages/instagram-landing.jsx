@@ -6,6 +6,7 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput } from '../components/form';
 import { trackEvent } from '../utils/analytics';
+import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -232,7 +233,7 @@ function InstagramLanding() {
                   <div className="row g-2">
                     <div className="col-6">
                       <a
-                        href="https://wa.me/919220404309?text=Hi%2C%20I%27m%20interested%20in%20corporate%20plant%20gifting"
+                        href={`${WHATSAPP_BASE_URL}?text=Hi%2C%20I%27m%20interested%20in%20corporate%20plant%20gifting`}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp', location: 'instagram-landing-corporate-gifting' })}
@@ -245,7 +246,7 @@ function InstagramLanding() {
                     </div>
                     <div className="col-6">
                       <a
-                        href="tel:9220404309"
+                        href={PHONE_TEL}
                         className="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center"
                         style={{ padding: '12px', fontSize: '14px' }}
                       >

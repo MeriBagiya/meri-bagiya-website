@@ -6,6 +6,7 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput, FormTextarea, FormCheckbox } from '../components/form';
 import { trackEvent } from '../utils/analytics';
+import { BUSINESS_ADDRESS_LINE } from '../constants/business';
 
 // API URL from environment variable with fallback
 const FUNCTION_URL = process.env.REACT_APP_API_URL || 'https://meri-bagiya-project.vercel.app/api/send-email';
@@ -162,7 +163,7 @@ function Contact() {
                             <div className="relative h-100 bg-color text-light padding30 rounded-1 text-center">
                                 <i className="icofont-location-pin fs-40 mb-3 d-block"></i>
                                 <h5>Office Location</h5>
-                                <p className="mb-0">Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, UP-201318</p>
+                                <p className="mb-0">{BUSINESS_ADDRESS_LINE}</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".4s">
@@ -176,7 +177,7 @@ function Contact() {
                             <div className="relative h-100 bg-color-2 text-light padding30 rounded-1 text-center">
                                 <i className="icofont-envelope fs-40 mb-3 d-block"></i>
                                 <h5>Send a Message</h5>
-                                <p className="mb-0">Contact@meribagiya.com</p>
+                                <p className="mb-0">contact@meribagiya.com</p>
                             </div>
                         </div>
                     </div>

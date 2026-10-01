@@ -1,40 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { whatsappUrl } from '../constants/contact';
+import { trackEvent } from '../utils/analytics';
+import { BUSINESS_ADDRESS, BUSINESS_GEO, BUSINESS_PHONE, BUSINESS_EMAIL } from '../constants/business';
 
 function ShophomepageImproved() {
-  // Initialize Swiper after component mounts - keeping this for now but hero will be simplified
-  useEffect(() => {
-    // Check if Swiper is available globally
-    if (typeof window.Swiper !== 'undefined') {
-      const swiper = new window.Swiper('.swiper', {
-        autoplay: {
-          delay: 5000, // Adjusted delay for simplified hero
-          disableOnInteraction: false
-        },
-        direction: 'horizontal',
-        loop: true,
-        speed: 1200,
-        watchSlidesProgress: true,
-        parallax: true,
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
-
-      // Cleanup on unmount
-      return () => {
-        if (swiper && swiper.destroy) {
-          swiper.destroy(true, true);
-        }
-      };
-    }
-  }, []);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -49,28 +20,17 @@ function ShophomepageImproved() {
       "https://meribagiya.com/assets/images/gallery/2.webp"
     ],
     "logo": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
-      "addressLocality": "Greater Noida",
-      "addressRegion": "Uttar Pradesh",
-      "postalCode": "201318",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "28.5899943",
-      "longitude": "77.4281686"
-    },
+    "address": BUSINESS_ADDRESS,
+    "geo": BUSINESS_GEO,
     "hasMap": "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z",
     "url": "https://meribagiya.com",
-    "telephone": "+91-9220404309",
-    "email": "contact@meribagiya.com",
+    "telephone": BUSINESS_PHONE,
+    "email": BUSINESS_EMAIL,
     "priceRange": "₹₹",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "08:00",
         "closes": "19:00"
       }
@@ -146,7 +106,7 @@ function ShophomepageImproved() {
     {
       title: "Design a Dream Garden from Scratch",
       description: "Expert landscape architects for custom garden design and full installation.",
-      icon: "icofont-flower-alt",
+      icon: "icofont-plant",
       link: "/services/garden-design"
     },
     {
@@ -185,72 +145,55 @@ function ShophomepageImproved() {
 
             <div id="top"></div>
 
-            <section id="section-intro" className="slider-light no-top no-bottom relative overflow-hidden z-1000">
-                <div className="v-center relative">
-
-                    <div className="swiper">
-                      {/* <!-- Additional required wrapper --> */}
-                      <div className="swiper-wrapper">
-
-                        {/* <!-- Slide 1: Focus on Services & Transformation --> */}
-                        <div className="swiper-slide">
-                            <div className="swiper-inner jarallax" style={{position: 'relative'}}>
-                                <img src={process.env.PUBLIC_URL + '/assets/images/slider/2.jpg'} className="jarallax-img" alt="Transform Your Garden Today"/>
-                                <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)'}}></div>
-                                <div className="sw-caption z-1000 text-white">
-                                    <div className="container">
-                                        <div className="row g-4 align-items-center justify-content-between">
-                                            <div className="spacer-double"></div>
-                                            <div className="col-lg-7"> {/* Adjusted col-lg to make text wider */}
-                                                <div className="spacer-single"></div>
-                                                <div className="sw-text-wrapper">
-                                                    <div className="subtitle" style={{color: '#8bc34a'}}>Your Vision, Our Expertise</div>
-                                                    <h2 className="slider-title text-uppercase mb-4">Transform Your Space into a <span className="id-color-2">Green Paradise</span></h2>
-                                                    <p className="slider-text">Expert garden design, maintenance, and plant solutions to create the outdoor (or indoor) space of your dreams.</p>
-                                                    <Link to="/services" className="btn-main mb10 mb-3">Explore All Services <i className="icofont-arrow-right"></i></Link>
-                                                </div>
-                                            </div>
-                                            <div className="spacer-single"></div>
-                                        </div>
-                                    </div>
-                                </div>
+            <section id="section-intro" className="hp-hero">
+                <div className="container">
+                    <div className="hp-hero-grid">
+                        <div>
+                            <div className="hp-eyebrow">Office plant rental in Noida</div>
+                            <h1 className="hp-title">Green offices, <em>zero upkeep.</em></h1>
+                            <p className="hp-lead">We place, water and swap healthy plants at your Noida office every month. You get a fresh workplace. We do the work.</p>
+                            <div className="hp-cta">
+                                <a
+                                    className="btn-wa"
+                                    href={whatsappUrl('Hi! I want to rent plants for my office in Noida. Please send a quote.')}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => trackEvent('generate_lead', { method: 'whatsapp', location: 'home_hero' })}
+                                >
+                                    Get a quote on WhatsApp
+                                </a>
+                                <Link className="btn-ghost" to="/plant-rent-in-office">See how it works</Link>
                             </div>
                         </div>
+                        <div className="hp-photo" style={{ backgroundImage: "url(/assets/images/home/office-plant.jpg)" }} role="img" aria-label="A potted fern in a bright office"></div>
+                    </div>
 
-                        {/* <!-- Slide 2: Focus on Corporate Gifting --> */}
-                        <div className="swiper-slide">
-                            <div className="swiper-inner jarallax" style={{position: 'relative'}}>
-                                <img src={process.env.PUBLIC_URL + '/assets/images/slider/3.jpg'} className="jarallax-img" alt="Corporate Gifting"/>
-                                <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)'}}></div>
-                                <div className="sw-caption z-1000 text-white">
-                                    <div className="container">
-                                        <div className="row g-4 align-items-center justify-content-between">
-                                            <div className="spacer-double"></div>
-                                            <div className="col-lg-7"> {/* Adjusted col-lg to make text wider */}
-                                                <div className="spacer-single"></div>
-                                                <div className="sw-text-wrapper">
-                                                    <div className="subtitle" style={{color: '#8bc34a'}}>Thoughtful & Sustainable</div>
-                                                    <h2 className="slider-title text-uppercase mb-4">Premium <span className="id-color-2">Plant Gifts</span> for Your Business</h2>
-                                                    <p className="slider-text">Impress clients & employees with eco-friendly plant gifts. Perfect for Diwali, New Year, & corporate events. Bulk orders welcome!</p>
-                                                    <Link to="/corporate-gifting" className="btn-main mb10 mb-3">Get a Corporate Quote <i className="icofont-arrow-right"></i></Link>
-                                                </div>
-                                            </div>
-                                            <div className="spacer-single"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="hp-proof">
+                        <div><b>850+</b>happy customers</div>
+                        <div><b>Monthly</b>watering and care</div>
+                        <div><b>Free swap</b>of plants that do not thrive</div>
+                        <div><b>Noida</b>and Greater Noida</div>
+                    </div>
+
+                    <div className="hp-cols">
+                        <div>
+                            <h3>Office plant rental</h3>
+                            <p>Pay monthly. We care for every plant.</p>
+                            <Link to="/plant-rent-in-office">Learn more &rarr;</Link>
                         </div>
-
-                      </div>
-
-                    {/* <!-- If we need navigation buttons --> */}
-                    <div className="swiper-button-prev no-bg text-white"></div>
-                    <div className="swiper-button-next no-bg text-white"></div>
-
+                        <div>
+                            <h3>Corporate gifting</h3>
+                            <p>Plant gifts with your logo for staff and clients.</p>
+                            <Link to="/corporate-gifting">Learn more &rarr;</Link>
+                        </div>
+                        <div>
+                            <h3>Terrace and balcony gardens</h3>
+                            <p>Design and build for homes and societies.</p>
+                            <Link to="/services">Learn more &rarr;</Link>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
         {/* New "Jobs to Be Done" Section */}
         <section id="section-jobs-to-be-done" className="bg-white">

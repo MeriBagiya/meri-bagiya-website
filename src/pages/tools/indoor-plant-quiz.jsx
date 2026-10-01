@@ -5,23 +5,25 @@ import ToolWhatsAppCTA from '../../components/tools/ToolWhatsAppCTA';
 import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
+import { plantPhoto } from '../../data/plantPhotos';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const plantDatabase = [
-  { name: 'Snake Plant', scientificName: 'Sansevieria', image: '/assets/images/plants/snake-plant.jpg', difficulty: 'Easy', light: ['low', 'indirect', 'bright'], water: 'low', petSafe: false, benefits: ['air-purification', 'low-maintenance'], price: 'budget', tags: ['bedroom', 'office', 'bathroom'] },
-  { name: 'Peace Lily', scientificName: 'Spathiphyllum', image: '/assets/images/plants/peace-lily.jpg', difficulty: 'Easy', light: ['low', 'indirect'], water: 'medium', petSafe: false, benefits: ['air-purification', 'flowers'], price: 'budget', tags: ['bedroom', 'living', 'bathroom'] },
-  { name: 'Spider Plant', scientificName: 'Chlorophytum', image: '/assets/images/plants/spider-plant.jpg', difficulty: 'Easy', light: ['indirect', 'bright'], water: 'medium', petSafe: true, benefits: ['air-purification', 'low-maintenance'], price: 'budget', tags: ['living', 'office', 'bedroom'] },
-  { name: 'Pothos', scientificName: 'Epipremnum aureum', image: '/assets/images/plants/pothos.jpg', difficulty: 'Easy', light: ['low', 'indirect', 'bright'], water: 'low', petSafe: false, benefits: ['air-purification', 'low-maintenance', 'visual'], price: 'budget', tags: ['living', 'office', 'bathroom', 'balcony'] },
-  { name: 'Monstera', scientificName: 'Monstera deliciosa', image: '/assets/images/plants/monstera.jpg', difficulty: 'Medium', light: ['indirect', 'bright'], water: 'medium', petSafe: false, benefits: ['visual', 'air-purification'], price: 'mid', tags: ['living', 'bedroom'] },
-  { name: 'Rubber Plant', scientificName: 'Ficus elastica', image: '/assets/images/plants/rubber-plant.jpg', difficulty: 'Easy', light: ['indirect', 'bright'], water: 'medium', petSafe: false, benefits: ['air-purification', 'visual'], price: 'mid', tags: ['living', 'office'] },
-  { name: 'Jade Plant', scientificName: 'Crassula ovata', image: '/assets/images/plants/jade-plant.jpg', difficulty: 'Easy', light: ['bright', 'direct'], water: 'low', petSafe: false, benefits: ['low-maintenance', 'visual'], price: 'budget', tags: ['balcony', 'office', 'living'] },
-  { name: 'Areca Palm', scientificName: 'Dypsis lutescens', image: '/assets/images/plants/areca-palm.jpg', difficulty: 'Medium', light: ['indirect', 'bright'], water: 'medium', petSafe: true, benefits: ['air-purification', 'visual'], price: 'mid', tags: ['living', 'office', 'balcony'] },
-  { name: 'Aloe Vera', scientificName: 'Aloe barbadensis', image: '/assets/images/plants/aloe-vera.jpg', difficulty: 'Easy', light: ['bright', 'direct'], water: 'low', petSafe: false, benefits: ['low-maintenance', 'air-purification'], price: 'budget', tags: ['balcony', 'bedroom', 'office'] },
-  { name: 'ZZ Plant', scientificName: 'Zamioculcas zamiifolia', image: '/assets/images/plants/zz-plant.jpg', difficulty: 'Easy', light: ['low', 'indirect'], water: 'low', petSafe: false, benefits: ['low-maintenance', 'air-purification'], price: 'mid', tags: ['office', 'bedroom', 'living'] },
-  { name: 'Tulsi (Holy Basil)', scientificName: 'Ocimum tenuiflorum', image: '/assets/images/plants/tulsi.jpg', difficulty: 'Easy', light: ['bright', 'direct'], water: 'medium', petSafe: true, benefits: ['air-purification', 'flowers'], price: 'budget', tags: ['balcony', 'living'] },
-  { name: 'Jasmine', scientificName: 'Jasminum', image: '/assets/images/plants/jasmine.jpg', difficulty: 'Medium', light: ['bright', 'direct'], water: 'medium', petSafe: true, benefits: ['flowers', 'visual'], price: 'mid', tags: ['balcony', 'living'] },
-  { name: 'Boston Fern', scientificName: 'Nephrolepis exaltata', image: '/assets/images/plants/boston-fern.jpg', difficulty: 'Medium', light: ['indirect'], water: 'high', petSafe: true, benefits: ['air-purification', 'visual'], price: 'mid', tags: ['bathroom', 'living', 'balcony'] },
-  { name: 'Fiddle Leaf Fig', scientificName: 'Ficus lyrata', image: '/assets/images/plants/fiddle-leaf-fig.jpg', difficulty: 'Hard', light: ['bright', 'indirect'], water: 'medium', petSafe: false, benefits: ['visual'], price: 'premium', tags: ['living'] },
-  { name: 'Bird of Paradise', scientificName: 'Strelitzia', image: '/assets/images/plants/bird-of-paradise.jpg', difficulty: 'Medium', light: ['bright', 'direct'], water: 'medium', petSafe: false, benefits: ['visual', 'flowers'], price: 'premium', tags: ['living', 'balcony'] },
+  { name: 'Snake Plant', scientificName: 'Sansevieria trifasciata', image: plantPhoto('snake-plant'), difficulty: 'Easy', light: ['low', 'indirect', 'bright'], water: 'low', petSafe: false, benefits: ['air-purification', 'low-maintenance'], price: 'budget', tags: ['bedroom', 'office', 'bathroom'] },
+  { name: 'Peace Lily', scientificName: 'Spathiphyllum wallisii', image: plantPhoto('peace-lily'), difficulty: 'Easy', light: ['low', 'indirect'], water: 'medium', petSafe: false, benefits: ['air-purification', 'flowers'], price: 'budget', tags: ['bedroom', 'living', 'bathroom'] },
+  { name: 'Spider Plant', scientificName: 'Chlorophytum comosum', image: plantPhoto('spider-plant'), difficulty: 'Easy', light: ['indirect', 'bright'], water: 'medium', petSafe: true, benefits: ['air-purification', 'low-maintenance'], price: 'budget', tags: ['living', 'office', 'bedroom'] },
+  { name: 'Pothos', scientificName: 'Epipremnum aureum', image: plantPhoto('pothos'), difficulty: 'Easy', light: ['low', 'indirect', 'bright'], water: 'low', petSafe: false, benefits: ['air-purification', 'low-maintenance', 'visual'], price: 'budget', tags: ['living', 'office', 'bathroom', 'balcony'] },
+  { name: 'Monstera', scientificName: 'Monstera deliciosa', image: plantPhoto('monstera'), difficulty: 'Medium', light: ['indirect', 'bright'], water: 'medium', petSafe: false, benefits: ['visual', 'air-purification'], price: 'mid', tags: ['living', 'bedroom'] },
+  { name: 'Rubber Plant', scientificName: 'Ficus elastica', image: plantPhoto('rubber-plant'), difficulty: 'Easy', light: ['indirect', 'bright'], water: 'medium', petSafe: false, benefits: ['air-purification', 'visual'], price: 'mid', tags: ['living', 'office'] },
+  { name: 'Jade Plant', scientificName: 'Crassula ovata', image: plantPhoto('jade-plant'), difficulty: 'Easy', light: ['bright', 'direct'], water: 'low', petSafe: false, benefits: ['low-maintenance', 'visual'], price: 'budget', tags: ['balcony', 'office', 'living'] },
+  { name: 'Areca Palm', scientificName: 'Dypsis lutescens', image: plantPhoto('areca-palm'), difficulty: 'Medium', light: ['indirect', 'bright'], water: 'medium', petSafe: true, benefits: ['air-purification', 'visual'], price: 'mid', tags: ['living', 'office', 'balcony'] },
+  { name: 'Aloe Vera', scientificName: 'Aloe vera', image: plantPhoto('aloe-vera'), difficulty: 'Easy', light: ['bright', 'direct'], water: 'low', petSafe: false, benefits: ['low-maintenance', 'air-purification'], price: 'budget', tags: ['balcony', 'bedroom', 'office'] },
+  { name: 'ZZ Plant', scientificName: 'Zamioculcas zamiifolia', image: plantPhoto('zz-plant'), difficulty: 'Easy', light: ['low', 'indirect'], water: 'low', petSafe: false, benefits: ['low-maintenance', 'air-purification'], price: 'mid', tags: ['office', 'bedroom', 'living'] },
+  { name: 'Tulsi (Holy Basil)', scientificName: 'Ocimum tenuiflorum', image: plantPhoto('tulsi'), difficulty: 'Easy', light: ['bright', 'direct'], water: 'medium', petSafe: true, benefits: ['air-purification', 'flowers'], price: 'budget', tags: ['balcony', 'living'] },
+  { name: 'Jasmine', scientificName: 'Jasminum sambac', image: plantPhoto('jasmine'), difficulty: 'Medium', light: ['bright', 'direct'], water: 'medium', petSafe: true, benefits: ['flowers', 'visual'], price: 'mid', tags: ['balcony', 'living'] },
+  { name: 'Boston Fern', scientificName: 'Nephrolepis exaltata', image: plantPhoto('boston-fern'), difficulty: 'Medium', light: ['indirect'], water: 'high', petSafe: true, benefits: ['air-purification', 'visual'], price: 'mid', tags: ['bathroom', 'living', 'balcony'] },
+  { name: 'Fiddle Leaf Fig', scientificName: 'Ficus lyrata', image: plantPhoto('fiddle-leaf-fig'), difficulty: 'Hard', light: ['bright', 'indirect'], water: 'medium', petSafe: false, benefits: ['visual'], price: 'premium', tags: ['living'] },
+  { name: 'Bird of Paradise', scientificName: 'Strelitzia reginae', image: plantPhoto('bird-of-paradise'), difficulty: 'Medium', light: ['bright', 'direct'], water: 'medium', petSafe: false, benefits: ['visual', 'flowers'], price: 'premium', tags: ['living', 'balcony'] },
 ];
 
 const questions = [
@@ -447,7 +449,7 @@ function IndoorPlantQuiz() {
                                   style={{ objectFit: 'cover', minHeight: '200px' }}
                                   onError={(e) => {
                                     e.target.onerror = null;
-                                    e.target.src = '/assets/images/plants/default-plant.jpg';
+                                    e.target.src = plantPhoto('default-plant');
                                   }}
                                 />
                               </div>
@@ -502,7 +504,7 @@ function IndoorPlantQuiz() {
                                   {/* CTA Buttons */}
                                   <div className="d-flex gap-2 flex-wrap">
                                     <a
-                                      href={`https://wa.me/919220404309?text=${encodeURIComponent(getBuyWhatsAppMessage(plant.name))}`}
+                                      href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getBuyWhatsAppMessage(plant.name))}`}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       className="btn btn-sm btn-success"
@@ -516,7 +518,7 @@ function IndoorPlantQuiz() {
                                       Buy This Plant
                                     </a>
                                     <a
-                                      href={`https://wa.me/919220404309?text=${encodeURIComponent(getRentWhatsAppMessage(plant.name))}`}
+                                      href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getRentWhatsAppMessage(plant.name))}`}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       className="btn btn-sm btn-outline-success"
@@ -542,7 +544,7 @@ function IndoorPlantQuiz() {
                         <h5 style={{ color: accentColor }}>Want All These Plants?</h5>
                         <p className="text-muted small mb-3">Chat with us on WhatsApp to get all 5 plants delivered to your doorstep.</p>
                         <a
-                          href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                          href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-lg text-white"

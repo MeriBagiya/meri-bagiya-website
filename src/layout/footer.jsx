@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../constants/contact';
+import { BUSINESS_ADDRESS_LINE, BUSINESS_EMAIL } from '../constants/business';
 
 function Footer() {
   return (
@@ -10,7 +12,7 @@ function Footer() {
  <div className="container relative z-2">
      <div className="row gx-5 gy-4">
          <div className="col-lg-4 col-md-6 col-12 text-center text-md-start">
-             <img src="/assets/images/MERI-BAGIYA-LOGO-UPDATED.png" className="w-150px" alt="Meri Bagiya - Plant Nursery & Garden Services" style={{maxWidth: '120px'}}/>
+             <img src="/assets/images/MERI-BAGIYA-LOGO-UPDATED.png" className="w-150px footer-logo" alt="Meri Bagiya - Plant Nursery & Garden Services" style={{maxWidth: "120px"}}/>
              <div className="spacer-20"></div>
              <p>Greater Noida's leading wholesale plant nursery and garden services provider. We supply retail nurseries, landscapers, and garden centers with quality plants. From garden design to maintenance, we bring your dream garden to life—professional, reliable, and passionate about nature.</p>
 
@@ -18,7 +20,7 @@ function Footer() {
                  <a href="https://www.facebook.com/share/1GT8gTXRsH/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
                  <a href="https://www.instagram.com/meribagiya_" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
                  <a href="https://www.youtube.com/@Meri_Bagiya_Nersery" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
-                 <a href="https://wa.me/919220404309" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Icon', location: 'footer-social' })}><i className="fa-brands fa-whatsapp"></i></a>
+                 <a href={WHATSAPP_BASE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Icon', location: 'footer-social' })}><i className="fa-brands fa-whatsapp"></i></a>
              </div>
          </div>
          <div className="col-lg-4 col-md-6 col-12 order-lg-1 order-md-2">
@@ -59,12 +61,12 @@ function Footer() {
                  <div className="spacer-20"></div>
 
                  <div className="fw-bold text-white"><i className="icofont-location-pin me-2 id-color-2"></i>Office Location</div>
-                 Near Ace Aspire, Amrapali Leisure Valley, Greater Noida, Uttar Pradesh-201318
+                 {BUSINESS_ADDRESS_LINE}
 
                  <div className="spacer-20"></div>
 
                  <div className="fw-bold text-white"><i className="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                 Contact@meribagiya.com
+                 {BUSINESS_EMAIL}
 
                  <div className="spacer-20"></div>
 

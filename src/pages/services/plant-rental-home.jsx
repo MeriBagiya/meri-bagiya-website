@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import HomeRentalCalculator from '../../components/HomeRentalCalculator';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
+import { BUSINESS_ADDRESS, BUSINESS_GEO, BUSINESS_PHONE, BUSINESS_EMAIL } from '../../constants/business';
 
 function PlantRentalHome() {
   const jsonLd = {
@@ -13,21 +15,10 @@ function PlantRentalHome() {
       "@type": "LocalBusiness",
       "name": "Meri Bagiya",
       "url": "https://meribagiya.com",
-      "telephone": "+91-9220404309",
-      "email": "contact@meribagiya.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
-        "addressLocality": "Greater Noida",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "201318",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.5899943",
-        "longitude": "77.4281686"
-      },
+      "telephone": BUSINESS_PHONE,
+      "email": BUSINESS_EMAIL,
+      "address": BUSINESS_ADDRESS,
+      "geo": BUSINESS_GEO,
       "sameAs": [
         "https://www.facebook.com/meribagiya",
         "https://www.instagram.com/meribagiya_",
@@ -164,7 +155,7 @@ function PlantRentalHome() {
                       </div>
                       <div className="col-6">
                         <img
-                          src="/assets/images/unsplash/1463320726281-696a485928c7.jpg"
+                          src="/assets/images/misc/4.webp"
                           alt="Plants on shelf"
                           className="w-100 rounded-10px"
                           style={{ height: '200px', objectFit: 'cover' }}
@@ -201,7 +192,7 @@ function PlantRentalHome() {
                     </div>
                     <div className="col-md-6 col-lg-4">
                       <div className="bg-light p-4 rounded-10px h-100 text-center">
-                        <i className="icofont-air fs-40 id-color mb-3"></i>
+                        <i className="icofont-wind fs-40 id-color mb-3"></i>
                         <h5>Better Air Quality</h5>
                         <p className="mb-0 text-muted">Indoor plants purify air and boost oxygen levels naturally.</p>
                       </div>
@@ -406,7 +397,7 @@ function PlantRentalHome() {
                   <p style={{ color: '#ffffff', marginBottom: '1.5rem' }}>Start with just 5 plants and transform your living space today!</p>
                   <div className="d-flex flex-column flex-md-row gap-3 justify-content-center">
                     <a
-                      href="https://wa.me/919220404309?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home.%20Please%20share%20more%20details."
+                      href={`${WHATSAPP_BASE_URL}?text=Hi!%20I'm%20interested%20in%20plant%20rental%20for%20my%20home.%20Please%20share%20more%20details.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackEvent('whatsapp_lead', { button_text: 'WhatsApp Us', location: 'plant-rental-home-page-cta' })}

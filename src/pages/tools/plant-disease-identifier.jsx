@@ -199,7 +199,7 @@ function PlantDiseaseIdentifier() {
                   )}
                   {!loading && !result && (
                     <div className="text-center py-5">
-                      <i className="icofont-search-alt-1" style={{ fontSize: '64px', color: '#4a7c59' }}></i>
+                      <i className="icofont-search" style={{ fontSize: '64px', color: '#4a7c59' }}></i>
                       <p className="mt-3 text-muted">Results will be displayed here.</p>
                     </div>
                   )}

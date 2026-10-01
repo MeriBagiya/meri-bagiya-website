@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { BUSINESS_ADDRESS, BUSINESS_GEO, BUSINESS_PHONE, BUSINESS_EMAIL } from '../constants/business';
 
 function Shophomepage() {
   // Initialize Swiper after component mounts
@@ -48,23 +49,12 @@ function Shophomepage() {
       "https://meribagiya.com/assets/images/gallery/2.webp"
     ],
     "logo": "https://meribagiya.com/assets/images/MERI-BAGIYA-LOGO-UPDATED.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Near Ace Aspire, Amrapali Leisure Valley",
-      "addressLocality": "Greater Noida",
-      "addressRegion": "Uttar Pradesh",
-      "postalCode": "201318",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "28.5899943",
-      "longitude": "77.4281686"
-    },
+    "address": BUSINESS_ADDRESS,
+    "geo": BUSINESS_GEO,
     "hasMap": "https://www.google.com/maps/place/Meri+Bagiya/@28.589999,77.4255937,17z",
     "url": "https://meribagiya.com",
-    "telephone": "+91-9220404309",
-    "email": "contact@meribagiya.com",
+    "telephone": BUSINESS_PHONE,
+    "email": BUSINESS_EMAIL,
     "priceRange": "₹₹",
     "openingHoursSpecification": [
       {

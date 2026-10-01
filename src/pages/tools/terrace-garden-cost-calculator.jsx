@@ -5,6 +5,7 @@ import ToolWhatsAppCTA from '../../components/tools/ToolWhatsAppCTA';
 import ToolRelatedServices from '../../components/tools/ToolRelatedServices';
 import ToolMoreTools from '../../components/tools/ToolMoreTools';
 import { trackEvent } from '../../utils/analytics';
+import { WHATSAPP_BASE_URL } from '../../constants/contact';
 
 const presets = [
   { label: 'Small Balcony', sqft: 50 },
@@ -14,7 +15,7 @@ const presets = [
 ];
 
 const gardenTypes = [
-  { id: 'decorative', label: 'Decorative', icon: 'icofont-flower', description: 'Beautiful flowering and ornamental plants', costMultiplier: 1.0 },
+  { id: 'decorative', label: 'Decorative', icon: 'icofont-flora-flower', description: 'Beautiful flowering and ornamental plants', costMultiplier: 1.0 },
   { id: 'vegetable', label: 'Vegetable Garden', icon: 'icofont-carrot', description: 'Grow your own organic vegetables', costMultiplier: 0.8 },
   { id: 'mixed', label: 'Mixed Garden', icon: 'icofont-leaf', description: 'Combination of decorative and edible plants', costMultiplier: 1.1 },
   { id: 'leisure', label: 'Leisure & Seating', icon: 'icofont-chair', description: 'Garden with seating area for relaxation', costMultiplier: 1.3 }
@@ -483,7 +484,7 @@ function TerraceGardenCostCalculator() {
                     {/* WhatsApp CTA */}
                     <div className="text-center mt-4">
                       <a
-                        href={`https://wa.me/919220404309?text=${encodeURIComponent(getWhatsAppMessage())}`}
+                        href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(getWhatsAppMessage())}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-success btn-lg"
