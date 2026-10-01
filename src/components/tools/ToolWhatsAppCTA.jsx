@@ -1,5 +1,5 @@
 import React from 'react';
-import { trackEvent } from '../../utils/analytics';
+import { trackEvent, trackCall } from '../../utils/analytics';
 import { WHATSAPP_BASE_URL, PHONE_TEL } from '../../constants/contact';
 
 function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garden experts can help you with personalized advice.", whatsappMessage = "Hi! I need help with my garden." }) {
@@ -25,7 +25,7 @@ function ToolWhatsAppCTA({ title = "Need Expert Help?", description = "Our garde
           Chat on WhatsApp
         </a>
         <a
-          href={PHONE_TEL}
+          href={PHONE_TEL} onClick={() => trackCall('tool_cta')}
           className="btn btn-outline-light d-block"
           style={{ borderRadius: '25px' }}
         >

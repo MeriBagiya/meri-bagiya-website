@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import { trackEvent } from '../utils/analytics';
+import { trackEvent, trackCall } from '../utils/analytics';
 import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 
 function Header() {
@@ -429,7 +429,7 @@ function Header() {
                 marginTop: 'auto'
             }}>
                 <p style={{fontSize: '12px', color: '#666', margin: 0}}>
-                    Call us: <a href={PHONE_TEL} style={{color: '#4a7c59'}}>9220404309</a>
+                    Call us: <a href={PHONE_TEL} onClick={() => trackCall('mobile_menu')} style={{color: '#4a7c59'}}>9220404309</a>
                 </p>
             </div>
         </div>

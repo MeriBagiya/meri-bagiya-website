@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { useFormValidation } from '../hooks/useFormValidation';
 import { validators } from '../constants/validation';
 import { FormInput } from '../components/form';
-import { trackEvent } from '../utils/analytics';
+import { trackEvent, trackCall } from '../utils/analytics';
 import { WHATSAPP_BASE_URL, PHONE_TEL } from '../constants/contact';
 
 // API URL from environment variable with fallback
@@ -246,7 +246,7 @@ function InstagramLanding() {
                     </div>
                     <div className="col-6">
                       <a
-                        href={PHONE_TEL}
+                        href={PHONE_TEL} onClick={() => trackCall('instagram_landing')}
                         className="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center"
                         style={{ padding: '12px', fontSize: '14px' }}
                       >
