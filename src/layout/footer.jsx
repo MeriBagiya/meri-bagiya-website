@@ -89,6 +89,7 @@ function Footer() {
                          <li><Link to="/privacy">Privacy Policy</Link></li>
                          <li><Link to="/return-policy">Return Policy</Link></li>
                          <li><Link to="/shipping">Pickup & Delivery</Link></li>
+                         <li><a href="/photo-credits.txt" target="_blank" rel="noopener noreferrer">Photo Credits</a></li>
                      </ul>
                  </div>
              </div>
